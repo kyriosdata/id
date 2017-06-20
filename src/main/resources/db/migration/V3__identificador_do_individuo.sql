@@ -42,7 +42,12 @@ CREATE TABLE IdentificadorDoIndividuo (
   area int,
   emissor varchar,
   dataDeEmissao DATE,
-  tipoDoIdentificador varchar
+  tipoDoIdentificador varchar,
+  cartorio varchar,
+  livro varchar,
+  folha varchar,
+  termo varchar,
+  serie varchar
 );
 
 ALTER TABLE IdentificadorDoIndividuo
