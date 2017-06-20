@@ -25,7 +25,7 @@ INSERT INTO NumeroSequenciaNomeAtribuido VALUES (9, 'Nono e subsequentes nomes a
 
 /*
   LOOKUP TABLE
-  Seção 9.6.2 (página 32)
+  Seção 9.7.2 (página 34)
   Título, honorífico ou prefixo do nome de referência, que inicia um
   nome, usada ao se referir a um indivíduo pelo nome, seja por carta,
   por telefone ou, dependendo da situação cultural, pessoalmente.
