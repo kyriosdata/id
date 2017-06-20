@@ -35,7 +35,7 @@ INSERT INTO UsoDoNome VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (no
 INSERT INTO UsoDoNome VALUES (8, 'O', 'Outro nome (alias)');
 
 /*
-  Seção 9
+  Seção 9 (página 17)
   O nome do indivíduo é um elemento de dados composto.
   Pode haver mais de um nome registrado para cada indivíduo. Pelo menos
   um nome deve ser capturado. Pode haver múltiplos títulos, nomes
