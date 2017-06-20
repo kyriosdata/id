@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS AreaGeografica;
 DROP TABLE IF EXISTS Estado;
-DROP TABLE IF EXISTS IdentificadorDoIndividuo;
+DROP TABLE IF EXISTS Identificador;
 DROP TABLE IF EXISTS TipoDoIdentificador;
 
 /* LOOKUP TABLE
@@ -53,7 +53,7 @@ INSERT INTO TipoDoIdentificador VALUES ('01', 'Identificador único dentro da or
 INSERT INTO TipoDoIdentificador VALUES ('21', 'radiologia');
 INSERT INTO TipoDoIdentificador VALUES ('22', 'patologia');
 
-CREATE TABLE IdentificadorDoIndividuo (
+CREATE TABLE Identificador (
   designacao varchar NOT NULL,
   area int,
   emissor varchar,
@@ -69,16 +69,16 @@ CREATE TABLE IdentificadorDoIndividuo (
   secao varchar
 );
 
-ALTER TABLE IdentificadorDoIndividuo
+ALTER TABLE Identificador
   ADD CONSTRAINT FK_AreaGeograficaCodigo
 FOREIGN KEY (area) REFERENCES AreaGeografica(codigo);
 
-ALTER TABLE IdentificadorDoIndividuo
+ALTER TABLE Identificador
   ADD CONSTRAINT FK_TipoDoIdentificadorCodigo
 FOREIGN KEY (tipoDoIdentificador) REFERENCES TipoDoIdentificador(codigo);
 
-ALTER TABLE IdentificadorDoIndividuo
+ALTER TABLE Identificador
   ADD CONSTRAINT FK_EstadoCodigo
 FOREIGN KEY (estado) REFERENCES Estado(codigo);
 
-INSERT INTO IdentificadorDoIndividuo VALUES (1, 1, 'N/A', DATE '2017-12-31', '01', 'c', 'l', 'f', 't', 's', 'GO', 'zona', 'seção');
+INSERT INTO Identificador VALUES (1, 1, 'N/A', DATE '2017-12-31', '01', 'c', 'l', 'f', 't', 's', 'GO', 'zona', 'seção');
