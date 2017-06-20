@@ -1,6 +1,22 @@
 DROP TABLE IF EXISTS AreaGeografica;
+DROP TABLE IF EXISTS Estado;
 DROP TABLE IF EXISTS IdentificadorDoIndividuo;
 DROP TABLE IF EXISTS TipoDoIdentificador;
+
+/* LOOKUP TABLE
+   O código do estado onde foi emitida a carteira de trabalho
+   do indivíduo.
+*/
+
+CREATE TABLE Estado (
+  codigo varchar(2),
+  nome varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO Estado VALUES ('GO', 'Goiás');
+INSERT INTO Estado VALUES ('RJ', 'Rio de Janeiro');
+INSERT INTO Estado VALUES ('SP', 'São Paulo');
 
 /* LOOKUP TABLE
    Um código que representa a área geográfica na qual
@@ -47,7 +63,10 @@ CREATE TABLE IdentificadorDoIndividuo (
   livro varchar,
   folha varchar,
   termo varchar,
-  serie varchar
+  serie varchar,
+  estado varchar(2),
+  zona varchar,
+  secao varchar
 );
 
 ALTER TABLE IdentificadorDoIndividuo
@@ -58,4 +77,8 @@ ALTER TABLE IdentificadorDoIndividuo
   ADD CONSTRAINT FK_TipoDoIdentificadorCodigo
 FOREIGN KEY (tipoDoIdentificador) REFERENCES TipoDoIdentificador(codigo);
 
-INSERT INTO IdentificadorDoIndividuo VALUES (1, 1, 'N/A', DATE '2017-12-31', '01');
+ALTER TABLE IdentificadorDoIndividuo
+  ADD CONSTRAINT FK_EstadoCodigo
+FOREIGN KEY (estado) REFERENCES Estado(codigo);
+
+INSERT INTO IdentificadorDoIndividuo VALUES (1, 1, 'N/A', DATE '2017-12-31', '01', 'c', 'l', 'f', 't', 's', 'GO', 'zona', 'seção');
