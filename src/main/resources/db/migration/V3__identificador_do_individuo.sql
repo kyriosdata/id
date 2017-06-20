@@ -69,6 +69,7 @@ CREATE TABLE IdentificadorDoIndividuo (
   secao varchar
 );
 
+
 ALTER TABLE IdentificadorDoIndividuo
   ADD CONSTRAINT FK_AreaGeograficaCodigo
 FOREIGN KEY (area) REFERENCES AreaGeografica(codigo);
