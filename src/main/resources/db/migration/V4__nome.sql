@@ -1,84 +1,38 @@
-DROP TABLE IF EXISTS AreaGeografica;
-DROP TABLE IF EXISTS Estado;
-DROP TABLE IF EXISTS IdentificadorDoIndividuo;
-DROP TABLE IF EXISTS TipoDoIdentificador;
-
-/* LOOKUP TABLE
-   O código do estado onde foi emitida a carteira de trabalho
-   do indivíduo.
-*/
-
-CREATE TABLE Estado (
-  codigo varchar(2),
-  nome varchar,
-  PRIMARY KEY (codigo)
-);
-
-INSERT INTO Estado VALUES ('GO', 'Goiás');
-INSERT INTO Estado VALUES ('RJ', 'Rio de Janeiro');
-INSERT INTO Estado VALUES ('SP', 'São Paulo');
-
-/* LOOKUP TABLE
-   Um código que representa a área geográfica na qual
-   o identificador é utilizado.
-*/
-
-CREATE TABLE AreaGeografica (
-  codigo int,
-  codigoAlternativo char,
-  descricao varchar,
-  PRIMARY KEY (codigo)
-);
-
-INSERT INTO AreaGeografica VALUES (1, 'L', 'Identificador do sujeito local');
-INSERT INTO AreaGeografica VALUES (2, 'A', 'Identificador da área/região/distrito');
-INSERT INTO AreaGeografica VALUES (3, 'E', 'Identificador do estado/província/território');
-INSERT INTO AreaGeografica VALUES (4, 'N', 'Identificador nacional');
+DROP TABLE IF EXISTS Nome;
+DROP TABLE IF EXISTS UsoCondicional;
 
 /*
   LOOKUP TABLE
-  Tipo de identificador usando pela organização, por exemplo,
-  identificador único do paciente, cartão de saúde, cartão da previdência.
-  FONTES ENCONTRADAS:
-  http://www.pmf.sc.gov.br/arquivos/arquivos/pdf/04_01_2010_10.17.42.24125bd84cc115c7ed10f14d211976a2.PDF
+  Seção 9.4 Uso condicional
  */
-
-CREATE TABLE TipoDoIdentificador (
-  codigo varchar,
-  descricao varchar,
-  PRIMARY KEY (codigo)
+CREATE TABLE UsoCondicional (
+  codigo int,
+  descricao varchar
 );
 
-INSERT INTO TipoDoIdentificador VALUES ('01', 'Identificador único dentro da organização');
-INSERT INTO TipoDoIdentificador VALUES ('21', 'radiologia');
-INSERT INTO TipoDoIdentificador VALUES ('22', 'patologia');
+INSERT INTO UsoCondicional VALUES (1, 'Informação não confiável');
+INSERT INTO UsoCondicional VALUES (2, 'Nome com erro de digitação');
+INSERT INTO UsoCondicional VALUES (3, 'Nome para não ser usado');
+INSERT INTO UsoCondicional VALUES (4, 'Vínculo do nome proibido por lei');
+INSERT INTO UsoCondicional VALUES (6, 'Requisito de privacidade/segurança especial');
+INSERT INTO UsoCondicional VALUES (9, 'Nome temporário');
 
-CREATE TABLE IdentificadorDoIndividuo (
-  designacao varchar NOT NULL,
-  area int,
-  emissor varchar,
-  dataDeEmissao DATE,
-  tipoDoIdentificador varchar,
-  cartorio varchar,
-  livro varchar,
-  folha varchar,
-  termo varchar,
-  serie varchar,
-  estado varchar(2),
-  zona varchar,
-  secao varchar
+/*
+  Seção 9
+  O nome do indivíduo é um elemento de dados composto.
+  Pode haver mais de um nome registrado para cada indivíduo. Pelo menos
+  um nome deve ser capturado. Pode haver múltiplos títulos, nomes
+  atribuídos, sobrenomes, sufixos e usos do nome para cada nome.
+  Somente um nome pode ser o nome preferido da pessoa em cda instante do
+  tempo.
+ */
+CREATE TABLE Nome (
+  completo varchar,
+  preferido BOOLEAN,
+  usoCondicional int
 );
 
-ALTER TABLE IdentificadorDoIndividuo
-  ADD CONSTRAINT FK_AreaGeograficaCodigo
-FOREIGN KEY (area) REFERENCES AreaGeografica(codigo);
+ALTER TABLE Nome
+  ADD CONSTRAINT FK_UsoCondicionalCodigo
+FOREIGN KEY (usoCondicional) REFERENCES UsoCondicional(codigo);
 
-ALTER TABLE IdentificadorDoIndividuo
-  ADD CONSTRAINT FK_TipoDoIdentificadorCodigo
-FOREIGN KEY (tipoDoIdentificador) REFERENCES TipoDoIdentificador(codigo);
-
-ALTER TABLE IdentificadorDoIndividuo
-  ADD CONSTRAINT FK_EstadoCodigo
-FOREIGN KEY (estado) REFERENCES Estado(codigo);
-
-INSERT INTO IdentificadorDoIndividuo VALUES (1, 1, 'N/A', DATE '2017-12-31', '01', 'c', 'l', 'f', 't', 's', 'GO', 'zona', 'seção');
