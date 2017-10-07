@@ -11,9 +11,11 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/bulma.min.css">
+  <style>
+    #visao-geral, #identificadores { display: none; }</style>
 </head>
 
-<body>
+<body onhashchange="changeToUrl();">
   <section class="hero is-light">
     <div class="hero-head">
       <header class="nav">
@@ -28,7 +30,7 @@
         <span></span>
         </span>
         <div class="nav-right nav-menu">
-          <a class="nav-item is-active">
+          <a class="nav-item is-active" href="">
             <span class="icon">
               <i class="fa fa-home"></i>
             </span>
@@ -48,12 +50,12 @@
       <nav class="tabs is-boxed is-small">
         <div class="container">
           <ul>
-            <li><a href="">Identificadores</a></li>
-            <li><a href="">Nomes</a></li>
-            <li><a href="">Dados demográficos</a></li>
-            <li><a href="">Endereços</a></li>
-            <li><a href="">Comunicações eletrônicas</a></li>
-            <li><a href="">Vínculos</a></li>
+            <li><a href="#identificadores">Identificadores</a></li>
+            <li><a href="#nomes">Nomes</a></li>
+            <li><a href="#dados">Dados demográficos</a></li>
+            <li><a href="#enderecos">Endereços</a></li>
+            <li><a href="#comunicacoes">Comunicações eletrônicas</a></li>
+            <li><a href="#vinculos">Vínculos</a></li>
           </ul>
         </div>
       </nav>
@@ -129,6 +131,27 @@
     </div>
   </section>
 
+  
+  <script>
+    var correnteVisivel;
+    window.onload = function() {
+      correnteVisivel = document.getElementById('visao-geral');
+      correnteVisivel.style.display = "block";
+    }
+    
+    function mostre(c) {
+      correnteVisivel.style.display = "none";
+      var exiba = document.getElementById(c);
+      exiba.style.display = "block";
+      correnteVisivel = exiba;
+    }
+    
+    function changeToUrl() {
+      /* Retira # */
+      var goTo = location.hash.substring(1);
+      mostre(goTo ? goTo : 'visao-geral');      
+    }
+  </script>
 </body>
 
 </html>
