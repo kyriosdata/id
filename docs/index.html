@@ -77,7 +77,7 @@
     <div class="hero-head">
       <nav class="navbar is-transparent">
         <div class="navbar-brand">
-          <a class="navbar-item" href="http://bulma.io">
+          <a class="navbar-item" href="http://esaudebucal.com.br">
             <img src="./logo.png" alt="eSaúdeBucal logo">
           </a>
 
@@ -411,6 +411,26 @@
           <li>Zona. Número da zona eleitoral do título eleitoral do indivíduo.</li>
         </ul>
       </ul>
+      
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+            <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#visao-geral">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Visão geral</span>
+            </a>
+            <a class="button" href="#nomes">
+              <span>Nomes</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
 
   </section>
@@ -431,12 +451,14 @@
       </ol>
 
       <h4>Nome completo</h4>
-      
+
       <p> O nome é formado pela concatenação dos títulos, primeiros nomes, sobrenomes e sufixos. Por exemplo, "Sr. João da Silva Júnior" é o nome completo formado por um único título (Sr.), um único primeiro nome (João), um sobrenome (da Silva) e um sufixo (Júnior).</p>
 
       <p>Não é obrigatório um título, nem tampouco um sufixo. Ou seja, o nome completo "Pedro Carvalho" é formado apenas pelo primeiro nome "Pedro" e o sobrenome "Carvalho", simples assim. </p>
 
       <p>Por outro lado, podemos ter outros nomes como "Magnífico Reitor Fulano da Silva Beltrano", onde há dois sufixos (magnífico e reitor), um primeiro nome (Fulano) e sobrenomes (da Silva e Beltrano), sem sufixo.</p>
+
+      <p>Podem ser fornecidos até 9 títulos, 9 primeiros nomes, 9 sobrenomes e 9 sufixos para cada nome. Em qualquer um destes casos, contudo, caso 9 elementos não sejam suficientes, então o nono elemento deve conter todos os demais a partir do nono.</p>
 
       <h4>Nome preferido</h4>
       <p>Quando recém-nascido o indivíduo possui um nome temporário. Quando registrado, o nome registrado passa a ser utilizado, contudo, o nome de recém-nascido deverá persistir para efeito de relatórios, por exemplo. Casamentos, dentre outras situações podem resultar em alteração de nome, além da possibilidade de um indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e "Edison Arantes do Nascimento" são nomes do maior jogador de futebol de todos os tempos, conforme a Wikipedia.</p>
@@ -464,19 +486,19 @@
           </tr>
         </tbody>
       </table>
-      
+
       <h4>Representação alternativa</h4>
-      <p>A representação alternativa é empregada quando a representação do nome é baseada em fonte ou caractere alternativo. A norma cita, por exemplo, o nome russo doméstico ou a representação do nome em caracteres chineses. Adicionalmente, um mesmo nome pode possuir várias representações alternativas.</p>  
-      
+      <p>A representação alternativa é empregada quando a representação do nome é baseada em fonte ou caractere alternativo. A norma cita, por exemplo, o nome russo doméstico ou a representação do nome em caracteres chineses. Adicionalmente, um mesmo nome pode possuir várias representações alternativas.</p>
+
       <h4>Grupo de utilização do nome</h4>
       <p>Um nome pode ser utilizado conforme a classificação que permite a diferenciação entre os usos dos nomes registrados para o indivíduo. Cada classificação é definida por um grupo e todo nome está associado a um ou mais grupos de usos.</p>
-      
+
       <p> Cada grupo de uso se aplica a um período com data de início e término. A data de início estabelece a partir de quando o nome em questão pode ser utilizado, enquanto a data de término a data a partir da qual o nome não mais pode ser empregado para a finalidade do grupo em questão. Em ambos os casos pode ser empregada a data no formato AAAAMMDD. A representação da data, contudo, deve ser compreendida na região em que está sendo usada.</p>
-      
+
       <p>Se o nome estiver associado a um identificador, então tal identificador deve estar associado ao grupo de uso em questão, por meio do item <em>identificador</em>. Ou seja, nesse caso, o grupo de uso também permite obter o identificador no qual o nome do indivíduo está definido.</p>
-      
+
       <p>Por último, além do período e do identificador eventualmente associado, um grupo também inclui o código de uso do nome, conforme a tabela abaixo.</p>
-      
+
       <h5>Tabela: código do uso do nome</h5>
       <table>
         <thead>
@@ -519,10 +541,10 @@
           </tr>
         </tbody>
       </table>
-      
+
       <h4>Indicador de uso condicional</h4>
       <p>Define as condições específicas ou regras que devem ser aplicadas ao nome em questão do indivíduo conforme a tabela abaixo.</p>
-      
+
       <h5>Tabela: uso condicional</h5>
       <table>
         <thead>
@@ -534,55 +556,156 @@
         <tbody>
           <tr>
             <td>1</td>
-            <td>Informação não confiável <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Informação não confiável</em>Quando se sabe que o nome registrado é fictício ou um nome parcial.</span></span></td>
+            <td>Informação não confiável <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Informação não confiável</em>Quando se sabe que o nome registrado é fictício ou um nome parcial.</span></span>
+            </td>
           </tr>
           <tr>
             <td>2</td>
-            <td>Nome com erro de digitação</td>
+            <td>Nome com erro de digitação <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome com erro de digitação</em>Indica que o nome contém erro de digitação, mas que deve ser retido para uma potencial vinculação futura.</span></span>
+            </td>
           </tr>
           <tr>
             <td>3</td>
-            <td>Nome para não ser usado</td>
+            <td>Nome para não ser usado <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome para não ser usado</em>Indica que nome não pode ser usado para se referir ao indivíduo.</span></span>
+            </td>
           </tr>
           <tr>
             <td>4</td>
-            <td>Vínculo do nome proibido por lei</td>
+            <td>Vínculo do nome proibido por lei <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Vínculo do nome proibido por lei</em>Indica que este nome e os nomes anteriores a este na sequência de nomes do indivíduo em questão não podem ser exibidos ao se buscar por ou lidar com informações e eventos associados com um nome que segue a este na sequência.</span></span>
+            </td>
           </tr>
           <tr>
             <td>6</td>
-            <td>Requisito de privacidade/segurança especial</td>
+            <td>Requisito de privacidade/segurança especial <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Requisito de privacidade/segurança especial</em>Nomes para os quais episódios são vinculados e devem ser acessíveis somente para pessoas específicas autorizadas.</span></span>
+            </td>
           </tr>
           <tr>
             <td>9</td>
-            <td>Nome temporário</td>
+            <td>Nome temporário <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome temporário</em>Indica nome não determinado, por exemplo, nome substituto utilizado em situação de emergência ou nome de recém-nascido.</span></span>
+            </td>
           </tr>
         </tbody>
       </table>
-      
+
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+            <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#identificadores">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Identificadores</span>
+            </a>
+            <a class="button" href="#dados">
+              <span>Dados demográficos</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 
   <section class="section" id="dados">
     <div class="content">
       <h3>Dados demográficos</h3>
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+            <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#nomes">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Nomes</span>
+            </a>
+            <a class="button" href="#enderecos">
+              <span>Endereços</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 
   <section class="section" id="enderecos">
     <div class="content">
       <h3>Endereços</h3>
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+           <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#dados">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Dados demográficos</span>
+            </a>
+            <a class="button" href="#comunicacoes">
+              <span>Comunicações eletrônicas</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 
   <section class="section" id="comunicacoes">
     <div class="content">
       <h3>Comunicações eletrônicas</h3>
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+           <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#enderecos">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Endereços</span>
+            </a>
+            <a class="button" href="#vinculos">
+              <span>Vínculos</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 
   <section class="section" id="vinculos">
     <div class="content">
       <h3>Vínculos</h3>
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+           <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#comunicacoes">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Comunicações eletrônicas</span>
+            </a>
+            <a class="button" href="#visao-geral">
+              <span>Visão geral</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   </section>
 

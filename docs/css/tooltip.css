@@ -1,5 +1,6 @@
 .tooltip {
   position: relative;
+    line-height: 1em;
 }
 
 .tooltip span {
@@ -16,7 +17,7 @@
   top: 2em;
   z-index: 99;
   margin-left: 0;
-  width: 250px;
+  width: 300px;
 }
 
 .tooltip:hover em {
