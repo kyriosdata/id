@@ -21,7 +21,6 @@
     #vinculos {
       display: none;
     }
-
   </style>
 </head>
 
@@ -45,140 +44,139 @@
       var goTo = location.hash.substring(1);
       mostre(goTo ? goTo : 'visao-geral');
     }
-    
-    document.addEventListener('DOMContentLoaded', function () {
 
-  // Get all "navbar-burger" elements
-  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    document.addEventListener('DOMContentLoaded', function() {
 
-  // Check if there are any navbar burgers
-  if ($navbarBurgers.length > 0) {
+      // Get all "navbar-burger" elements
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-    // Add a click event on each of them
-    $navbarBurgers.forEach(function ($el) {
-      $el.addEventListener('click', function () {
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
 
-        // Get the target from the "data-target" attribute
-        var target = $el.dataset.target;
-        var $target = document.getElementById(target);
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function($el) {
+          $el.addEventListener('click', function() {
 
-        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-        $el.classList.toggle('is-active');
-        $target.classList.toggle('is-active');
+            // Get the target from the "data-target" attribute
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
 
-      });
+            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
     });
-  }
-
-});
-
   </script>
 
   <section class="hero is-light">
-    <div class="hero-head">  
+    <div class="hero-head">
       <nav class="navbar is-transparent">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="http://bulma.io">
-      <img src="./logo.png" alt="eSaúdeBucal logo">
-    </a>
-    
-    <a class="navbar-item" href="http://www.abntcatalogo.com.br/norma.aspx?ID=088501" target="_blank">
-      <span>ABNT</span>
-    </a>
+        <div class="navbar-brand">
+          <a class="navbar-item" href="http://bulma.io">
+            <img src="./logo.png" alt="eSaúdeBucal logo">
+          </a>
 
-    <div class="navbar-item">
-      <iframe src="https://ghbtns.com/github-btn.html?user=kyriosdata&repo=id&type=star&count=true" frameborder="0" scrolling="0" width="150px" height="20px"></iframe>
-    </div>
-    
-    <div class="navbar-burger burger" data-target="navMenuTransparentExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
+          <a class="navbar-item" href="http://www.abntcatalogo.com.br/norma.aspx?ID=088501" target="_blank">
+            <span>ABNT</span>
+          </a>
 
-  <div id="navMenuTransparentExample" class="navbar-menu">
-    <div class="navbar-start">
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="/documentation/overview/start/">
+          <div class="navbar-item">
+            <iframe src="https://ghbtns.com/github-btn.html?user=kyriosdata&repo=id&type=star&count=true" frameborder="0" scrolling="0" width="150px" height="20px"></iframe>
+          </div>
+
+          <div class="navbar-burger burger" data-target="navMenuTransparentExample">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="navMenuTransparentExample" class="navbar-menu">
+          <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link  is-active" href="/documentation/overview/start/">
           Elementos
         </a>
-        <div class="navbar-dropdown is-boxed">
-          <a class="navbar-item " href="">
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item " href="">
             Visão geral
           </a>
-          <a class="navbar-item " href="#identificadores">
+                <a class="navbar-item " href="#identificadores">
             Identificadores
           </a>
-          <a class="navbar-item " href="#nomes">
+                <a class="navbar-item " href="#nomes">
             Nomes
           </a>
-          <a class="navbar-item " href="#dados">
+                <a class="navbar-item " href="#dados">
             Dados demográficos
           </a>
-          <a class="navbar-item " href="#enderecos">
+                <a class="navbar-item " href="#enderecos">
             Endereços
           </a>
-          <a class="navbar-item " href="#comunicacoes">
+                <a class="navbar-item " href="#comunicacoes">
             Comunicações eletrônicas
           </a>
-          <a class="navbar-item " href="#vinculos">
+                <a class="navbar-item " href="#vinculos">
             Vínculos
           </a>
-          
-          <hr class="navbar-divider">
-          <div class="navbar-item">
-            <div>
-              <p class="is-size-6-desktop">
-                <strong class="has-text-info">Sugestão?</strong>
-              </p>
-              
-                <small>
+
+                <hr class="navbar-divider">
+                <div class="navbar-item">
+                  <div>
+                    <p class="is-size-6-desktop">
+                      <strong class="has-text-info">Sugestão?</strong>
+                    </p>
+
+                    <small>
                   <a class="bd-view-all-versions" href="mailto:fabio@inf.ufg.br&Subject=ABNT%20NBR%2015985" target="_blank">fabio@inf.ufg.br</a>
                 </small>
-              
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <div class="navbar-link">
+                Software
+              </div>
+              <div id="moreDropdown" class="navbar-dropdown is-boxed">
+                <a class="navbar-item " href="#vinculos">
+            Modelos
+          </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+              <div class="field is-grouped">
+                <p class="control">
+                  <a class="button" href="">
+                    <span class="icon">
+                <i class="fa fa-home"></i>
+              </span>
+
+                  </a>
+                </p>
+                <p class="control">
+                  <a class="button is-primary" href="https://github.com/kyriosdata/id" target="_blank">
+                    <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+                    <span>Download</span>
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="navbar-item has-dropdown is-hoverable">
-        <div class="navbar-link">
-          Software
-        </div>
-        <div id="moreDropdown" class="navbar-dropdown is-boxed">
-          <a class="navbar-item " href="#vinculos">
-            Modelos
-          </a>
-        </div>
-      </div>
+      </nav>
     </div>
 
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <div class="field is-grouped">
-         <p class="control">
-            <a class="button" href="">
-              <span class="icon">
-                <i class="fa fa-home"></i>
-              </span>
-              
-            </a>
-          </p>
-          <p class="control">
-            <a class="button is-primary" href="https://github.com/kyriosdata/id" target="_blank">
-              <span class="icon">
-                <i class="fa fa-github"></i>
-              </span>
-              <span>Download</span>
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-    </div>
-    
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
@@ -419,32 +417,33 @@
   <section class="section" id="nomes">
     <div class="content">
       <h3>Nomes</h3>
-      <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo.</p> 
-      
+      <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo.</p>
+
       <p>Pelo menos um nome deve estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser identificado o uso pretendido de cada um deles, em particular deve ser estabelecido qual é o nome preferido, além de possível representacão alternativa. Dito de outra forma, um único nome é definido por:</p>
-      
-          <ol>
-            <li>Nome completo</li>
-            <li>Nome preferido</li>
-            <li>Representação alternativa</li>
-            <li>Quando utilizar o nome</li>          
-            <li>Indicador de uso condicional</li>            
-          </ol>
-      
+
+      <ol>
+        <li>Nome completo</li>
+        <li>Nome preferido</li>
+        <li>Representação alternativa</li>
+        <li>Grupo de utilização do nome</li>
+        <li>Indicador de uso condicional</li>
+      </ol>
+
       <h4>Nome completo</h4>
+      
       <p> O nome é formado pela concatenação dos títulos, primeiros nomes, sobrenomes e sufixos. Por exemplo, "Sr. João da Silva Júnior" é o nome completo formado por um único título (Sr.), um único primeiro nome (João), um sobrenome (da Silva) e um sufixo (Júnior).</p>
-      
+
       <p>Não é obrigatório um título, nem tampouco um sufixo. Ou seja, o nome completo "Pedro Carvalho" é formado apenas pelo primeiro nome "Pedro" e o sobrenome "Carvalho", simples assim. </p>
-      
+
       <p>Por outro lado, podemos ter outros nomes como "Magnífico Reitor Fulano da Silva Beltrano", onde há dois sufixos (magnífico e reitor), um primeiro nome (Fulano) e sobrenomes (da Silva e Beltrano), sem sufixo.</p>
-      
+
       <h4>Nome preferido</h4>
-      <p>Quando recém-nascido o indivíduo possui um nome temporário. Quando registrado, o nome registrado passa a ser utilizado, contudo, o nome de recém-nascido deverá persistir para efeito de relatórios, por exemplo. Casamentos, dentre outras situações podem resultar em alteração de nome, além da possibilidade de um indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e "Edison Arantes do Nascimento" são nomes do maior jogador de futebol de todos os tempos, conforme a Wikipedia.</p> 
-      
+      <p>Quando recém-nascido o indivíduo possui um nome temporário. Quando registrado, o nome registrado passa a ser utilizado, contudo, o nome de recém-nascido deverá persistir para efeito de relatórios, por exemplo. Casamentos, dentre outras situações podem resultar em alteração de nome, além da possibilidade de um indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e "Edison Arantes do Nascimento" são nomes do maior jogador de futebol de todos os tempos, conforme a Wikipedia.</p>
+
       <p>Os nomes precisam ser preservados, e não apenas o nome corrente ou último nome, dado que os nomes anteriores foram empregados em registros formais, por exemplo, por uma empresa de plano de saúde.</p>
-      
+
       <p>Quando um indivíduo possui mais de um nome, deve ser identificado o nome preferido. A preferência é uma indicação do próprio indivíduo. Adicionalmente, em um dado instante de tempo, um único nome é preferido.</p>
-      
+
       <h5>Tabela: código de nome preferido</h5>
       <table>
         <thead>
@@ -461,6 +460,61 @@
           <tr>
             <td>2</td>
             <td>Este não é o nome preferido.</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h4>Representação alternativa</h4>
+      <p>A representação alternativa é empregada quando a representação do nome é baseada em fonte ou caractere alternativo. A norma cita, por exemplo, o nome russo doméstico ou a representação do nome em caracteres chineses. Adicionalmente, um mesmo nome pode possuir várias representações alternativas.</p>  
+      
+      <h4>Grupo de utilização do nome</h4>
+      <p>Um nome pode ser utilizado conforme a classificação que permite a diferenciação entre os usos dos nomes registrados para o indivíduo. Cada classificação é definida por um grupo e todo nome está associado a um ou mais grupos de usos.</p>
+      
+      <p> Cada grupo de uso se aplica a um período com data de início e término. A data de início estabelece a partir de quando o nome em questão pode ser utilizado, enquanto a data de término a data a partir da qual o nome não mais pode ser empregado para a finalidade do grupo em questão. Em ambos os casos pode ser empregada a data no formato AAAAMMDD. A representação da data, contudo, deve ser compreendida na região em que está sendo usada.</p>
+      
+      <p>Se o nome estiver associado a um identificador, então tal identificador deve estar associado ao grupo de uso em questão, por meio do item <em>identificador</em>. Ou seja, nesse caso, o grupo de uso também permite obter o identificador no qual o nome do indivíduo está definido.</p>
+      
+      <p>Por último, além do período e do identificador eventualmente associado, um grupo também inclui o código de uso do nome, conforme a tabela abaixo.</p>
+      
+      <h5>Tabela: código do uso do nome</h5>
+      <table>
+        <thead>
+          <tr>
+            <td>Código</td>
+            <td>Descrição</td>
+            <td>Representação alternativa</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Relatório</td>
+            <td>R</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Nome de recém-nascido</td>
+            <td>N</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Nome profissional ou comercial</td>
+            <td>C</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Nome de solteiro, nome de nascimento ou nome original</td>
+            <td>S</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Nome registrado (nome legal)</td>
+            <td>L</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Outro nome (<em>alias</em>)</td>
+            <td>O</td>
           </tr>
         </tbody>
       </table>
