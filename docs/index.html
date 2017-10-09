@@ -10,7 +10,8 @@
   <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="./css/bulma.min.css">
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/tooltip.css">
   <style>
     #visao-geral,
     #identificadores,
@@ -419,7 +420,7 @@
       <h3>Nomes</h3>
       <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo.</p>
 
-      <p>Pelo menos um nome deve estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser identificado o uso pretendido de cada um deles, em particular deve ser estabelecido qual é o nome preferido, além de possível representacão alternativa. Dito de outra forma, um único nome é definido por:</p>
+      <p>Pelo menos um nome deve estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser definido o uso pretendido de cada um deles, em particular deve ser estabelecido qual é o nome preferido, além de possível representacão alternativa. Dito de outra forma, um único nome é definido por:</p>
 
       <ol>
         <li>Nome completo</li>
@@ -518,6 +519,46 @@
           </tr>
         </tbody>
       </table>
+      
+      <h4>Indicador de uso condicional</h4>
+      <p>Define as condições específicas ou regras que devem ser aplicadas ao nome em questão do indivíduo conforme a tabela abaixo.</p>
+      
+      <h5>Tabela: uso condicional</h5>
+      <table>
+        <thead>
+          <tr>
+            <td>Código</td>
+            <td>Descrição</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Informação não confiável <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Informação não confiável</em>Quando se sabe que o nome registrado é fictício ou um nome parcial.</span></span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Nome com erro de digitação</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Nome para não ser usado</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Vínculo do nome proibido por lei</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Requisito de privacidade/segurança especial</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Nome temporário</td>
+          </tr>
+        </tbody>
+      </table>
+      
     </div>
   </section>
 
