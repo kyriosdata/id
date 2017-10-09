@@ -12,10 +12,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/bulma.min.css">
   <style>
-    #visao-geral, #identificadores { display: none; }</style>
+    #visao-geral,
+    #identificadores {
+      display: none;
+    }
+  </style>
 </head>
 
 <body onhashchange="changeToUrl();">
+  <script>
+    var corrente;
+    window.onload = function() {
+      corrente = document.getElementById('visao-geral');
+      corrente.style.display = "block";
+    }
+
+    function mostre(c) {
+      corrente.style.display = "none";
+      var exiba = document.getElementById(c);
+      exiba.style.display = "block";
+      corrente = exiba;
+    }
+
+    function changeToUrl() {
+      /* Retira # */
+      var goTo = location.hash.substring(1);
+      mostre(goTo ? goTo : 'visao-geral');
+    }
+  </script>
+
   <section class="hero is-light">
     <div class="hero-head">
       <header class="nav">
@@ -36,7 +61,7 @@
             </span>
           </a>
         </div>
-    </header>
+      </header>
     </div>
     <div class="hero-body">
       <div class="container">
@@ -65,9 +90,9 @@
   <section id="visao-geral" class="section">
     <div class="content">
       <h3>Visão geral</h3>
-      A norma <em>ABNT NBR 15985:2011 &#8212; Informática em Saúde &#8212; Identificação dos indivíduos em saúde</em> define informações e fornece orientações para a identificação de indivíduos em um ambiente de assistência à saúde. A identificação de um único indivíduo, segundo a norma, baseia-se nos seguintes componentes:
+      A norma <em>ABNT NBR 15985:2011 &#8212; Informática em Saúde &#8212; Identificação dos indivíduos em saúde</em> define informações e fornece orientações para a identificação de indivíduos em um ambiente de assistência à saúde. A identificação de um único indivíduo, segundo a norma, é influenciada pelos seguintes componentes:
       <ul>
-        <li>Identificadores</li>
+        <li><a href="#identificadores">Identificadores</a></li>
         <li>Nomes</li>
         <li>Dados demográficos</li>
         <li>Endereços</li>
@@ -76,82 +101,203 @@
       </ul>
     </div>
   </section>
-  
+
   <section id="identificadores" class="section">
     <div class="content">
-       <h3>Identificadores</h3>
-      <p>Um identificador <em>identifica</em> um indivíduo em saúde, por exemplo, a "Carteira de Identidade" e a
-      "Carteira Nacional de Habilitação". Um único indivíduo pode possuir vários identificadores.</p>
-      
+      <h3>Identificadores</h3>
+      <p>Um identificador <em>identifica</em> um indivíduo em saúde, por exemplo, a "Carteira de Identidade" e a "Carteira Nacional de Habilitação". Um único indivíduo pode possuir vários identificadores.</p>
+
       <p>Um estabelecimento de saúde também podem gerar identificadores para os indivíduos que atende. Nesse caso, os identificadores gerados são reconhecidos no âmbito desse estabelecimento.</p>
-      
+
       <p>Um identificador é composto por:</p>
       <ul>
         <li><em>Designação</em>. Esse é o "valor" propriamente dito do identificador, em geral um código ou número, por exemplo, 1.234.567 para a carteira de identidade.</li>
         <li><em>Área geográfica</em>. Código que representa a área geográfica na qual o identificador é utilizado. Por exemplo, o identificador pode ser nacional ou apenas local ao estabelecimento em questão. Os códigos possíveis são definidos na tabela abaixo:
-        <section class="section">
-           <h3>Área geográfica (códigos)</h3>
-          <table>
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Descrição</th>
-              <th>Código alternativo</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Identificador local.</td>
-              <td>L</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Identificador de área, região ou distrito.</td>
-              <td>A</td>
-            </tr>
-            <tr>
-               <td>3</td>
-              <td>Identificador de estado, privíncia ou território.</td>
-              <td>E</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Identificador nacional.</td>
-              <td>N</td>
-            </tr>
-          </tbody>
-        </table>
-        </section>
+          <section class="section">
+            <h5>Tabela: área geográfica (códigos)</h5>
+            <table>
+              <thead>
+                <tr>
+                  <th>Código</th>
+                  <th>Descrição</th>
+                  <th>Código alternativo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Identificador local.</td>
+                  <td>L</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Identificador de área, região ou distrito.</td>
+                  <td>A</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Identificador de estado, privíncia ou território.</td>
+                  <td>E</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Identificador nacional.</td>
+                  <td>N</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
         </li>
         <li><em>Emissor</em>. Organização que aloca uma designação de identificador a um indivíduo. Por exemplo, "Secretaria de Segurança Pública de Goiás". </li>
         <li><em>Data da emissão</em>. Data na qual foi emitido o identificador do indivíduo.</li>
         <li><em>Tipo</em>. Código que identifica o tipo de identificador. Por exemplo, "carteira de trabalho" e "certidão de nascimento".</li>
       </ul>
+      
+      <h4>Componentes opcionais</h4>
+      <p>Enquanto os componentes acima são obrigatórios, aqueles abaixo aplicam-se em casos específicos, conforme o tipo de identificador:</p>
+      <ul>
+        <li>Certidão de nascimento, certidão de casamento ou divórsio</li>
+        <ul>
+          <li>Nome do cartório. O nome do cartório que emitiu o documento (identificador).</li>
+          <li>Livro. Número do livro no qual foi feito o registro do documento no cartório.</li>
+          <li>Folha. Número da folha do livro no qual foi feito o registro do documento no cartório.</li>
+          <li>Termo. Número do documento.</li>
+        </ul>
+        <li>Carteira de Trabalho e Previdência Social (CTPS)</li>
+        <ul>
+          <li>Série. Número da série da CTPS.</li>
+          <li>Estado. Código do estado onde foi emitida a carteira de trabalho.
+            <section class="section">
+              <table>
+                <thead>
+                  <tr>
+                    <td>Código</td>
+                    <td>Estado</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>AC</td>
+                    <td>Acre</td>
+                  </tr>
+                  <tr>
+                    <td>AL</td>
+                    <td>Alagos</td>
+                  </tr>
+                  <tr>
+                    <td>AM</td>
+                    <td>Amazonas</td>
+                  </tr>
+                  <tr>
+                    <td>AP</td>
+                    <td>Amapá</td>
+                  </tr>
+                  <tr>
+                    <td>BA</td>
+                    <td>Bahia</td>
+                  </tr>
+                  <tr>
+                    <td>CE</td>
+                    <td>Ceará</td>
+                  </tr>
+                  <tr>
+                    <td>DF</td>
+                    <td>Distrito Federal</td>
+                  </tr>
+                  <tr>
+                    <td>ES</td>
+                    <td>Espírito Santo</td>
+                  </tr>
+                  <tr>
+                    <td>GO</td>
+                    <td>Goiás</td>
+                  </tr>
+                  <tr>
+                    <td>MA</td>
+                    <td>Maranhão</td>
+                  </tr>
+                  <tr>
+                    <td>MG</td>
+                    <td>Minas Gerais</td>
+                  </tr>
+                  <tr>
+                    <td>MS</td>
+                    <td>Mato Grosso do Sul</td>
+                  </tr>
+                  <tr>
+                    <td>MT</td>
+                    <td>Mato Grosso</td>
+                  </tr>
+                  <tr>
+                    <td>PA</td>
+                    <td>Pará</td>
+                  </tr>
+                  <tr>
+                    <td>PB</td>
+                    <td>Paraíba</td>
+                  </tr>
+                  <tr>
+                    <td>PE</td>
+                    <td>Pernambuco</td>
+                  </tr>
+                  <tr>
+                    <td>PI</td>
+                    <td>Piauí</td>
+                  </tr>
+                  <tr>
+                    <td>PR</td>
+                    <td>Paraná</td>
+                  </tr>
+                  <tr>
+                    <td>RJ</td>
+                    <td>Rio de Janeiro</td>
+                  </tr>
+                  <tr>
+                    <td>RN</td>
+                    <td>Rio Grande do Norte</td>
+                  </tr>
+                  <tr>
+                    <td>RO</td>
+                    <td>Rondônia</td>
+                  </tr>
+                  <tr>
+                    <td>RR</td>
+                    <td>Roraima</td>
+                  </tr>
+                  <tr>
+                    <td>RS</td>
+                    <td>Rio Grande do Sul</td>
+                  </tr>
+                  <tr>
+                    <td>SC</td>
+                    <td>Santa Catarina</td>
+                  </tr>
+                  <tr>
+                    <td>SE</td>
+                    <td>Sergipe</td>
+                  </tr>
+                  <tr>
+                    <td>SP</td>
+                    <td>São Paulo</td>
+                  </tr>
+                  <tr>
+                    <td>TO</td>
+                    <td>Tocantins</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </li>
+        </ul>
+        <li>Título de eleitor</li>
+        <ul>
+          <li>Seção</li>
+          <li>Zona</li>
+        </ul>
+      </ul>
     </div>
-  </section>
 
-  
-  <script>
-    var correnteVisivel;
-    window.onload = function() {
-      correnteVisivel = document.getElementById('visao-geral');
-      correnteVisivel.style.display = "block";
-    }
-    
-    function mostre(c) {
-      correnteVisivel.style.display = "none";
-      var exiba = document.getElementById(c);
-      exiba.style.display = "block";
-      correnteVisivel = exiba;
-    }
-    
-    function changeToUrl() {
-      /* Retira # */
-      var goTo = location.hash.substring(1);
-      mostre(goTo ? goTo : 'visao-geral');      
-    }
-  </script>
+  </section>
 </body>
 
 </html>
