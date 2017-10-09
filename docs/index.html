@@ -21,6 +21,7 @@
     #vinculos {
       display: none;
     }
+
   </style>
 </head>
 
@@ -44,30 +45,42 @@
       var goTo = location.hash.substring(1);
       mostre(goTo ? goTo : 'visao-geral');
     }
+
   </script>
 
   <section class="hero is-light">
-    <div class="hero-head">
-      <header class="nav">
-        <div class="nav-left">
-          <a href="http://esaudebucal.com.br" class="nav-item">
+    <div class="hero-head">  
+      <nav class="navbar is-transparent">
+        <div class="navbar-brand">
+          <a href="http://esaudebucal.com.br" class="navbar-item">
             <img src="logo.png" alt="eSaúdeBucal logo"> &nbsp;&nbsp;eSaúdeBucal
           </a>
+          <div class="navbar-burger burger"
+                     data-target="navMenuBurger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
-        <span class="nav-toggle">
-          <span><a href="#identificadores">Identificadores</a></span>
-        <span></span>
-        <span></span>
-        </span>
-        <div class="nav-right nav-menu">
-          <a class="nav-item is-active" href="">
+        <div class="navbar-menu" id="navMenuBurger">
+          <div class="navbar-end">
+            <a class="navbar-item" href="">
             <span class="icon">
               <i class="fa fa-home"></i>
-            </span>
-          </a>
+              </span></a>
+            <div class="navbar-item">
+              <a href="https://github.com/kyriosdata/id" target="_blank" class="button is-primary">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>Download</span>
+            </a>
+            </div>
+          </div>
         </div>
-      </header>
+      </nav>
     </div>
+    
     <div class="hero-body">
       <div class="container">
         <h1 class="title">
