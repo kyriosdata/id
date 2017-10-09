@@ -272,14 +272,14 @@
       <h4>Componentes opcionais</h4>
       <p>Enquanto os componentes acima são obrigatórios, aqueles abaixo aplicam-se em casos específicos, conforme o tipo de identificador:</p>
       <ul>
-        <li>Certidão de nascimento, certidão de casamento ou divórsio</li>
+        <li><em>Certidão de nascimento</em>, <em>certidão de casamento</em> ou <em>certidão de divórcio</em></li>
         <ul>
           <li>Nome do cartório. O nome do cartório que emitiu o documento (identificador).</li>
           <li>Livro. Número do livro no qual foi feito o registro do documento no cartório.</li>
           <li>Folha. Número da folha do livro no qual foi feito o registro do documento no cartório.</li>
           <li>Termo. Número do documento.</li>
         </ul>
-        <li>Carteira de Trabalho e Previdência Social (CTPS)</li>
+        <li><em>Carteira de Trabalho e Previdência Social (CTPS)</em></li>
         <ul>
           <li>Série. Número da série da CTPS.</li>
           <li>Estado. Código do estado onde foi emitida a carteira de trabalho.
@@ -406,7 +406,7 @@
             </section>
           </li>
         </ul>
-        <li>Título de eleitor</li>
+        <li><em>Título de eleitor</em></li>
         <ul>
           <li>Seção. Número da seção eleitoral descrito no título eleitoral do indivíduo.</li>
           <li>Zona. Número da zona eleitoral do título eleitoral do indivíduo.</li>
@@ -419,6 +419,51 @@
   <section class="section" id="nomes">
     <div class="content">
       <h3>Nomes</h3>
+      <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo.</p> 
+      
+      <p>Pelo menos um nome deve estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser identificado o uso pretendido de cada um deles, em particular deve ser estabelecido qual é o nome preferido, além de possível representacão alternativa. Dito de outra forma, um único nome é definido por:</p>
+      
+          <ol>
+            <li>Nome completo</li>
+            <li>Nome preferido</li>
+            <li>Representação alternativa</li>
+            <li>Quando utilizar o nome</li>          
+            <li>Indicador de uso condicional</li>            
+          </ol>
+      
+      <h4>Nome completo</h4>
+      <p> O nome é formado pela concatenação dos títulos, primeiros nomes, sobrenomes e sufixos. Por exemplo, "Sr. João da Silva Júnior" é o nome completo formado por um único título (Sr.), um único primeiro nome (João), um sobrenome (da Silva) e um sufixo (Júnior).</p>
+      
+      <p>Não é obrigatório um título, nem tampouco um sufixo. Ou seja, o nome completo "Pedro Carvalho" é formado apenas pelo primeiro nome "Pedro" e o sobrenome "Carvalho", simples assim. </p>
+      
+      <p>Por outro lado, podemos ter outros nomes como "Magnífico Reitor Fulano da Silva Beltrano", onde há dois sufixos (magnífico e reitor), um primeiro nome (Fulano) e sobrenomes (da Silva e Beltrano), sem sufixo.</p>
+      
+      <h4>Nome preferido</h4>
+      <p>Quando recém-nascido o indivíduo possui um nome temporário. Quando registrado, o nome registrado passa a ser utilizado, contudo, o nome de recém-nascido deverá persistir para efeito de relatórios, por exemplo. Casamentos, dentre outras situações podem resultar em alteração de nome, além da possibilidade de um indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e "Edison Arantes do Nascimento" são nomes do maior jogador de futebol de todos os tempos, conforme a Wikipedia.</p> 
+      
+      <p>Os nomes precisam ser preservados, e não apenas o nome corrente ou último nome, dado que os nomes anteriores foram empregados em registros formais, por exemplo, por uma empresa de plano de saúde.</p>
+      
+      <p>Quando um indivíduo possui mais de um nome, deve ser identificado o nome preferido. A preferência é uma indicação do próprio indivíduo. Adicionalmente, em um dado instante de tempo, um único nome é preferido.</p>
+      
+      <h5>Tabela: código de nome preferido</h5>
+      <table>
+        <thead>
+          <tr>
+            <td>Código</td>
+            <td>Descrição</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Este é o nome preferido. Deve ser usado em relatórios, cartas e outros, exceto se um uso específico, comentado adiante, indicar o uso de outro nome.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Este não é o nome preferido.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
