@@ -13,7 +13,12 @@
   <link rel="stylesheet" href="./css/bulma.min.css">
   <style>
     #visao-geral,
-    #identificadores {
+    #identificadores,
+    #nomes,
+    #dados,
+    #comunicacoes,
+    #enderecos,
+    #vinculos {
       display: none;
     }
   </style>
@@ -93,11 +98,11 @@
       A norma <em>ABNT NBR 15985:2011 &#8212; Informática em Saúde &#8212; Identificação dos indivíduos em saúde</em> define informações e fornece orientações para a identificação de indivíduos em um ambiente de assistência à saúde. A identificação de um único indivíduo, segundo a norma, é influenciada pelos seguintes componentes:
       <ul>
         <li><a href="#identificadores">Identificadores</a></li>
-        <li>Nomes</li>
-        <li>Dados demográficos</li>
-        <li>Endereços</li>
-        <li>Comunicações eletrônicas</li>
-        <li>Vínculos</li>
+        <li><a href="nomes">Nomes</a></li>
+        <li><a href="#dados">Dados demográficos</a></li>
+        <li><a href="#enderecos">Endereços</a></li>
+        <li><a href="#comunicacoes">Comunicações eletrônicas</a></li>
+        <li><a href="#vinculos">Vínculos</a></li>
       </ul>
     </div>
   </section>
@@ -152,7 +157,7 @@
         <li><em>Data da emissão</em>. Data na qual foi emitido o identificador do indivíduo.</li>
         <li><em>Tipo</em>. Código que identifica o tipo de identificador. Por exemplo, "carteira de trabalho" e "certidão de nascimento".</li>
       </ul>
-      
+
       <h4>Componentes opcionais</h4>
       <p>Enquanto os componentes acima são obrigatórios, aqueles abaixo aplicam-se em casos específicos, conforme o tipo de identificador:</p>
       <ul>
@@ -168,6 +173,7 @@
           <li>Série. Número da série da CTPS.</li>
           <li>Estado. Código do estado onde foi emitida a carteira de trabalho.
             <section class="section">
+              <h5>Tabela: códigos dos estados do Brasil</h5>
               <table>
                 <thead>
                   <tr>
@@ -291,13 +297,44 @@
         </ul>
         <li>Título de eleitor</li>
         <ul>
-          <li>Seção</li>
-          <li>Zona</li>
+          <li>Seção. Número da seção eleitoral descrito no título eleitoral do indivíduo.</li>
+          <li>Zona. Número da zona eleitoral do título eleitoral do indivíduo.</li>
         </ul>
       </ul>
     </div>
 
   </section>
+
+  <section class="section" id="nomes">
+    <div class="content">
+      <h3>Nomes</h3>
+    </div>
+  </section>
+
+  <section class="section" id="dados">
+    <div class="content">
+      <h3>Dados demográficos</h3>
+    </div>
+  </section>
+
+  <section class="section" id="enderecos">
+    <div class="content">
+      <h3>Endereços</h3>
+    </div>
+  </section>
+
+  <section class="section" id="comunicacoes">
+    <div class="content">
+      <h3>Comunicações eletrônicas</h3>
+    </div>
+  </section>
+
+  <section class="section" id="vinculos">
+    <div class="content">
+      <h3>Vínculos</h3>
+    </div>
+  </section>
+
 </body>
 
 </html>
