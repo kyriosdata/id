@@ -81,10 +81,10 @@
       for (i = 0; i < elementos.length; i++) {
         elementos[i].style.display = 'none';
       }
-      
+
       var corrente = document.getElementById(d);
       corrente.style.display = 'block';
-      
+
       /* Atualizar feedback da tab selecionada */
       elementos = document.getElementsByClassName('li-parcial');
       for (i = 0; i < elementos.length; i++) {
@@ -462,18 +462,7 @@
     <div class="content">
 
       <h3>Nomes</h3>
-      <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo.</p>
-
-      <p>Pelo menos um nome deve estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser definido o uso pretendido de cada um deles, em particular deve ser estabelecido qual é o nome preferido, além de possível representacão alternativa. Dito de outra forma, um único nome é definido por:</p>
-
-      <ol>
-        <li><span onclick="veja('nomes-completo');">Nome completo</span></li>
-        <li><span onclick="veja('nomes-preferido');">Nome preferido</span></li>
-        <li><span onclick="veja('nomes-representacao');">Representação alternativa</span></li>
-        <li><span onclick="veja('nomes-grupo');">Grupo de utilização do nome</span></li>
-        <li><span onclick="veja('nomes-indicador');">Indicador de uso condicional</span></li>
-      </ol>
-
+      <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo. Pelo menos um nome deve estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser definido o uso pretendido de cada um deles e deve ser estabelecido qual é o nome preferido, além de possível representacão alternativa. De form detalhada, um único nome é definido por:</p>
 
       <div class="tabs is-centered is-boxed">
         <ul>
@@ -660,7 +649,46 @@
   <section class="section" id="dados">
     <div class="content">
       <h3>Dados demográficos</h3>
-      <p>Dados demográficos adicionais podem ser empregados para maximizar a probabilidade da identificação positiva de um indivíduo.</p>
+      <p>Dados demográficos adicionais podem ser empregados para maximizar a probabilidade da identificação positiva de um indivíduo. Tais dados incluem: (a) data de nascimento; (b) óbito; (c) sexo; (d) nome da mãe; (e) nome do pai; (f) situação familiar; (g) raça/cor; (h) nacionalidade; (i) pluralidade do nascimento e (j) comentário de identificação.</p>
+
+      <div class="box">
+        <div class="field">
+          <label class="label">Mãe</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="nome da mãe">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Pai</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="nome do pai">
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Situação familiar (convive com)</label>
+          <div class="control">
+            <input class="checkbox" type="checkbox"><span>&nbsp;companheiro(a) e filho(s)</span><br>
+            <input class="checkbox" type="checkbox"><span>&nbsp;companheiro(a) com laços conjugais e sem filhos</span><br>
+            <input class="checkbox" type="checkbox"><span>&nbsp;companheiro(a), com filho(s) e/ou outro(s) familiar(es)</span><br>
+            <input class="checkbox" type="checkbox"><span>&nbsp;familiar(es) sem companheiro(a)</span><br>
+            <input class="checkbox" type="checkbox"><span>&nbsp;outra(s) pessoa(s) sem laços consanguíneos e/ou laços conjugais</span><br>
+            <input class="checkbox" type="checkbox"><span>&nbsp;vive só</span><br>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label">Situação familiar (convive com)</label>
+          <div class="select">
+            <select>
+    <option value="1">companheiro(a) e filho(s)</option>
+    <option value="2">companheiro(a) com laços conjugais e sem filhos</option>
+    <option value="3">companheiro(a), com filho(s) e/ou outro(s) familiares.</option>
+    <option value="4">familiar(es) sem companheiro(a)</option>
+    <option value="5">outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais</option>
+    <option value="6">Vive só</option>
+  </select>
+          </div>
+        </div>
+      </div>
 
       <section class="hero is-light">
         <div class="hero-body">
