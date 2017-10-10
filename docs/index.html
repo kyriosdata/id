@@ -106,7 +106,22 @@
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           var json = JSON.parse(this.responseText);
-          alert(json.length);
+          var tamanho = json.length;
+          var i;
+          
+          /* elimina opções existentes */
+          var municipios = document.getElementById('municipios');
+          municipios.options.length = 0;
+          
+          /* insere municípios do estado selecionado */
+          for (i = 0; i < tamanho; i++) {
+            var opcao = document.createElement('option');
+            var componente = json[i];
+            if (componente.estado == estado) {
+              opcao.text = componente.municipio;
+              municipios.add(opcao, municipios[i]);
+            }
+          }
         }
       };
       xhttp.open("GET", "js/municipios.json", true);
@@ -818,7 +833,7 @@
             <div class="control">
               <label id="municipio-label" class="label"></label>
               <div class="select is-small">
-                <select onchange="atualizaMunicipios()">
+                <select id="municipios">
         <option value="AC">Acre</option>
         <option value="AL">Alagoas</option>
         <option value="AM">Amazonas</option>
