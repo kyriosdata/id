@@ -31,7 +31,7 @@
     window.onload = function() {
       corrente = document.getElementById('visao-geral');
       corrente.style.display = "block";
-      
+
       veja('nomes-completo');
     }
 
@@ -73,15 +73,26 @@
       }
 
     });
-    
+
     function veja(d) {
+      /* Exibir a div */
       var elementos = document.getElementsByClassName('parcial');
       var i;
       for (i = 0; i < elementos.length; i++) {
         elementos[i].style.display = 'none';
       }
       
-      document.getElementById(d).style.display = 'block';
+      var corrente = document.getElementById(d);
+      corrente.style.display = 'block';
+      
+      /* Atualizar feedback da tab selecionada */
+      elementos = document.getElementsByClassName('li-parcial');
+      for (i = 0; i < elementos.length; i++) {
+        elementos[i].className = 'li-parcial';
+      }
+
+      corrente = document.getElementById('li-' + d);
+      corrente.className = 'li-parcial is-active';
     }
   </script>
 
@@ -458,10 +469,21 @@
       <ol>
         <li><span onclick="veja('nomes-completo');">Nome completo</span></li>
         <li><span onclick="veja('nomes-preferido');">Nome preferido</span></li>
-        <li>Representação alternativa</li>
-        <li>Grupo de utilização do nome</li>
-        <li>Indicador de uso condicional</li>
+        <li><span onclick="veja('nomes-representacao');">Representação alternativa</span></li>
+        <li><span onclick="veja('nomes-grupo');">Grupo de utilização do nome</span></li>
+        <li><span onclick="veja('nomes-indicador');">Indicador de uso condicional</span></li>
       </ol>
+
+
+      <div class="tabs is-centered is-boxed">
+        <ul>
+          <li class="li-parcial" id="li-nomes-completo"><a onclick="veja('nomes-completo');">Nome completo</a></li>
+          <li class="li-parcial" id="li-nomes-preferido"><a onclick="veja('nomes-preferido');">Preferido</a></li>
+          <li class="li-parcial" id="li-nomes-representacao"><a onclick="veja('nomes-representacao');">Representação</a></li>
+          <li class="li-parcial" id="li-nomes-grupo"><a onclick="veja('nomes-grupo');">Uso</a></li>
+          <li class="li-parcial" id="li-nomes-indicador"><a onclick="veja('nomes-indicador');">Indicador</a></li>
+        </ul>
+      </div>
 
       <div class="parcial" id="nomes-completo">
         <h4>Nome completo</h4>
