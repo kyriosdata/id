@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Fábio Nogueira de Lucena">
+  <link rel="shortcut icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABNT 15985</title>
+  <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/tooltip.css">
+</head>
+
+<body onhashchange="changeToUrl();">
+  <script>
+    var corrente;
+    window.onload = function() {
+      corrente = document.getElementById('visao-geral');
+      corrente.style.display = "block";
+
+
+      paises('paises-endereco');
+    }
+
+    function mostre(c) {
+      corrente.style.display = "none";
+      var exiba = document.getElementById(c);
+      exiba.style.display = "block";
+      corrente = exiba;
+    }
+
+    function changeToUrl() {
+      /* Retira # */
+      var goTo = location.hash.substring(1);
+      mostre(goTo ? goTo : 'visao-geral');
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // Get all "navbar-burger" elements
+      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+      // Check if there are any navbar burgers
+      if ($navbarBurgers.length > 0) {
+
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function($el) {
+          $el.addEventListener('click', function() {
+
+            // Get the target from the "data-target" attribute
+            var target = $el.dataset.target;
+            var $target = document.getElementById(target);
+
+            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+            $el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+
+          });
+        });
+      }
+
+    });
+
+    function veja(d) {
+      /* Exibir a div */
+      var elementos = document.getElementsByClassName('parcial');
+      var i;
+      for (i = 0; i < elementos.length; i++) {
+        elementos[i].style.display = 'none';
+      }
+
+      var corrente = document.getElementById(d);
+      corrente.style.display = 'block';
+
+      /* Atualizar feedback da tab selecionada */
+      elementos = document.getElementsByClassName('li-parcial');
+      for (i = 0; i < elementos.length; i++) {
+        elementos[i].className = 'li-parcial';
+      }
+
+      corrente = document.getElementById('li-' + d);
+      corrente.className = 'li-parcial is-active';
+    }
+
+    function atualizaMunicipios() {
+      var elemento = document.getElementById('estados');
+      var estado = elemento.options[elemento.selectedIndex].text;
+      var municipioLabel = document.getElementById('municipio-label');
+      municipioLabel.textContent = estado + " (municípios)";
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var json = JSON.parse(this.responseText);
+          var tamanho = json.length;
+          var i;
+
+          /* elimina opções existentes */
+          var municipios = document.getElementById('municipios');
+          municipios.options.length = 0;
+
+          /* insere municípios do estado selecionado */
+          for (i = 0; i < tamanho; i++) {
+            var opcao = document.createElement('option');
+            var componente = json[i];
+            if (componente.estado == estado) {
+              opcao.text = componente.municipio;
+              opcao.value = componente.codigo;
+              municipios.add(opcao, municipios[i]);
+            }
+          }
+        }
+      };
+      xhttp.open("GET", "js/municipios.json", true);
+      xhttp.send();
+    }
+
+    function paises(chave) {
+      var elemento = document.getElementById(chave);
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var json = JSON.parse(this.responseText);
+          var tamanho = json.length;
+          var i;
+
+          /* insere países */
+          for (i = 0; i < tamanho; i++) {
+            var opcao = document.createElement('option');
+            var componente = json[i];
+            opcao.text = componente.pais;
+            opcao.value = componente.cod;
+            elemento.add(opcao, elemento[i]);
+          }
+        }
+      };
+      xhttp.open("GET", "js/paises.json", true);
+      xhttp.send();
+    }
+
+    function nacionalidade() {
+      var db = document.getElementById('db');
+      var de = document.getElementById('de');
+
+      var elemento = document.getElementById('brasileira');
+      if (elemento.checked) {
+        db.style.display = "block";
+        de.style.display = "none";
+      } else {
+        db.style.display = "none";
+        de.style.display = "block";
+      }
+    }
+
+    function brasilOutro() {
+      var brasil = document.getElementById('detalhe-brasil');
+      var outro = document.getElementById('detalhe-outro');
+
+      var elemento = document.getElementById('brasil');
+      if (elemento.checked) {
+        brasil.style.display = "block";
+        outro.style.display = "none";
+      } else {
+        brasil.style.display = "none";
+        outro.style.display = "block";
+      }
+    }
+  </script>
+  <section class="section" id="visao-geral"></section>
+
+  <section class="section" id="enderecos">
+    <div class="content">
+      <h3>Endereços</h3>
+      <div class="box">
+
+        <!-- tipo de endereço -->
+        <div class="field">
+          <label class="label">Tipo de endereço</label>
+          <div class="select is-small">
+            <select name="tipo">
+                <option value="1">Comercial</option>
+                <option value="2">Correio ou postal</option>
+                <option value="3">Acomodação temporária</option>
+                <option value="4">Residencial</option>
+                <option value="8">Sem endereço fixo</option>
+                <option value="9">Desconhecido/não declarado</option>
+              </select>
+          </div>
+        </div>
+
+        <!-- data inicial do tipo de enereço -->
+        <div class="field">
+          <label class="label">Data inicial</label>
+          <input type="date">
+        </div>
+        <div class="field">
+          <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label>
+        </div>
+
+        <!-- data final do tipo de enereço -->
+        <div class="field">
+          <label class="label">Data final</label>
+          <input type="date">
+        </div>
+        <div class="field">
+          <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label>
+        </div>
+
+        <!-- pais -->
+        <label class="label">País</label>
+        <div class="control" onchange="brasilOutro();">
+          <label class="radio">
+            <input id="brasil" type="radio" name="pais" checked>
+            Brasil</label>
+          <label class="radio">
+            <input type="radio" name="pais">
+            Outro</label>
+        </div>
+
+        <!-- detalhe para o Brasil -->
+        <div id="detalhe-brasil" class="box">
+
+          <div class="columns">
+            <div class="column is-10">
+              <!-- estado -->
+          <div class="field is-horizontal">
+           <div class="field-label">
+             <label class="label">Estado</label>              
+           </div>
+            <div class="field-body">
+              <div class="field">
+                <div class="control">
+              <div class="select is-small">
+                <select id="estados" onchange="atualizaMunicipios()">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AM">Amazonas</option>
+        <option value="AP">Amapá</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="PR">Paraná</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SE">Sergipe</option>
+        <option value="SP">São Paulo</option>
+        <option value="TO">Tocantins</option>
+      </select>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- município -->
+          <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">Município</label>
+            </div>
+              <div class="field-body">
+                <div class="field">
+                  <div class="control">
+              <div class="select is-small">
+                <select id="municipios">
+      </select>
+              </div>
+            </div>
+                </div>
+              </div>
+          </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- detalhe para outro país (diferente do Brasil) -->
+        <div id="detalhe-outro" class="box">
+          <div class="columns">
+            <div class="column is-8">
+                        <div class="field is-horizontal">
+            <div class="field-label">
+              <label class="label">País</label>
+            </div>                          
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+           <div class="select is-small">
+            <select id="paises-endereco">
+      </select>
+          </div>
+            </div>
+            </div>
+          </div>
+          </div>
+          
+        <!-- estado -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Estado</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+            <input type="text" class="input is-small">
+          </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- município -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Município</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+            <input type="text" class="input is-small">
+          </div>
+            </div>
+          </div>
+        </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- caixa postal -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Caixa Postal</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+            <div class="control">
+            <input type="number" class="input is-small">
+          </div>
+          </div>
+          </div>
+        </div>
+
+        <!-- código de endereçamento postal -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">CEP</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+            <input type="text" maxlength="8" class="input is-small">
+            <p class="help">Por exemplo, 74000-010.</p>
+          </div>
+            </div>
+          </div>
+          
+        </div>
+        
+        <!-- bairro -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Bairro</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+            <input type="text" class="input is-small">
+          </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- distrito -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Distrito</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+            <input type="text" class="input is-small">
+          </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- linha 1 -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Linha 1</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+            <input type="text" class="input is-small">
+          </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- linha 2 -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Linha 2</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+            <input type="text" class="input is-small">
+          </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+
+      <!-- rodapé -->
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+            <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#dados">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Dados demográficos</span>
+            </a>
+            <a class="button" href="#comunicacoes">
+              <span>Comunicações eletrônicas</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+</body>
+
+</html>
