@@ -22,6 +22,7 @@
     #vinculos {
       display: none;
     }
+
   </style>
 </head>
 
@@ -129,20 +130,45 @@
       xhttp.open("GET", "js/municipios.json", true);
       xhttp.send();
     }
-    
+
+    function paises() {
+      var elemento = document.getElementById('paises');
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var json = JSON.parse(this.responseText);
+          var tamanho = json.length;
+          var i;
+
+          /* insere países */
+          for (i = 0; i < tamanho; i++) {
+            var opcao = document.createElement('option');
+            var componente = json[i];
+            opcao.text = componente.pais;
+            opcao.value = componente.cod;
+            elemento.add(opcao, elemento[i]);
+          }
+        }
+      };
+      xhttp.open("GET", "js/paises.json", true);
+      xhttp.send();
+    }
+
     function nacionalidade() {
       var db = document.getElementById('db');
       var de = document.getElementById('de');
-                
+
       var elemento = document.getElementById('brasileira');
       if (elemento.checked) {
-        db.style.display = "block";        
+        db.style.display = "block";
         de.style.display = "none";
       } else {
-        db.style.display = "none";        
+        db.style.display = "none";
         de.style.display = "block";
       }
     }
+
   </script>
 
   <section class="hero is-light">
@@ -807,38 +833,38 @@
             <input class="checkbox" type="checkbox" value="4"><span>&nbsp;amarela</span><br>
             <input class="checkbox" type="checkbox" value="5"><span>&nbsp;indígena</span>
           </div>
-        </div>        
+        </div>
 
       </div>
-      
+
       <div class="box">
         <div class="field">
-        <label class="label">Sexo</label>
-        <div class="control">
-          <label class="radio">
+          <label class="label">Sexo</label>
+          <div class="control">
+            <label class="radio">
             <input class="radio" type="radio" name="sexo" value="1">
             masculino (M)
             </label><br>
-          <label class="radio">
+            <label class="radio">
               <input class="radio" type="radio" name="sexo" value="2">
               feminino (F)
             </label><br>
-          <label class="radio">
+            <label class="radio">
               <input class="radio" type="radio" name="sexo" value="3">
                 intersexo ou indeterminado (I)</label><br>
-          <label class="radio">
+            <label class="radio">
               <input class="radio" type="radio" name="sexo" value="9" checked>
               não declarado (U)</label>
+          </div>
         </div>
       </div>
-      </div>
-      
+
       <!-- situação familiar -->
       <div class="box">
         <div class="field">
-        <label class="label">Situação familiar (convive com)</label>
-        <div class="select">
-          <select>
+          <label class="label">Situação familiar (convive com)</label>
+          <div class="select">
+            <select>
     <option value="1">companheiro(a) e filho(s)</option>
     <option value="2">companheiro(a) com laços conjugais e sem filhos</option>
     <option value="3">companheiro(a), com filho(s) e/ou outro(s) familiares.</option>
@@ -846,13 +872,13 @@
     <option value="5">outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais</option>
     <option value="6">Vive só</option>
   </select>
+          </div>
         </div>
       </div>
-      </div>
-      
+
       <!-- nacionalidade -->
       <div class="box">
-         <label class="label">Nacionalidade</label>
+        <label class="label">Nacionalidade</label>
         <div class="control" onchange="nacionalidade();">
           <label class="radio">
             <input id="brasileira" type="radio" name="nacionalidade" value="1" checked>
@@ -861,7 +887,7 @@
             <input type="radio" name="nacionalidade" value="2">
             Estrangeiro</label>
         </div>
-        
+
         <div id="db" class="box">
           <div class="field">
             <div class="control">
@@ -908,11 +934,19 @@
             </div>
           </div>
         </div>
-        
+
         <div id="de" class="box">
-          <h1>um texto</h1>
+          <div class="field">
+            <div class="control">
+              <label class="label">País</label>
+              <div class="select is-small">
+                <select id="paises">
+      </select>
+              </div>
+            </div>
+          </div>
         </div>
-        
+
       </div>
     </div>
 
