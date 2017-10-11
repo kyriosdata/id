@@ -117,6 +117,37 @@
       xhttp.open("GET", "js/municipios.json", true);
       xhttp.send();
     }
+    
+    function municipiosEndereco() {
+      var elemento = document.getElementById('estados');
+      var estado = elemento.options[elemento.selectedIndex].text;
+      
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var json = JSON.parse(this.responseText);
+          var tamanho = json.length;
+          var i;
+
+          /* elimina opções existentes */
+          var municipios = document.getElementById('municipios-endereco');
+          municipios.options.length = 0;
+
+          /* insere municípios do estado selecionado */
+          for (i = 0; i < tamanho; i++) {
+            var opcao = document.createElement('option');
+            var componente = json[i];
+            if (componente.estado == estado) {
+              opcao.text = componente.municipio;
+              opcao.value = componente.codigo;
+              municipios.add(opcao, municipios[i]);
+            }
+          }
+        }
+      };
+      xhttp.open("GET", "js/municipios.json", true);
+      xhttp.send();
+    }
 
     function paises(chave) {
       var elemento = document.getElementById(chave);
@@ -258,14 +289,14 @@
             <div class="column is-10">
               <!-- estado -->
           <div class="field is-horizontal">
-           <div class="field-label">
+           <div class="field-label is-small">
              <label class="label">Estado</label>              
            </div>
             <div class="field-body">
               <div class="field">
                 <div class="control">
               <div class="select is-small">
-                <select id="estados" onchange="atualizaMunicipios()">
+                <select id="estados" onchange="municipiosEndereco()">
         <option value="AC">Acre</option>
         <option value="AL">Alagoas</option>
         <option value="AM">Amazonas</option>
@@ -300,14 +331,14 @@
 
           <!-- município -->
           <div class="field is-horizontal">
-            <div class="field-label">
+            <div class="field-label is-small">
               <label class="label">Município</label>
             </div>
               <div class="field-body">
                 <div class="field">
                   <div class="control">
               <div class="select is-small">
-                <select id="municipios">
+                <select id="municipios-endereco">
       </select>
               </div>
             </div>
@@ -321,9 +352,9 @@
         <!-- detalhe para outro país (diferente do Brasil) -->
         <div id="detalhe-outro" class="box">
           <div class="columns">
-            <div class="column is-8">
+            <div class="column is-6">
                         <div class="field is-horizontal">
-            <div class="field-label">
+            <div class="field-label is-small">
               <label class="label">País</label>
             </div>                          
           <div class="field-body">
@@ -340,7 +371,7 @@
           
         <!-- estado -->
         <div class="field is-horizontal">
-          <div class="field-label">
+          <div class="field-label is-small">
             <label class="label">Estado</label>
           </div>
           <div class="field-body">
@@ -354,7 +385,7 @@
         
         <!-- município -->
         <div class="field is-horizontal">
-          <div class="field-label">
+          <div class="field-label is-small">
             <label class="label">Município</label>
           </div>
           <div class="field-body">
