@@ -22,7 +22,6 @@
     #vinculos {
       display: none;
     }
-
   </style>
 </head>
 
@@ -171,6 +170,51 @@
       }
     }
 
+    function brasilOutro() {
+      var brasil = document.getElementById('detalhe-brasil');
+      var outro = document.getElementById('detalhe-outro');
+
+      var elemento = document.getElementById('brasil');
+      if (elemento.checked) {
+        brasil.style.display = "block";
+        outro.style.display = "none";
+      } else {
+        brasil.style.display = "none";
+        outro.style.display = "block";
+      }
+    }
+
+
+    function municipiosEndereco() {
+      var elemento = document.getElementById('estados-endereco');
+      var estado = elemento.options[elemento.selectedIndex].text;
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var json = JSON.parse(this.responseText);
+          var tamanho = json.length;
+          var i;
+
+          /* elimina opções existentes */
+          var municipios = document.getElementById('municipios-endereco');
+          municipios.options.length = 0;
+
+          /* insere municípios do estado selecionado */
+          for (i = 0; i < tamanho; i++) {
+            var opcao = document.createElement('option');
+            var componente = json[i];
+            if (componente.estado == estado) {
+              opcao.text = componente.municipio;
+              opcao.value = componente.codigo;
+              municipios.add(opcao, municipios[i]);
+            }
+          }
+        }
+      };
+      xhttp.open("GET", "js/municipios.json", true);
+      xhttp.send();
+    }
   </script>
 
   <section class="hero is-light">
@@ -946,21 +990,21 @@
               </div>
             </div>
           </div>
-                    <div class="field">
+          <div class="field">
             <label class="label">Data de entrada no Brasil</label>
             <input type="date">
           </div>
         </div>
 
       </div>
-      
+
       <!-- pluralidade de nascimentos -->
       <div class="box">
         <div class="field">
-            <div class="control">
-              <label class="label">Pluralidade de nascimentos</label>
-              <div class="select is-small">
-                <select>
+          <div class="control">
+            <label class="label">Pluralidade de nascimentos</label>
+            <div class="select is-small">
+              <select>
                 <option value="1">Único</option>
                 <option value="2">Gêmeos</option>
                 <option value="3">Trigêmeos</option>
@@ -970,18 +1014,18 @@
                 <option value="7">Outros</option>
                 <option value="9" selected>Não declarado</option>
       </select>
-              </div>
             </div>
           </div>
+        </div>
       </div>
-      
+
       <!-- ordem de nascimento -->
       <div class="box">
         <div class="field">
-            <div class="control">
-              <label class="label">Ordem de nascimento</label>
-              <div class="select is-small">
-                <select>
+          <div class="control">
+            <label class="label">Ordem de nascimento</label>
+            <div class="select is-small">
+              <select>
                 <option value="1">único ou primeiro</option>
                 <option value="2">segundo</option>
                 <option value="3">terceiro</option>
@@ -991,19 +1035,19 @@
                 <option value="7">outros</option>
                 <option value="9" selected>não declarado</option>
       </select>
-              </div>
             </div>
           </div>
+        </div>
       </div>
-      
+
       <!-- comentário de identificação -->
       <div class="box">
         <div class="field">
-            <div class="control">
-              <label class="label">Comentário de identificação</label>
-<textarea class="textarea is-small" placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
-            </div>
+          <div class="control">
+            <label class="label">Comentário de identificação</label>
+            <textarea class="textarea is-small" placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
           </div>
+        </div>
       </div>
     </div>
 
@@ -1030,64 +1074,290 @@
 
   <section class="section" id="enderecos">
     <div class="content">
-      <h3>Endereços</h3>      
-        <div class="box">
-         
-          <!-- tipo de endereço -->
-          <div class="field">
-            <label class="label">Tipo de endereço</label>
-            
-          </div>
-          
-          <!-- data inicial do tipo de enereço -->
-          <div class="field">
-            <label class="label">Data inicial</label>
-            <input type="date">
-          </div>
-          <div class="field">
-            <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label>
-          </div>
-        
-        <!-- data final do tipo de enereço -->
-          <div class="field">
-            <label class="label">Data final</label>
-            <input type="date">
-          </div>
-          <div class="field">
-            <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label>
+      <h3>Endereços</h3>
+      <div class="box">
+
+        <!-- tipo de endereço -->
+        <div class="field">
+          <label class="label">Tipo de endereço</label>
+          <div class="select is-small">
+            <select name="tipo">
+                <option value="1">Comercial</option>
+                <option value="2">Correio ou postal</option>
+                <option value="3">Acomodação temporária</option>
+                <option value="4">Residencial</option>
+                <option value="8">Sem endereço fixo</option>
+                <option value="9">Desconhecido/não declarado</option>
+              </select>
           </div>
         </div>
-      
+
+        <!-- data inicial do tipo de enereço -->
+        <div class="field">
+          <label class="label">Data inicial</label>
+          <input type="date">
+        </div>
+        <div class="field">
+          <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label>
+        </div>
+
+        <!-- data final do tipo de enereço -->
+        <div class="field">
+          <label class="label">Data final</label>
+          <input type="date">
+        </div>
+        <div class="field">
+          <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label>
+        </div>
+
+        <!-- pais -->
+        <label class="label">País</label>
+        <div class="control" onchange="brasilOutro();">
+          <label class="radio">
+            <input id="brasil" type="radio" name="pais" checked>
+            Brasil</label>
+          <label class="radio">
+            <input type="radio" name="pais">
+            Outro</label>
+        </div>
+
+        <!-- detalhe para o Brasil -->
+        <div id="detalhe-brasil" class="box">
+
+          <div class="columns">
+            <div class="column is-10">
+              <!-- estado -->
+              <div class="field is-horizontal">
+                <div class="field-label is-small">
+                  <label class="label">Estado</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <div class="select is-small">
+                        <select id="estados-endereco" onchange="municipiosEndereco()">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AM">Amazonas</option>
+        <option value="AP">Amapá</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="PR">Paraná</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SE">Sergipe</option>
+        <option value="SP">São Paulo</option>
+        <option value="TO">Tocantins</option>
+      </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- município -->
+              <div class="field is-horizontal">
+                <div class="field-label is-small">
+                  <label class="label">Município</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <div class="select is-small">
+                        <select id="municipios-endereco">
+      </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- detalhe para outro país (diferente do Brasil) -->
+        <div id="detalhe-outro" class="box">
+          <div class="columns">
+            <div class="column is-6">
+              <div class="field is-horizontal">
+                <div class="field-label is-small">
+                  <label class="label">País</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <div class="select is-small">
+                        <select id="paises-endereco">
+      </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- estado -->
+              <div class="field is-horizontal">
+                <div class="field-label is-small">
+                  <label class="label">Estado</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input type="text" class="input is-small">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- município -->
+              <div class="field is-horizontal">
+                <div class="field-label is-small">
+                  <label class="label">Município</label>
+                </div>
+                <div class="field-body">
+                  <div class="field">
+                    <div class="control">
+                      <input type="text" class="input is-small">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- caixa postal -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Caixa Postal</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="number" class="input is-small">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- código de endereçamento postal -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">CEP</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="text" maxlength="8" class="input is-small">
+                <p class="help">Por exemplo, 74000-010.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- bairro -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Bairro</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="text" class="input is-small">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- distrito -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Distrito</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="text" class="input is-small">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- linha 1 -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Linha 1</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="text" class="input is-small">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- linha 2 -->
+        <div class="field is-horizontal">
+          <div class="field-label">
+            <label class="label">Linha 2</label>
+          </div>
+          <div class="field-body">
+            <div class="field">
+              <div class="control">
+                <input type="text" class="input is-small">
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
       <!-- rodapé -->
       <section class="hero is-light">
         <div class="hero-body">
