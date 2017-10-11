@@ -16,194 +16,82 @@
 
 <body onhashchange="changeToUrl();">
   <script>
-    var corrente;
-    window.onload = function() {
-      corrente = document.getElementById('visao-geral');
-      corrente.style.display = "block";
-
-
-      paises('paises-endereco');
-    }
-
-    function mostre(c) {
-      corrente.style.display = "none";
-      var exiba = document.getElementById(c);
-      exiba.style.display = "block";
-      corrente = exiba;
-    }
-
-    function changeToUrl() {
-      /* Retira # */
-      var goTo = location.hash.substring(1);
-      mostre(goTo ? goTo : 'visao-geral');
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-      // Get all "navbar-burger" elements
-      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
-
-        // Add a click event on each of them
-        $navbarBurgers.forEach(function($el) {
-          $el.addEventListener('click', function() {
-
-            // Get the target from the "data-target" attribute
-            var target = $el.dataset.target;
-            var $target = document.getElementById(target);
-
-            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-            $el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-
-          });
-        });
-      }
-
-    });
-
-    function veja(d) {
-      /* Exibir a div */
-      var elementos = document.getElementsByClassName('parcial');
-      var i;
-      for (i = 0; i < elementos.length; i++) {
-        elementos[i].style.display = 'none';
-      }
-
-      var corrente = document.getElementById(d);
-      corrente.style.display = 'block';
-
-      /* Atualizar feedback da tab selecionada */
-      elementos = document.getElementsByClassName('li-parcial');
-      for (i = 0; i < elementos.length; i++) {
-        elementos[i].className = 'li-parcial';
-      }
-
-      corrente = document.getElementById('li-' + d);
-      corrente.className = 'li-parcial is-active';
-    }
-
-    function atualizaMunicipios() {
-      var elemento = document.getElementById('estados');
-      var estado = elemento.options[elemento.selectedIndex].text;
-      var municipioLabel = document.getElementById('municipio-label');
-      municipioLabel.textContent = estado + " (municípios)";
-
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var json = JSON.parse(this.responseText);
-          var tamanho = json.length;
-          var i;
-
-          /* elimina opções existentes */
-          var municipios = document.getElementById('municipios');
-          municipios.options.length = 0;
-
-          /* insere municípios do estado selecionado */
-          for (i = 0; i < tamanho; i++) {
-            var opcao = document.createElement('option');
-            var componente = json[i];
-            if (componente.estado == estado) {
-              opcao.text = componente.municipio;
-              opcao.value = componente.codigo;
-              municipios.add(opcao, municipios[i]);
-            }
-          }
-        }
-      };
-      xhttp.open("GET", "js/municipios.json", true);
-      xhttp.send();
-    }
-    
-    function municipiosEndereco() {
-      var elemento = document.getElementById('estados');
-      var estado = elemento.options[elemento.selectedIndex].text;
-      
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var json = JSON.parse(this.responseText);
-          var tamanho = json.length;
-          var i;
-
-          /* elimina opções existentes */
-          var municipios = document.getElementById('municipios-endereco');
-          municipios.options.length = 0;
-
-          /* insere municípios do estado selecionado */
-          for (i = 0; i < tamanho; i++) {
-            var opcao = document.createElement('option');
-            var componente = json[i];
-            if (componente.estado == estado) {
-              opcao.text = componente.municipio;
-              opcao.value = componente.codigo;
-              municipios.add(opcao, municipios[i]);
-            }
-          }
-        }
-      };
-      xhttp.open("GET", "js/municipios.json", true);
-      xhttp.send();
-    }
-
-    function paises(chave) {
-      var elemento = document.getElementById(chave);
-
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var json = JSON.parse(this.responseText);
-          var tamanho = json.length;
-          var i;
-
-          /* insere países */
-          for (i = 0; i < tamanho; i++) {
-            var opcao = document.createElement('option');
-            var componente = json[i];
-            opcao.text = componente.pais;
-            opcao.value = componente.cod;
-            elemento.add(opcao, elemento[i]);
-          }
-        }
-      };
-      xhttp.open("GET", "js/paises.json", true);
-      xhttp.send();
-    }
-
-    function nacionalidade() {
-      var db = document.getElementById('db');
-      var de = document.getElementById('de');
-
-      var elemento = document.getElementById('brasileira');
-      if (elemento.checked) {
-        db.style.display = "block";
-        de.style.display = "none";
-      } else {
-        db.style.display = "none";
-        de.style.display = "block";
-      }
-    }
-
-    function brasilOutro() {
-      var brasil = document.getElementById('detalhe-brasil');
-      var outro = document.getElementById('detalhe-outro');
-
-      var elemento = document.getElementById('brasil');
-      if (elemento.checked) {
-        brasil.style.display = "block";
-        outro.style.display = "none";
-      } else {
-        brasil.style.display = "none";
-        outro.style.display = "block";
-      }
-    }
+ 
   </script>
   <section class="section" id="visao-geral"></section>
 
-  
+  <section class="section" id="comunicacoes">
+    <div class="content">
+      <h3>Comunicações eletrônicas</h3>
+
+      <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+      <span class="icon is-large">
+        <i class="fa fa-phone fa-1x" aria-hidden="true"></i>
+      </span>
+      <span>Telefone</span>
+      <span class="icon">
+        <i class="fa fa-angle-down fa-1x" aria-hidden="true"></i>
+      </span>
+    </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item">
+              <span class="icon">
+        <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+      </span> Celular
+            </div>
+            <div class="dropdown-item is-active">
+              <span class="icon">
+        <i class="fa fa-fax" aria-hidden="true"></i>
+      </span> Fax
+            </div>
+            <div class="dropdown-item">
+              <span class="icon">
+        <i class="fa fa-fax" aria-hidden="true"></i>
+      </span> Pager
+            </div>
+            <div class="dropdown-item">
+              <span class="icon">
+        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      </span> Email
+            </div>
+            <div class="dropdown-item">
+              <span class="icon">
+        <i class="fa fa-globe" aria-hidden="true"></i>
+      </span> URL
+            </div>
+            <hr class="dropdown-divider">
+            <div class="dropdown-item">
+              Outro
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="hero is-light">
+        <div class="hero-body">
+          <div class="content has-text-centered">
+            <h5 class="subtitle">Continue com...</h5>
+            <a class="button" href="#enderecos">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+              <span>Endereços</span>
+            </a>
+            <a class="button" href="#vinculos">
+              <span>Vínculos</span>
+              <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
 
 </body>
 
