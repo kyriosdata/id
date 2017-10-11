@@ -36,7 +36,8 @@
       veja('nomes-completo');
       atualizaMunicipios();
       nacionalidade();
-      paises();
+      paises('paises');
+      paises('paises-endereco')
     }
 
     function mostre(c) {
@@ -132,8 +133,8 @@
       xhttp.send();
     }
 
-    function paises() {
-      var elemento = document.getElementById('paises');
+    function paises(chave) {
+      var elemento = document.getElementById(chave);
 
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
@@ -929,7 +930,6 @@
               <label id="municipio-label" class="label"></label>
               <div class="select is-small">
                 <select id="municipios">
-        <option value="AC">Acre</option>
       </select>
               </div>
             </div>
@@ -939,15 +939,71 @@
         <div id="de" class="box">
           <div class="field">
             <div class="control">
-              <label class="label">País</label>
+              <label class="label">País de nascimento</label>
               <div class="select is-small">
                 <select id="paises">
       </select>
               </div>
             </div>
           </div>
+                    <div class="field">
+            <label class="label">Data de entrada no Brasil</label>
+            <input type="date">
+          </div>
         </div>
 
+      </div>
+      
+      <!-- pluralidade de nascimentos -->
+      <div class="box">
+        <div class="field">
+            <div class="control">
+              <label class="label">Pluralidade de nascimentos</label>
+              <div class="select is-small">
+                <select>
+                <option value="1">Único</option>
+                <option value="2">Gêmeos</option>
+                <option value="3">Trigêmeos</option>
+                <option value="4">Quádruplos</option>
+                <option value="5">Quíntuplos</option>
+                <option value="6">Sêxtuplos</option>
+                <option value="7">Outros</option>
+                <option value="9" selected>Não declarado</option>
+      </select>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <!-- ordem de nascimento -->
+      <div class="box">
+        <div class="field">
+            <div class="control">
+              <label class="label">Ordem de nascimento</label>
+              <div class="select is-small">
+                <select>
+                <option value="1">único ou primeiro</option>
+                <option value="2">segundo</option>
+                <option value="3">terceiro</option>
+                <option value="4">quarto</option>
+                <option value="5">quinto</option>
+                <option value="6">sexto</option>
+                <option value="7">outros</option>
+                <option value="9" selected>não declarado</option>
+      </select>
+              </div>
+            </div>
+          </div>
+      </div>
+      
+      <!-- comentário de identificação -->
+      <div class="box">
+        <div class="field">
+            <div class="control">
+              <label class="label">Comentário de identificação</label>
+<textarea class="textarea is-small" placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
+            </div>
+          </div>
       </div>
     </div>
 
@@ -970,12 +1026,69 @@
         </div>
       </div>
     </section>
-    </div>
   </section>
 
   <section class="section" id="enderecos">
     <div class="content">
-      <h3>Endereços</h3>
+      <h3>Endereços</h3>      
+        <div class="box">
+         
+          <!-- tipo de endereço -->
+          <div class="field">
+            <label class="label">Tipo de endereço</label>
+            
+          </div>
+          
+          <!-- data inicial do tipo de enereço -->
+          <div class="field">
+            <label class="label">Data inicial</label>
+            <input type="date">
+          </div>
+          <div class="field">
+            <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label>
+          </div>
+        
+        <!-- data final do tipo de enereço -->
+          <div class="field">
+            <label class="label">Data final</label>
+            <input type="date">
+          </div>
+          <div class="field">
+            <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
+          Acurado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+          Estimado</label>
+            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+          Desconhecido</label>
+          </div>
+        </div>
+      
+      <!-- rodapé -->
       <section class="hero is-light">
         <div class="hero-body">
           <div class="content has-text-centered">
