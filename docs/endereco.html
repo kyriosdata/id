@@ -12,59 +12,98 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bulma.min.css">
   <link rel="stylesheet" href="css/tooltip.css">
+  
+  <style>
+    .dropdown-item:hover {
+      background-color: lightgray;
+    }
+  </style>
 </head>
 
-<body onhashchange="changeToUrl();">
+<body>
   <script>
- 
+    var meios = [{ icone: "fa-phone", txt : "Telefone"},
+                { icone: "fa-mobile", txt : "Celular"},
+                { icone: "fa-fax", txt : "Fax"},
+                { icone: "fa-tablet", txt : "Pager"},
+                { icone: "fa-envelope-o", txt : "Email"},
+                { icone: "fa-globe", txt : "URL"},
+                { icone: "", txt : "Outro"}];
+    
+    function alterna() {
+      var meio = document.getElementById('meio');
+      if (meio.classList.contains('is-active')) {
+        meio.classList.remove('is-active');
+      } else {
+        meio.classList.add('is-active');
+      }
+    }
+    
+    function selecione(t) {
+      var valor = t.id.substring(1);
+      var indice = valor == 8 ? 6 : valor - 1;
+      
+      var botaoTxt = document.getElementById('mtexto');
+      botaoTxt.innerHTML = meios[indice].txt;
+      
+      var botaoIcone = document.getElementById('micone');
+      botaoIcone.className = '';
+      botaoIcone.classList.add('fa');
+      botaoIcone.classList.add(meios[indice].icone);
+      alterna();
+    }
   </script>
-  <section class="section" id="visao-geral"></section>
 
   <section class="section" id="comunicacoes">
     <div class="content">
       <h3>Comunicações eletrônicas</h3>
 
-      <div class="dropdown is-hoverable">
+      <div class="dropdown" id="meio">
         <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-      <span class="icon is-large">
-        <i class="fa fa-phone fa-1x" aria-hidden="true"></i>
-      </span>
-      <span>Telefone</span>
-      <span class="icon">
-        <i class="fa fa-angle-down fa-1x" aria-hidden="true"></i>
-      </span>
-    </button>
+          <button onclick="alterna()" class="button" id="mb">
+            <span class="icon">
+              <i class="fa fa-phone" id="micone"></i>
+            </span>
+            <span id="mtexto">Telefone</span>
+            <span class="icon">
+              <i class="fa fa-angle-down fa-1x"></i>
+            </span>
+          </button>
         </div>
         <div class="dropdown-menu" id="dropdown-menu" role="menu">
           <div class="dropdown-content">
-            <div class="dropdown-item">
+            <div class="dropdown-item" onclick="selecione(this)" id="m1">
               <span class="icon">
-        <i class="fa fa-mobile fa-2x" aria-hidden="true"></i>
+                <i class="fa fa-phone"></i>
+              </span> Telefone
+            </div>
+            <div class="dropdown-item" onclick="selecione(this)" id="m2">
+              <span class="icon">
+        <i class="fa fa-mobile" aria-hidden="true"></i>
       </span> Celular
             </div>
-            <div class="dropdown-item is-active">
+            <div class="dropdown-item" onclick="selecione(this)" id="m3">
               <span class="icon">
-        <i class="fa fa-fax" aria-hidden="true"></i>
-      </span> Fax
+                <i class="fa fa-fax" aria-hidden="true"></i>
+              </span> Fax
             </div>
-            <div class="dropdown-item">
+            <div class="dropdown-item" onclick="selecione(this)" id="m4">
               <span class="icon">
-        <i class="fa fa-fax" aria-hidden="true"></i>
-      </span> Pager
+                <i class="fa fa-tablet" aria-hidden="true"></i>
+              </span> Pager
             </div>
-            <div class="dropdown-item">
+            <div class="dropdown-item" onclick="selecione(this)" id="m5">
               <span class="icon">
-        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-      </span> Email
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+              </span> Email
             </div>
-            <div class="dropdown-item">
+            <div class="dropdown-item" onclick="selecione(this)" id="m6">
               <span class="icon">
         <i class="fa fa-globe" aria-hidden="true"></i>
       </span> URL
             </div>
             <hr class="dropdown-divider">
-            <div class="dropdown-item">
+            <div class="dropdown-item" onclick="selecione(this)" id="m8">
               Outro
             </div>
           </div>
