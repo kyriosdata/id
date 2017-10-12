@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bulma.min.css">
   <link rel="stylesheet" href="css/tooltip.css">
-  
+
   <style>
     .dropdown-item:hover {
       background-color: lightgray;
@@ -22,14 +22,36 @@
 
 <body>
   <script>
-    var meios = [{ icone: "fa-phone", txt : "Telefone"},
-                { icone: "fa-mobile", txt : "Celular"},
-                { icone: "fa-fax", txt : "Fax"},
-                { icone: "fa-tablet", txt : "Pager"},
-                { icone: "fa-envelope-o", txt : "Email"},
-                { icone: "fa-globe", txt : "URL"},
-                { icone: "", txt : "Outro"}];
-    
+    var meios = [{
+        icone: "fa-phone",
+        txt: "Telefone"
+      },
+      {
+        icone: "fa-mobile",
+        txt: "Celular"
+      },
+      {
+        icone: "fa-fax",
+        txt: "Fax"
+      },
+      {
+        icone: "fa-tablet",
+        txt: "Pager"
+      },
+      {
+        icone: "fa-envelope-o",
+        txt: "Email"
+      },
+      {
+        icone: "fa-globe",
+        txt: "URL"
+      },
+      {
+        icone: "",
+        txt: "Outro"
+      }
+    ];
+
     function alterna() {
       var meio = document.getElementById('meio');
       if (meio.classList.contains('is-active')) {
@@ -38,14 +60,14 @@
         meio.classList.add('is-active');
       }
     }
-    
+
     function selecione(t) {
       var valor = t.id.substring(1);
       var indice = valor == 8 ? 6 : valor - 1;
-      
+
       var botaoTxt = document.getElementById('mtexto');
       botaoTxt.innerHTML = meios[indice].txt;
-      
+
       var botaoIcone = document.getElementById('micone');
       botaoIcone.className = '';
       botaoIcone.classList.add('fa');
@@ -106,6 +128,42 @@
             <div class="dropdown-item" onclick="selecione(this)" id="m8">
               Outro
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="label">Preferência</label>
+          <div class="select is-small">
+            <select>
+                <option value="B">Horário comercial</option>
+                <option value="D">Durante o dia</option>
+                <option value="W">Finais de semana</option>
+                <option value="A">Qualquer hora</option>
+                <option value="E">Período noturno</option>
+      </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <label class="label">Utilização</label>
+          <div class="select is-small">
+            <select>
+                <option value="B">Comercial</option>
+                <option value="D">Pessoal</option>
+                <option value="W">Comercial ou pessoal</option>
+      </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <div class="text">
+            <input type="text">
           </div>
         </div>
       </div>
