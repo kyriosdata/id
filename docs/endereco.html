@@ -80,9 +80,12 @@
     <div class="content">
       <h3>Comunicações eletrônicas</h3>
 
-      <div class="dropdown" id="meio">
-        <div class="dropdown-trigger">
-          <button onclick="alterna()" class="button" id="mb">
+      <div class="columns">
+        <div class="column is-narrow">
+         <label class="label is-small">Meio</label>
+          <div class="dropdown" id="meio">           
+            <div class="dropdown-trigger">
+              <button onclick="alterna()" class="button" id="mb">
             <span class="icon">
               <i class="fa fa-phone" id="micone"></i>
             </span>
@@ -91,82 +94,90 @@
               <i class="fa fa-angle-down fa-1x"></i>
             </span>
           </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <div class="dropdown-item" onclick="selecione(this)" id="m1">
-              <span class="icon">
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+              <div class="dropdown-content">
+                <div class="dropdown-item" onclick="selecione(this)" id="m1">
+                  <span class="icon">
                 <i class="fa fa-phone"></i>
               </span> Telefone
-            </div>
-            <div class="dropdown-item" onclick="selecione(this)" id="m2">
-              <span class="icon">
+                </div>
+                <div class="dropdown-item" onclick="selecione(this)" id="m2">
+                  <span class="icon">
         <i class="fa fa-mobile" aria-hidden="true"></i>
       </span> Celular
-            </div>
-            <div class="dropdown-item" onclick="selecione(this)" id="m3">
-              <span class="icon">
+                </div>
+                <div class="dropdown-item" onclick="selecione(this)" id="m3">
+                  <span class="icon">
                 <i class="fa fa-fax" aria-hidden="true"></i>
               </span> Fax
-            </div>
-            <div class="dropdown-item" onclick="selecione(this)" id="m4">
-              <span class="icon">
+                </div>
+                <div class="dropdown-item" onclick="selecione(this)" id="m4">
+                  <span class="icon">
                 <i class="fa fa-tablet" aria-hidden="true"></i>
               </span> Pager
-            </div>
-            <div class="dropdown-item" onclick="selecione(this)" id="m5">
-              <span class="icon">
+                </div>
+                <div class="dropdown-item" onclick="selecione(this)" id="m5">
+                  <span class="icon">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
               </span> Email
-            </div>
-            <div class="dropdown-item" onclick="selecione(this)" id="m6">
-              <span class="icon">
+                </div>
+                <div class="dropdown-item" onclick="selecione(this)" id="m6">
+                  <span class="icon">
         <i class="fa fa-globe" aria-hidden="true"></i>
       </span> URL
-            </div>
-            <hr class="dropdown-divider">
-            <div class="dropdown-item" onclick="selecione(this)" id="m8">
-              Outro
+                </div>
+                <hr class="dropdown-divider">
+                <div class="dropdown-item" onclick="selecione(this)" id="m8">
+                  Outro
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label class="label">Preferência</label>
-          <div class="select is-small">
-            <select>
-                <option value="B">Horário comercial</option>
+        <div class="column is-narrow">
+          <div class="field">
+           <label class="label is-small">Detalhe</label>
+            <div class="control">
+              <div class="text">
+                <input type="text" size="30" class="input">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column is-narrow">
+          <div class="field">
+            <div class="control">
+              <label class="label is-small">Preferência</label>
+              <div class="select">
+                <select>
+                <option value="B" selected>Horário comercial</option>
                 <option value="D">Durante o dia</option>
                 <option value="W">Finais de semana</option>
                 <option value="A">Qualquer hora</option>
                 <option value="E">Período noturno</option>
       </select>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="field">
-        <div class="control">
-          <label class="label">Utilização</label>
-          <div class="select is-small">
-            <select>
-                <option value="B">Comercial</option>
+        <div class="column is-narrow">
+          <div class="field">
+            <div class="control">
+              <label class="label is-small">Utilização</label>
+              <div class="select">
+                <select>
+                <option value="B" selected>Comercial</option>
                 <option value="D">Pessoal</option>
                 <option value="W">Comercial ou pessoal</option>
       </select>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
 
-      <div class="field">
-        <div class="control">
-          <div class="text">
-            <input type="text">
-          </div>
-        </div>
-      </div>
 
       <section class="hero is-light">
         <div class="hero-body">
