@@ -639,28 +639,178 @@
                 <li>Zona. Número da zona eleitoral do título eleitoral do indivíduo.</li>
             </ul>
         </ul>
+    </div>
+    <div class="content">
+        <h3>Identificador</h3>
 
-        <section class="hero is-light">
-            <div class="hero-body">
-                <div class="content has-text-centered">
-                    <h5 class="subtitle">Continue com...</h5>
-                    <a class="button" href="#visao-geral">
+        <div class="columns">
+            <div class="column is-narrow">
+                <div class="field">
+                    <div class="control">
+                        <label class="label is-small">Tipo do identificador</label>
+                        <div class="select">
+                            <select>
+                                <option value="01" selected>Único dentro da organização</option>
+                                <option value="02">Número do prontuário</option>
+                                <option value="21">Radiologia</option>
+                                <option value="22">Patologia</option>
+                                <option value="23">Farmácia</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label id="com-id" class="label is-small">Designação</label>
+                    <div class="control">
+                        <div class="text">
+                            <input type="text" size="25" class="input">
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="label is-small">Emissor</label>
+                        <input type="text" class="input">
+                    </div>
+                </div>
+            </div>
+            <div class="column is-narrow">
+                <div class="field">
+                    <div class="control">
+                        <label class="label is-small">Área geográfica</label>
+                        <div class="select">
+                            <select>
+                                <option value="1" selected>Local</option>
+                                <option value="2">Área/região/distrito</option>
+                                <option value="3">Estado/província/território</option>
+                                <option value="4">Nacional</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label class="label is-small">Data</label>
+                        <input type="date" class="input">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="field">
+                <label class="label is-small">Nome do cartório</label>
+                <div class="control">
+                    <div class="text">
+                        <input type="text" size="25" class="input">
+                    </div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label is-small">Livro</label>
+                        <div class="control">
+                            <div class="text">
+                                <input type="number" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label is-small">Folha</label>
+                        <div class="control">
+                            <div class="text">
+                                <input type="number" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label is-small">Termo</label>
+                        <div class="control">
+                            <div class="text">
+                                <input type="number" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="field">
+                <label class="label is-small">Carteira de Trabalho</label>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <label class="label is-small">Série</label>
+                    <div class="control">
+                        <div class="text">
+                            <input type="number" class="input">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label is-small">Estado</label>
+                        <div class="control">
+                            <div class="text">
+                                <input type="number" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="field">
+                <label class="label is-small">Título de eleitor</label>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <label class="label is-small">Seção</label>
+                    <div class="control">
+                        <div class="text">
+                            <input type="number" class="input">
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label is-small">Zona</label>
+                        <div class="control">
+                            <div class="text">
+                                <input type="number" class="input">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="hero is-light">
+        <div class="hero-body">
+            <div class="content has-text-centered">
+                <h5 class="subtitle">Continue com...</h5>
+                <a class="button" href="#visao-geral">
               <span class="icon">
       <i class="fa fa-arrow-left"></i>
     </span>
-                        <span>Visão geral</span>
-                    </a>
-                    <a class="button" href="#nomes">
-                        <span>Nomes</span>
-                        <span class="icon">
+                    <span>Visão geral</span>
+                </a>
+                <a class="button" href="#nomes">
+                    <span>Nomes</span>
+                    <span class="icon">
       <i class="fa fa-arrow-right"></i>
     </span>
-                    </a>
-                </div>
+                </a>
             </div>
-        </section>
-    </div>
-
+        </div>
+    </section>
 </section>
 
 <section class="section" id="nomes">
