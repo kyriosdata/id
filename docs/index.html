@@ -2,1435 +2,1513 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Fábio Nogueira de Lucena">
-  <link rel="shortcut icon" href="favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ABNT 15985</title>
-  <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
+    <meta charset="utf-8">
+    <meta name="author" content="Fábio Nogueira de Lucena">
+    <link rel="shortcut icon" href="favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABNT 15985</title>
+    <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/bulma.min.css">
-  <link rel="stylesheet" href="css/tooltip.css">
-  <style>
-    #visao-geral,
-    #identificadores,
-    #nomes,
-    #dados,
-    #comunicacoes,
-    #enderecos,
-    #vinculos {
-      display: none;
-    }
-  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/tooltip.css">
+    <style>
+        #visao-geral,
+        #identificadores,
+        #nomes,
+        #dados,
+        #comunicacoes,
+        #enderecos,
+        #vinculos {
+            display: none;
+        }
+    </style>
 </head>
 
 <body onhashchange="changeToUrl();">
-  <script>
+<script>
     var corrente;
-    window.onload = function() {
-      corrente = document.getElementById('visao-geral');
-      corrente.style.display = "block";
+    window.onload = function () {
+        corrente = document.getElementById('visao-geral');
+        corrente.style.display = "block";
 
-      veja('nomes-completo');
-      atualizaMunicipios();
-      municipiosEndereco();
-      nacionalidade();
-      paises('paises');
-      paises('paises-endereco')
+        veja('nomes-completo');
+        atualizaMunicipios();
+        municipiosEndereco();
+        nacionalidade();
+        paises('paises');
+        paises('paises-endereco')
     }
 
     function mostre(c) {
-      corrente.style.display = "none";
-      var exiba = document.getElementById(c);
-      exiba.style.display = "block";
-      corrente = exiba;
+        corrente.style.display = "none";
+        var exiba = document.getElementById(c);
+        exiba.style.display = "block";
+        corrente = exiba;
     }
 
     function changeToUrl() {
-      /* Retira # */
-      var goTo = location.hash.substring(1);
-      mostre(goTo ? goTo : 'visao-geral');
+        /* Retira # */
+        var goTo = location.hash.substring(1);
+        mostre(goTo ? goTo : 'visao-geral');
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
 
-      // Get all "navbar-burger" elements
-      var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        // Get all "navbar-burger" elements
+        var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-      // Check if there are any navbar burgers
-      if ($navbarBurgers.length > 0) {
+        // Check if there are any navbar burgers
+        if ($navbarBurgers.length > 0) {
 
-        // Add a click event on each of them
-        $navbarBurgers.forEach(function($el) {
-          $el.addEventListener('click', function() {
+            // Add a click event on each of them
+            $navbarBurgers.forEach(function ($el) {
+                $el.addEventListener('click', function () {
 
-            // Get the target from the "data-target" attribute
-            var target = $el.dataset.target;
-            var $target = document.getElementById(target);
+                    // Get the target from the "data-target" attribute
+                    var target = $el.dataset.target;
+                    var $target = document.getElementById(target);
 
-            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-            $el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
+                    // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                    $el.classList.toggle('is-active');
+                    $target.classList.toggle('is-active');
 
-          });
-        });
-      }
+                });
+            });
+        }
 
     });
 
     function veja(d) {
-      /* Exibir a div */
-      var elementos = document.getElementsByClassName('parcial');
-      var i;
-      for (i = 0; i < elementos.length; i++) {
-        elementos[i].style.display = 'none';
-      }
+        /* Exibir a div */
+        var elementos = document.getElementsByClassName('parcial');
+        var i;
+        for (i = 0; i < elementos.length; i++) {
+            elementos[i].style.display = 'none';
+        }
 
-      var corrente = document.getElementById(d);
-      corrente.style.display = 'block';
+        var corrente = document.getElementById(d);
+        corrente.style.display = 'block';
 
-      /* Atualizar feedback da tab selecionada */
-      elementos = document.getElementsByClassName('li-parcial');
-      for (i = 0; i < elementos.length; i++) {
-        elementos[i].className = 'li-parcial';
-      }
+        /* Atualizar feedback da tab selecionada */
+        elementos = document.getElementsByClassName('li-parcial');
+        for (i = 0; i < elementos.length; i++) {
+            elementos[i].className = 'li-parcial';
+        }
 
-      corrente = document.getElementById('li-' + d);
-      corrente.className = 'li-parcial is-active';
+        corrente = document.getElementById('li-' + d);
+        corrente.className = 'li-parcial is-active';
     }
 
     function atualizaMunicipios() {
-      var elemento = document.getElementById('estados');
-      var estado = elemento.options[elemento.selectedIndex].text;
-      var municipioLabel = document.getElementById('municipio-label');
-      municipioLabel.textContent = estado + " (municípios)";
+        var elemento = document.getElementById('estados');
+        var estado = elemento.options[elemento.selectedIndex].text;
+        var municipioLabel = document.getElementById('municipio-label');
+        municipioLabel.textContent = estado + " (municípios)";
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var json = JSON.parse(this.responseText);
-          var tamanho = json.length;
-          var i;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.responseText);
+                var tamanho = json.length;
+                var i;
 
-          /* elimina opções existentes */
-          var municipios = document.getElementById('municipios');
-          municipios.options.length = 0;
+                /* elimina opções existentes */
+                var municipios = document.getElementById('municipios');
+                municipios.options.length = 0;
 
-          /* insere municípios do estado selecionado */
-          for (i = 0; i < tamanho; i++) {
-            var opcao = document.createElement('option');
-            var componente = json[i];
-            if (componente.estado == estado) {
-              opcao.text = componente.municipio;
-              opcao.value = componente.codigo;
-              municipios.add(opcao, municipios[i]);
+                /* insere municípios do estado selecionado */
+                for (i = 0; i < tamanho; i++) {
+                    var opcao = document.createElement('option');
+                    var componente = json[i];
+                    if (componente.estado == estado) {
+                        opcao.text = componente.municipio;
+                        opcao.value = componente.codigo;
+                        municipios.add(opcao, municipios[i]);
+                    }
+                }
             }
-          }
-        }
-      };
-      xhttp.open("GET", "js/municipios.json", true);
-      xhttp.send();
+        };
+        xhttp.open("GET", "js/municipios.json", true);
+        xhttp.send();
     }
 
     function paises(chave) {
-      var elemento = document.getElementById(chave);
+        var elemento = document.getElementById(chave);
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var json = JSON.parse(this.responseText);
-          var tamanho = json.length;
-          var i;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.responseText);
+                var tamanho = json.length;
+                var i;
 
-          /* insere países */
-          for (i = 0; i < tamanho; i++) {
-            var opcao = document.createElement('option');
-            var componente = json[i];
-            opcao.text = componente.pais;
-            opcao.value = componente.cod;
-            elemento.add(opcao, elemento[i]);
-          }
-        }
-      };
-      xhttp.open("GET", "js/paises.json", true);
-      xhttp.send();
+                /* insere países */
+                for (i = 0; i < tamanho; i++) {
+                    var opcao = document.createElement('option');
+                    var componente = json[i];
+                    opcao.text = componente.pais;
+                    opcao.value = componente.cod;
+                    elemento.add(opcao, elemento[i]);
+                }
+            }
+        };
+        xhttp.open("GET", "js/paises.json", true);
+        xhttp.send();
     }
 
     function nacionalidade() {
-      var db = document.getElementById('db');
-      var de = document.getElementById('de');
+        var db = document.getElementById('db');
+        var de = document.getElementById('de');
 
-      var elemento = document.getElementById('brasileira');
-      if (elemento.checked) {
-        db.style.display = "block";
-        de.style.display = "none";
-      } else {
-        db.style.display = "none";
-        de.style.display = "block";
-      }
+        var elemento = document.getElementById('brasileira');
+        if (elemento.checked) {
+            db.style.display = "block";
+            de.style.display = "none";
+        } else {
+            db.style.display = "none";
+            de.style.display = "block";
+        }
     }
 
     function brasilOutro() {
-      var brasil = document.getElementById('detalhe-brasil');
-      var outro = document.getElementById('detalhe-outro');
+        var brasil = document.getElementById('detalhe-brasil');
+        var outro = document.getElementById('detalhe-outro');
 
-      var elemento = document.getElementById('brasil');
-      if (elemento.checked) {
-        brasil.style.display = "block";
-        outro.style.display = "none";
-      } else {
-        brasil.style.display = "none";
-        outro.style.display = "block";
-      }
+        var elemento = document.getElementById('brasil');
+        if (elemento.checked) {
+            brasil.style.display = "block";
+            outro.style.display = "none";
+        } else {
+            brasil.style.display = "none";
+            outro.style.display = "block";
+        }
     }
 
 
     function municipiosEndereco() {
-      var elemento = document.getElementById('estados-endereco');
-      var estado = elemento.options[elemento.selectedIndex].text;
+        var elemento = document.getElementById('estados-endereco');
+        var estado = elemento.options[elemento.selectedIndex].text;
 
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-          var json = JSON.parse(this.responseText);
-          var tamanho = json.length;
-          var i;
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var json = JSON.parse(this.responseText);
+                var tamanho = json.length;
+                var i;
 
-          /* elimina opções existentes */
-          var municipios = document.getElementById('municipios-endereco');
-          municipios.options.length = 0;
+                /* elimina opções existentes */
+                var municipios = document.getElementById('municipios-endereco');
+                municipios.options.length = 0;
 
-          /* insere municípios do estado selecionado */
-          for (i = 0; i < tamanho; i++) {
-            var opcao = document.createElement('option');
-            var componente = json[i];
-            if (componente.estado == estado) {
-              opcao.text = componente.municipio;
-              opcao.value = componente.codigo;
-              municipios.add(opcao, municipios[i]);
+                /* insere municípios do estado selecionado */
+                for (i = 0; i < tamanho; i++) {
+                    var opcao = document.createElement('option');
+                    var componente = json[i];
+                    if (componente.estado == estado) {
+                        opcao.text = componente.municipio;
+                        opcao.value = componente.codigo;
+                        municipios.add(opcao, municipios[i]);
+                    }
+                }
             }
-          }
-        }
-      };
-      xhttp.open("GET", "js/municipios.json", true);
-      xhttp.send();
+        };
+        xhttp.open("GET", "js/municipios.json", true);
+        xhttp.send();
     }
-  </script>
+</script>
 
-  <section class="hero is-light">
+<section class="hero is-light">
     <div class="hero-head">
-      <nav class="navbar is-transparent">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="http://esaudebucal.com.br">
-            <img src="./logo.png" alt="eSaúdeBucal logo">
-          </a>
+        <nav class="navbar is-transparent">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="http://esaudebucal.com.br">
+                    <img src="./logo.png" alt="eSaúdeBucal logo">
+                </a>
 
-          <a class="navbar-item" href="http://www.abntcatalogo.com.br/norma.aspx?ID=088501" target="_blank">
-            <span>ABNT</span>
-          </a>
+                <a class="navbar-item" href="http://www.abntcatalogo.com.br/norma.aspx?ID=088501" target="_blank">
+                    <span>ABNT</span>
+                </a>
 
-          <div class="navbar-item">
-            <iframe src="https://ghbtns.com/github-btn.html?user=kyriosdata&repo=id&type=star&count=true" frameborder="0" scrolling="0" width="150px" height="20px"></iframe>
-          </div>
-
-          <div class="navbar-burger burger" data-target="navMenuTransparentExample">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div id="navMenuTransparentExample" class="navbar-menu">
-          <div class="navbar-start">
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link  is-active" href="/documentation/overview/start/">
-          Elementos
-        </a>
-              <div class="navbar-dropdown is-boxed">
-                <a class="navbar-item " href="">
-            Visão geral
-          </a>
-                <a class="navbar-item " href="#identificadores">
-            Identificadores
-          </a>
-                <a class="navbar-item " href="#nomes">
-            Nomes
-          </a>
-                <a class="navbar-item " href="#dados">
-            Dados demográficos
-          </a>
-                <a class="navbar-item " href="#enderecos">
-            Endereços
-          </a>
-                <a class="navbar-item " href="#comunicacoes">
-            Comunicações eletrônicas
-          </a>
-                <a class="navbar-item " href="#vinculos">
-            Vínculos
-          </a>
-
-                <hr class="navbar-divider">
                 <div class="navbar-item">
-                  <div>
-                    <p class="is-size-6-desktop">
-                      <strong class="has-text-info">Sugestão?</strong>
-                    </p>
-
-                    <small>
-                  <a class="bd-view-all-versions" href="mailto:fabio@inf.ufg.br&Subject=ABNT%20NBR%2015985" target="_blank">fabio@inf.ufg.br</a>
-                </small>
-
-                  </div>
+                    <iframe src="https://ghbtns.com/github-btn.html?user=kyriosdata&repo=id&type=star&count=true"
+                            frameborder="0" scrolling="0" width="150px" height="20px"></iframe>
                 </div>
-              </div>
-            </div>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <div class="navbar-link">
-                Software
-              </div>
-              <div id="moreDropdown" class="navbar-dropdown is-boxed">
-                <a class="navbar-item " href="#vinculos">
-            Modelos
-          </a>
-              </div>
-            </div>
-          </div>
 
-          <div class="navbar-end">
-            <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <a class="button" href="">
+                <div class="navbar-burger burger" data-target="navMenuTransparentExample">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <div id="navMenuTransparentExample" class="navbar-menu">
+                <div class="navbar-start">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link  is-active" href="/documentation/overview/start/">
+                            Elementos
+                        </a>
+                        <div class="navbar-dropdown is-boxed">
+                            <a class="navbar-item " href="">
+                                Visão geral
+                            </a>
+                            <a class="navbar-item " href="#identificadores">
+                                Identificadores
+                            </a>
+                            <a class="navbar-item " href="#nomes">
+                                Nomes
+                            </a>
+                            <a class="navbar-item " href="#dados">
+                                Dados demográficos
+                            </a>
+                            <a class="navbar-item " href="#enderecos">
+                                Endereços
+                            </a>
+                            <a class="navbar-item " href="#comunicacoes">
+                                Comunicações eletrônicas
+                            </a>
+                            <a class="navbar-item " href="#vinculos">
+                                Vínculos
+                            </a>
+
+                            <hr class="navbar-divider">
+                            <div class="navbar-item">
+                                <div>
+                                    <p class="is-size-6-desktop">
+                                        <strong class="has-text-info">Sugestão?</strong>
+                                    </p>
+
+                                    <small>
+                                        <a class="bd-view-all-versions"
+                                           href="mailto:fabio@inf.ufg.br&Subject=ABNT%20NBR%2015985" target="_blank">fabio@inf.ufg.br</a>
+                                    </small>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <div class="navbar-link">
+                            Software
+                        </div>
+                        <div id="moreDropdown" class="navbar-dropdown is-boxed">
+                            <a class="navbar-item " href="#vinculos">
+                                Modelos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="field is-grouped">
+                            <p class="control">
+                                <a class="button" href="">
                     <span class="icon">
                 <i class="fa fa-home"></i>
               </span>
 
-                  </a>
-                </p>
-                <p class="control">
-                  <a class="button is-primary" href="https://github.com/kyriosdata/id" target="_blank">
+                                </a>
+                            </p>
+                            <p class="control">
+                                <a class="button is-primary" href="https://github.com/kyriosdata/id" target="_blank">
                     <span class="icon">
                 <i class="fa fa-github"></i>
               </span>
-                    <span>Download</span>
-                  </a>
-                </p>
-              </div>
+                                    <span>Download</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </nav>
+        </nav>
     </div>
 
     <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          ABNT NBR 15985:2011
-        </h1>
-        <h2 class="subtitle">Compreendendo a identificação de pacientes</h2>
-      </div>
+        <div class="container">
+            <h1 class="title">
+                ABNT NBR 15985:2011
+            </h1>
+            <h2 class="subtitle">Compreendendo a identificação de pacientes</h2>
+        </div>
     </div>
     <div class="hero-foot">
-      <nav class="tabs is-boxed is-small">
-        <div class="container">
-          <ul>
+        <nav class="tabs is-boxed is-small">
+            <div class="container">
+                <ul>
+                    <li><a href="#identificadores">Identificadores</a></li>
+                    <li><a href="#nomes">Nomes</a></li>
+                    <li><a href="#dados">Dados demográficos</a></li>
+                    <li><a href="#enderecos">Endereços</a></li>
+                    <li><a href="#comunicacoes">Comunicações eletrônicas</a></li>
+                    <li><a href="#vinculos">Vínculos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<section id="visao-geral" class="section">
+    <div class="content">
+        <h3>Visão geral</h3>
+        A norma <em>ABNT NBR 15985:2011 &#8212; Informática em Saúde &#8212; Identificação dos indivíduos em saúde</em>
+        define informações e fornece orientações para a identificação de indivíduos em um ambiente de assistência à
+        saúde. A identificação de um único indivíduo, segundo a norma, é influenciada pelos seguintes componentes:
+        <ul>
             <li><a href="#identificadores">Identificadores</a></li>
             <li><a href="#nomes">Nomes</a></li>
             <li><a href="#dados">Dados demográficos</a></li>
             <li><a href="#enderecos">Endereços</a></li>
             <li><a href="#comunicacoes">Comunicações eletrônicas</a></li>
             <li><a href="#vinculos">Vínculos</a></li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </section>
-
-  <section id="visao-geral" class="section">
-    <div class="content">
-      <h3>Visão geral</h3>
-      A norma <em>ABNT NBR 15985:2011 &#8212; Informática em Saúde &#8212; Identificação dos indivíduos em saúde</em> define informações e fornece orientações para a identificação de indivíduos em um ambiente de assistência à saúde. A identificação de um único indivíduo, segundo a norma, é influenciada pelos seguintes componentes:
-      <ul>
-        <li><a href="#identificadores">Identificadores</a></li>
-        <li><a href="#nomes">Nomes</a></li>
-        <li><a href="#dados">Dados demográficos</a></li>
-        <li><a href="#enderecos">Endereços</a></li>
-        <li><a href="#comunicacoes">Comunicações eletrônicas</a></li>
-        <li><a href="#vinculos">Vínculos</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="identificadores" class="section">
-    <div class="content">
-      <h3>Identificadores</h3>
-      <p>Um identificador <em>identifica</em> um indivíduo em saúde, por exemplo, a "Carteira de Identidade" e a "Carteira Nacional de Habilitação". Um único indivíduo pode possuir vários identificadores.</p>
-
-      <p>Um estabelecimento de saúde também podem gerar identificadores para os indivíduos que atende. Nesse caso, os identificadores gerados são reconhecidos no âmbito desse estabelecimento.</p>
-
-      <p>Um identificador é composto por:</p>
-      <ul>
-        <li><em>Designação</em>. Esse é o "valor" propriamente dito do identificador, em geral um código ou número, por exemplo, 1.234.567 para a carteira de identidade.</li>
-        <li><em>Área geográfica</em>. Código que representa a área geográfica na qual o identificador é utilizado. Por exemplo, o identificador pode ser nacional ou apenas local ao estabelecimento em questão. Os códigos possíveis são definidos na tabela abaixo:
-          <section class="section">
-            <h5>Tabela: área geográfica (códigos)</h5>
-            <table>
-              <thead>
-                <tr>
-                  <th>Código</th>
-                  <th>Descrição</th>
-                  <th>Código alternativo</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Identificador local.</td>
-                  <td>L</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Identificador de área, região ou distrito.</td>
-                  <td>A</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Identificador de estado, privíncia ou território.</td>
-                  <td>E</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Identificador nacional.</td>
-                  <td>N</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
-        </li>
-        <li><em>Emissor</em>. Organização que aloca uma designação de identificador a um indivíduo. Por exemplo, "Secretaria de Segurança Pública de Goiás". </li>
-        <li><em>Data da emissão</em>. Data na qual foi emitido o identificador do indivíduo.</li>
-        <li><em>Tipo</em>. Código que identifica o tipo de identificador. Por exemplo, "carteira de trabalho" e "certidão de nascimento".</li>
-      </ul>
-
-      <h4>Componentes opcionais</h4>
-      <p>Enquanto os componentes acima são obrigatórios, aqueles abaixo aplicam-se em casos específicos, conforme o tipo de identificador:</p>
-      <ul>
-        <li><em>Certidão de nascimento</em>, <em>certidão de casamento</em> ou <em>certidão de divórcio</em></li>
-        <ul>
-          <li>Nome do cartório. O nome do cartório que emitiu o documento (identificador).</li>
-          <li>Livro. Número do livro no qual foi feito o registro do documento no cartório.</li>
-          <li>Folha. Número da folha do livro no qual foi feito o registro do documento no cartório.</li>
-          <li>Termo. Número do documento.</li>
         </ul>
-        <li><em>Carteira de Trabalho e Previdência Social (CTPS)</em></li>
+    </div>
+</section>
+
+<section id="identificadores" class="section">
+    <div class="content">
+        <h3>Identificadores</h3>
+        <p>Um identificador <em>identifica</em> um indivíduo em saúde, por exemplo, a "Carteira de Identidade" e a
+            "Carteira Nacional de Habilitação". Um único indivíduo pode possuir vários identificadores.</p>
+
+        <p>Um estabelecimento de saúde também podem gerar identificadores para os indivíduos que atende. Nesse caso, os
+            identificadores gerados são reconhecidos no âmbito desse estabelecimento.</p>
+
+        <p>Um identificador é composto por:</p>
         <ul>
-          <li>Série. Número da série da CTPS.</li>
-          <li>Estado. Código do estado onde foi emitida a carteira de trabalho.
-            <section class="section">
-              <h5>Tabela: códigos dos estados do Brasil</h5>
-              <table>
+            <li><em>Designação</em>. Esse é o "valor" propriamente dito do identificador, em geral um código ou número,
+                por exemplo, 1.234.567 para a carteira de identidade.
+            </li>
+            <li><em>Área geográfica</em>. Código que representa a área geográfica na qual o identificador é utilizado.
+                Por exemplo, o identificador pode ser nacional ou apenas local ao estabelecimento em questão. Os códigos
+                possíveis são definidos na tabela abaixo:
+                <section class="section">
+                    <h5>Tabela: área geográfica (códigos)</h5>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Descrição</th>
+                            <th>Código alternativo</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Identificador local.</td>
+                            <td>L</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Identificador de área, região ou distrito.</td>
+                            <td>A</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Identificador de estado, privíncia ou território.</td>
+                            <td>E</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Identificador nacional.</td>
+                            <td>N</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </li>
+            <li><em>Emissor</em>. Organização que aloca uma designação de identificador a um indivíduo. Por exemplo,
+                "Secretaria de Segurança Pública de Goiás".
+            </li>
+            <li><em>Data da emissão</em>. Data na qual foi emitido o identificador do indivíduo.</li>
+            <li><em>Tipo</em>. Código que identifica o tipo de identificador. Por exemplo, "carteira de trabalho" e
+                "certidão de nascimento".
+            </li>
+        </ul>
+
+        <h4>Componentes opcionais</h4>
+        <p>Enquanto os componentes acima são obrigatórios, aqueles abaixo aplicam-se em casos específicos, conforme o
+            tipo de identificador:</p>
+        <ul>
+            <li><em>Certidão de nascimento</em>, <em>certidão de casamento</em> ou <em>certidão de divórcio</em></li>
+            <ul>
+                <li>Nome do cartório. O nome do cartório que emitiu o documento (identificador).</li>
+                <li>Livro. Número do livro no qual foi feito o registro do documento no cartório.</li>
+                <li>Folha. Número da folha do livro no qual foi feito o registro do documento no cartório.</li>
+                <li>Termo. Número do documento.</li>
+            </ul>
+            <li><em>Carteira de Trabalho e Previdência Social (CTPS)</em></li>
+            <ul>
+                <li>Série. Número da série da CTPS.</li>
+                <li>Estado. Código do estado onde foi emitida a carteira de trabalho.
+                    <section class="section">
+                        <h5>Tabela: códigos dos estados do Brasil</h5>
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Código</td>
+                                <td>Estado</td>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>AC</td>
+                                <td>Acre</td>
+                            </tr>
+                            <tr>
+                                <td>AL</td>
+                                <td>Alagoas</td>
+                            </tr>
+                            <tr>
+                                <td>AM</td>
+                                <td>Amazonas</td>
+                            </tr>
+                            <tr>
+                                <td>AP</td>
+                                <td>Amapá</td>
+                            </tr>
+                            <tr>
+                                <td>BA</td>
+                                <td>Bahia</td>
+                            </tr>
+                            <tr>
+                                <td>CE</td>
+                                <td>Ceará</td>
+                            </tr>
+                            <tr>
+                                <td>DF</td>
+                                <td>Distrito Federal</td>
+                            </tr>
+                            <tr>
+                                <td>ES</td>
+                                <td>Espírito Santo</td>
+                            </tr>
+                            <tr>
+                                <td>GO</td>
+                                <td>Goiás</td>
+                            </tr>
+                            <tr>
+                                <td>MA</td>
+                                <td>Maranhão</td>
+                            </tr>
+                            <tr>
+                                <td>MG</td>
+                                <td>Minas Gerais</td>
+                            </tr>
+                            <tr>
+                                <td>MS</td>
+                                <td>Mato Grosso do Sul</td>
+                            </tr>
+                            <tr>
+                                <td>MT</td>
+                                <td>Mato Grosso</td>
+                            </tr>
+                            <tr>
+                                <td>PA</td>
+                                <td>Pará</td>
+                            </tr>
+                            <tr>
+                                <td>PB</td>
+                                <td>Paraíba</td>
+                            </tr>
+                            <tr>
+                                <td>PE</td>
+                                <td>Pernambuco</td>
+                            </tr>
+                            <tr>
+                                <td>PI</td>
+                                <td>Piauí</td>
+                            </tr>
+                            <tr>
+                                <td>PR</td>
+                                <td>Paraná</td>
+                            </tr>
+                            <tr>
+                                <td>RJ</td>
+                                <td>Rio de Janeiro</td>
+                            </tr>
+                            <tr>
+                                <td>RN</td>
+                                <td>Rio Grande do Norte</td>
+                            </tr>
+                            <tr>
+                                <td>RO</td>
+                                <td>Rondônia</td>
+                            </tr>
+                            <tr>
+                                <td>RR</td>
+                                <td>Roraima</td>
+                            </tr>
+                            <tr>
+                                <td>RS</td>
+                                <td>Rio Grande do Sul</td>
+                            </tr>
+                            <tr>
+                                <td>SC</td>
+                                <td>Santa Catarina</td>
+                            </tr>
+                            <tr>
+                                <td>SE</td>
+                                <td>Sergipe</td>
+                            </tr>
+                            <tr>
+                                <td>SP</td>
+                                <td>São Paulo</td>
+                            </tr>
+                            <tr>
+                                <td>TO</td>
+                                <td>Tocantins</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </li>
+            </ul>
+            <li><em>Título de eleitor</em></li>
+            <ul>
+                <li>Seção. Número da seção eleitoral descrito no título eleitoral do indivíduo.</li>
+                <li>Zona. Número da zona eleitoral do título eleitoral do indivíduo.</li>
+            </ul>
+        </ul>
+
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="content has-text-centered">
+                    <h5 class="subtitle">Continue com...</h5>
+                    <a class="button" href="#visao-geral">
+              <span class="icon">
+      <i class="fa fa-arrow-left"></i>
+    </span>
+                        <span>Visão geral</span>
+                    </a>
+                    <a class="button" href="#nomes">
+                        <span>Nomes</span>
+                        <span class="icon">
+      <i class="fa fa-arrow-right"></i>
+    </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</section>
+
+<section class="section" id="nomes">
+    <div class="content">
+
+        <h3>Nomes</h3>
+        <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo. Pelo menos um nome deve
+            estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser
+            definido o uso pretendido de cada um deles e deve ser estabelecido qual é o nome preferido, além de possível
+            representacão alternativa. De form detalhada, um único nome é definido por:</p>
+
+        <div class="tabs is-centered is-boxed">
+            <ul>
+                <li class="li-parcial" id="li-nomes-completo"><a onclick="veja('nomes-completo');">Nome completo</a>
+                </li>
+                <li class="li-parcial" id="li-nomes-preferido"><a onclick="veja('nomes-preferido');">Preferido</a></li>
+                <li class="li-parcial" id="li-nomes-representacao"><a onclick="veja('nomes-representacao');">Representação</a>
+                </li>
+                <li class="li-parcial" id="li-nomes-grupo"><a onclick="veja('nomes-grupo');">Uso</a></li>
+                <li class="li-parcial" id="li-nomes-indicador"><a onclick="veja('nomes-indicador');">Indicador</a></li>
+            </ul>
+        </div>
+
+        <div class="parcial" id="nomes-completo">
+            <h4>Nome completo</h4>
+
+            <p> O nome é formado pela concatenação dos títulos, primeiros nomes, sobrenomes e sufixos. Por exemplo, "Sr.
+                João da Silva Júnior" é o nome completo formado por um único título (Sr.), um único primeiro nome
+                (João), um sobrenome (da Silva) e um sufixo (Júnior).</p>
+
+            <p>Não é obrigatório um título, nem tampouco um sufixo. Ou seja, o nome completo "Pedro Carvalho" é formado
+                apenas pelo primeiro nome "Pedro" e o sobrenome "Carvalho", simples assim. </p>
+
+            <p>Por outro lado, podemos ter outros nomes como "Magnífico Reitor Fulano da Silva Beltrano", onde há dois
+                sufixos (magnífico e reitor), um primeiro nome (Fulano) e sobrenomes (da Silva e Beltrano), sem
+                sufixo.</p>
+
+            <p>Podem ser fornecidos até 9 títulos, 9 primeiros nomes, 9 sobrenomes e 9 sufixos para cada nome. Em
+                qualquer um destes casos, contudo, caso 9 elementos não sejam suficientes, então o nono elemento deve
+                conter todos os demais a partir do nono.</p>
+
+        </div>
+
+        <div class="parcial" id="nomes-preferido">
+            <h4>Nome preferido</h4>
+            <p>Quando recém-nascido o indivíduo possui um nome temporário. Quando registrado, o nome registrado passa a
+                ser utilizado, contudo, o nome de recém-nascido deverá persistir para efeito de relatórios, por exemplo.
+                Casamentos, dentre outras situações podem resultar em alteração de nome, além da possibilidade de um
+                indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e "Edison Arantes do Nascimento" são nomes
+                do maior jogador de futebol de todos os tempos, conforme a Wikipedia.</p>
+
+            <p>Os nomes precisam ser preservados, e não apenas o nome corrente ou último nome, dado que os nomes
+                anteriores foram empregados em registros formais, por exemplo, por uma empresa de plano de saúde.</p>
+
+            <p>Quando um indivíduo possui mais de um nome, deve ser identificado o nome preferido. A preferência é uma
+                indicação do próprio indivíduo. Adicionalmente, em um dado instante de tempo, um único nome é
+                preferido.</p>
+
+            <h5>Tabela: código de nome preferido</h5>
+            <table>
                 <thead>
-                  <tr>
+                <tr>
                     <td>Código</td>
-                    <td>Estado</td>
-                  </tr>
+                    <td>Descrição</td>
+                </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>AC</td>
-                    <td>Acre</td>
-                  </tr>
-                  <tr>
-                    <td>AL</td>
-                    <td>Alagoas</td>
-                  </tr>
-                  <tr>
-                    <td>AM</td>
-                    <td>Amazonas</td>
-                  </tr>
-                  <tr>
-                    <td>AP</td>
-                    <td>Amapá</td>
-                  </tr>
-                  <tr>
-                    <td>BA</td>
-                    <td>Bahia</td>
-                  </tr>
-                  <tr>
-                    <td>CE</td>
-                    <td>Ceará</td>
-                  </tr>
-                  <tr>
-                    <td>DF</td>
-                    <td>Distrito Federal</td>
-                  </tr>
-                  <tr>
-                    <td>ES</td>
-                    <td>Espírito Santo</td>
-                  </tr>
-                  <tr>
-                    <td>GO</td>
-                    <td>Goiás</td>
-                  </tr>
-                  <tr>
-                    <td>MA</td>
-                    <td>Maranhão</td>
-                  </tr>
-                  <tr>
-                    <td>MG</td>
-                    <td>Minas Gerais</td>
-                  </tr>
-                  <tr>
-                    <td>MS</td>
-                    <td>Mato Grosso do Sul</td>
-                  </tr>
-                  <tr>
-                    <td>MT</td>
-                    <td>Mato Grosso</td>
-                  </tr>
-                  <tr>
-                    <td>PA</td>
-                    <td>Pará</td>
-                  </tr>
-                  <tr>
-                    <td>PB</td>
-                    <td>Paraíba</td>
-                  </tr>
-                  <tr>
-                    <td>PE</td>
-                    <td>Pernambuco</td>
-                  </tr>
-                  <tr>
-                    <td>PI</td>
-                    <td>Piauí</td>
-                  </tr>
-                  <tr>
-                    <td>PR</td>
-                    <td>Paraná</td>
-                  </tr>
-                  <tr>
-                    <td>RJ</td>
-                    <td>Rio de Janeiro</td>
-                  </tr>
-                  <tr>
-                    <td>RN</td>
-                    <td>Rio Grande do Norte</td>
-                  </tr>
-                  <tr>
-                    <td>RO</td>
-                    <td>Rondônia</td>
-                  </tr>
-                  <tr>
-                    <td>RR</td>
-                    <td>Roraima</td>
-                  </tr>
-                  <tr>
-                    <td>RS</td>
-                    <td>Rio Grande do Sul</td>
-                  </tr>
-                  <tr>
-                    <td>SC</td>
-                    <td>Santa Catarina</td>
-                  </tr>
-                  <tr>
-                    <td>SE</td>
-                    <td>Sergipe</td>
-                  </tr>
-                  <tr>
-                    <td>SP</td>
-                    <td>São Paulo</td>
-                  </tr>
-                  <tr>
-                    <td>TO</td>
-                    <td>Tocantins</td>
-                  </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Este é o nome preferido. Deve ser usado em relatórios, cartas e outros, exceto se um uso
+                        específico, comentado adiante, indicar o uso de outro nome.
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Este não é o nome preferido.</td>
+                </tr>
                 </tbody>
-              </table>
-            </section>
-          </li>
-        </ul>
-        <li><em>Título de eleitor</em></li>
-        <ul>
-          <li>Seção. Número da seção eleitoral descrito no título eleitoral do indivíduo.</li>
-          <li>Zona. Número da zona eleitoral do título eleitoral do indivíduo.</li>
-        </ul>
-      </ul>
+            </table>
 
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="content has-text-centered">
-            <h5 class="subtitle">Continue com...</h5>
-            <a class="button" href="#visao-geral">
+        </div>
+
+        <div class="parcial" id="nomes-representacao">
+            <h4>Representação alternativa</h4>
+            <p>A representação alternativa é empregada quando a representação do nome é baseada em fonte ou caractere
+                alternativo. A norma cita, por exemplo, o nome russo doméstico ou a representação do nome em caracteres
+                chineses. Adicionalmente, um mesmo nome pode possuir várias representações alternativas.</p>
+        </div>
+
+        <div class="parcial" id="nomes-grupo">
+            <h4>Grupo de utilização do nome</h4>
+            <p>Um nome pode ser utilizado conforme a classificação que permite a diferenciação entre os usos dos nomes
+                registrados para o indivíduo. Cada classificação é definida por um grupo e todo nome está associado a um
+                ou mais grupos de usos.</p>
+
+            <p> Cada grupo de uso se aplica a um período com data de início e término. A data de início estabelece a
+                partir de quando o nome em questão pode ser utilizado, enquanto a data de término a data a partir da
+                qual o nome não mais pode ser empregado para a finalidade do grupo em questão. Em ambos os casos pode
+                ser empregada a data no formato AAAAMMDD. A representação da data, contudo, deve ser compreendida na
+                região em que está sendo usada.</p>
+
+            <p>Se o nome estiver associado a um identificador, então tal identificador deve estar associado ao grupo de
+                uso em questão, por meio do item <em>identificador</em>. Ou seja, nesse caso, o grupo de uso também
+                permite obter o identificador no qual o nome do indivíduo está definido.</p>
+
+            <p>Por último, além do período e do identificador eventualmente associado, um grupo também inclui o código
+                de uso do nome, conforme a tabela abaixo.</p>
+
+            <h5>Tabela: código do uso do nome</h5>
+            <table>
+                <thead>
+                <tr>
+                    <td>Código</td>
+                    <td>Descrição</td>
+                    <td>Representação alternativa</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Relatório</td>
+                    <td>R</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nome de recém-nascido</td>
+                    <td>N</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Nome profissional ou comercial</td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Nome de solteiro, nome de nascimento ou nome original</td>
+                    <td>S</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Nome registrado (nome legal)</td>
+                    <td>L</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Outro nome (<em>alias</em>)</td>
+                    <td>O</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="parcial" id="nomes-indicador">
+            <h4>Indicador de uso condicional</h4>
+            <p>Define as condições específicas ou regras que devem ser aplicadas ao nome em questão do indivíduo
+                conforme a tabela abaixo.</p>
+
+            <h5>Tabela: uso condicional</h5>
+            <table>
+                <thead>
+                <tr>
+                    <td>Código</td>
+                    <td>Descrição</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Informação não confiável <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                            class="info"><em>Informação não confiável</em>Quando se sabe que o nome registrado é fictício ou um nome parcial.</span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Nome com erro de digitação <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                            class="info"><em>Nome com erro de digitação</em>Indica que o nome contém erro de digitação, mas que deve ser retido para uma potencial vinculação futura.</span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Nome para não ser usado <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                            class="info"><em>Nome para não ser usado</em>Indica que nome não pode ser usado para se referir ao indivíduo.</span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Vínculo do nome proibido por lei <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                            class="info"><em>Vínculo do nome proibido por lei</em>Indica que este nome e os nomes anteriores a este na sequência de nomes do indivíduo em questão não podem ser exibidos ao se buscar por ou lidar com informações e eventos associados com um nome que segue a este na sequência.</span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Requisito de privacidade/segurança especial <span class="tooltip"><i
+                            class="fa fa-info-circle"></i><span class="info"><em>Requisito de privacidade/segurança especial</em>Nomes para os quais episódios são vinculados e devem ser acessíveis somente para pessoas específicas autorizadas.</span></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Nome temporário <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome temporário</em>Indica nome não determinado, por exemplo, nome substituto utilizado em situação de emergência ou nome de recém-nascido.</span></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="content has-text-centered">
+                    <h5 class="subtitle">Continue com...</h5>
+                    <a class="button" href="#identificadores">
               <span class="icon">
       <i class="fa fa-arrow-left"></i>
     </span>
-              <span>Visão geral</span>
-            </a>
-            <a class="button" href="#nomes">
-              <span>Nomes</span>
-              <span class="icon">
+                        <span>Identificadores</span>
+                    </a>
+                    <a class="button" href="#dados">
+                        <span>Dados demográficos</span>
+                        <span class="icon">
       <i class="fa fa-arrow-right"></i>
     </span>
-            </a>
-          </div>
-        </div>
-      </section>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
+</section>
 
-  </section>
-
-  <section class="section" id="nomes">
+<section class="section" id="dados">
     <div class="content">
+        <h3>Dados demográficos</h3>
+        <p>Dados demográficos adicionais podem ser empregados para maximizar a probabilidade da identificação positiva
+            de um indivíduo. Tais dados incluem: (a) data de nascimento; (b) óbito; (c) sexo; (d) nome da mãe; (e) nome
+            do pai; (f) situação familiar; (g) raça/cor; (h) nacionalidade; (i) pluralidade do nascimento e (j)
+            comentário de identificação.</p>
 
-      <h3>Nomes</h3>
-      <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo. Pelo menos um nome deve estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser definido o uso pretendido de cada um deles e deve ser estabelecido qual é o nome preferido, além de possível representacão alternativa. De form detalhada, um único nome é definido por:</p>
-
-      <div class="tabs is-centered is-boxed">
-        <ul>
-          <li class="li-parcial" id="li-nomes-completo"><a onclick="veja('nomes-completo');">Nome completo</a></li>
-          <li class="li-parcial" id="li-nomes-preferido"><a onclick="veja('nomes-preferido');">Preferido</a></li>
-          <li class="li-parcial" id="li-nomes-representacao"><a onclick="veja('nomes-representacao');">Representação</a></li>
-          <li class="li-parcial" id="li-nomes-grupo"><a onclick="veja('nomes-grupo');">Uso</a></li>
-          <li class="li-parcial" id="li-nomes-indicador"><a onclick="veja('nomes-indicador');">Indicador</a></li>
-        </ul>
-      </div>
-
-      <div class="parcial" id="nomes-completo">
-        <h4>Nome completo</h4>
-
-        <p> O nome é formado pela concatenação dos títulos, primeiros nomes, sobrenomes e sufixos. Por exemplo, "Sr. João da Silva Júnior" é o nome completo formado por um único título (Sr.), um único primeiro nome (João), um sobrenome (da Silva) e um sufixo (Júnior).</p>
-
-        <p>Não é obrigatório um título, nem tampouco um sufixo. Ou seja, o nome completo "Pedro Carvalho" é formado apenas pelo primeiro nome "Pedro" e o sobrenome "Carvalho", simples assim. </p>
-
-        <p>Por outro lado, podemos ter outros nomes como "Magnífico Reitor Fulano da Silva Beltrano", onde há dois sufixos (magnífico e reitor), um primeiro nome (Fulano) e sobrenomes (da Silva e Beltrano), sem sufixo.</p>
-
-        <p>Podem ser fornecidos até 9 títulos, 9 primeiros nomes, 9 sobrenomes e 9 sufixos para cada nome. Em qualquer um destes casos, contudo, caso 9 elementos não sejam suficientes, então o nono elemento deve conter todos os demais a partir do nono.</p>
-
-      </div>
-
-      <div class="parcial" id="nomes-preferido">
-        <h4>Nome preferido</h4>
-        <p>Quando recém-nascido o indivíduo possui um nome temporário. Quando registrado, o nome registrado passa a ser utilizado, contudo, o nome de recém-nascido deverá persistir para efeito de relatórios, por exemplo. Casamentos, dentre outras situações podem resultar em alteração de nome, além da possibilidade de um indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e "Edison Arantes do Nascimento" são nomes do maior jogador de futebol de todos os tempos, conforme a Wikipedia.</p>
-
-        <p>Os nomes precisam ser preservados, e não apenas o nome corrente ou último nome, dado que os nomes anteriores foram empregados em registros formais, por exemplo, por uma empresa de plano de saúde.</p>
-
-        <p>Quando um indivíduo possui mais de um nome, deve ser identificado o nome preferido. A preferência é uma indicação do próprio indivíduo. Adicionalmente, em um dado instante de tempo, um único nome é preferido.</p>
-
-        <h5>Tabela: código de nome preferido</h5>
-        <table>
-          <thead>
-            <tr>
-              <td>Código</td>
-              <td>Descrição</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Este é o nome preferido. Deve ser usado em relatórios, cartas e outros, exceto se um uso específico, comentado adiante, indicar o uso de outro nome.</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Este não é o nome preferido.</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-
-      <div class="parcial" id="nomes-representacao">
-        <h4>Representação alternativa</h4>
-        <p>A representação alternativa é empregada quando a representação do nome é baseada em fonte ou caractere alternativo. A norma cita, por exemplo, o nome russo doméstico ou a representação do nome em caracteres chineses. Adicionalmente, um mesmo nome pode possuir várias representações alternativas.</p>
-      </div>
-
-      <div class="parcial" id="nomes-grupo">
-        <h4>Grupo de utilização do nome</h4>
-        <p>Um nome pode ser utilizado conforme a classificação que permite a diferenciação entre os usos dos nomes registrados para o indivíduo. Cada classificação é definida por um grupo e todo nome está associado a um ou mais grupos de usos.</p>
-
-        <p> Cada grupo de uso se aplica a um período com data de início e término. A data de início estabelece a partir de quando o nome em questão pode ser utilizado, enquanto a data de término a data a partir da qual o nome não mais pode ser empregado para a finalidade do grupo em questão. Em ambos os casos pode ser empregada a data no formato AAAAMMDD. A representação da data, contudo, deve ser compreendida na região em que está sendo usada.</p>
-
-        <p>Se o nome estiver associado a um identificador, então tal identificador deve estar associado ao grupo de uso em questão, por meio do item <em>identificador</em>. Ou seja, nesse caso, o grupo de uso também permite obter o identificador no qual o nome do indivíduo está definido.</p>
-
-        <p>Por último, além do período e do identificador eventualmente associado, um grupo também inclui o código de uso do nome, conforme a tabela abaixo.</p>
-
-        <h5>Tabela: código do uso do nome</h5>
-        <table>
-          <thead>
-            <tr>
-              <td>Código</td>
-              <td>Descrição</td>
-              <td>Representação alternativa</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Relatório</td>
-              <td>R</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Nome de recém-nascido</td>
-              <td>N</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Nome profissional ou comercial</td>
-              <td>C</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Nome de solteiro, nome de nascimento ou nome original</td>
-              <td>S</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Nome registrado (nome legal)</td>
-              <td>L</td>
-            </tr>
-            <tr>
-              <td>8</td>
-              <td>Outro nome (<em>alias</em>)</td>
-              <td>O</td>
-            </tr>
-          </tbody>
-        </table>
-
-      </div>
-
-      <div class="parcial" id="nomes-indicador">
-        <h4>Indicador de uso condicional</h4>
-        <p>Define as condições específicas ou regras que devem ser aplicadas ao nome em questão do indivíduo conforme a tabela abaixo.</p>
-
-        <h5>Tabela: uso condicional</h5>
-        <table>
-          <thead>
-            <tr>
-              <td>Código</td>
-              <td>Descrição</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Informação não confiável <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Informação não confiável</em>Quando se sabe que o nome registrado é fictício ou um nome parcial.</span></span>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Nome com erro de digitação <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome com erro de digitação</em>Indica que o nome contém erro de digitação, mas que deve ser retido para uma potencial vinculação futura.</span></span>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Nome para não ser usado <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome para não ser usado</em>Indica que nome não pode ser usado para se referir ao indivíduo.</span></span>
-              </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Vínculo do nome proibido por lei <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Vínculo do nome proibido por lei</em>Indica que este nome e os nomes anteriores a este na sequência de nomes do indivíduo em questão não podem ser exibidos ao se buscar por ou lidar com informações e eventos associados com um nome que segue a este na sequência.</span></span>
-              </td>
-            </tr>
-            <tr>
-              <td>6</td>
-              <td>Requisito de privacidade/segurança especial <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Requisito de privacidade/segurança especial</em>Nomes para os quais episódios são vinculados e devem ser acessíveis somente para pessoas específicas autorizadas.</span></span>
-              </td>
-            </tr>
-            <tr>
-              <td>9</td>
-              <td>Nome temporário <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome temporário</em>Indica nome não determinado, por exemplo, nome substituto utilizado em situação de emergência ou nome de recém-nascido.</span></span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="content has-text-centered">
-            <h5 class="subtitle">Continue com...</h5>
-            <a class="button" href="#identificadores">
-              <span class="icon">
-      <i class="fa fa-arrow-left"></i>
-    </span>
-              <span>Identificadores</span>
-            </a>
-            <a class="button" href="#dados">
-              <span>Dados demográficos</span>
-              <span class="icon">
-      <i class="fa fa-arrow-right"></i>
-    </span>
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  </section>
-
-  <section class="section" id="dados">
-    <div class="content">
-      <h3>Dados demográficos</h3>
-      <p>Dados demográficos adicionais podem ser empregados para maximizar a probabilidade da identificação positiva de um indivíduo. Tais dados incluem: (a) data de nascimento; (b) óbito; (c) sexo; (d) nome da mãe; (e) nome do pai; (f) situação familiar; (g) raça/cor; (h) nacionalidade; (i) pluralidade do nascimento e (j) comentário de identificação.</p>
-
-      <div class="box">
-        <div class="field">
-          <label class="label">Mãe</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="nome completo da mãe">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Pai</label>
-          <div class="control">
-            <input class="input" type="text" placeholder="nome completo do pai">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Situação familiar (convive com)</label>
-          <div class="control">
-            <input class="checkbox" type="checkbox" value="1"><span>&nbsp;companheiro(a) e filho(s)</span><br>
-            <input class="checkbox" type="checkbox" value="2"><span>&nbsp;companheiro(a) com laços conjugais e sem filhos</span><br>
-            <input class="checkbox" type="checkbox" value="3"><span>&nbsp;companheiro(a), com filho(s) e/ou outro(s) familiar(es)</span><br>
-            <input class="checkbox" type="checkbox" value="4"><span>&nbsp;familiar(es) sem companheiro(a)</span><br>
-            <input class="checkbox" type="checkbox" value="5"><span>&nbsp;outra(s) pessoa(s) sem laços consanguíneos e/ou laços conjugais</span><br>
-            <input class="checkbox" type="checkbox" value="6"><span>&nbsp;vive só</span><br>
-          </div>
-        </div>
-
-        <!-- data de nascimento -->
         <div class="box">
-          <div class="field">
-            <label class="label">Data de nascimento</label>
-            <input type="date">
-          </div>
-          <div class="field">
-            <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label>
-          </div>
-          <div class="field">
-            <label class="label">Seguimento</label>
-            <div class="control">
-              <input type="checkbox" class="checkbox">&nbsp;Data precisa de seguimento
+            <div class="field">
+                <label class="label">Mãe</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="nome completo da mãe">
+                </div>
             </div>
-          </div>
+            <div class="field">
+                <label class="label">Pai</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="nome completo do pai">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Situação familiar (convive com)</label>
+                <div class="control">
+                    <input class="checkbox" type="checkbox" value="1"><span>&nbsp;companheiro(a) e filho(s)</span><br>
+                    <input class="checkbox" type="checkbox" value="2"><span>&nbsp;companheiro(a) com laços conjugais e sem filhos</span><br>
+                    <input class="checkbox" type="checkbox" value="3"><span>&nbsp;companheiro(a), com filho(s) e/ou outro(s) familiar(es)</span><br>
+                    <input class="checkbox" type="checkbox" value="4"><span>&nbsp;familiar(es) sem companheiro(a)</span><br>
+                    <input class="checkbox" type="checkbox" value="5"><span>&nbsp;outra(s) pessoa(s) sem laços consanguíneos e/ou laços conjugais</span><br>
+                    <input class="checkbox" type="checkbox" value="6"><span>&nbsp;vive só</span><br>
+                </div>
+            </div>
+
+            <!-- data de nascimento -->
+            <div class="box">
+                <div class="field">
+                    <label class="label">Data de nascimento</label>
+                    <input type="date">
+                </div>
+                <div class="field">
+                    <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
+                                                                                                       type="radio"
+                                                                                                       name="dia"
+                                                                                                       value="A">
+                    Acurado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                        Estimado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                        Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                                  value="A">
+                    Acurado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                        Estimado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                        Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                                  value="A">
+                    Acurado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                        Estimado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                        Desconhecido</label>
+                </div>
+                <div class="field">
+                    <label class="label">Seguimento</label>
+                    <div class="control">
+                        <input type="checkbox" class="checkbox">&nbsp;Data precisa de seguimento
+                    </div>
+                </div>
+            </div>
+
+            <!-- óbito -->
+            <div class="box">
+                <div class="field">
+                    <label class="label">Óbito</label>
+                    <input type="date">
+                </div>
+                <div class="field">
+                    <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
+                                                                                                       type="radio"
+                                                                                                       name="dia"
+                                                                                                       value="A">
+                    Acurado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                        Estimado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                        Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                                  value="A">
+                    Acurado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                        Estimado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                        Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                                  value="A">
+                    Acurado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                        Estimado</label>
+                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                        Desconhecido</label>
+                </div>
+                <div class="field">
+                    <label class="label">Fonte de notificação</label>
+                    <div class="control">
+                        <label class="radio"><input class="radio" type="radio" name="dia" value="1">
+                            Cartório</label>
+                        <label class="radio"><input class="radio" type="radio" name="dia" value="2">
+                            Prestador de assistência à saúde</label>
+                        <label class="radio"><input class="radio" type="radio" name="dia" value="3">
+                            Parente</label>
+                        <label class="radio"><input class="radio" type="radio" name="dia" value="4">
+                            Outro</label>
+                        <label class="radio"><input class="radio" type="radio" name="dia" value="9" checked>
+                            Desconhecido</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Raça/cor</label>
+                <div class="control">
+                    <input class="checkbox" type="checkbox" value="1"><span>&nbsp;branca</span><br>
+                    <input class="checkbox" type="checkbox" value="2"><span>&nbsp;preta</span><br>
+                    <input class="checkbox" type="checkbox" value="3"><span>&nbsp;parda</span><br>
+                    <input class="checkbox" type="checkbox" value="4"><span>&nbsp;amarela</span><br>
+                    <input class="checkbox" type="checkbox" value="5"><span>&nbsp;indígena</span>
+                </div>
+            </div>
+
         </div>
 
-        <!-- óbito -->
         <div class="box">
-          <div class="field">
-            <label class="label">Óbito</label>
-            <input type="date">
-          </div>
-          <div class="field">
-            <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-            <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label>
-          </div>
-          <div class="field">
-            <label class="label">Fonte de notificação</label>
-            <div class="control">
-              <label class="radio"><input class="radio" type="radio" name="dia" value="1">
-          Cartório</label>
-              <label class="radio"><input class="radio" type="radio" name="dia" value="2">
-          Prestador de assistência à saúde</label>
-              <label class="radio"><input class="radio" type="radio" name="dia" value="3">
-          Parente</label>
-              <label class="radio"><input class="radio" type="radio" name="dia" value="4">
-          Outro</label>
-              <label class="radio"><input class="radio" type="radio" name="dia" value="9" checked>
-          Desconhecido</label>
+            <div class="field">
+                <label class="label">Sexo</label>
+                <div class="control">
+                    <label class="radio">
+                        <input class="radio" type="radio" name="sexo" value="1">
+                        masculino (M)
+                    </label><br>
+                    <label class="radio">
+                        <input class="radio" type="radio" name="sexo" value="2">
+                        feminino (F)
+                    </label><br>
+                    <label class="radio">
+                        <input class="radio" type="radio" name="sexo" value="3">
+                        intersexo ou indeterminado (I)</label><br>
+                    <label class="radio">
+                        <input class="radio" type="radio" name="sexo" value="9" checked>
+                        não declarado (U)</label>
+                </div>
             </div>
-          </div>
         </div>
 
-        <div class="field">
-          <label class="label">Raça/cor</label>
-          <div class="control">
-            <input class="checkbox" type="checkbox" value="1"><span>&nbsp;branca</span><br>
-            <input class="checkbox" type="checkbox" value="2"><span>&nbsp;preta</span><br>
-            <input class="checkbox" type="checkbox" value="3"><span>&nbsp;parda</span><br>
-            <input class="checkbox" type="checkbox" value="4"><span>&nbsp;amarela</span><br>
-            <input class="checkbox" type="checkbox" value="5"><span>&nbsp;indígena</span>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="box">
-        <div class="field">
-          <label class="label">Sexo</label>
-          <div class="control">
-            <label class="radio">
-            <input class="radio" type="radio" name="sexo" value="1">
-            masculino (M)
-            </label><br>
-            <label class="radio">
-              <input class="radio" type="radio" name="sexo" value="2">
-              feminino (F)
-            </label><br>
-            <label class="radio">
-              <input class="radio" type="radio" name="sexo" value="3">
-                intersexo ou indeterminado (I)</label><br>
-            <label class="radio">
-              <input class="radio" type="radio" name="sexo" value="9" checked>
-              não declarado (U)</label>
-          </div>
-        </div>
-      </div>
-
-      <!-- situação familiar -->
-      <div class="box">
-        <div class="field">
-          <label class="label">Situação familiar (convive com)</label>
-          <div class="select">
-            <select>
-    <option value="1">companheiro(a) e filho(s)</option>
-    <option value="2">companheiro(a) com laços conjugais e sem filhos</option>
-    <option value="3">companheiro(a), com filho(s) e/ou outro(s) familiares.</option>
-    <option value="4">familiar(es) sem companheiro(a)</option>
-    <option value="5">outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais</option>
-    <option value="6">Vive só</option>
-  </select>
-          </div>
-        </div>
-      </div>
-
-      <!-- nacionalidade -->
-      <div class="box">
-        <label class="label">Nacionalidade</label>
-        <div class="control" onchange="nacionalidade();">
-          <label class="radio">
-            <input id="brasileira" type="radio" name="nacionalidade" value="1" checked>
-            Brasileiro</label>
-          <label class="radio">
-            <input type="radio" name="nacionalidade" value="2">
-            Estrangeiro</label>
-        </div>
-
-        <div id="db" class="box">
-          <div class="field">
-            <div class="control">
-              <label class="label">Estado de nascimento</label>
-              <div class="select is-small">
-                <select id="estados" onchange="atualizaMunicipios()">
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AM">Amazonas</option>
-        <option value="AP">Amapá</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="PR">Paraná</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="SC">Santa Catarina</option>
-        <option value="SE">Sergipe</option>
-        <option value="SP">São Paulo</option>
-        <option value="TO">Tocantins</option>
-      </select>
-              </div>
+        <!-- situação familiar -->
+        <div class="box">
+            <div class="field">
+                <label class="label">Situação familiar (convive com)</label>
+                <div class="select">
+                    <select>
+                        <option value="1">companheiro(a) e filho(s)</option>
+                        <option value="2">companheiro(a) com laços conjugais e sem filhos</option>
+                        <option value="3">companheiro(a), com filho(s) e/ou outro(s) familiares.</option>
+                        <option value="4">familiar(es) sem companheiro(a)</option>
+                        <option value="5">outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais</option>
+                        <option value="6">Vive só</option>
+                    </select>
+                </div>
             </div>
-          </div>
-          <div class="field">
-            <div class="control">
-              <label id="municipio-label" class="label"></label>
-              <div class="select is-small">
-                <select id="municipios">
-      </select>
-              </div>
+        </div>
+
+        <!-- nacionalidade -->
+        <div class="box">
+            <label class="label">Nacionalidade</label>
+            <div class="control" onchange="nacionalidade();">
+                <label class="radio">
+                    <input id="brasileira" type="radio" name="nacionalidade" value="1" checked>
+                    Brasileiro</label>
+                <label class="radio">
+                    <input type="radio" name="nacionalidade" value="2">
+                    Estrangeiro</label>
             </div>
-          </div>
-        </div>
 
-        <div id="de" class="box">
-          <div class="field">
-            <div class="control">
-              <label class="label">País de nascimento</label>
-              <div class="select is-small">
-                <select id="paises">
-      </select>
-              </div>
+            <div id="db" class="box">
+                <div class="field">
+                    <div class="control">
+                        <label class="label">Estado de nascimento</label>
+                        <div class="select is-small">
+                            <select id="estados" onchange="atualizaMunicipios()">
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="PR">Paraná</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <label id="municipio-label" class="label"></label>
+                        <div class="select is-small">
+                            <select id="municipios">
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="field">
-            <label class="label">Data de entrada no Brasil</label>
-            <input type="date">
-          </div>
-        </div>
 
-      </div>
-
-      <!-- pluralidade de nascimentos -->
-      <div class="box">
-        <div class="field">
-          <div class="control">
-            <label class="label">Pluralidade de nascimentos</label>
-            <div class="select is-small">
-              <select>
-                <option value="1">Único</option>
-                <option value="2">Gêmeos</option>
-                <option value="3">Trigêmeos</option>
-                <option value="4">Quádruplos</option>
-                <option value="5">Quíntuplos</option>
-                <option value="6">Sêxtuplos</option>
-                <option value="7">Outros</option>
-                <option value="9" selected>Não declarado</option>
-      </select>
+            <div id="de" class="box">
+                <div class="field">
+                    <div class="control">
+                        <label class="label">País de nascimento</label>
+                        <div class="select is-small">
+                            <select id="paises">
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Data de entrada no Brasil</label>
+                    <input type="date">
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- ordem de nascimento -->
-      <div class="box">
-        <div class="field">
-          <div class="control">
-            <label class="label">Ordem de nascimento</label>
-            <div class="select is-small">
-              <select>
-                <option value="1">único ou primeiro</option>
-                <option value="2">segundo</option>
-                <option value="3">terceiro</option>
-                <option value="4">quarto</option>
-                <option value="5">quinto</option>
-                <option value="6">sexto</option>
-                <option value="7">outros</option>
-                <option value="9" selected>não declarado</option>
-      </select>
+        </div>
+
+        <!-- pluralidade de nascimentos -->
+        <div class="box">
+            <div class="field">
+                <div class="control">
+                    <label class="label">Pluralidade de nascimentos</label>
+                    <div class="select is-small">
+                        <select>
+                            <option value="1">Único</option>
+                            <option value="2">Gêmeos</option>
+                            <option value="3">Trigêmeos</option>
+                            <option value="4">Quádruplos</option>
+                            <option value="5">Quíntuplos</option>
+                            <option value="6">Sêxtuplos</option>
+                            <option value="7">Outros</option>
+                            <option value="9" selected>Não declarado</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
 
-      <!-- comentário de identificação -->
-      <div class="box">
-        <div class="field">
-          <div class="control">
-            <label class="label">Comentário de identificação</label>
-            <textarea class="textarea is-small" placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
-          </div>
+        <!-- ordem de nascimento -->
+        <div class="box">
+            <div class="field">
+                <div class="control">
+                    <label class="label">Ordem de nascimento</label>
+                    <div class="select is-small">
+                        <select>
+                            <option value="1">único ou primeiro</option>
+                            <option value="2">segundo</option>
+                            <option value="3">terceiro</option>
+                            <option value="4">quarto</option>
+                            <option value="5">quinto</option>
+                            <option value="6">sexto</option>
+                            <option value="7">outros</option>
+                            <option value="9" selected>não declarado</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <!-- comentário de identificação -->
+        <div class="box">
+            <div class="field">
+                <div class="control">
+                    <label class="label">Comentário de identificação</label>
+                    <textarea class="textarea is-small"
+                              placeholder="exemplo: dois pacientes com o mesmo nome. Não é o mesmo que 123456"></textarea>
+                </div>
+            </div>
+        </div>
     </div>
 
     <section class="hero is-light">
-      <div class="hero-body">
-        <div class="content has-text-centered">
-          <h5 class="subtitle">Continue com...</h5>
-          <a class="button" href="#nomes">
+        <div class="hero-body">
+            <div class="content has-text-centered">
+                <h5 class="subtitle">Continue com...</h5>
+                <a class="button" href="#nomes">
             <span class="icon">
       <i class="fa fa-arrow-left"></i>
     </span>
-            <span>Nomes</span>
-          </a>
-          <a class="button" href="#enderecos">
-            <span>Endereços</span>
-            <span class="icon">
+                    <span>Nomes</span>
+                </a>
+                <a class="button" href="#enderecos">
+                    <span>Endereços</span>
+                    <span class="icon">
       <i class="fa fa-arrow-right"></i>
     </span>
-          </a>
+                </a>
+            </div>
         </div>
-      </div>
     </section>
-  </section>
+</section>
 
-  <section class="section" id="enderecos">
+<section class="section" id="enderecos">
     <div class="content">
-      <h3>Endereços</h3>
-      <div class="box">
+        <h3>Endereços</h3>
+        <div class="box">
 
-        <!-- tipo de endereço -->
-        <div class="field">
-          <label class="label">Tipo de endereço</label>
-          <div class="select is-small">
-            <select name="tipo">
-                <option value="1">Comercial</option>
-                <option value="2">Correio ou postal</option>
-                <option value="3">Acomodação temporária</option>
-                <option value="4">Residencial</option>
-                <option value="8">Sem endereço fixo</option>
-                <option value="9">Desconhecido/não declarado</option>
-              </select>
-          </div>
-        </div>
+            <!-- tipo de endereço -->
+            <div class="field">
+                <label class="label">Tipo de endereço</label>
+                <div class="select is-small">
+                    <select name="tipo">
+                        <option value="1">Comercial</option>
+                        <option value="2">Correio ou postal</option>
+                        <option value="3">Acomodação temporária</option>
+                        <option value="4">Residencial</option>
+                        <option value="8">Sem endereço fixo</option>
+                        <option value="9">Desconhecido/não declarado</option>
+                    </select>
+                </div>
+            </div>
 
-        <!-- data inicial do tipo de enereço -->
-        <div class="field">
-          <label class="label">Data inicial</label>
-          <input type="date">
-        </div>
-        <div class="field">
-          <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label>
-        </div>
+            <!-- data inicial do tipo de enereço -->
+            <div class="field">
+                <label class="label">Data inicial</label>
+                <input type="date">
+            </div>
+            <div class="field">
+                <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
+                                                                                                   type="radio"
+                                                                                                   name="dia" value="A">
+                Acurado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    Estimado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                              value="A">
+                Acurado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    Estimado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                              value="A">
+                Acurado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    Estimado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    Desconhecido</label>
+            </div>
 
-        <!-- data final do tipo de enereço -->
-        <div class="field">
-          <label class="label">Data final</label>
-          <input type="date">
-        </div>
-        <div class="field">
-          <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia" value="A">
-          Acurado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="E">
-          Estimado</label>
-          <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-          Desconhecido</label>
-        </div>
+            <!-- data final do tipo de enereço -->
+            <div class="field">
+                <label class="label">Data final</label>
+                <input type="date">
+            </div>
+            <div class="field">
+                <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
+                                                                                                   type="radio"
+                                                                                                   name="dia" value="A">
+                Acurado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    Estimado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                              value="A">
+                Acurado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    Estimado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
+                                                                              value="A">
+                Acurado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    Estimado</label>
+                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    Desconhecido</label>
+            </div>
 
-        <!-- pais -->
-        <label class="label">País</label>
-        <div class="control" onchange="brasilOutro();">
-          <label class="radio">
-            <input id="brasil" type="radio" name="pais" checked>
-            Brasil</label>
-          <label class="radio">
-            <input type="radio" name="pais">
-            Outro</label>
-        </div>
+            <!-- pais -->
+            <label class="label">País</label>
+            <div class="control" onchange="brasilOutro();">
+                <label class="radio">
+                    <input id="brasil" type="radio" name="pais" checked>
+                    Brasil</label>
+                <label class="radio">
+                    <input type="radio" name="pais">
+                    Outro</label>
+            </div>
 
-        <!-- detalhe para o Brasil -->
-        <div id="detalhe-brasil" class="box">
+            <!-- detalhe para o Brasil -->
+            <div id="detalhe-brasil" class="box">
 
-          <div class="columns">
-            <div class="column is-10">
-              <!-- estado -->
-              <div class="field is-horizontal">
-                <div class="field-label is-small">
-                  <label class="label">Estado</label>
+                <div class="columns">
+                    <div class="column is-10">
+                        <!-- estado -->
+                        <div class="field is-horizontal">
+                            <div class="field-label is-small">
+                                <label class="label">Estado</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select is-small">
+                                            <select id="estados-endereco" onchange="municipiosEndereco()">
+                                                <option value="AC">Acre</option>
+                                                <option value="AL">Alagoas</option>
+                                                <option value="AM">Amazonas</option>
+                                                <option value="AP">Amapá</option>
+                                                <option value="BA">Bahia</option>
+                                                <option value="CE">Ceará</option>
+                                                <option value="DF">Distrito Federal</option>
+                                                <option value="ES">Espírito Santo</option>
+                                                <option value="GO">Goiás</option>
+                                                <option value="MA">Maranhão</option>
+                                                <option value="MG">Minas Gerais</option>
+                                                <option value="MS">Mato Grosso do Sul</option>
+                                                <option value="MT">Mato Grosso</option>
+                                                <option value="PA">Pará</option>
+                                                <option value="PB">Paraíba</option>
+                                                <option value="PE">Pernambuco</option>
+                                                <option value="PI">Piauí</option>
+                                                <option value="PR">Paraná</option>
+                                                <option value="RJ">Rio de Janeiro</option>
+                                                <option value="RN">Rio Grande do Norte</option>
+                                                <option value="RS">Rio Grande do Sul</option>
+                                                <option value="SC">Santa Catarina</option>
+                                                <option value="SE">Sergipe</option>
+                                                <option value="SP">São Paulo</option>
+                                                <option value="TO">Tocantins</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- município -->
+                        <div class="field is-horizontal">
+                            <div class="field-label is-small">
+                                <label class="label">Município</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select is-small">
+                                            <select id="municipios-endereco">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- detalhe para outro país (diferente do Brasil) -->
+            <div id="detalhe-outro" class="box">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-small">
+                                <label class="label">País</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <div class="select is-small">
+                                            <select id="paises-endereco">
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- estado -->
+                        <div class="field is-horizontal">
+                            <div class="field-label is-small">
+                                <label class="label">Estado</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input type="text" class="input is-small">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- município -->
+                        <div class="field is-horizontal">
+                            <div class="field-label is-small">
+                                <label class="label">Município</label>
+                            </div>
+                            <div class="field-body">
+                                <div class="field">
+                                    <div class="control">
+                                        <input type="text" class="input is-small">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- caixa postal -->
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <label class="label">Caixa Postal</label>
                 </div>
                 <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <div class="select is-small">
-                        <select id="estados-endereco" onchange="municipiosEndereco()">
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AM">Amazonas</option>
-        <option value="AP">Amapá</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="PR">Paraná</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="SC">Santa Catarina</option>
-        <option value="SE">Sergipe</option>
-        <option value="SP">São Paulo</option>
-        <option value="TO">Tocantins</option>
-      </select>
-                      </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="number" class="input is-small">
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
 
-              <!-- município -->
-              <div class="field is-horizontal">
-                <div class="field-label is-small">
-                  <label class="label">Município</label>
+            <!-- código de endereçamento postal -->
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <label class="label">CEP</label>
                 </div>
                 <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <div class="select is-small">
-                        <select id="municipios-endereco">
-      </select>
-                      </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" maxlength="8" class="input is-small">
+                            <p class="help">Por exemplo, 74000-010.</p>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- detalhe para outro país (diferente do Brasil) -->
-        <div id="detalhe-outro" class="box">
-          <div class="columns">
-            <div class="column is-6">
-              <div class="field is-horizontal">
-                <div class="field-label is-small">
-                  <label class="label">País</label>
+            </div>
+
+            <!-- bairro -->
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <label class="label">Bairro</label>
                 </div>
                 <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <div class="select is-small">
-                        <select id="paises-endereco">
-      </select>
-                      </div>
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" class="input is-small">
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
 
-              <!-- estado -->
-              <div class="field is-horizontal">
-                <div class="field-label is-small">
-                  <label class="label">Estado</label>
+            <!-- distrito -->
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <label class="label">Distrito</label>
                 </div>
                 <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <input type="text" class="input is-small">
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" class="input is-small">
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
 
-              <!-- município -->
-              <div class="field is-horizontal">
-                <div class="field-label is-small">
-                  <label class="label">Município</label>
+            <!-- linha 1 -->
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <label class="label">Linha 1</label>
                 </div>
                 <div class="field-body">
-                  <div class="field">
-                    <div class="control">
-                      <input type="text" class="input is-small">
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" class="input is-small">
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- caixa postal -->
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Caixa Postal</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="number" class="input is-small">
-              </div>
+            <!-- linha 2 -->
+            <div class="field is-horizontal">
+                <div class="field-label">
+                    <label class="label">Linha 2</label>
+                </div>
+                <div class="field-body">
+                    <div class="field">
+                        <div class="control">
+                            <input type="text" class="input is-small">
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
 
-        <!-- código de endereçamento postal -->
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">CEP</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="text" maxlength="8" class="input is-small">
-                <p class="help">Por exemplo, 74000-010.</p>
-              </div>
-            </div>
-          </div>
 
         </div>
 
-        <!-- bairro -->
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Bairro</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="text" class="input is-small">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- distrito -->
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Distrito</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="text" class="input is-small">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- linha 1 -->
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Linha 1</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="text" class="input is-small">
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- linha 2 -->
-        <div class="field is-horizontal">
-          <div class="field-label">
-            <label class="label">Linha 2</label>
-          </div>
-          <div class="field-body">
-            <div class="field">
-              <div class="control">
-                <input type="text" class="input is-small">
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-
-      <!-- rodapé -->
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="content has-text-centered">
-            <h5 class="subtitle">Continue com...</h5>
-            <a class="button" href="#dados">
+        <!-- rodapé -->
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="content has-text-centered">
+                    <h5 class="subtitle">Continue com...</h5>
+                    <a class="button" href="#dados">
               <span class="icon">
       <i class="fa fa-arrow-left"></i>
     </span>
-              <span>Dados demográficos</span>
-            </a>
-            <a class="button" href="#comunicacoes">
-              <span>Comunicações eletrônicas</span>
-              <span class="icon">
+                        <span>Dados demográficos</span>
+                    </a>
+                    <a class="button" href="#comunicacoes">
+                        <span>Comunicações eletrônicas</span>
+                        <span class="icon">
       <i class="fa fa-arrow-right"></i>
     </span>
-            </a>
-          </div>
-        </div>
-      </section>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
+</section>
 
-  <section class="section" id="comunicacoes">
+<section class="section" id="comunicacoes">
     <div class="content">
-      <h3>Comunicações eletrônicas</h3>
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="content has-text-centered">
-            <h5 class="subtitle">Continue com...</h5>
-            <a class="button" href="#enderecos">
+        <h3>Comunicações eletrônicas</h3>
+
+
+        <!-- rodapé -->
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="content has-text-centered">
+                    <h5 class="subtitle">Continue com...</h5>
+                    <a class="button" href="#enderecos">
               <span class="icon">
       <i class="fa fa-arrow-left"></i>
     </span>
-              <span>Endereços</span>
-            </a>
-            <a class="button" href="#vinculos">
-              <span>Vínculos</span>
-              <span class="icon">
-      <i class="fa fa-arrow-right"></i>
-    </span>
-            </a>
-          </div>
-        </div>
-      </section>
+                        <span>Endereços</span>
+                    </a>
+                    <a class="button" href="#vinculos">
+                        <span>Vínculos</span>
+                        <span class="icon">
+                            <i class="fa fa-arrow-right"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
+</section>
 
-  <section class="section" id="vinculos">
+<section class="section" id="vinculos">
     <div class="content">
-      <h3>Vínculos</h3>
-      <section class="hero is-light">
-        <div class="hero-body">
-          <div class="content has-text-centered">
-            <h5 class="subtitle">Continue com...</h5>
-            <a class="button" href="#comunicacoes">
+        <h3>Vínculos</h3>
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="content has-text-centered">
+                    <h5 class="subtitle">Continue com...</h5>
+                    <a class="button" href="#comunicacoes">
               <span class="icon">
       <i class="fa fa-arrow-left"></i>
     </span>
-              <span>Comunicações eletrônicas</span>
-            </a>
-            <a class="button" href="#visao-geral">
-              <span>Visão geral</span>
-              <span class="icon">
+                        <span>Comunicações eletrônicas</span>
+                    </a>
+                    <a class="button" href="#visao-geral">
+                        <span>Visão geral</span>
+                        <span class="icon">
       <i class="fa fa-arrow-right"></i>
     </span>
-            </a>
-          </div>
-        </div>
-      </section>
+                    </a>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
+</section>
 
 </body>
 
