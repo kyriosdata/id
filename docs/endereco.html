@@ -24,7 +24,12 @@
 <script>
     function nomeChanged(obj) {
         var rotulo = document.getElementById('nome-completo');
-        rotulo.innerHTML = obj.value;
+        var titulo = document.getElementById('titulo').value;
+        var nome = document.getElementById('nome').value;
+        var sobrenome = document.getElementById('sobrenome').value;
+        var sufixo = document.getElementById('sufixo').value;
+
+        rotulo.innerHTML = titulo + " " + nome + " " + sobrenome + " " + sufixo;
     }
 </script>
 
@@ -34,38 +39,38 @@
 
         <div class="columns">
             <div class="column is-narrow">
-                <div id="nome" class="field">
+                <div class="field">
                     <label class="label is-small">Nome</label>
                     <div class="control">
                         <div class="text">
-                            <input type="text" size="30" class="input" oninput="nomeChanged(this)">
+                            <input id="nome" type="text" size="30" class="input" oninput="nomeChanged(this)">
                         </div>
                     </div>
                 </div>
             </div>
             <div class="column is-narrow">
-                <div id="sobrenome" class="field">
+                <div class="field">
                     <div class="control">
                         <label class="label is-small">Sobrenome</label>
-                        <input type="text" size="30" class="input" oninput="nomeChanged(this)">
+                        <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged(this)">
                     </div>
                 </div>
             </div>
         </div>
         <div class="columns">
             <div class="column is-narrow">
-                <div id="titulo" class="field">
+                <div class="field">
                     <div class="control">
                         <label class="label is-small">Título</label>
-                        <input type="text" size="15" class="input" oninput="nomeChanged(this)">
+                        <input id="titulo" type="text" size="15" class="input" oninput="nomeChanged(this)">
                     </div>
                 </div>
             </div>
             <div class="column is-narrow">
-                <div id="sufixo" class="field">
+                <div class="field">
                     <div class="control">
                         <label class="label is-small">Sufixo</label>
-                        <input type="text" size="15" class="input" oninput="nomeChanged(this)">
+                        <input id="sufixo" type="text" size="15" class="input" oninput="nomeChanged(this)">
                     </div>
                 </div>
             </div>
