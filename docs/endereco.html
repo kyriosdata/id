@@ -33,95 +33,53 @@
     }
 </script>
 
-<section class="section" id="vinculos">
-    <div class="content">
-        <h3>Nome</h3>
-
-        <div class="columns">
-            <div class="column is-narrow">
-                <div class="field">
-                    <label class="label is-small">Nome</label>
-                    <div class="control">
-                        <div class="text">
-                            <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="column is-narrow">
-                <div class="field">
-                    <div class="control">
-                        <label class="label is-small">Sobrenome</label>
-                        <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column is-narrow">
-                <div class="field">
-                    <div class="control">
-                        <label class="label is-small">Título</label>
-                        <input id="titulo" type="text" size="15" class="input" oninput="nomeChanged()">
-                    </div>
-                </div>
-            </div>
-            <div class="column is-narrow">
-                <div class="field">
-                    <div class="control">
-                        <label class="label is-small">Sufixo</label>
-                        <input id="sufixo" type="text" size="15" class="input" oninput="nomeChanged()">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label is-small">Nome completo</label>
-            <div class="control">
-                <div class="text">
-                    <label id="nome-completo" class="is-small">-- preencha os campos --</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label is-small">Uso</label>
-            <div class="control">
-                <div class="select">
-                    <select id="uso" class="select">
-                        <option value="1">Relatório (R)</option>
-                        <option value="2">Nome de recém-nascido (N)</option>
-                        <option value="3">Nome profissional ou comercial (C)</option>
-                        <option value="4">Nome de solteiro (nascimento) (original)</option>
-                        <option value="5">Nome registrado (nome legal)</option>
-                        <option value="8">Outro nome (alias)</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <section class="hero is-light">
-            <div class="hero-body">
-                <div class="content has-text-centered">
-                    <h5 class="subtitle">Continue com...</h5>
-                    <a class="button" href="#enderecos">
-                        <span class="icon">
-                            <i class="fa fa-arrow-left"></i>
-                        </span>
-                        <span>Endereços</span>
-                    </a>
-                    <a class="button" href="#vinculos">
-                        <span>Vínculos</span>
-                        <span class="icon">
-                            <i class="fa fa-arrow-right"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-</section>
+<table class="table is-bordered is-striped is-hoverable">
+  <thead>
+    <tr>
+      <th>Vínculo</th>
+      <th>Tipo</th>
+      <th>Início</th>
+      <th>Fim</th>
+      <th>Remover</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Fulano 1</td>
+      <td>Pai</td>
+      <td>--</td>
+      <td>--</td>
+      <td>
+        <button class="button is-small is-danger" onclick="removeLinha(this)">
+          <span class="icon">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </button>
+      </td>
+    </tr>
+    <tr>
+      <td>Fulano 2</td>
+      <td>Pai</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Fulano 3</td>
+      <td>Pai</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+    <tr>
+      <td>Fulano 4</td>
+      <td>Pai</td>
+      <td>--</td>
+      <td>--</td>
+      <td>--</td>
+    </tr>
+  </tbody>
+</table>
 
 </body>
 
