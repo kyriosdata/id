@@ -1,0 +1,127 @@
+<html>
+<head><title>Image map created by yEd</title>
+<style type="text/css">
+.tooltip {
+  font-size:10pt;
+  background-color:#FFFFCC;
+  border:1px solid black;
+  padding:2px
+}
+</style>
+<style type="text/css">
+.tooltip {
+  position:absolute;
+  display:none
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+tooltip = null;
+document.onmousemove = updateTooltip;
+function updateTooltip(e) {
+try {
+if (document.all) {
+if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+x = document.documentElement.scrollLeft + window.event.x;
+y = document.documentElement.scrollTop + window.event.y;
+}
+else { // all other Explorers
+x = document.body.scrollLeft + window.event.x;
+y = document.body.scrollTop + window.event.y;
+}
+}
+else {
+x = e.pageX;
+y = e.pageY;
+}
+if (tooltip != null) {
+o = 20;
+var sx, sy;
+if (self.pageYOffset) { // all except Explorer
+sx = self.pageXOffset;
+sy = self.pageYOffset;
+}
+else if (document.documentElement && document.documentElement.scrollTop) { // Explorer 6 Strict
+sx = document.documentElement.scrollLeft;
+sy = document.documentElement.scrollTop;
+}
+else if (document.body) { // all other Explorers
+sx = document.body.scrollLeft;
+sy = document.body.scrollTop;
+}
+t = y + o + tooltip.offsetHeight;
+w = sy + document.body.clientHeight;
+if (t > w) {
+y = y - o - tooltip.offsetHeight;
+}
+else {
+y = y + o;
+}
+t = x + o + tooltip.offsetWidth;
+w = sx + document.body.clientWidth;
+if (t > w) {
+x = x - o - tooltip.offsetWidth;
+}
+else {
+x = x + o;
+}
+if ((tooltip.style.top == '' || tooltip.style.top == 0) && (tooltip.style.left == '' || tooltip.style.left == 0))
+{
+tooltip.style.width = tooltip.offsetWidth + 'px';
+tooltip.style.height = tooltip.offsetHeight + 'px';
+}
+tooltip.style.left = x + "px";
+tooltip.style.top = y + "px";
+}
+} catch (error) { error = null; }
+}
+function showTooltip(id) {
+try {
+tooltip = document.getElementById(id);
+tooltip.style.display = "block";
+} catch (error) { error = null; }
+}
+function hideTooltip() {
+try {
+tooltip.style.display = "none";
+} catch (error) { error = null; }
+}
+</script>
+
+<div class="tooltip" id="n0">Indivíduo</div>
+<div class="tooltip" id="n1">Vínculo</div>
+<div class="tooltip" id="n2">Comunicação</div>
+<div class="tooltip" id="n3">Endereço</div>
+<div class="tooltip" id="n4">Linha de endereço</div>
+<div class="tooltip" id="n5">Dados demográficos</div>
+<div class="tooltip" id="n6">Nacionalidade</div>
+<div class="tooltip" id="n7">Representação alternativa</div>
+<div class="tooltip" id="n8">Nome</div>
+<div class="tooltip" id="n9">Utilização do nome</div>
+<div class="tooltip" id="n10">Identificador</div>
+
+<map name="image1_1">
+  <area shape="rect" coords="723,34,803,124" alt="" onmouseover="showTooltip('n10')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="495,40,658,119" alt="" onmouseover="showTooltip('n9')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="324,15,429,143" alt="" onmouseover="showTooltip('n8')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="105,44,287,114" alt="" onmouseover="showTooltip('n7')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="15,239,178,339" alt="" onmouseover="showTooltip('n6')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="250,178,425,400" alt="" onmouseover="showTooltip('n5')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="748,486,881,564" alt="" onmouseover="showTooltip('n4')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="727,181,902,397" alt="" onmouseover="showTooltip('n3')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="521,480,632,570" alt="" onmouseover="showTooltip('n2')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="273,480,394,570" alt="" onmouseover="showTooltip('n1')" onmouseout="hideTooltip()"/>
+  <area shape="rect" coords="521,244,632,334" alt="" onmouseover="showTooltip('n0')" onmouseout="hideTooltip()"/>
+</map>
+
+
+    <table class="yimagetable" cellspacing="0" cellpadding="0" border="0">
+      <tr>
+        <td><img class="yimage" src="imagens/logico.png" usemap="#image1_1" border="0" alt=""/></td>
+      </tr>
+    </table>
+
+</body>
+</html>
