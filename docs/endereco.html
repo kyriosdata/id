@@ -2,84 +2,91 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Fábio Nogueira de Lucena">
-    <link rel="shortcut icon" href="favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ABNT 15985</title>
-    <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
+  <meta charset="utf-8">
+  <meta name="author" content="Fábio Nogueira de Lucena">
+  <link rel="shortcut icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABNT 15985</title>
+  <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bulma.css">
-    <link rel="stylesheet" href="css/tooltip.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bulma.css">
+  <link rel="stylesheet" href="css/tooltip.css">
 
-    <style>
-        .dropdown-item:hover {
-            background-color: lightgray;
-        }
-    </style>
+  <style>
+    .dropdown-item:hover {
+      background-color: lightgray;
+    }
+
+  </style>
 </head>
 
 <body>
-<script>
-    function nomeChanged() {
-        var rotulo = document.getElementById('nome-completo');
-        var titulo = document.getElementById('titulo').value;
-        var nome = document.getElementById('nome').value;
-        var sobrenome = document.getElementById('sobrenome').value;
-        var sufixo = document.getElementById('sufixo').value;
-
-        rotulo.innerHTML = titulo + " " + nome + " " + sobrenome + " " + sufixo;
+  <script>
+    function removeLinha(x) {
+      var i = x.parentNode.parentNode.rowIndex;
+      document.getElementById("table-vinculos").deleteRow(i);
     }
-</script>
 
-<table class="table is-bordered is-striped is-hoverable">
-  <thead>
-    <tr>
-      <th>Vínculo</th>
-      <th>Tipo</th>
-      <th>Início</th>
-      <th>Fim</th>
-      <th>Remover</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Fulano 1</td>
-      <td>Pai</td>
-      <td>--</td>
-      <td>--</td>
-      <td>
-        <button class="button is-small is-danger" onclick="removeLinha(this)">
-          <span class="icon">
+  </script>
+
+  <table class="table is-bordered is-striped is-hoverable" id="table-vinculos">
+    <thead>
+      <tr>
+        <th>Vínculo</th>
+        <th>Tipo</th>
+        <th>Início</th>
+        <th>Fim</th>
+        <th>Remover</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Fulano 1</td>
+        <td>Pai</td>
+        <td>--</td>
+        <td>--</td>
+        <td>
+          <span class="icon has-text-danger" onclick="removeLinha(this)">
             <i class="fa fa-times" aria-hidden="true"></i>
           </span>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>Fulano 2</td>
-      <td>Pai</td>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <td>Fulano 3</td>
-      <td>Pai</td>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-    <tr>
-      <td>Fulano 4</td>
-      <td>Pai</td>
-      <td>--</td>
-      <td>--</td>
-      <td>--</td>
-    </tr>
-  </tbody>
-</table>
+        </td>
+      </tr>
+      <tr>
+        <td>Fulano 2</td>
+        <td>Pai</td>
+        <td>--</td>
+        <td>--</td>
+        <td>
+          <span class="icon has-text-danger" onclick="removeLinha(this)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Fulano 3</td>
+        <td>Pai</td>
+        <td>--</td>
+        <td>--</td>
+        <td>
+          <span class="icon has-text-danger" onclick="removeLinha(this)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td>Fulano 4</td>
+        <td>Pai</td>
+        <td>--</td>
+        <td>--</td>
+        <td>
+          <span class="icon has-text-danger" onclick="removeLinha(this)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
 </body>
 
