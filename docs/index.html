@@ -359,6 +359,9 @@
                             Software
                         </div>
                         <div id="moreDropdown" class="navbar-dropdown is-boxed">
+                           <a class="navbar-item " href="#uc">
+                                Casos de Uso
+                            </a>
                             <a class="navbar-item " href="conceitual.html">
                                 Modelo Conceitual
                             </a>
@@ -1703,6 +1706,8 @@
         <h3>Vínculos</h3>
 
         <div class="columns">
+           
+            <!-- identificador -->
             <div class="column is-narrow">
                 <div class="field">
                     <label class="label is-small">Identificador</label>
@@ -1711,8 +1716,11 @@
                             <input type="text" size="20" class="input">
                         </div>
                     </div>
+                    <p class="help is-danger" style="width:150px;">Isso é uma "chave". Não faz sentido o usuário fornecer. Aqui deveria ter o nome da mãe ou pai, por exemplo, correspondente à chave.</p>
                 </div>
             </div>
+            
+            <!-- tipo do relacionamento -->
             <div class="column is-narrow">
                 <div class="field">
                     <div class="control">
@@ -1746,6 +1754,8 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- data inicial -->
             <div class="column is-narrow">
                 <div class="field">
                     <div class="control">
@@ -1754,6 +1764,8 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- data final -->
             <div class="column is-narrow">
                 <div class="field">
                     <div class="control">
@@ -1783,6 +1795,17 @@
                 </div>
             </div>
         </section>
+    </div>
+</section>
+
+<section id="uc" class="section">
+    <div class="content">
+        <h3>Casos de Uso</h3>
+        <ul>
+            <li><a href="#identificadores">Criar identificação</a></li>
+            <li><a href="#nomes">Atualizar identificação</a></li>
+            <li><a href="#dados">Localizar identificação</a></li>
+        </ul>
     </div>
 </section>
 
