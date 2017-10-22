@@ -23,9 +23,25 @@
 
 <body>
   <script>
+    window.onkeydown = function(event) {
+      if (event.keyCode == 27) {
+        feche();
+      }
+    };
+    
     function removeLinha(x) {
       var i = x.parentNode.parentNode.rowIndex;
       document.getElementById("table-vinculos").deleteRow(i);
+    }
+    
+    function abra() {
+      var k = document.getElementById('edita-vinculo');
+      k.classList.add('is-active');
+    }
+    
+    function feche() {
+      var k = document.getElementById('edita-vinculo');
+      k.classList.remove('is-active');
     }
 
   </script>
@@ -91,6 +107,25 @@
       </tr>
     </tbody>
   </table>
+  
+  <button class="button" onclick="abra()">Abra</button>
+  
+  <div class="modal" id="edita-vinculo">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Vínculo</p>
+      <button class="delete" aria-label="close" onclick="feche()"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Atualize</button>
+      <button class="button" onclick="feche()">Cancela</button>
+    </footer>
+  </div>
+</div>
 
 </body>
 
