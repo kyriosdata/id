@@ -17,6 +17,10 @@
     .dropdown-item:hover {
       background-color: lightgray;
     }
+    
+    #table-vinculos {
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -36,7 +40,7 @@
     function abra() {
       var d = document.getElementById("vinculo-di-atualiza");
       d.value = dataCorrente();
-      
+
       var n = document.getElementById('vinculo-nome-pessoa');
       n.innerHTML = "O nome do vínculo com o paciente";
 
@@ -59,6 +63,10 @@
       local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
       return local.toJSON().slice(0, 10);
     }
+    
+    function showRow(x) {
+      alert(x.rowIndex + " " + x.cells[0].innerHTML);
+    }
   </script>
 
   <table class="table is-bordered is-striped is-hoverable" id="table-vinculos">
@@ -72,35 +80,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>Fulano 1</td>
-        <td>Pai</td>
+      <tr onclick="showRow(this)">
+        <td>Fulano da Silva Sauro Dinocrópio</td>
+        <td>Mãe adotiva</td>
         <td>--</td>
-        <td>
-          <span class="icon has-text-info">
+        <td>--</td>
+        <td>          <span class="icon has-text-info">
             <i class="fa fa-pencil" aria-hidden="true"></i>
           </span>
-        </td>
-        <td>
           <span class="icon has-text-danger" onclick="removeLinha(this)">
             <i class="fa fa-times" aria-hidden="true"></i>
           </span>
         </td>
       </tr>
-      <tr>
-        <td>Fulano 2</td>
-        <td>Pai</td>
-        <td>--</td>
-        <td>--</td>
-        <td>
-          <span class="icon has-text-danger" onclick="removeLinha(this)">
-            <i class="fa fa-times" aria-hidden="true"></i>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <td>Fulano 3</td>
-        <td>Pai</td>
+      <tr onclick="showRow(this)">
+        <td>Maria da Silva de Antônia e Bento Ferreira</td>
+        <td>Conjugê/companheiro(a)</td>
         <td>--</td>
         <td>--</td>
         <td>
@@ -109,9 +104,20 @@
           </span>
         </td>
       </tr>
-      <tr>
-        <td>Fulano 4</td>
-        <td>Pai</td>
+      <tr onclick="showRow(this)">
+        <td>Fulana Saura Dinocrópia Filha</td>
+        <td>Irmã</td>
+        <td>--</td>
+        <td>--</td>
+        <td>
+          <span class="icon has-text-danger" onclick="removeLinha(this)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </span>
+        </td>
+      </tr>
+      <tr onclick="showRow(this)">
+        <td>Beltrano Fulano de Silva</td>
+        <td>Avô paterno</td>
         <td>--</td>
         <td>--</td>
         <td>
@@ -133,13 +139,13 @@
         <button class="delete" aria-label="close" onclick="feche()"></button>
       </header>
       <section class="modal-card-body">
-       <!-- Nome do vínculo (pessoa) -->
-       <div class="field">
-         <div class="control">
-           <label for="" class="label is-normal" id="vinculo-nome-pessoa">não fornecido</label>
-           <p class="help">Você não pode editar o vínculo (remova-o se for o caso).</p>
-         </div>
-       </div>
+        <!-- Nome do vínculo (pessoa) -->
+        <div class="field">
+          <div class="control">
+            <label for="" class="label is-normal" id="vinculo-nome-pessoa">não fornecido</label>
+            <p class="help">Você não pode editar o vínculo (remova-o se for o caso).</p>
+          </div>
+        </div>
         <!-- Relacionamento -->
         <div class="field">
           <div class="control">
@@ -173,6 +179,9 @@
             </div>
           </div>
         </div>
+        
+        <div class="columns">
+          <div class="column">
         <!-- data inicial -->
         <div class="field">
           <div class="control">
@@ -180,12 +189,16 @@
             <label for="vinculo-di-atualiza" class="label is-small">Data de início</label>
             <input type="date" class="input" id="vinculo-di-atualiza">
           </div>
-        </div>
+        </div>            
+          </div>
+          <div class="column">
         <!-- data final -->
         <div class="field">
           <div class="control">
             <label for="vinculo-df-atualiza" class="label is-small">Data final</label>
             <input type="date" class="input" id="vinculo-df-atualiza">
+          </div>
+        </div>            
           </div>
         </div>
       </section>
