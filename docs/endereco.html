@@ -130,8 +130,54 @@
         <button class="delete" aria-label="close" onclick="feche()"></button>
       </header>
       <section class="modal-card-body">
-        <!-- Content ... -->
-        <input type="date" class="input" id="vinculo-di-atualiza">
+        <!-- Relacionamento -->
+        <div class="field">
+          <div class="control">
+            <label class="label is-small">Relacionamento</label>
+            <div class="select">
+              <select>
+                                <option value="7" selected>Avó materna</option>
+                                <option value="8">Avô materno</option>
+                                <option value="22">Cônjuge/companheiro(a)
+                                </option>
+                                <option value="23">Irmão</option>
+                                <option value="24">Irmã</option>
+                                <option value="25">Meio-irmão</option>
+                                <option value="26">Meio-irmã</option>
+                                <option value="27">Irmãos</option>
+                                <option value="28">Criança</option>
+                                <option value="29">Filha</option>
+                                <option value="36">Avó paterna</option>
+                                <option value="37">Avô paterno</option>
+                                <option value="38">Tio materno</option>
+                                <option value="40">Tio paterno</option>
+                                <option value="41">Tia paterna</option>
+                                <option value="189">Recém-nascido</option>
+                                <option value="254">Pais</option>
+                                <option value="262">Mãe adotiva</option>
+                                <option value="263">Pai adotivo</option>
+                                <option value="264">Responsável</option>
+                                <option value="265">Coabitante</option>
+                                <option value="939">Tia materna</option>
+                            </select>
+            </div>
+          </div>
+        </div>
+        <!-- data inicial -->
+        <div class="field">
+          <div class="control">
+            <!-- data de início -->
+            <label for="vinculo-di-atualiza" class="label is-small">Data de início</label>
+            <input type="date" class="input" id="vinculo-di-atualiza">
+          </div>
+        </div>
+        <!-- data final -->
+        <div class="field">
+          <div class="control">
+            <label for="vinculo-df-atualiza" class="label is-small">Data final</label>
+            <input type="date" class="input" id="vinculo-df-atualiza">
+          </div>
+        </div>
       </section>
       <footer class="modal-card-foot">
         <button class="button is-success" onclick="atualize()">Atualize</button>

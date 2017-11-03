@@ -29,10 +29,14 @@
       <file leaf-file-name="endereco.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/endereco.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2269">
-              <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+            <state relative-caret-position="2539">
+              <caret line="129" column="31" lean-forward="false" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
               <folding>
-                <marker date="1509734052919" expanded="true" signature="3406:3569" ph="..." />
+                <marker date="1509737189857" expanded="true" signature="955:967" ph="{...}" />
+                <marker date="1509737189857" expanded="true" signature="4114:4131" ph="..." />
+                <marker date="1509737189857" expanded="true" signature="4114:4344" ph="..." />
+                <marker date="1509737189857" expanded="true" signature="4114:4353" ph="..." />
+                <marker date="1509737189857" expanded="true" signature="4170:4333" ph="..." />
               </folding>
             </state>
           </provider>
@@ -41,10 +45,11 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5428">
-              <caret line="1663" column="16" lean-forward="true" selection-start-line="1663" selection-start-column="16" selection-end-line="1663" selection-end-column="16" />
+            <state relative-caret-position="412">
+              <caret line="1625" column="10" lean-forward="false" selection-start-line="1625" selection-start-column="10" selection-end-line="1656" selection-end-column="16" />
               <folding>
-                <element signature="n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#section#8;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
@@ -70,6 +75,9 @@
       <find>Identificador</find>
       <find>Vínculo</find>
       <find>vínculo</find>
+      <find>identificador</find>
+      <find>tipo de identifi</find>
+      <find>tipo do identifi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -620,7 +628,7 @@
       <workItem from="1497994497576" duration="3082000" />
       <workItem from="1498082768901" duration="612000" />
       <workItem from="1499641161768" duration="36000" />
-      <workItem from="1509723279211" duration="8451000" />
+      <workItem from="1509723279211" duration="9579000" />
     </task>
     <task id="LOCAL-00001" summary="Versão inicial área geográfica">
       <created>1497968382511</created>
@@ -752,7 +760,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25818000" />
+    <option name="totallyTimeSpent" value="26946000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1143,20 +1151,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/endereco.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2269">
-          <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+        <state relative-caret-position="2539">
+          <caret line="129" column="31" lean-forward="false" selection-start-line="129" selection-start-column="31" selection-end-line="129" selection-end-column="31" />
           <folding>
-            <marker date="1509734052919" expanded="true" signature="3406:3569" ph="..." />
+            <marker date="1509737189857" expanded="true" signature="955:967" ph="{...}" />
+            <marker date="1509737189857" expanded="true" signature="4114:4131" ph="..." />
+            <marker date="1509737189857" expanded="true" signature="4114:4344" ph="..." />
+            <marker date="1509737189857" expanded="true" signature="4114:4353" ph="..." />
+            <marker date="1509737189857" expanded="true" signature="4170:4333" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5428">
-          <caret line="1663" column="16" lean-forward="true" selection-start-line="1663" selection-start-column="16" selection-end-line="1663" selection-end-column="16" />
+        <state relative-caret-position="412">
+          <caret line="1625" column="10" lean-forward="false" selection-start-line="1625" selection-start-column="10" selection-end-line="1656" selection-end-column="16" />
           <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#section#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#section#8;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
