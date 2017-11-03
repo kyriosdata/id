@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e884f500-b48e-4cfa-935d-6332c7db3ab0" name="Default" comment="organização">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index.html" afterPath="$PROJECT_DIR$/docs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/endereco.html" afterPath="$PROJECT_DIR$/docs/endereco.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,85 +26,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="endereco.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/endereco.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2269">
+              <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+              <folding>
+                <marker date="1509734052919" expanded="true" signature="3406:3569" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="759">
-              <caret line="1348" column="22" lean-forward="true" selection-start-line="1348" selection-start-column="22" selection-end-line="1348" selection-end-column="22" />
+            <state relative-caret-position="5428">
+              <caret line="1663" column="16" lean-forward="true" selection-start-line="1663" selection-start-column="16" selection-end-line="1663" selection-end-column="16" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#select#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#section#8;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="257" column="1" lean-forward="false" selection-start-line="257" selection-start-column="1" selection-end-line="257" selection-end-column="1" />
-              <folding>
-                <element signature="e#42#293#0" expanded="false" />
-                <element signature="n#!!block;n#mostre#0" expanded="false" />
-                <element signature="n#!!block;n#changeToUrl#0" expanded="false" />
-                <element signature="e#647#1434#0" expanded="false" />
-                <element signature="n#!!block;n#veja#0" expanded="false" />
-                <element signature="n#!!block;n#atualizaMunicipios#0" expanded="false" />
-                <element signature="n#!!block;n#paises#0" expanded="false" />
-                <element signature="n#!!block;n#nacionalidade#0" expanded="false" />
-                <element signature="n#!!block;n#brasilOutro#0" expanded="false" />
-                <element signature="n#!!block;n#municipiosEndereco#0" expanded="false" />
-                <element signature="e#5943#6370#0" expanded="false" />
-                <element signature="e#6013#6071#0" expanded="false" />
-                <element signature="e#6077#6128#0" expanded="false" />
-                <element signature="e#6134#6190#0" expanded="false" />
-                <element signature="e#6196#6256#0" expanded="false" />
-                <element signature="e#6262#6315#0" expanded="false" />
-                <element signature="e#6321#6368#0" expanded="false" />
-                <element signature="n#!!block;n#alterna#0" expanded="false" />
-                <element signature="n#!!block;n#selecione#0" expanded="false" />
-                <element signature="n#!!block;n#nomeChanged#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tooltip.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docs/css/tooltip.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="330">
-                <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sgbd.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sgbd.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="690">
-                <caret line="23" column="41" lean-forward="false" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -124,10 +66,10 @@
       <find>dados demogr</find>
       <find>um identificador é compo</find>
       <find>visão geral</find>
-      <find>vínculo</find>
       <find>bulma</find>
       <find>Identificador</find>
       <find>Vínculo</find>
+      <find>vínculo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,6 +94,7 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/docs/js/main.js" />
         <option value="$PROJECT_DIR$/docs/index.html" />
+        <option value="$PROJECT_DIR$/docs/endereco.html" />
       </list>
     </option>
   </component>
@@ -677,7 +620,7 @@
       <workItem from="1497994497576" duration="3082000" />
       <workItem from="1498082768901" duration="612000" />
       <workItem from="1499641161768" duration="36000" />
-      <workItem from="1509723279211" duration="7021000" />
+      <workItem from="1509723279211" duration="8451000" />
     </task>
     <task id="LOCAL-00001" summary="Versão inicial área geográfica">
       <created>1497968382511</created>
@@ -809,7 +752,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24388000" />
+    <option name="totallyTimeSpent" value="25818000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1198,16 +1141,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/docs/endereco.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2269">
+          <caret line="120" column="31" lean-forward="false" selection-start-line="120" selection-start-column="31" selection-end-line="120" selection-end-column="31" />
+          <folding>
+            <marker date="1509734052919" expanded="true" signature="3406:3569" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="1348" column="22" lean-forward="true" selection-start-line="1348" selection-start-column="22" selection-end-line="1348" selection-end-column="22" />
+        <state relative-caret-position="5428">
+          <caret line="1663" column="16" lean-forward="true" selection-start-line="1663" selection-start-column="16" selection-end-line="1663" selection-end-column="16" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#select#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#1;n#div#0;n#div#0;n#div#6;n#div#0;n#div#0;n#section#5;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#section#7;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#section#8;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -17,7 +17,6 @@
     .dropdown-item:hover {
       background-color: lightgray;
     }
-
   </style>
 </head>
 
@@ -28,22 +27,35 @@
         feche();
       }
     };
-    
+
     function removeLinha(x) {
       var i = x.parentNode.parentNode.rowIndex;
       document.getElementById("table-vinculos").deleteRow(i);
     }
-    
+
     function abra() {
+      var d = document.getElementById("vinculo-di-atualiza");
+      d.value = dataCorrente();
+
       var k = document.getElementById('edita-vinculo');
       k.classList.add('is-active');
     }
-    
+
     function feche() {
       var k = document.getElementById('edita-vinculo');
       k.classList.remove('is-active');
     }
 
+    function atualize() {
+      var k = document.getElementById('edita-vinculo');
+      k.classList.remove('is-active');
+    }
+
+    function dataCorrente() {
+      var local = new Date();
+      local.setMinutes(local.getMinutes() - local.getTimezoneOffset());
+      return local.toJSON().slice(0, 10);
+    }
   </script>
 
   <table class="table is-bordered is-striped is-hoverable" id="table-vinculos">
@@ -107,25 +119,26 @@
       </tr>
     </tbody>
   </table>
-  
+
   <button class="button" onclick="abra()">Abra</button>
-  
+
   <div class="modal" id="edita-vinculo">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Vínculo</p>
-      <button class="delete" aria-label="close" onclick="feche()"></button>
-    </header>
-    <section class="modal-card-body">
-      <!-- Content ... -->
-    </section>
-    <footer class="modal-card-foot">
-      <button class="button is-success">Atualize</button>
-      <button class="button" onclick="feche()">Cancela</button>
-    </footer>
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Alterar vínculo</p>
+        <button class="delete" aria-label="close" onclick="feche()"></button>
+      </header>
+      <section class="modal-card-body">
+        <!-- Content ... -->
+        <input type="date" class="input" id="vinculo-di-atualiza">
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-success" onclick="atualize()">Atualize</button>
+        <button class="button" onclick="feche()">Cancela</button>
+      </footer>
+    </div>
   </div>
-</div>
 
 </body>
 
