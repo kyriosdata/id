@@ -7,9 +7,11 @@
     <link rel="shortcut icon" href="favicon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ABNT 15985</title>
-    <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
+    <meta name="description"
+          content="Apresentação detalhada da norma ABNT NBR 15985:2011">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bulma.css">
     <link rel="stylesheet" href="css/tooltip.css">
     <style>
@@ -17,6 +19,7 @@
             font-family: Georgia, serif;
             font-size: 110%;
         }
+
         #visao-geral,
         #identificadores,
         #nomes,
@@ -194,7 +197,6 @@
         }
     }
 
-
     function municipiosEndereco() {
         var elemento = document.getElementById('estados-endereco');
         var estado = elemento.options[elemento.selectedIndex].text;
@@ -226,10 +228,11 @@
         xhttp.send();
     }
 
-    var meios = [{
-        icone: "fa-phone",
-        txt: "Telefone"
-    },
+    var meios = [
+        {
+            icone: "fa-phone",
+            txt: "Telefone"
+        },
         {
             icone: "fa-mobile",
             txt: "Celular"
@@ -284,8 +287,8 @@
         botaoIcone.classList.add(meios[indice].icone);
         alterna();
     }
-  
-  function nomeChanged() {
+
+    function nomeChanged() {
         var rotulo = document.getElementById('nome-completo');
         var titulo = document.getElementById('titulo').value;
         var nome = document.getElementById('nome').value;
@@ -304,16 +307,20 @@
                     <img src="./logo.png" alt="eSaúdeBucal logo">
                 </a>
 
-                <a class="navbar-item" href="http://www.abntcatalogo.com.br/norma.aspx?ID=088501" target="_blank">
+                <a class="navbar-item"
+                   href="http://www.abntcatalogo.com.br/norma.aspx?ID=088501"
+                   target="_blank">
                     <span>ABNT</span>
                 </a>
 
                 <div class="navbar-item">
                     <iframe src="https://ghbtns.com/github-btn.html?user=kyriosdata&repo=id&type=star&count=true"
-                            frameborder="0" scrolling="0" width="150px" height="20px"></iframe>
+                            frameborder="0" scrolling="0" width="150px"
+                            height="20px"></iframe>
                 </div>
 
-                <div class="navbar-burger burger" data-target="navMenuTransparentExample">
+                <div class="navbar-burger burger"
+                     data-target="navMenuTransparentExample">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -355,7 +362,7 @@
                             Software
                         </div>
                         <div id="moreDropdown" class="navbar-dropdown is-boxed">
-                           <a class="navbar-item " href="#uc">
+                            <a class="navbar-item " href="#uc">
                                 Casos de Uso
                             </a>
                             <a class="navbar-item " href="conceitual.html">
@@ -371,22 +378,25 @@
                             Créditos
                         </div>
                         <div id="moreDropdown" class="navbar-dropdown is-boxed">
-                           <a class="navbar-item " href="https://bulma.io">
+                            <a class="navbar-item " href="https://bulma.io">
                                 <figure class="image">
-                                  <img src="imagens/made-with-bulma.png" alt="Bulma logo">
+                                    <img src="imagens/made-with-bulma.png"
+                                         alt="Bulma logo">
                                 </figure>
-                            </a>                            
-                            
+                            </a>
+
                             <hr class="navbar-divider">
                             <div class="navbar-item">
                                 <div>
                                     <p class="is-size-6-desktop">
-                                        <strong class="has-text-info">Envie suas sugestões!</strong>
+                                        <strong class="has-text-info">Envie suas
+                                            sugestões!</strong>
                                     </p>
 
                                     <small>
                                         <a class="bd-view-all-versions"
-                                           href="mailto:fabio@inf.ufg.br&Subject=ABNT%20NBR%2015985" target="_blank">fabio@inf.ufg.br</a>
+                                           href="mailto:fabio@inf.ufg.br&Subject=ABNT%20NBR%2015985"
+                                           target="_blank">fabio@inf.ufg.br</a>
                                     </small>
 
                                 </div>
@@ -407,7 +417,9 @@
                                 </a>
                             </p>
                             <p class="control">
-                                <a class="button is-primary" href="https://github.com/kyriosdata/id" target="_blank">
+                                <a class="button is-primary"
+                                   href="https://github.com/kyriosdata/id"
+                                   target="_blank">
                     <span class="icon">
                 <i class="fa fa-github"></i>
               </span>
@@ -437,7 +449,8 @@
                     <li><a href="#nomes">Nomes</a></li>
                     <li><a href="#dados">Dados demográficos</a></li>
                     <li><a href="#enderecos">Endereços</a></li>
-                    <li><a href="#comunicacoes">Comunicações eletrônicas</a></li>
+                    <li><a href="#comunicacoes">Comunicações eletrônicas</a>
+                    </li>
                     <li><a href="#vinculos">Vínculos</a></li>
                 </ul>
             </div>
@@ -448,9 +461,12 @@
 <section id="visao-geral" class="section">
     <div class="content">
         <h3>Visão geral</h3>
-        A norma <em>ABNT NBR 15985:2011 &#8212; Informática em Saúde &#8212; Identificação dos indivíduos em saúde</em>
-        define informações e fornece orientações para a identificação de indivíduos em um ambiente de assistência à
-        saúde. A identificação de um único indivíduo, segundo a norma, é influenciada pelos seguintes componentes:
+        A norma <em>ABNT NBR 15985:2011 &#8212; Informática em Saúde &#8212;
+        Identificação dos indivíduos em saúde</em>
+        define informações e fornece orientações para a identificação de
+        indivíduos em um ambiente de assistência à
+        saúde. A identificação de um único indivíduo, segundo a norma, é
+        influenciada pelos seguintes componentes:
         <ul>
             <li><a href="#identificadores">Identificadores</a></li>
             <li><a href="#nomes">Nomes</a></li>
@@ -465,23 +481,32 @@
 <section id="identificadores" class="section">
     <div class="content">
         <h3>Identificadores</h3>
-        <p>Um identificador é uma informação empregada para identificar um indivíduo, por exemplo,
-            a "Carteira de Identidade" e a "Carteira Nacional de Habilitação" são possíveis identificadores a serem
-            associadas a um mesmo indivíduo com o propósito de distingui-lo dentre outros.</p>
+        <p>Um identificador é uma informação empregada para identificar um
+            indivíduo, por exemplo,
+            a "Carteira de Identidade" e a "Carteira Nacional de Habilitação"
+            são possíveis identificadores a serem
+            associadas a um mesmo indivíduo com o propósito de distingui-lo
+            dentre outros.</p>
 
-        <p>Formalmente, um identificador é um número ou código emitido para o propósito de identificação de um
-        indivíduo, conforme a ABNT NBR 15985:2011.</p>
+        <p>Formalmente, um identificador é um número ou código emitido para o
+            propósito de identificação de um
+            indivíduo, conforme a ABNT NBR 15985:2011.</p>
 
-        <p>Um estabelecimento de saúde pode gerar identificadores para os indivíduos que atende. Nesse caso, os
-            identificadores gerados são reconhecidos no âmbito desse estabelecimento.</p>
+        <p>Um estabelecimento de saúde pode gerar identificadores para os
+            indivíduos que atende. Nesse caso, os
+            identificadores gerados são reconhecidos no âmbito desse
+            estabelecimento.</p>
 
         <p>Um identificador é composto por:</p>
         <ul>
-            <li><em>Designação</em>. Esse é o "valor" propriamente dito do identificador, em geral um código ou número,
+            <li><em>Designação</em>. Esse é o "valor" propriamente dito do
+                identificador, em geral um código ou número,
                 por exemplo, 1.234.567 para a carteira de identidade.
             </li>
-            <li><em>Área geográfica</em>. Código que representa a área geográfica na qual o identificador é utilizado.
-                Por exemplo, o identificador pode ser nacional ou apenas local ao estabelecimento em questão. Os códigos
+            <li><em>Área geográfica</em>. Código que representa a área
+                geográfica na qual o identificador é utilizado.
+                Por exemplo, o identificador pode ser nacional ou apenas local
+                ao estabelecimento em questão. Os códigos
                 possíveis são definidos na tabela abaixo:
                 <section class="section">
                     <h5>Tabela: área geográfica (códigos)</h5>
@@ -506,7 +531,9 @@
                         </tr>
                         <tr>
                             <td>3</td>
-                            <td>Identificador de estado, privíncia ou território.</td>
+                            <td>Identificador de estado, privíncia ou
+                                território.
+                            </td>
                             <td>E</td>
                         </tr>
                         <tr>
@@ -518,37 +545,54 @@
                     </table>
                 </section>
             </li>
-            <li><em>Emissor</em>. Organização que aloca uma designação de identificador a um indivíduo. Por exemplo,
+            <li><em>Emissor</em>. Organização que aloca uma designação de
+                identificador a um indivíduo. Por exemplo,
                 "Secretaria de Segurança Pública de Goiás".
             </li>
-            <li><em>Data da emissão</em>. Data na qual foi emitido o identificador do indivíduo.</li>
-            <li><em>Tipo</em>. Código que identifica o tipo de identificador. Por exemplo, "carteira de trabalho" e
+            <li><em>Data da emissão</em>. Data na qual foi emitido o
+                identificador do indivíduo.
+            </li>
+            <li><em>Tipo</em>. Código que identifica o tipo de identificador.
+                Por exemplo, "carteira de trabalho" e
                 "certidão de nascimento".
             </li>
         </ul>
 
         <h4>Componentes opcionais</h4>
-        <p>Enquanto os componentes acima são obrigatórios, aqueles abaixo aplicam-se em casos específicos, conforme o
+        <p>Enquanto os componentes acima são obrigatórios, aqueles abaixo
+            aplicam-se em casos específicos, conforme o
             tipo de identificador:</p>
         <ul>
-            <li><em>Certidão de nascimento</em>, <em>certidão de casamento</em> ou <em>certidão de divórcio</em></li>
+            <li><em>Certidão de nascimento</em>, <em>certidão de casamento</em>
+                ou <em>certidão de divórcio</em></li>
             <ul>
-                <li>Nome do cartório. O nome do cartório que emitiu o documento (identificador).</li>
-                <li>Livro. Número do livro no qual foi feito o registro do documento no cartório.</li>
-                <li>Folha. Número da folha do livro no qual foi feito o registro do documento no cartório.</li>
+                <li>Nome do cartório. O nome do cartório que emitiu o documento
+                    (identificador).
+                </li>
+                <li>Livro. Número do livro no qual foi feito o registro do
+                    documento no cartório.
+                </li>
+                <li>Folha. Número da folha do livro no qual foi feito o registro
+                    do documento no cartório.
+                </li>
                 <li>Termo. Número do documento.</li>
             </ul>
             <li><em>Carteira de Trabalho e Previdência Social (CTPS)</em>
                 <ul>
                     <li>Série. Número da série da CTPS.</li>
-                    <li>Estado. Código do estado onde foi emitida a carteira de trabalho. Por exemplo, "GO" para Goiás.
+                    <li>Estado. Código do estado onde foi emitida a carteira de
+                        trabalho. Por exemplo, "GO" para Goiás.
                     </li>
                 </ul>
             </li>
             <li><em>Título de eleitor</em></li>
             <ul>
-                <li>Seção. Número da seção eleitoral descrito no título eleitoral do indivíduo.</li>
-                <li>Zona. Número da zona eleitoral do título eleitoral do indivíduo.</li>
+                <li>Seção. Número da seção eleitoral descrito no título
+                    eleitoral do indivíduo.
+                </li>
+                <li>Zona. Número da zona eleitoral do título eleitoral do
+                    indivíduo.
+                </li>
             </ul>
         </ul>
     </div>
@@ -559,10 +603,13 @@
             <div class="column is-narrow">
                 <div class="field">
                     <div class="control">
-                        <label class="label is-small">Tipo do identificador</label>
+                        <label class="label is-small">Tipo do
+                            identificador</label>
                         <div class="select">
                             <select>
-                                <option value="01" selected>Único dentro da organização</option>
+                                <option value="01" selected>Único dentro da
+                                    organização
+                                </option>
                                 <option value="02">Número do prontuário</option>
                                 <option value="21">Radiologia</option>
                                 <option value="22">Patologia</option>
@@ -594,7 +641,8 @@
                             <select>
                                 <option value="1" selected>Local</option>
                                 <option value="2">Área/região/distrito</option>
-                                <option value="3">Estado/província/território</option>
+                                <option value="3">Estado/província/território
+                                </option>
                                 <option value="4">Nacional</option>
                             </select>
                         </div>
@@ -741,57 +789,84 @@
     <div class="content">
 
         <h3>Nomes</h3>
-        <p>O nome de um indivíduo é o recurso mais empregado para se referir a um indivíduo. Pelo menos um nome deve
-            estar registrado para cada indivíduo e, caso estejam disponíveis dois ou mais nomes, também deve ser
-            definido o uso pretendido de cada um deles e deve ser estabelecido qual é o nome preferido, além de possível
-            representacão alternativa. De form detalhada, um único nome é definido por:</p>
+        <p>O nome de um indivíduo é o recurso mais empregado para se referir a
+            um indivíduo. Pelo menos um nome deve
+            estar registrado para cada indivíduo e, caso estejam disponíveis
+            dois ou mais nomes, também deve ser
+            definido o uso pretendido de cada um deles e deve ser estabelecido
+            qual é o nome preferido, além de possível
+            representacão alternativa. De form detalhada, um único nome é
+            definido por:</p>
 
         <div class="tabs is-centered is-boxed">
             <ul>
-                <li class="li-parcial" id="li-nomes-completo"><a onclick="veja('nomes-completo');">Nome completo</a>
+                <li class="li-parcial" id="li-nomes-completo"><a
+                        onclick="veja('nomes-completo');">Nome completo</a>
                 </li>
-                <li class="li-parcial" id="li-nomes-preferido"><a onclick="veja('nomes-preferido');">Preferido</a></li>
-                <li class="li-parcial" id="li-nomes-representacao"><a onclick="veja('nomes-representacao');">Representação</a>
+                <li class="li-parcial" id="li-nomes-preferido"><a
+                        onclick="veja('nomes-preferido');">Preferido</a></li>
+                <li class="li-parcial" id="li-nomes-representacao"><a
+                        onclick="veja('nomes-representacao');">Representação</a>
                 </li>
-                <li class="li-parcial" id="li-nomes-grupo"><a onclick="veja('nomes-grupo');">Uso</a></li>
-                <li class="li-parcial" id="li-nomes-indicador"><a onclick="veja('nomes-indicador');">Indicador</a></li>
-                <li class="li-parcial" id="li-nomes-form"><a onclick="veja('nomes-form');">Formulário</a></li>
+                <li class="li-parcial" id="li-nomes-grupo"><a
+                        onclick="veja('nomes-grupo');">Uso</a></li>
+                <li class="li-parcial" id="li-nomes-indicador"><a
+                        onclick="veja('nomes-indicador');">Indicador</a></li>
+                <li class="li-parcial" id="li-nomes-form"><a
+                        onclick="veja('nomes-form');">Formulário</a></li>
             </ul>
         </div>
 
         <div class="parcial" id="nomes-completo">
             <h4>Nome completo</h4>
 
-            <p> O nome é formado pela concatenação dos títulos, primeiros nomes, sobrenomes e sufixos. Por exemplo, "Sr.
-                João da Silva Júnior" é o nome completo formado por um único título (Sr.), um único primeiro nome
+            <p> O nome é formado pela concatenação dos títulos, primeiros nomes,
+                sobrenomes e sufixos. Por exemplo, "Sr.
+                João da Silva Júnior" é o nome completo formado por um único
+                título (Sr.), um único primeiro nome
                 (João), um sobrenome (da Silva) e um sufixo (Júnior).</p>
 
-            <p>Não é obrigatório um título, nem tampouco um sufixo. Ou seja, o nome completo "Pedro Carvalho" é formado
-                apenas pelo primeiro nome "Pedro" e o sobrenome "Carvalho", simples assim. </p>
+            <p>Não é obrigatório um título, nem tampouco um sufixo. Ou seja, o
+                nome completo "Pedro Carvalho" é formado
+                apenas pelo primeiro nome "Pedro" e o sobrenome "Carvalho",
+                simples assim. </p>
 
-            <p>Por outro lado, podemos ter outros nomes como "Magnífico Reitor Fulano da Silva Beltrano", onde há dois
-                sufixos (magnífico e reitor), um primeiro nome (Fulano) e sobrenomes (da Silva e Beltrano), sem
+            <p>Por outro lado, podemos ter outros nomes como "Magnífico Reitor
+                Fulano da Silva Beltrano", onde há dois
+                sufixos (magnífico e reitor), um primeiro nome (Fulano) e
+                sobrenomes (da Silva e Beltrano), sem
                 sufixo.</p>
 
-            <p>Podem ser fornecidos até 9 títulos, 9 primeiros nomes, 9 sobrenomes e 9 sufixos para cada nome. Em
-                qualquer um destes casos, contudo, caso 9 elementos não sejam suficientes, então o nono elemento deve
+            <p>Podem ser fornecidos até 9 títulos, 9 primeiros nomes, 9
+                sobrenomes e 9 sufixos para cada nome. Em
+                qualquer um destes casos, contudo, caso 9 elementos não sejam
+                suficientes, então o nono elemento deve
                 conter todos os demais a partir do nono.</p>
 
         </div>
 
         <div class="parcial" id="nomes-preferido">
             <h4>Nome preferido</h4>
-            <p>Quando recém-nascido o indivíduo possui um nome temporário. Quando registrado, o nome registrado passa a
-                ser utilizado, contudo, o nome de recém-nascido deverá persistir para efeito de relatórios, por exemplo.
-                Casamentos, dentre outras situações podem resultar em alteração de nome, além da possibilidade de um
-                indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e "Edison Arantes do Nascimento" são nomes
-                do maior jogador de futebol de todos os tempos, conforme a Wikipedia.</p>
+            <p>Quando recém-nascido o indivíduo possui um nome temporário.
+                Quando registrado, o nome registrado passa a
+                ser utilizado, contudo, o nome de recém-nascido deverá persistir
+                para efeito de relatórios, por exemplo.
+                Casamentos, dentre outras situações podem resultar em alteração
+                de nome, além da possibilidade de um
+                indivíduo ser chamado por vários nomes. Por exemplo, "Pelé" e
+                "Edison Arantes do Nascimento" são nomes
+                do maior jogador de futebol de todos os tempos, conforme a
+                Wikipedia.</p>
 
-            <p>Os nomes precisam ser preservados, e não apenas o nome corrente ou último nome, dado que os nomes
-                anteriores foram empregados em registros formais, por exemplo, por uma empresa de plano de saúde.</p>
+            <p>Os nomes precisam ser preservados, e não apenas o nome corrente
+                ou último nome, dado que os nomes
+                anteriores foram empregados em registros formais, por exemplo,
+                por uma empresa de plano de saúde.</p>
 
-            <p>Quando um indivíduo possui mais de um nome, deve ser identificado o nome preferido. A preferência é uma
-                indicação do próprio indivíduo. Adicionalmente, em um dado instante de tempo, um único nome é
+            <p>Quando um indivíduo possui mais de um nome, deve ser identificado
+                o nome preferido. A preferência é uma
+                indicação do próprio indivíduo. Adicionalmente, em um dado
+                instante de tempo, um único nome é
                 preferido.</p>
 
             <h5>Tabela: código de nome preferido</h5>
@@ -805,8 +880,10 @@
                 <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Este é o nome preferido. Deve ser usado em relatórios, cartas e outros, exceto se um uso
-                        específico, comentado adiante, indicar o uso de outro nome.
+                    <td>Este é o nome preferido. Deve ser usado em relatórios,
+                        cartas e outros, exceto se um uso
+                        específico, comentado adiante, indicar o uso de outro
+                        nome.
                     </td>
                 </tr>
                 <tr>
@@ -820,28 +897,41 @@
 
         <div class="parcial" id="nomes-representacao">
             <h4>Representação alternativa</h4>
-            <p>A representação alternativa é empregada quando a representação do nome é baseada em fonte ou caractere
-                alternativo. A norma cita, por exemplo, o nome russo doméstico ou a representação do nome em caracteres
-                chineses. Adicionalmente, um mesmo nome pode possuir várias representações alternativas.</p>
+            <p>A representação alternativa é empregada quando a representação do
+                nome é baseada em fonte ou caractere
+                alternativo. A norma cita, por exemplo, o nome russo doméstico
+                ou a representação do nome em caracteres
+                chineses. Adicionalmente, um mesmo nome pode possuir várias
+                representações alternativas.</p>
         </div>
 
         <div class="parcial" id="nomes-grupo">
             <h4>Grupo de utilização do nome</h4>
-            <p>Um nome pode ser utilizado conforme a classificação que permite a diferenciação entre os usos dos nomes
-                registrados para o indivíduo. Cada classificação é definida por um grupo e todo nome está associado a um
+            <p>Um nome pode ser utilizado conforme a classificação que permite a
+                diferenciação entre os usos dos nomes
+                registrados para o indivíduo. Cada classificação é definida por
+                um grupo e todo nome está associado a um
                 ou mais grupos de usos.</p>
 
-            <p> Cada grupo de uso se aplica a um período com data de início e término. A data de início estabelece a
-                partir de quando o nome em questão pode ser utilizado, enquanto a data de término a data a partir da
-                qual o nome não mais pode ser empregado para a finalidade do grupo em questão. Em ambos os casos pode
-                ser empregada a data no formato AAAAMMDD. A representação da data, contudo, deve ser compreendida na
+            <p> Cada grupo de uso se aplica a um período com data de início e
+                término. A data de início estabelece a
+                partir de quando o nome em questão pode ser utilizado, enquanto
+                a data de término a data a partir da
+                qual o nome não mais pode ser empregado para a finalidade do
+                grupo em questão. Em ambos os casos pode
+                ser empregada a data no formato AAAAMMDD. A representação da
+                data, contudo, deve ser compreendida na
                 região em que está sendo usada.</p>
 
-            <p>Se o nome estiver associado a um identificador, então tal identificador deve estar associado ao grupo de
-                uso em questão, por meio do item <em>identificador</em>. Ou seja, nesse caso, o grupo de uso também
-                permite obter o identificador no qual o nome do indivíduo está definido.</p>
+            <p>Se o nome estiver associado a um identificador, então tal
+                identificador deve estar associado ao grupo de
+                uso em questão, por meio do item <em>identificador</em>. Ou
+                seja, nesse caso, o grupo de uso também
+                permite obter o identificador no qual o nome do indivíduo está
+                definido.</p>
 
-            <p>Por último, além do período e do identificador eventualmente associado, um grupo também inclui o código
+            <p>Por último, além do período e do identificador eventualmente
+                associado, um grupo também inclui o código
                 de uso do nome, conforme a tabela abaixo.</p>
 
             <h5>Tabela: código do uso do nome</h5>
@@ -871,7 +961,8 @@
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>Nome de solteiro, nome de nascimento ou nome original</td>
+                    <td>Nome de solteiro, nome de nascimento ou nome original
+                    </td>
                     <td>S</td>
                 </tr>
                 <tr>
@@ -891,7 +982,8 @@
 
         <div class="parcial" id="nomes-indicador">
             <h4>Indicador de uso condicional</h4>
-            <p>Define as condições específicas ou regras que devem ser aplicadas ao nome em questão do indivíduo
+            <p>Define as condições específicas ou regras que devem ser aplicadas
+                ao nome em questão do indivíduo
                 conforme a tabela abaixo.</p>
 
             <h5>Tabela: uso condicional</h5>
@@ -905,133 +997,160 @@
                 <tbody>
                 <tr>
                     <td>1</td>
-                    <td>Informação não confiável <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                    <td>Informação não confiável <span class="tooltip"><i
+                            class="fa fa-info-circle"></i><span
                             class="info"><em>Informação não confiável</em>Quando se sabe que o nome registrado é fictício ou um nome parcial.</span></span>
                     </td>
                 </tr>
                 <tr>
                     <td>2</td>
-                    <td>Nome com erro de digitação <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                    <td>Nome com erro de digitação <span class="tooltip"><i
+                            class="fa fa-info-circle"></i><span
                             class="info"><em>Nome com erro de digitação</em>Indica que o nome contém erro de digitação, mas que deve ser retido para uma potencial vinculação futura.</span></span>
                     </td>
                 </tr>
                 <tr>
                     <td>3</td>
-                    <td>Nome para não ser usado <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                    <td>Nome para não ser usado <span class="tooltip"><i
+                            class="fa fa-info-circle"></i><span
                             class="info"><em>Nome para não ser usado</em>Indica que nome não pode ser usado para se referir ao indivíduo.</span></span>
                     </td>
                 </tr>
                 <tr>
                     <td>4</td>
-                    <td>Vínculo do nome proibido por lei <span class="tooltip"><i class="fa fa-info-circle"></i><span
+                    <td>Vínculo do nome proibido por lei <span
+                            class="tooltip"><i
+                            class="fa fa-info-circle"></i><span
                             class="info"><em>Vínculo do nome proibido por lei</em>Indica que este nome e os nomes anteriores a este na sequência de nomes do indivíduo em questão não podem ser exibidos ao se buscar por ou lidar com informações e eventos associados com um nome que segue a este na sequência.</span></span>
                     </td>
                 </tr>
                 <tr>
                     <td>6</td>
-                    <td>Requisito de privacidade/segurança especial <span class="tooltip"><i
-                            class="fa fa-info-circle"></i><span class="info"><em>Requisito de privacidade/segurança especial</em>Nomes para os quais episódios são vinculados e devem ser acessíveis somente para pessoas específicas autorizadas.</span></span>
+                    <td>Requisito de privacidade/segurança especial <span
+                            class="tooltip"><i
+                            class="fa fa-info-circle"></i><span
+                            class="info"><em>Requisito de privacidade/segurança especial</em>Nomes para os quais episódios são vinculados e devem ser acessíveis somente para pessoas específicas autorizadas.</span></span>
                     </td>
                 </tr>
                 <tr>
                     <td>9</td>
-                    <td>Nome temporário <span class="tooltip"><i class="fa fa-info-circle"></i><span class="info"><em>Nome temporário</em>Indica nome não determinado, por exemplo, nome substituto utilizado em situação de emergência ou nome de recém-nascido.</span></span>
+                    <td>Nome temporário <span class="tooltip"><i
+                            class="fa fa-info-circle"></i><span
+                            class="info"><em>Nome temporário</em>Indica nome não determinado, por exemplo, nome substituto utilizado em situação de emergência ou nome de recém-nascido.</span></span>
                     </td>
                 </tr>
                 </tbody>
             </table>
         </div>
-        
-        <div class="parcial" id="nomes-form">
-          <section class="section" id="formulario-nomes">
-    <div class="content">
-        <h3>Nome</h3>
 
-        <div class="columns">
-            <div class="column is-narrow">
-                <div class="field">
-                    <label class="label is-small">Nome</label>
-                    <div class="control">
-                        <div class="text">
-                            <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
+        <div class="parcial" id="nomes-form">
+            <section class="section" id="formulario-nomes">
+                <div class="content">
+                    <h3>Nome</h3>
+
+                    <div class="columns">
+                        <div class="column is-narrow">
+                            <div class="field">
+                                <label class="label is-small">Nome</label>
+                                <div class="control">
+                                    <div class="text">
+                                        <input id="nome" type="text" size="30"
+                                               class="input"
+                                               oninput="nomeChanged()">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-narrow">
+                            <div class="field">
+                                <div class="control">
+                                    <label class="label is-small">Sobrenome</label>
+                                    <input id="sobrenome" type="text" size="30"
+                                           class="input"
+                                           oninput="nomeChanged()">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="column is-narrow">
-                <div class="field">
-                    <div class="control">
-                        <label class="label is-small">Sobrenome</label>
-                        <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
+                    <div class="columns">
+                        <div class="column is-narrow">
+                            <div class="field">
+                                <div class="control">
+                                    <label class="label is-small">Título</label>
+                                    <input id="titulo" type="text" size="15"
+                                           class="input"
+                                           oninput="nomeChanged()">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column is-narrow">
+                            <div class="field">
+                                <div class="control">
+                                    <label class="label is-small">Sufixo</label>
+                                    <input id="sufixo" type="text" size="15"
+                                           class="input"
+                                           oninput="nomeChanged()">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="columns">
-            <div class="column is-narrow">
-                <div class="field">
-                    <div class="control">
-                        <label class="label is-small">Título</label>
-                        <input id="titulo" type="text" size="15" class="input" oninput="nomeChanged()">
+
+                    <div class="field">
+                        <label class="label is-small">Nome completo</label>
+                        <div class="control">
+                            <div class="text">
+                                <label id="nome-completo" class="is-small">--
+                                    preencha os campos --</label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="column is-narrow">
-                <div class="field">
-                    <div class="control">
-                        <label class="label is-small">Sufixo</label>
-                        <input id="sufixo" type="text" size="15" class="input" oninput="nomeChanged()">
+
+                    <div class="field">
+                        <label class="label is-small">Uso</label>
+                        <div class="control">
+                            <div class="select">
+                                <select id="uso" class="select">
+                                    <option value="1">Relatório (R)</option>
+                                    <option value="2">Nome de recém-nascido
+                                        (N)
+                                    </option>
+                                    <option value="3">Nome profissional ou
+                                        comercial (C)
+                                    </option>
+                                    <option value="4">Nome de solteiro
+                                        (nascimento) (original)
+                                    </option>
+                                    <option value="5">Nome registrado (nome
+                                        legal)
+                                    </option>
+                                    <option value="8">Outro nome (alias)
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="field">
-            <label class="label is-small">Nome completo</label>
-            <div class="control">
-                <div class="text">
-                    <label id="nome-completo" class="is-small">-- preencha os campos --</label>
-                </div>
-            </div>
-        </div>
-
-        <div class="field">
-            <label class="label is-small">Uso</label>
-            <div class="control">
-                <div class="select">
-                    <select id="uso" class="select">
-                        <option value="1">Relatório (R)</option>
-                        <option value="2">Nome de recém-nascido (N)</option>
-                        <option value="3">Nome profissional ou comercial (C)</option>
-                        <option value="4">Nome de solteiro (nascimento) (original)</option>
-                        <option value="5">Nome registrado (nome legal)</option>
-                        <option value="8">Outro nome (alias)</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <section class="hero is-light">
-            <div class="hero-body">
-                <div class="content has-text-centered">
-                    <h5 class="subtitle">Continue com...</h5>
-                    <a class="button" href="#enderecos">
+                    <section class="hero is-light">
+                        <div class="hero-body">
+                            <div class="content has-text-centered">
+                                <h5 class="subtitle">Continue com...</h5>
+                                <a class="button" href="#enderecos">
                         <span class="icon">
                             <i class="fa fa-arrow-left"></i>
                         </span>
-                        <span>Endereços</span>
-                    </a>
-                    <a class="button" href="#vinculos">
-                        <span>Vínculos</span>
-                        <span class="icon">
+                                    <span>Endereços</span>
+                                </a>
+                                <a class="button" href="#vinculos">
+                                    <span>Vínculos</span>
+                                    <span class="icon">
                             <i class="fa fa-arrow-right"></i>
                         </span>
-                    </a>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </div>
-        </section>
-    </div>
-</section>
+            </section>
         </div>
 
         <section class="hero is-light">
@@ -1059,22 +1178,27 @@
 <section class="section" id="dados">
     <div class="content">
         <h3>Dados demográficos</h3>
-        <p>Dados demográficos adicionais podem ser empregados para maximizar a probabilidade da identificação positiva
-            de um indivíduo. Tais dados incluem: (a) data de nascimento; (b) óbito; (c) sexo; (d) nome da mãe; (e) nome
-            do pai; (f) situação familiar; (g) raça/cor; (h) nacionalidade; (i) pluralidade do nascimento e (j)
+        <p>Dados demográficos adicionais podem ser empregados para maximizar a
+            probabilidade da identificação positiva
+            de um indivíduo. Tais dados incluem: (a) data de nascimento; (b)
+            óbito; (c) sexo; (d) nome da mãe; (e) nome
+            do pai; (f) situação familiar; (g) raça/cor; (h) nacionalidade; (i)
+            pluralidade do nascimento e (j)
             comentário de identificação.</p>
 
         <div class="box">
             <div class="field">
                 <label class="label">Mãe</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="nome completo da mãe">
+                    <input class="input" type="text"
+                           placeholder="nome completo da mãe">
                 </div>
             </div>
             <div class="field">
                 <label class="label">Pai</label>
                 <div class="control">
-                    <input class="input" type="text" placeholder="nome completo do pai">
+                    <input class="input" type="text"
+                           placeholder="nome completo do pai">
                 </div>
             </div>
             <div class="field">
@@ -1096,32 +1220,44 @@
                     <input type="date">
                 </div>
                 <div class="field">
-                    <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
-                                                                                                       type="radio"
-                                                                                                       name="dia"
-                                                                                                       value="A">
-                    Acurado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    <label class="label">Inicador de acurácia</label> Dia:
+                    <label class="radio"><input class="radio"
+                                                type="radio"
+                                                name="dia"
+                                                value="A">
+                        Acurado</label>
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="E">
                         Estimado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                        Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                                  value="A">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="U">
+                        Desconhecido</label><br> Mês: <label
+                        class="radio"><input class="radio" type="radio"
+                                             name="dia"
+                                             value="A">
                     Acurado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="E">
                         Estimado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                        Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                                  value="A">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="U">
+                        Desconhecido</label><br> Ano: <label
+                        class="radio"><input class="radio" type="radio"
+                                             name="dia"
+                                             value="A">
                     Acurado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="E">
                         Estimado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="U">
                         Desconhecido</label>
                 </div>
                 <div class="field">
                     <label class="label">Seguimento</label>
                     <div class="control">
-                        <input type="checkbox" class="checkbox">&nbsp;Data precisa de seguimento
+                        <input type="checkbox" class="checkbox">&nbsp;Data
+                        precisa de seguimento
                     </div>
                 </div>
             </div>
@@ -1133,40 +1269,57 @@
                     <input type="date">
                 </div>
                 <div class="field">
-                    <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
-                                                                                                       type="radio"
-                                                                                                       name="dia"
-                                                                                                       value="A">
-                    Acurado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    <label class="label">Inicador de acurácia</label> Dia:
+                    <label class="radio"><input class="radio"
+                                                type="radio"
+                                                name="dia"
+                                                value="A">
+                        Acurado</label>
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="E">
                         Estimado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                        Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                                  value="A">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="U">
+                        Desconhecido</label><br> Mês: <label
+                        class="radio"><input class="radio" type="radio"
+                                             name="dia"
+                                             value="A">
                     Acurado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="E">
                         Estimado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                        Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                                  value="A">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="U">
+                        Desconhecido</label><br> Ano: <label
+                        class="radio"><input class="radio" type="radio"
+                                             name="dia"
+                                             value="A">
                     Acurado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="E">
                         Estimado</label>
-                    <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                    <label class="radio"><input class="radio" type="radio"
+                                                name="dia" value="U">
                         Desconhecido</label>
                 </div>
                 <div class="field">
                     <label class="label">Fonte de notificação</label>
                     <div class="control">
-                        <label class="radio"><input class="radio" type="radio" name="dia" value="1">
+                        <label class="radio"><input class="radio" type="radio"
+                                                    name="dia" value="1">
                             Cartório</label>
-                        <label class="radio"><input class="radio" type="radio" name="dia" value="2">
+                        <label class="radio"><input class="radio" type="radio"
+                                                    name="dia" value="2">
                             Prestador de assistência à saúde</label>
-                        <label class="radio"><input class="radio" type="radio" name="dia" value="3">
+                        <label class="radio"><input class="radio" type="radio"
+                                                    name="dia" value="3">
                             Parente</label>
-                        <label class="radio"><input class="radio" type="radio" name="dia" value="4">
+                        <label class="radio"><input class="radio" type="radio"
+                                                    name="dia" value="4">
                             Outro</label>
-                        <label class="radio"><input class="radio" type="radio" name="dia" value="9" checked>
+                        <label class="radio"><input class="radio" type="radio"
+                                                    name="dia" value="9"
+                                                    checked>
                             Desconhecido</label>
                     </div>
                 </div>
@@ -1201,7 +1354,8 @@
                         <input class="radio" type="radio" name="sexo" value="3">
                         intersexo ou indeterminado (I)</label><br>
                     <label class="radio">
-                        <input class="radio" type="radio" name="sexo" value="9" checked>
+                        <input class="radio" type="radio" name="sexo" value="9"
+                               checked>
                         não declarado (U)</label>
                 </div>
             </div>
@@ -1214,10 +1368,17 @@
                 <div class="select">
                     <select>
                         <option value="1">companheiro(a) e filho(s)</option>
-                        <option value="2">companheiro(a) com laços conjugais e sem filhos</option>
-                        <option value="3">companheiro(a), com filho(s) e/ou outro(s) familiares.</option>
-                        <option value="4">familiar(es) sem companheiro(a)</option>
-                        <option value="5">outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais</option>
+                        <option value="2">companheiro(a) com laços conjugais e
+                            sem filhos
+                        </option>
+                        <option value="3">companheiro(a), com filho(s) e/ou
+                            outro(s) familiares.
+                        </option>
+                        <option value="4">familiar(es) sem companheiro(a)
+                        </option>
+                        <option value="5">outra(s) pessoa(s), sem laços
+                            consanguíneos e/ou laços conjugais
+                        </option>
                         <option value="6">Vive só</option>
                     </select>
                 </div>
@@ -1229,7 +1390,8 @@
             <label class="label">Nacionalidade</label>
             <div class="control" onchange="nacionalidade();">
                 <label class="radio">
-                    <input id="brasileira" type="radio" name="nacionalidade" value="1" checked>
+                    <input id="brasileira" type="radio" name="nacionalidade"
+                           value="1" checked>
                     Brasileiro</label>
                 <label class="radio">
                     <input type="radio" name="nacionalidade" value="2">
@@ -1241,7 +1403,8 @@
                     <div class="control">
                         <label class="label">Estado de nascimento</label>
                         <div class="select is-small">
-                            <select id="estados" onchange="atualizaMunicipios()">
+                            <select id="estados"
+                                    onchange="atualizaMunicipios()">
                                 <option value="AC">Acre</option>
                                 <option value="AL">Alagoas</option>
                                 <option value="AM">Amazonas</option>
@@ -1401,25 +1564,34 @@
                 <input type="date">
             </div>
             <div class="field">
-                <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
-                                                                                                   type="radio"
-                                                                                                   name="dia" value="A">
+                <label class="label">Inicador de acurácia</label> Dia: <label
+                    class="radio"><input class="radio"
+                                         type="radio"
+                                         name="dia" value="A">
                 Acurado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="E">
                     Estimado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                    Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                              value="A">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="U">
+                    Desconhecido</label><br> Mês: <label class="radio"><input
+                    class="radio" type="radio" name="dia"
+                    value="A">
                 Acurado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="E">
                     Estimado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                    Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                              value="A">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="U">
+                    Desconhecido</label><br> Ano: <label class="radio"><input
+                    class="radio" type="radio" name="dia"
+                    value="A">
                 Acurado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="E">
                     Estimado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="U">
                     Desconhecido</label>
             </div>
 
@@ -1429,25 +1601,34 @@
                 <input type="date">
             </div>
             <div class="field">
-                <label class="label">Inicador de acurácia</label> Dia: <label class="radio"><input class="radio"
-                                                                                                   type="radio"
-                                                                                                   name="dia" value="A">
+                <label class="label">Inicador de acurácia</label> Dia: <label
+                    class="radio"><input class="radio"
+                                         type="radio"
+                                         name="dia" value="A">
                 Acurado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="E">
                     Estimado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                    Desconhecido</label><br> Mês: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                              value="A">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="U">
+                    Desconhecido</label><br> Mês: <label class="radio"><input
+                    class="radio" type="radio" name="dia"
+                    value="A">
                 Acurado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="E">
                     Estimado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
-                    Desconhecido</label><br> Ano: <label class="radio"><input class="radio" type="radio" name="dia"
-                                                                              value="A">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="U">
+                    Desconhecido</label><br> Ano: <label class="radio"><input
+                    class="radio" type="radio" name="dia"
+                    value="A">
                 Acurado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="E">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="E">
                     Estimado</label>
-                <label class="radio"><input class="radio" type="radio" name="dia" value="U">
+                <label class="radio"><input class="radio" type="radio"
+                                            name="dia" value="U">
                     Desconhecido</label>
             </div>
 
@@ -1476,32 +1657,64 @@
                                 <div class="field">
                                     <div class="control">
                                         <div class="select is-small">
-                                            <select id="estados-endereco" onchange="municipiosEndereco()">
+                                            <select id="estados-endereco"
+                                                    onchange="municipiosEndereco()">
                                                 <option value="AC">Acre</option>
-                                                <option value="AL">Alagoas</option>
-                                                <option value="AM">Amazonas</option>
-                                                <option value="AP">Amapá</option>
-                                                <option value="BA">Bahia</option>
-                                                <option value="CE">Ceará</option>
-                                                <option value="DF">Distrito Federal</option>
-                                                <option value="ES">Espírito Santo</option>
-                                                <option value="GO">Goiás</option>
-                                                <option value="MA">Maranhão</option>
-                                                <option value="MG">Minas Gerais</option>
-                                                <option value="MS">Mato Grosso do Sul</option>
-                                                <option value="MT">Mato Grosso</option>
+                                                <option value="AL">Alagoas
+                                                </option>
+                                                <option value="AM">Amazonas
+                                                </option>
+                                                <option value="AP">Amapá
+                                                </option>
+                                                <option value="BA">Bahia
+                                                </option>
+                                                <option value="CE">Ceará
+                                                </option>
+                                                <option value="DF">Distrito
+                                                    Federal
+                                                </option>
+                                                <option value="ES">Espírito
+                                                    Santo
+                                                </option>
+                                                <option value="GO">Goiás
+                                                </option>
+                                                <option value="MA">Maranhão
+                                                </option>
+                                                <option value="MG">Minas
+                                                    Gerais
+                                                </option>
+                                                <option value="MS">Mato Grosso
+                                                    do Sul
+                                                </option>
+                                                <option value="MT">Mato Grosso
+                                                </option>
                                                 <option value="PA">Pará</option>
-                                                <option value="PB">Paraíba</option>
-                                                <option value="PE">Pernambuco</option>
-                                                <option value="PI">Piauí</option>
-                                                <option value="PR">Paraná</option>
-                                                <option value="RJ">Rio de Janeiro</option>
-                                                <option value="RN">Rio Grande do Norte</option>
-                                                <option value="RS">Rio Grande do Sul</option>
-                                                <option value="SC">Santa Catarina</option>
-                                                <option value="SE">Sergipe</option>
-                                                <option value="SP">São Paulo</option>
-                                                <option value="TO">Tocantins</option>
+                                                <option value="PB">Paraíba
+                                                </option>
+                                                <option value="PE">Pernambuco
+                                                </option>
+                                                <option value="PI">Piauí
+                                                </option>
+                                                <option value="PR">Paraná
+                                                </option>
+                                                <option value="RJ">Rio de
+                                                    Janeiro
+                                                </option>
+                                                <option value="RN">Rio Grande do
+                                                    Norte
+                                                </option>
+                                                <option value="RS">Rio Grande do
+                                                    Sul
+                                                </option>
+                                                <option value="SC">Santa
+                                                    Catarina
+                                                </option>
+                                                <option value="SE">Sergipe
+                                                </option>
+                                                <option value="SP">São Paulo
+                                                </option>
+                                                <option value="TO">Tocantins
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -1557,7 +1770,8 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <input type="text" class="input is-small">
+                                        <input type="text"
+                                               class="input is-small">
                                     </div>
                                 </div>
                             </div>
@@ -1571,7 +1785,8 @@
                             <div class="field-body">
                                 <div class="field">
                                     <div class="control">
-                                        <input type="text" class="input is-small">
+                                        <input type="text"
+                                               class="input is-small">
                                     </div>
                                 </div>
                             </div>
@@ -1602,7 +1817,8 @@
                 <div class="field-body">
                     <div class="field">
                         <div class="control">
-                            <input type="text" maxlength="8" class="input is-small">
+                            <input type="text" maxlength="8"
+                                   class="input is-small">
                             <p class="help">Por exemplo, 74000-010.</p>
                         </div>
                     </div>
@@ -1713,38 +1929,45 @@
                     </div>
                     <div class="dropdown-menu" id="dropdown-menu" role="menu">
                         <div class="dropdown-content">
-                            <div class="dropdown-item" onclick="selecione(this)" id="m1">
+                            <div class="dropdown-item" onclick="selecione(this)"
+                                 id="m1">
                   <span class="icon">
                 <i class="fa fa-phone"></i>
               </span> Telefone
                             </div>
-                            <div class="dropdown-item" onclick="selecione(this)" id="m2">
+                            <div class="dropdown-item" onclick="selecione(this)"
+                                 id="m2">
                   <span class="icon">
         <i class="fa fa-mobile" aria-hidden="true"></i>
       </span> Celular
                             </div>
-                            <div class="dropdown-item" onclick="selecione(this)" id="m3">
+                            <div class="dropdown-item" onclick="selecione(this)"
+                                 id="m3">
                   <span class="icon">
                 <i class="fa fa-fax" aria-hidden="true"></i>
               </span> Fax
                             </div>
-                            <div class="dropdown-item" onclick="selecione(this)" id="m4">
+                            <div class="dropdown-item" onclick="selecione(this)"
+                                 id="m4">
                   <span class="icon">
                 <i class="fa fa-tablet" aria-hidden="true"></i>
               </span> Pager
                             </div>
-                            <div class="dropdown-item" onclick="selecione(this)" id="m5">
+                            <div class="dropdown-item" onclick="selecione(this)"
+                                 id="m5">
                   <span class="icon">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
               </span> Email
                             </div>
-                            <div class="dropdown-item" onclick="selecione(this)" id="m6">
+                            <div class="dropdown-item" onclick="selecione(this)"
+                                 id="m6">
                   <span class="icon">
         <i class="fa fa-globe" aria-hidden="true"></i>
       </span> URL
                             </div>
                             <hr class="dropdown-divider">
-                            <div class="dropdown-item" onclick="selecione(this)" id="m8">
+                            <div class="dropdown-item" onclick="selecione(this)"
+                                 id="m8">
                                 Outro
                             </div>
                         </div>
@@ -1767,7 +1990,8 @@
                         <label class="label is-small">Preferência</label>
                         <div class="select">
                             <select>
-                                <option value="B" selected>Horário comercial</option>
+                                <option value="B" selected>Horário comercial
+                                </option>
                                 <option value="D">Durante o dia</option>
                                 <option value="W">Finais de semana</option>
                                 <option value="A">Qualquer hora</option>
@@ -1820,12 +2044,19 @@
 <section class="section" id="vinculos">
     <div class="content">
         <h3>Vínculos</h3>
-        <p>Um vínculo é empregado, por exemplo, para contribuir com a acurácia das informações associadas a um paciente, por exemplo, endereço. Deve ser observado que um vínculo pode ser fruto de uma relação social com o paciente e, consequentemente, deve ser usado com caultela, além de demandar a adoção de período de 
-        "validade" do vínculo.</p>
-        
-        <p>Cada paciente pode possuir zero ou mais vínculos. Cada um deles é estabelecido por meio de um identificador da pessoa associada ao paciente. Esse identificador deve ser único no estabelecimento de assistência à saúde.</p>
+        <p>Um vínculo é empregado, por exemplo, para contribuir com a acurácia
+            das informações associadas a um paciente, por exemplo, endereço.
+            Deve ser observado que um vínculo pode ser fruto de uma relação
+            social com o paciente e, consequentemente, deve ser usado com
+            caultela, além de demandar a adoção de período de
+            "validade" do vínculo.</p>
+
+        <p>Cada paciente pode possuir zero ou mais vínculos. Cada um deles é
+            estabelecido por meio de um identificador da pessoa associada ao
+            paciente. Esse identificador deve ser único no estabelecimento de
+            assistência à saúde.</p>
         <div class="columns">
-           
+
             <!-- identificador -->
             <div class="column is-narrow">
                 <div class="field">
@@ -1835,10 +2066,13 @@
                             <input type="text" size="20" class="input">
                         </div>
                     </div>
-                    <p class="help is-danger" style="width:150px;">Isso é uma "chave". Não faz sentido o usuário fornecer. Aqui deveria ter o nome da mãe ou pai, por exemplo, correspondente à chave.</p>
+                    <p class="help is-danger" style="width:150px;">Isso é uma
+                        "chave". Não faz sentido o usuário fornecer. Aqui
+                        deveria ter o nome da mãe ou pai, por exemplo,
+                        correspondente à chave.</p>
                 </div>
             </div>
-            
+
             <!-- tipo do relacionamento -->
             <div class="column is-narrow">
                 <div class="field">
@@ -1848,7 +2082,8 @@
                             <select>
                                 <option value="7" selected>Avó materna</option>
                                 <option value="8">Avô materno</option>
-                                <option value="22">Cônjuge/companheiro(a)</option>
+                                <option value="22">Cônjuge/companheiro(a)
+                                </option>
                                 <option value="23">Irmão</option>
                                 <option value="24">Irmã</option>
                                 <option value="25">Meio-irmão</option>
@@ -1873,7 +2108,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- data inicial -->
             <div class="column is-narrow">
                 <div class="field">
@@ -1883,7 +2118,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- data final -->
             <div class="column is-narrow">
                 <div class="field">
@@ -1921,9 +2156,20 @@
     <div class="content">
         <h3>Casos de Uso</h3>
         <ul>
-            <li>Criar identificação. Uma nova identificação é produzida para um indivíduo a ser assistido pela instituição.</li>
-            <li>Atualizar identificação. Elementos de uma identificação existente são alterados para refletir, por exemplo, o novo endereço de um paciente.</li>
-            <li>Localizar identificação. A busca por uma identificação ocorre, por exemplo, quando um paciente procura por assistência. Em geral, nome, nome da mãe, data de nascimento e sexo são alguns dos elementos empregados para a busca e suficientes para localizar um único indivíduo. A busca, portanto, deve contemplar vários campos.</li>
+            <li>Criar identificação. Uma nova identificação é produzida para um
+                indivíduo a ser assistido pela instituição.
+            </li>
+            <li>Atualizar identificação. Elementos de uma identificação
+                existente são alterados para refletir, por exemplo, o novo
+                endereço de um paciente.
+            </li>
+            <li>Localizar identificação. A busca por uma identificação ocorre,
+                por exemplo, quando um paciente procura por assistência. Em
+                geral, nome, nome da mãe, data de nascimento e sexo são alguns
+                dos elementos empregados para a busca e suficientes para
+                localizar um único indivíduo. A busca, portanto, deve contemplar
+                vários campos.
+            </li>
         </ul>
     </div>
 </section>
