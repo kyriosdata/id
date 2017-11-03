@@ -36,6 +36,9 @@
     function abra() {
       var d = document.getElementById("vinculo-di-atualiza");
       d.value = dataCorrente();
+      
+      var n = document.getElementById('vinculo-nome-pessoa');
+      n.innerHTML = "O nome do vínculo com o paciente";
 
       var k = document.getElementById('edita-vinculo');
       k.classList.add('is-active');
@@ -130,6 +133,13 @@
         <button class="delete" aria-label="close" onclick="feche()"></button>
       </header>
       <section class="modal-card-body">
+       <!-- Nome do vínculo (pessoa) -->
+       <div class="field">
+         <div class="control">
+           <label for="" class="label is-normal" id="vinculo-nome-pessoa">não fornecido</label>
+           <p class="help">Você não pode editar o vínculo (remova-o se for o caso).</p>
+         </div>
+       </div>
         <!-- Relacionamento -->
         <div class="field">
           <div class="control">
