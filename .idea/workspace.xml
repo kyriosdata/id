@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e884f500-b48e-4cfa-935d-6332c7db3ab0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/docs/js/main.js" />
+    <list default="true" id="e884f500-b48e-4cfa-935d-6332c7db3ab0" name="Default" comment="organização">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/index.html" afterPath="$PROJECT_DIR$/docs/index.html" />
     </list>
@@ -30,8 +29,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+            <state relative-caret-position="650">
+              <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
               <folding>
                 <element signature="n#ul#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -120,6 +119,7 @@
       <find>casos de uso</find>
       <find>dados demogr</find>
       <find>um identificador é compo</find>
+      <find>visão geral</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -655,6 +655,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e884f500-b48e-4cfa-935d-6332c7db3ab0" name="Default" comment="" />
@@ -666,7 +669,7 @@
       <workItem from="1497994497576" duration="3082000" />
       <workItem from="1498082768901" duration="612000" />
       <workItem from="1499641161768" duration="36000" />
-      <workItem from="1509723279211" duration="1738000" />
+      <workItem from="1509723279211" duration="2573000" />
     </task>
     <task id="LOCAL-00001" summary="Versão inicial área geográfica">
       <created>1497968382511</created>
@@ -787,11 +790,18 @@
       <option name="project" value="LOCAL" />
       <updated>1509724225545</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="organização">
+      <created>1509725031094</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1509725031094</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19105000" />
+    <option name="totallyTimeSpent" value="19940000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1182,8 +1192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="31" column="12" lean-forward="true" selection-start-line="31" selection-start-column="12" selection-end-line="31" selection-end-column="12" />
+        <state relative-caret-position="650">
+          <caret line="208" column="0" lean-forward="true" selection-start-line="208" selection-start-column="0" selection-end-line="208" selection-end-column="0" />
           <folding>
             <element signature="n#ul#0;n#div#0;n#section#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
