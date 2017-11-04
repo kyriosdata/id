@@ -1,38 +1,4 @@
 DROP TABLE IF EXISTS Nome;
-DROP TABLE IF EXISTS UsoCondicional;
-
-/*
-  LOOKUP TABLE
-  Seção 9.4 Uso condicional
- */
-CREATE TABLE UsoCondicional (
-  codigo int,
-  descricao varchar
-);
-
-INSERT INTO UsoCondicional VALUES (1, 'Informação não confiável');
-INSERT INTO UsoCondicional VALUES (2, 'Nome com erro de digitação');
-INSERT INTO UsoCondicional VALUES (3, 'Nome para não ser usado');
-INSERT INTO UsoCondicional VALUES (4, 'Vínculo do nome proibido por lei');
-INSERT INTO UsoCondicional VALUES (6, 'Requisito de privacidade/segurança especial');
-INSERT INTO UsoCondicional VALUES (9, 'Nome temporário');
-
-/*
-  LOOKUP TABLE
-  Seção 9.9.2 Uso do nome
- */
-
-CREATE TABLE UsoDoNome (
-  codigo int,
-  alternativo char,
-  descricao varchar
-);
-
-INSERT INTO UsoDoNome VALUES (1, 'R', 'relatório');
-INSERT INTO UsoDoNome VALUES (2, 'N', 'Nome de recém-nascido');
-INSERT INTO UsoDoNome VALUES (3, 'C', 'Nome profissional ou comercial');
-INSERT INTO UsoDoNome VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
-INSERT INTO UsoDoNome VALUES (8, 'O', 'Outro nome (alias)');
 
 /*
   Seção 9 (página 17)
@@ -44,9 +10,12 @@ INSERT INTO UsoDoNome VALUES (8, 'O', 'Outro nome (alias)');
   tempo.
  */
 CREATE TABLE Nome (
-  completo varchar,
-  preferido BOOLEAN,
-  usoCondicional int
+  titulos varchar,
+  nomes varchar,
+  sobrenomes varchar,
+  sufixos varchar,
+  usoCondicional int,
+  preferido BOOLEAN
 );
 
 ALTER TABLE Nome

@@ -41,4 +41,4 @@ ALTER TABLE CTPS
   ADD CONSTRAINT FK_EstadoCodigo
 FOREIGN KEY (estado) REFERENCES Estado(codigo);
 
-INSERT INTO IDENTIFICADOR VALUES (1, 1, 'N/A', DATE '2017-12-31', '01', 'c', 'l', 'f', 't', 's', 'GO', 'zona', 'seção');
+INSERT INTO IDENTIFICADOR VALUES ('1', 1, 'N/A', DATE '2017-12-31', '01');
