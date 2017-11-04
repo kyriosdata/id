@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e884f500-b48e-4cfa-935d-6332c7db3ab0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6857f364-c6aa-405e-8942-068426582d89.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6857f364-c6aa-405e-8942-068426582d89.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V5__sobrenome.sql" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V2__codigos.sql" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V2__codigos.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V3__identificador.sql" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V3__identificador.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V4__nome.sql" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V4__nome.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql" afterPath="$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,8 +57,18 @@
       <file leaf-file-name="V4__nome.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V4__nome.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <state relative-caret-position="441">
+              <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="V6__titulo.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -68,8 +77,8 @@
       <file leaf-file-name="V2__codigos.sql" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__codigos.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1389">
-              <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+            <state relative-caret-position="-2109">
+              <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -116,7 +125,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V3__id.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V3__identificador_do_individuo.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V5__sobrenome.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V7__atribuido.sql" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/docs/js/main.js" />
@@ -133,8 +141,9 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6857f364-c6aa-405e-8942-068426582d89/console.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V1__init.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V3__identificador.sql" />
-        <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2__codigos.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V4__nome.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2__codigos.sql" />
       </list>
     </option>
   </component>
@@ -694,7 +703,7 @@
       <workItem from="1499641161768" duration="36000" />
       <workItem from="1509723279211" duration="10918000" />
       <workItem from="1509816744079" duration="1578000" />
-      <workItem from="1509823010774" duration="5090000" />
+      <workItem from="1509823010774" duration="5442000" />
     </task>
     <task id="LOCAL-00001" summary="Versão inicial área geográfica">
       <created>1497968382511</created>
@@ -833,7 +842,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34953000" />
+    <option name="totallyTimeSpent" value="35305000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1082,20 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="63" column="71" lean-forward="false" selection-start-line="63" selection-start-column="71" selection-end-line="63" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V5__sobrenome.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V7__atribuido.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -1298,18 +1293,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V5__sobrenome.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V4__nome.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        <state relative-caret-position="441">
+          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V2__codigos.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1389">
-          <caret line="10" column="31" lean-forward="false" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        <state relative-caret-position="-2109">
+          <caret line="11" column="34" lean-forward="false" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
           <folding />
         </state>
       </provider>

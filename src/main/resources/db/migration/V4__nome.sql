@@ -1,4 +1,6 @@
-DROP TABLE IF EXISTS Nome;
+DROP TABLE IF EXISTS NOME;
+DROP TABLE IF EXISTS UTILIZACAO;
+DROP TABLE IF EXISTS REPRESENTACAO;
 
 /*
   Seção 9 (página 17)
@@ -9,7 +11,7 @@ DROP TABLE IF EXISTS Nome;
   Somente um nome pode ser o nome preferido da pessoa em cda instante do
   tempo.
  */
-CREATE TABLE Nome (
+CREATE TABLE NOME (
   titulos varchar,
   nomes varchar,
   sobrenomes varchar,
@@ -18,7 +20,21 @@ CREATE TABLE Nome (
   preferido BOOLEAN
 );
 
-ALTER TABLE Nome
+ALTER TABLE NOME
   ADD CONSTRAINT FK_UsoCondicionalCodigo
 FOREIGN KEY (usoCondicional) REFERENCES UsoCondicional(codigo);
+
+CREATE TABLE UTILIZACAO (
+  uso int,
+  dataInicial DATE,
+  dataFinal DATE
+);
+
+ALTER TABLE UTILIZACAO
+    ADD CONSTRAINT FK_UsoDoNomeCodigo
+FOREIGN KEY (uso) REFERENCES USODONOME(codigo);
+
+CREATE TABLE REPRESENTACAO (
+  alternativa varchar
+);
 

@@ -9,6 +9,7 @@ DROP TABLE IF EXISTS Estado;
 DROP TABLE IF EXISTS TipoDoIdentificador;
 DROP TABLE IF EXISTS UsoCondicional;
 DROP TABLE IF EXISTS UsoDoNome;
+DROP TABLE IF EXISTS NOMEDETITULO;
 
 CREATE TABLE Estado (
   codigo varchar(2),
@@ -88,4 +89,34 @@ INSERT INTO UsoDoNome VALUES (2, 'N', 'Nome de recém-nascido');
 INSERT INTO UsoDoNome VALUES (3, 'C', 'Nome profissional ou comercial');
 INSERT INTO UsoDoNome VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
 INSERT INTO UsoDoNome VALUES (8, 'O', 'Outro nome (alias)');
+
+/*
+  LOOKUP TABLE
+  Seção 9.6.2 (página 32)
+  Título, honorífico ou prefixo do nome de referência, que inicia um
+  nome, usada ao se referir a um indivíduo pelo nome, seja por carta,
+  por telefone ou, dependendo da situação cultural, pessoalmente.
+ */
+
+CREATE TABLE NOMEDETITULO (
+  nome varchar,
+  abreviacao varchar,
+  PRIMARY KEY (abreviacao)
+);
+
+/*
+  TODO Acrescentar na tabela lista "completa" de pronomes de tratamento.
+ */
+INSERT INTO NOMEDETITULO VALUES ('Almirante', 'Alm.');
+INSERT INTO NOMEDETITULO VALUES ('Capitão', 'Cap.');
+INSERT INTO NOMEDETITULO VALUES ('Coronel', 'Cel.');
+INSERT INTO NOMEDETITULO VALUES ('General', 'Gen.');
+INSERT INTO NOMEDETITULO VALUES ('Herr', 'Herr.');
+INSERT INTO NOMEDETITULO VALUES ('Major', 'Maj.');
+INSERT INTO NOMEDETITULO VALUES ('Professor', 'Prof.');
+INSERT INTO NOMEDETITULO VALUES ('Reverendo', 'Ver.');
+INSERT INTO NOMEDETITULO VALUES ('Sargento', 'Sgt.');
+INSERT INTO NOMEDETITULO VALUES ('Senhor', 'Sr.');
+INSERT INTO NOMEDETITULO VALUES ('Senhora', 'Sra.');
+INSERT INTO NOMEDETITULO VALUES ('Senhorita', 'Srta.');
 
