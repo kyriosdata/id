@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e884f500-b48e-4cfa-935d-6332c7db3ab0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V6__titulo.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V7__atribuido.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/db/migration/V8__sufixo.sql" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6857f364-c6aa-405e-8942-068426582d89.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6857f364-c6aa-405e-8942-068426582d89.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sgbd.md" afterPath="$PROJECT_DIR$/sgbd.md" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,11 +52,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="V4__nome.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sgbd.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sgbd.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="264">
+                <caret line="11" column="68" lean-forward="false" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="V4__nome.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V4__nome.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            <state relative-caret-position="177">
+              <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -130,7 +141,6 @@
         <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/docs/endereco.html" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/sgbd.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/esb/id/PessoaRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/esb/id/IndividuoRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/kyriosdata/esb/id/Pessoa.java" />
@@ -144,6 +154,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V7__atribuido.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V2__codigos.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/db/migration/V8__sufixo.sql" />
+        <option value="$PROJECT_DIR$/sgbd.md" />
       </list>
     </option>
   </component>
@@ -703,7 +714,7 @@
       <workItem from="1499641161768" duration="36000" />
       <workItem from="1509723279211" duration="10918000" />
       <workItem from="1509816744079" duration="1578000" />
-      <workItem from="1509823010774" duration="5722000" />
+      <workItem from="1509823010774" duration="5901000" />
     </task>
     <task id="LOCAL-00001" summary="Versão inicial área geográfica">
       <created>1497968382511</created>
@@ -842,7 +853,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35585000" />
+    <option name="totallyTimeSpent" value="35764000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1171,17 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sgbd.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="241">
-            <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/569d6841/6857f364-c6aa-405e-8942-068426582d89/DATABASE.PUBLIC.schema_version">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1320,9 +1320,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/db/migration/V4__nome.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        <state relative-caret-position="177">
+          <caret line="23" column="40" lean-forward="false" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sgbd.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="264">
+            <caret line="11" column="68" lean-forward="false" selection-start-line="11" selection-start-column="68" selection-end-line="11" selection-end-column="68" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

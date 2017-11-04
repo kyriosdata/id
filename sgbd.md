@@ -7,6 +7,10 @@ consulte o arquivo _pom.xml_ (effective pom) e procure pela propriedade
 _h2.version_. Essa propriedade deve ser empregada pelo Flyway e também
 para a configuração do **exec-maven-plugin**.
 
+Observe que ao executar **mvn package** será gerado o diretório **jars** no diretório
+**target** no qual estarão todas os jar files empregados, inclusive aquele correspondente
+ao H2. Esse deve ser o jar empregado pelo cliente do IntelliJ IDEA. 
+
 ### Iniciar o H2 (Server Mode)
 Basta executar **mvn exec:java**. No _pom.xml_ está indicada a versão
 a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
