@@ -1,31 +1,44 @@
-DROP TABLE IF EXISTS Identificador;
+DROP TABLE IF EXISTS IDENTIFICADOR;
+DROP TABLE IF EXISTS CTPS;
+DROP TABLE IF EXISTS CERTIDAO;
+DROP TABLE IF EXISTS TITULOELEITORAL;
 
-CREATE TABLE Identificador (
+CREATE TABLE IDENTIFICADOR (
   designacao varchar NOT NULL,
   area int,
   emissor varchar,
   dataDeEmissao DATE,
-  tipoDoIdentificador varchar,
+  tipo varchar
+);
+
+CREATE TABLE CTPS (
+  serie varchar,
+  estado varchar(2)
+);
+
+CREATE TABLE CERTIDAO (
+  tipo int,
   cartorio varchar,
   livro varchar,
   folha varchar,
-  termo varchar,
-  serie varchar,
-  estado varchar(2),
-  zona varchar,
-  secao varchar
+  termo varchar
 );
 
-ALTER TABLE Identificador
+CREATE TABLE TITULOELEITORAL (
+  sessao varchar,
+  zona varchar
+);
+
+ALTER TABLE IDENTIFICADOR
   ADD CONSTRAINT FK_AreaGeograficaCodigo
 FOREIGN KEY (area) REFERENCES AreaGeografica(codigo);
 
-ALTER TABLE Identificador
+ALTER TABLE IDENTIFICADOR
   ADD CONSTRAINT FK_TipoDoIdentificadorCodigo
-FOREIGN KEY (tipoDoIdentificador) REFERENCES TipoDoIdentificador(codigo);
+FOREIGN KEY (tipo) REFERENCES TipoDoIdentificador(codigo);
 
-ALTER TABLE Identificador
+ALTER TABLE CTPS
   ADD CONSTRAINT FK_EstadoCodigo
 FOREIGN KEY (estado) REFERENCES Estado(codigo);
 
-INSERT INTO Identificador VALUES (1, 1, 'N/A', DATE '2017-12-31', '01', 'c', 'l', 'f', 't', 's', 'GO', 'zona', 'seção');
+INSERT INTO IDENTIFICADOR VALUES (1, 1, 'N/A', DATE '2017-12-31', '01', 'c', 'l', 'f', 't', 's', 'GO', 'zona', 'seção');
