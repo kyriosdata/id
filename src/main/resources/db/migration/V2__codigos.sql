@@ -1,12 +1,12 @@
+/*
+  LOOKUP TABLES
+  Tabelas que mantêm códigos predefinidos utilizados em campos
+  de outras tabelas.
+ */
+
 DROP TABLE IF EXISTS AreaGeografica;
 DROP TABLE IF EXISTS Estado;
-DROP TABLE IF EXISTS Identificador;
 DROP TABLE IF EXISTS TipoDoIdentificador;
-
-/* LOOKUP TABLE
-   O código do estado onde foi emitida a carteira de trabalho
-   do indivíduo.
-*/
 
 CREATE TABLE Estado (
   codigo varchar(2),
