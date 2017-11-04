@@ -5,7 +5,7 @@
       <driver-ref>h2.unified</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>
-      <jdbc-url>jdbc:h2:tcp://192.168.5.50:9092/.</jdbc-url>
+      <jdbc-url>jdbc:h2:tcp://192.168.5.50:9092/./database</jdbc-url>
     </data-source>
   </component>
 </project>

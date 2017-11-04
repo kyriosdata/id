@@ -12,7 +12,13 @@ Basta executar **mvn exec:java**. No _pom.xml_ está indicada a versão
 a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
 Flyway quanto pelo cliente SQL empregado.
 
+### URL de conexão
+```
+jdbc:h2:tcp://localhost:9092/./database
+```
+
 # Passos
+Para execução das migrações.
 
 ```
 $ mvn exec:java
