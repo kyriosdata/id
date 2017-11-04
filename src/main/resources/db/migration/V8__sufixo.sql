@@ -55,9 +55,4 @@ ALTER TABLE NomeAtribuido
   ADD CONSTRAINT FK_NumeroSequenciaNomeAtribuido
 FOREIGN KEY (ordem) REFERENCES NumeroSequenciaNomeAtribuido(ordem);
 
-/*
-  "Maria Georgina da Silva"
- */
-INSERT INTO NomeAtribuido VALUES ('Maria', 11);
-INSERT INTO NomeAtribuido VALUES ('Georgina', 21);
 
