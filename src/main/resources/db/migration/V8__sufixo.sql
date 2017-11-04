@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS NomeSufixo;
+DROP TABLE IF EXISTS NomeAtribuido;
 DROP TABLE IF EXISTS Sufixo;
 DROP TABLE IF EXISTS NumeroSequenciaSufixo;
 
@@ -56,6 +58,6 @@ FOREIGN KEY (ordem) REFERENCES NumeroSequenciaNomeAtribuido(ordem);
 /*
   "Maria Georgina da Silva"
  */
-INSERT INTO NomeAtribuido VALUES ('Maria', 1);
-INSERT INTO NomeAtribuido VALUES ('Georgina', 2);
+INSERT INTO NomeAtribuido VALUES ('Maria', 11);
+INSERT INTO NomeAtribuido VALUES ('Georgina', 21);
 

@@ -8,7 +8,7 @@ _h2.version_. Essa propriedade deve ser empregada pelo Flyway e também
 para a configuração do **exec-maven-plugin**.
 
 ### Iniciar o H2 (Server Mode)
-Basta executar **mvn exec:java***. No _pom.xml_ está indicada a versão
+Basta executar **mvn exec:java**. No _pom.xml_ está indicada a versão
 a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
 Flyway quanto pelo cliente SQL empregado.
 
@@ -25,6 +25,6 @@ O diretório `src/main/db/migration` contém várias versões **V1**,
 **V2** e assim sucessivamente. 
 
 Todas elas serão aplicadas, na ordem das versões, com o comando
-**mvn flyway:migrate**. Use o comando **mvnflyway:info** para obter
+**mvn flyway:migrate**. Use o comando **mvn flyway:info** para obter
 informações sobre o banco de dados em questão, o que deve indicar
 eventuais alterações pendentes, se for o caso.
