@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e884f500-b48e-4cfa-935d-6332c7db3ab0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6857f364-c6aa-405e-8942-068426582d89.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6857f364-c6aa-405e-8942-068426582d89.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sgbd.md" afterPath="$PROJECT_DIR$/sgbd.md" />
@@ -28,6 +28,11 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="jdbc:h2:tcp://192.168.5.50:9092/./database" type="e3449647:DbNodeDescriptor" />
       </path>
+      <path>
+        <item name="" type="eadb38e5:DatabaseStructure$Root" />
+        <item name="jdbc:h2:tcp://192.168.5.50:9092/./database" type="e3449647:DbNodeDescriptor" />
+        <item name="DATABASE" type="e3449647:DbNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
@@ -47,8 +52,8 @@
         <entry file="file://$PROJECT_DIR$/sgbd.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="193">
-                <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <first_editor relative-caret-position="337">
+                <caret line="22" column="54" lean-forward="false" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -736,7 +741,7 @@
       <workItem from="1499641161768" duration="36000" />
       <workItem from="1509723279211" duration="10918000" />
       <workItem from="1509816744079" duration="1578000" />
-      <workItem from="1509823010774" duration="2392000" />
+      <workItem from="1509823010774" duration="2766000" />
     </task>
     <task id="LOCAL-00001" summary="Versão inicial área geográfica">
       <created>1497968382511</created>
@@ -875,7 +880,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32255000" />
+    <option name="totallyTimeSpent" value="32629000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1327,8 +1332,8 @@
     <entry file="file://$PROJECT_DIR$/sgbd.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="193">
-            <caret line="16" column="23" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <first_editor relative-caret-position="337">
+            <caret line="22" column="54" lean-forward="false" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
             <folding />
           </first_editor>
           <second_editor />

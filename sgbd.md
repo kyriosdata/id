@@ -17,8 +17,12 @@ Flyway quanto pelo cliente SQL empregado.
 jdbc:h2:tcp://localhost:9092/./database
 ```
 
+### Fluxo típico
+Remover o **database.mv.db** (banco padrão usado pela aplicação). Executar o
+H2 via **mvn exec:jdbc** e só então a aplicação. A execução da aplicação pode ser
+feita via linha de comandos conforme ilustrado abaixo.
+
 # Passos
-Para execução das migrações.
 
 ```
 $ mvn exec:java
