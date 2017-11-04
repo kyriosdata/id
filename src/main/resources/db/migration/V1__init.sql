@@ -1,3 +1,8 @@
+/*
+	Tabela que mantém identificadores únicos (surrogate keys) para
+	os indivíduos cujas informações são mantidas.
+ */
+
 DROP TABLE IF EXISTS INDIVIDUO;
 
 CREATE TABLE INDIVIDUO (
