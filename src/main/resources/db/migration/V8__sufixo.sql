@@ -51,8 +51,4 @@ INSERT INTO NomeSufixo VALUES ('Décimo', 'X');
 INSERT INTO NomeSufixo VALUES ('PhD', 'PhD');
 INSERT INTO NomeSufixo VALUES ('Doutor em Medicina', 'MD');
 
-ALTER TABLE NomeAtribuido
-  ADD CONSTRAINT FK_NumeroSequenciaNomeAtribuido
-FOREIGN KEY (ordem) REFERENCES NumeroSequenciaNomeAtribuido(ordem);
-
 
