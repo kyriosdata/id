@@ -339,7 +339,7 @@ INSERT INTO USOCONDICIONAL VALUES (9, 'Nome temporário');
 
 /*
   LOOKUP TABLE
-  Seção 9.9.2 Uso do nome
+  Seção 9.9.2 (pág. 40) Uso do nome
  */
 
 CREATE TABLE USODONOME (
@@ -352,6 +352,7 @@ INSERT INTO USODONOME VALUES (1, 'R', 'relatório');
 INSERT INTO USODONOME VALUES (2, 'N', 'Nome de recém-nascido');
 INSERT INTO USODONOME VALUES (3, 'C', 'Nome profissional ou comercial');
 INSERT INTO USODONOME VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
+INSERT INTO USODONOME VALUES (5, 'L', 'Nome registrado (nome legal)');
 INSERT INTO USODONOME VALUES (8, 'O', 'Outro nome (alias)');
 
 /*
