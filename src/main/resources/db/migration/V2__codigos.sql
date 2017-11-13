@@ -70,6 +70,24 @@ INSERT INTO SEXO VALUES (3, 'Intersexo ou indeterminado', 'I');
 INSERT INTO SEXO VALUES (9, 'Não declarado ou descrito inadequadamente', 'U');
 
 /*
+  Situação familiar indica a relação do indivíduo com as pessoas
+  com as quais convive.
+ */
+
+CREATE TABLE SITUACAOFAMILIAR (
+  codigo int,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO SITUACAOFAMILIAR VALUES (1, 'Convive com companheiro(a) e filho(s)');
+INSERT INTO SITUACAOFAMILIAR VALUES (2, 'Convive com companheiro(a) com laços conjugais e sem filhos');
+INSERT INTO SITUACAOFAMILIAR VALUES (3, 'Convive com companheiro(a), com filho(s) e/ou outro(s) familiares');
+INSERT INTO SITUACAOFAMILIAR VALUES (4, 'Convive com familiar(es) sem companheira(o)');
+INSERT INTO SITUACAOFAMILIAR VALUES (5, 'Convive com outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais');
+INSERT INTO SITUACAOFAMILIAR VALUES (6, 'Vive só');
+
+/*
   Seguimento de data. Indica se a data em questão precisa de acompanhamento
   para obter dados mais acurados.
  */
