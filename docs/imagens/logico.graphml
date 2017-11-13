@@ -212,8 +212,8 @@ títulos
 nomes
 sobrenomes
 sufixos
-uso condicional
-preferido<y:LabelModel>
+preferido
+uso condicional<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
