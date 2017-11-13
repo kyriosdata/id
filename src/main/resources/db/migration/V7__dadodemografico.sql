@@ -6,10 +6,11 @@ DROP TABLE IF EXISTS DADODEMOGRAFICO;
 
 CREATE TABLE DADODEMOGRAFICO (
 	individuo VARCHAR(36) NOT NULL,
-	meio int,
-	preferencia char,
-	detalhe varchar NOT NULL,
-	utilizacao int
+	nascimento DATE,
+	nascimentoAcuracia varchar(3),
+	nascimentoSeguimento char,
+	pluralidade int,
+	ordem int
 );
 
 ALTER TABLE COMUNICACAO
