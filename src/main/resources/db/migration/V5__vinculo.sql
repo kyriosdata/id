@@ -5,6 +5,13 @@
 
 DROP TABLE IF EXISTS VINCULO;
 
+/*
+	Vínculo
+
+	Seção 13.1 (pág. 89) - identificador do indivíduo,
+	13.2 (pág. 89) - relacionamento,
+	13.3 (pág. 90) e 13.4 (pág. 91) para período de validade.
+ */
 CREATE TABLE VINCULO (
 	identificador VARCHAR(36) NOT NULL,
 	individuo varchar(36) NOT NULL,
