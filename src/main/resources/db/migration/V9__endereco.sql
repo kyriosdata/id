@@ -5,6 +5,10 @@
 DROP TABLE IF EXISTS ENDERECO;
 DROP TABLE IF EXISTS LINHAENDERECO;
 
+/*
+	Seção 11.2.14 (pág. 74) - bairro é seguida, na ordem por outras seções
+	que refletem a ordem dos campos definidos na tabela abaixo.
+ */
 CREATE TABLE ENDERECO (
 	id VARCHAR(36) NOT NULL,
 	individuo VARCHAR(36) NOT NULL,
@@ -12,6 +16,9 @@ CREATE TABLE ENDERECO (
 	distrito varchar,
 	municipio int,
 	estado VARCHAR(2),
+	cep varchar,
+	caixaPostal varchar,
+	pais int,
 	PRIMARY KEY (id)
 );
 
@@ -26,6 +33,10 @@ FOREIGN KEY (municipio) REFERENCES MUNICIPIO (codigo);
 ALTER TABLE ENDERECO
 		ADD CONSTRAINT FK_EstadoDoEndereco
 FOREIGN KEY (estado) REFERENCES ESTADO (codigo);
+
+ALTER TABLE ENDERECO
+	ADD CONSTRAINT FK_PaisDoEndereco
+FOREIGN KEY (pais) REFERENCES PAIS (codigo);
 
 /*
 	Seção 11.2 (pág. 65) - Linha de endereço
