@@ -9,8 +9,11 @@ CREATE TABLE DADODEMOGRAFICO (
 	nascimento DATE,
 	nascimentoAcuracia varchar(3),
 	nascimentoSeguimento char,
-	pluralidade int,
-	ordem int
+	nascimentoPluralidade int,
+	nascimentoOrdem int,
+	obito DATE,
+	obitoAcuracia varchar(3),
+	obitoFonte varchar
 );
 
 ALTER TABLE DADODEMOGRAFICO
@@ -19,11 +22,11 @@ FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
 
 ALTER TABLE DADODEMOGRAFICO
 	ADD CONSTRAINT FK_PluralidadeDoNascimento
-FOREIGN KEY (pluralidade) REFERENCES NASCIMENTOPLURALIDADE (codigo);
+FOREIGN KEY (nascimentoPluralidade) REFERENCES NASCIMENTOPLURALIDADE (codigo);
 
 ALTER TABLE DADODEMOGRAFICO
 	ADD CONSTRAINT FK_OrdemDoNascimento
-FOREIGN KEY (ordem) REFERENCES NASCIMENTOORDEM (codigo);
+FOREIGN KEY (nascimentoOrdem) REFERENCES NASCIMENTOORDEM (codigo);
 
 ALTER TABLE DADODEMOGRAFICO
 	ADD CONSTRAINT FK_DataDemandaSeguimento
