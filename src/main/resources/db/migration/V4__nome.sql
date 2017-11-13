@@ -8,12 +8,19 @@ DROP TABLE IF EXISTS REPRESENTACAO;
 
 /*
   Seção 9 (página 17)
-  O nome do indivíduo é um elemento de dados composto.
+  O nome do indivíduo é um elemento de dados composto. Um único nome pode
+  conter múltiplos títulos, nomes atribuídos, sobrenomes e sufixos. Cada
+  um desses é registrado por meio de uma única sequência de caracteres e,
+  nesse caso, um espaço em branco é o separador. Por exemplo, em vez de
+  "Prof." e "Doutor" como dois títulos de um único nome, optou-se por
+  "Prof. Doutor".
+
+  Somente um nome pode ser o nome preferido da pessoa em cada instante de
+  tempo. Adicionalmente, para cada nome de um indivíduo tem-se um uso
+  condicional associado.
+
   Pode haver mais de um nome registrado para cada indivíduo. Pelo menos
-  um nome deve ser capturado. Pode haver múltiplos títulos, nomes
-  atribuídos, sobrenomes, sufixos e usos do nome para cada nome.
-  Somente um nome pode ser o nome preferido da pessoa em cda instante do
-  tempo.
+  um nome deve ser capturado.
  */
 CREATE TABLE NOME (
   titulos varchar,
@@ -26,7 +33,7 @@ CREATE TABLE NOME (
 
 ALTER TABLE NOME
   ADD CONSTRAINT FK_UsoCondicionalCodigo
-FOREIGN KEY (usoCondicional) REFERENCES UsoCondicional(codigo);
+FOREIGN KEY (usoCondicional) REFERENCES USOCONDICIONAL (codigo);
 
 CREATE TABLE UTILIZACAO (
   uso int,
