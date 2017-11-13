@@ -9,7 +9,7 @@ CREATE TABLE COMUNICACAO (
 	individuo VARCHAR(36) NOT NULL,
 	meio int,
 	preferencia char,
-	dataInicio DATE,
+	detalhe varchar,
 	dataFinal DATE
 );
 
