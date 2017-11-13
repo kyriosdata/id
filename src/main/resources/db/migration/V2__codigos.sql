@@ -226,13 +226,14 @@ INSERT INTO TIPOIDENTIFICADOR VALUES ('21', 'radiologia');
 INSERT INTO TIPOIDENTIFICADOR VALUES ('22', 'patologia');
 
 /*
+  Seção 12.2 (pág. 85)
   Tipo de meio de comunicação eletrônica.
  */
 
 CREATE TABLE TIPOCOMUNICACAO (
   codigo int,
-  alternativo char,
   descricao varchar,
+  alternativo char,
   PRIMARY KEY (codigo)
 );
 
