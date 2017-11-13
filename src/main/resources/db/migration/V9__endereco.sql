@@ -19,6 +19,7 @@ CREATE TABLE ENDERECO (
 	cep varchar,
 	caixaPostal varchar,
 	pais int,
+	tipo int,
 	PRIMARY KEY (id)
 );
 
@@ -37,6 +38,10 @@ FOREIGN KEY (estado) REFERENCES ESTADO (codigo);
 ALTER TABLE ENDERECO
 	ADD CONSTRAINT FK_PaisDoEndereco
 FOREIGN KEY (pais) REFERENCES PAIS (codigo);
+
+ALTER TABLE ENDERECO
+	ADD CONSTRAINT FK_TipoDoEndereco
+FOREIGN KEY (tipo) REFERENCES TIPOENDERECO (codigo);
 
 /*
 	Seção 11.2 (pág. 65) - Linha de endereço
