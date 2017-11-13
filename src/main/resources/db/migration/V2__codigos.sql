@@ -38,6 +38,22 @@ INSERT INTO AREAGEOGRAFICA VALUES (3, 'E', 'Identificador do estado/província/t
 INSERT INTO AREAGEOGRAFICA VALUES (4, 'N', 'Identificador nacional');
 
 /*
+  Indica a fonte de notificação do óbito.
+ */
+
+CREATE TABLE OBITOFONTE (
+  codigo int,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO OBITOFONTE VALUES (1, 'Cartório');
+INSERT INTO OBITOFONTE VALUES (2, 'Prestador de assistência à saúde');
+INSERT INTO OBITOFONTE VALUES (3, 'Parente');
+INSERT INTO OBITOFONTE VALUES (4, 'Outro');
+INSERT INTO OBITOFONTE VALUES (9, 'Desconhecido');
+
+/*
   Seguimento de data. Indica se a data em questão precisa de acompanhamento
   para obter dados mais acurados.
  */
