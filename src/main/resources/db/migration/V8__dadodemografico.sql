@@ -14,7 +14,7 @@ CREATE TABLE DADODEMOGRAFICO (
 	obito DATE,
 	obitoAcuracia varchar(3),
 	obitoFonte int,
-	sexo int,
+	sexo int NOT NULL,
 	mae varchar,
 	pai varchar,
 	situacaoFamiliar int,

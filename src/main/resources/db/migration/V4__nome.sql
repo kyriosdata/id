@@ -23,6 +23,7 @@ DROP TABLE IF EXISTS REPRESENTACAO;
   um nome deve ser capturado.
  */
 CREATE TABLE NOME (
+  individuo varchar(36) NOT NULL,
   titulos varchar,
   nomes varchar,
   sobrenomes varchar,
@@ -34,6 +35,10 @@ CREATE TABLE NOME (
 ALTER TABLE NOME
   ADD CONSTRAINT FK_UsoCondicionalCodigo
 FOREIGN KEY (usoCondicional) REFERENCES USOCONDICIONAL (codigo);
+
+ALTER TABLE NOME
+  ADD CONSTRAINT FK_IndividuoDoNome
+FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
 
 CREATE TABLE UTILIZACAO (
   uso int,
