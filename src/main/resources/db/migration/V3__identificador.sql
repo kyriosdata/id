@@ -83,8 +83,8 @@ FOREIGN KEY (tipo) REFERENCES TIPOCERTIDAO (codigo);
 
 CREATE TABLE TITULOELEITORAL (
   identificador varchar(36) NOT NULL,
-  sessao NUMERIC,
-  zona NUMERIC
+  zona NUMERIC,
+  sessao NUMERIC
 );
 
 ALTER TABLE CERTIDAO
