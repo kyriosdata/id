@@ -148,7 +148,7 @@ INSERT INTO SITUACAOFAMILIAR VALUES (6, 'Vive só');
  */
 
 CREATE TABLE DATASEGUIMENTO (
-  codigo char,
+  codigo char(1),
   descricao varchar,
   PRIMARY KEY (codigo)
 );
