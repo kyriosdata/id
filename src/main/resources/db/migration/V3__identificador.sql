@@ -40,14 +40,23 @@ ALTER TABLE CTPS
   ADD CONSTRAINT FK_IdentificadorDaCarteira
 FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
-
+/*
+  Certidão de nascimento, casamento e divórcio.
+  Seções 8.7 (pág. 14), 8.8 (pág. 14), 8.9 (pág. 14) e 8.10 (pág. 15),
+  respectivamente para os campos "cartório", "livro", "folha" e "termo".
+ */
 CREATE TABLE CERTIDAO (
+  identificador varchar(36) NOT NULL,
   tipo int,
   cartorio varchar,
   livro varchar,
   folha varchar,
   termo varchar
 );
+
+ALTER TABLE CERTIDAO
+  ADD CONSTRAINT FK_IdentificadorDaCertidao
+FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
 CREATE TABLE TITULOELEITORAL (
   sessao varchar,
