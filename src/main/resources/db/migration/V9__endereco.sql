@@ -20,6 +20,10 @@ CREATE TABLE ENDERECO (
 	caixaPostal varchar,
 	pais int,
 	tipo int,
+	dataInicial DATE,
+	dataInicialAcuracia varchar(3),
+	dataFinal DATE,
+	dataFinalAcuracia varchar(3),
 	PRIMARY KEY (id)
 );
 
