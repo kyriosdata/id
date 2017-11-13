@@ -78,5 +78,6 @@ INSERT INTO DADODEMOGRAFICO VALUES (
 	'8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
 	DATE '2017-11-13', 'AEU', 'S', 1, 1,
 	DATE '2017-11-14', 'AAA', 1, 1, 'nome da mãe', 'nome do pai',
-	1, 1, 'um comentário', 1
+	1, 1, 'um comentário', 1,
+	1100015, 'RO', 999
 );
