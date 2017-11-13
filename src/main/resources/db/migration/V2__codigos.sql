@@ -646,3 +646,21 @@ INSERT INTO PAIS VALUES
   (777,'APÁTRIDA'),
   (888,'OUTRAS NACIONALIDADES'),
   (999,'IGNORADO');
+
+/*
+  LOOKUP TABLE Tipo de endereço
+  Seção 11.9 (pág. 77).
+ */
+
+CREATE TABLE TIPOENDERECO (
+  codigo int,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO TIPOENDERECO VALUES (1, 'Comercial');
+INSERT INTO TIPOENDERECO VALUES (2, 'Correio ou postal');
+INSERT INTO TIPOENDERECO VALUES (3, 'Acomodação temporária');
+INSERT INTO TIPOENDERECO VALUES (4, 'Residencial');
+INSERT INTO TIPOENDERECO VALUES (8, 'Sem endereço fixo');
+INSERT INTO TIPOENDERECO VALUES (9, 'Desconhecido, ou não declarado, ou inadequadamente descrito');
