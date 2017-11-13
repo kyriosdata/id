@@ -54,6 +54,22 @@ INSERT INTO OBITOFONTE VALUES (4, 'Outro');
 INSERT INTO OBITOFONTE VALUES (9, 'Desconhecido');
 
 /*
+  Raça/cor
+ */
+
+CREATE TABLE RACA (
+  codigo int,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO RACA VALUES (1, 'Branca');
+INSERT INTO RACA VALUES (2, 'Preta');
+INSERT INTO RACA VALUES (3, 'Parda');
+INSERT INTO RACA VALUES (4, 'Amarela');
+INSERT INTO RACA VALUES (5, 'Indígena');
+
+/*
   Sexo do indivíduo para propósitos administrativos.
  */
 
