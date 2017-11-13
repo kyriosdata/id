@@ -45,9 +45,15 @@ ALTER TABLE NOME
     ADD CONSTRAINT FK_NomePreferido
 FOREIGN KEY (preferido) REFERENCES NOMEPREFERIDO (codigo);
 
+/*
+  Grupo de utilização do nome
+  Seção 9.9 (pág. 40)
+ */
+
 CREATE TABLE UTILIZACAO (
   nome varchar(36) NOT NULL,
   uso int,
+  identificador varchar(36) NOT NULL,
   dataInicial DATE,
   dataFinal DATE
 );
@@ -55,6 +61,10 @@ CREATE TABLE UTILIZACAO (
 ALTER TABLE UTILIZACAO
     ADD CONSTRAINT FK_UtilizacaoDeNome
 FOREIGN KEY (nome) REFERENCES NOME (id);
+
+ALTER TABLE UTILIZACAO
+  ADD CONSTRAINT FK_UtilizacaoExigeIdentificador
+FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
 ALTER TABLE UTILIZACAO
     ADD CONSTRAINT FK_UsoDoNomeCodigo
