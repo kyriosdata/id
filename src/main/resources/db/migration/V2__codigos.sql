@@ -346,7 +346,7 @@ INSERT INTO USOCONDICIONAL VALUES (9, 'Nome temporário');
 
 CREATE TABLE USODONOME (
   codigo int,
-  alternativo char,
+  alternativo char(1),
   descricao varchar,
   PRIMARY KEY (codigo)
 );
