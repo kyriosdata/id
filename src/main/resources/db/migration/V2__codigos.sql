@@ -268,7 +268,7 @@ INSERT INTO HORARIOCONTATO VALUES ('E', 'Período noturno');
 CREATE TABLE TIPOUSO (
   codigo int,
   descricao varchar,
-  alternativo char,
+  alternativo char(1),
   PRIMARY KEY (codigo)
 );
 
