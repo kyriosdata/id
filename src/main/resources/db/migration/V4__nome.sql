@@ -81,6 +81,10 @@ CREATE TABLE REPRESENTACAO (
   alternativa varchar
 );
 
+ALTER TABLE REPRESENTACAO
+    ADD CONSTRAINT FK_NomeDaRepresentacao
+FOREIGN KEY (nome) REFERENCES NOME (id);
+
 INSERT INTO NOME (
   id, individuo,
   titulos, nomes, sobrenomes, sufixos, preferido, usoCondicional)
