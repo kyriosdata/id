@@ -115,7 +115,7 @@ INSERT INTO RACA VALUES (5, 'Indígena');
 CREATE TABLE SEXO (
   codigo int,
   descricao varchar,
-  alternativo char,
+  alternativo char(1),
   PRIMARY KEY (codigo)
 );
 
