@@ -53,7 +53,7 @@ INSERT INTO ESTADO VALUES ('TO', 'Tocantins');
 
 CREATE TABLE AREAGEOGRAFICA (
   codigo int,
-  codigoAlternativo char,
+  alternativo char(1),
   descricao varchar,
   PRIMARY KEY (codigo)
 );
