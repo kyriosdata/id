@@ -22,6 +22,18 @@ CREATE TABLE IDENTIFICADOR (
   PRIMARY KEY (id)
 );
 
+ALTER TABLE IDENTIFICADOR
+  ADD CONSTRAINT FK_AreaGeograficaCodigo
+FOREIGN KEY (area) REFERENCES AREAGEOGRAFICA (codigo);
+
+ALTER TABLE IDENTIFICADOR
+  ADD CONSTRAINT FK_TipoDoIdentificadorCodigo
+FOREIGN KEY (tipo) REFERENCES TIPOIDENTIFICADOR (codigo);
+
+ALTER TABLE IDENTIFICADOR
+  ADD CONSTRAINT FK_IdentificadorParaIndividuo
+FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
+
 /*
   Seção 8.11 (pág. 15) e 8.12 (pág. 16), respectivamente para
   os campos "série" e "estado" da carteira de trabalho.
@@ -58,26 +70,27 @@ ALTER TABLE CERTIDAO
   ADD CONSTRAINT FK_IdentificadorDaCertidao
 FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
+ALTER TABLE CERTIDAO
+    ADD CONSTRAINT FK_TipoDaCertidao
+FOREIGN KEY (tipo) REFERENCES TIPOCERTIDAO (codigo);
+
+/*
+  Título de eleitor.
+
+  Seção 8.13 (pág. 16) e 8.14 (pág. 17), respectivamente para
+  os campos "zona" e "seção".
+ */
+
 CREATE TABLE TITULOELEITORAL (
-  sessao varchar,
-  zona varchar
+  identificador varchar(36) NOT NULL,
+  sessao NUMERIC,
+  zona NUMERIC
 );
 
 ALTER TABLE CERTIDAO
-    ADD CONSTRAINT FK_TipoCertidao
-FOREIGN KEY (tipo) REFERENCES TIPOCERTIDAO (codigo);
+  ADD CONSTRAINT FK_IdentificadorDoTituloEleitoral
+FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
-ALTER TABLE IDENTIFICADOR
-  ADD CONSTRAINT FK_AreaGeograficaCodigo
-FOREIGN KEY (area) REFERENCES AREAGEOGRAFICA (codigo);
-
-ALTER TABLE IDENTIFICADOR
-  ADD CONSTRAINT FK_TipoDoIdentificadorCodigo
-FOREIGN KEY (tipo) REFERENCES TIPOIDENTIFICADOR (codigo);
-
-ALTER TABLE IDENTIFICADOR
-    ADD CONSTRAINT FK_IdentificadorParaIndividuo
-FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
 
 INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, dataDeEmissao, tipo)
 VALUES ('7ec971f2-bd30-4704-8952-d705e9b006e5', '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
