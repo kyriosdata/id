@@ -13,7 +13,7 @@ CREATE TABLE DADODEMOGRAFICO (
 	nascimentoOrdem int,
 	obito DATE,
 	obitoAcuracia varchar(3),
-	obitoFonte varchar
+	obitoFonte int
 );
 
 ALTER TABLE DADODEMOGRAFICO
@@ -32,5 +32,10 @@ ALTER TABLE DADODEMOGRAFICO
 	ADD CONSTRAINT FK_DataDemandaSeguimento
 FOREIGN KEY (nascimentoSeguimento) REFERENCES DATASEGUIMENTO (codigo);
 
+ALTER TABLE DADODEMOGRAFICO
+	ADD CONSTRAINT FK_FonteDoObito
+FOREIGN KEY (obitoFonte) REFERENCES OBITOFONTE (codigo);
+
 INSERT INTO DADODEMOGRAFICO VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
-																		DATE '2017-11-13', 'AEU', 'S', 1, 1);
+																		DATE '2017-11-13', 'AEU', 'S', 1, 1,
+		DATE '2017-11-14', 'AAA', 1);
