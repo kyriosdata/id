@@ -17,7 +17,8 @@ CREATE TABLE DADODEMOGRAFICO (
 	sexo int,
 	mae varchar,
 	pai varchar,
-	situacaoFamiliar int
+	situacaoFamiliar int,
+	raca int
 );
 
 ALTER TABLE DADODEMOGRAFICO
@@ -48,9 +49,13 @@ ALTER TABLE DADODEMOGRAFICO
 	ADD CONSTRAINT FK_SituacaoFamiliar
 FOREIGN KEY (situacaoFamiliar) REFERENCES SITUACAOFAMILIAR (codigo);
 
+ALTER TABLE DADODEMOGRAFICO
+	ADD CONSTRAINT FK_Raca
+FOREIGN KEY (raca) REFERENCES RACA (codigo);
+
 INSERT INTO DADODEMOGRAFICO VALUES (
 	'8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
 	DATE '2017-11-13', 'AEU', 'S', 1, 1,
 	DATE '2017-11-14', 'AAA', 1, 1, 'nome da mãe', 'nome do pai',
-	1
+	1, 1
 );
