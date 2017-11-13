@@ -22,10 +22,24 @@ CREATE TABLE IDENTIFICADOR (
   PRIMARY KEY (id)
 );
 
+/*
+  Seção 8.11 (pág. 15) e 8.12 (pág. 16), respectivamente para
+  os campos "série" e "estado" da carteira de trabalho.
+ */
 CREATE TABLE CTPS (
-  serie varchar,
+  identificador varchar(36) NOT NULL,
+  serie NUMERIC,
   estado varchar(2)
 );
+
+ALTER TABLE CTPS
+  ADD CONSTRAINT FK_EstadoCodigo
+FOREIGN KEY (estado) REFERENCES ESTADO (codigo);
+
+ALTER TABLE CTPS
+  ADD CONSTRAINT FK_IdentificadorDaCarteira
+FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
+
 
 CREATE TABLE CERTIDAO (
   tipo int,
@@ -55,10 +69,6 @@ FOREIGN KEY (tipo) REFERENCES TIPOIDENTIFICADOR (codigo);
 ALTER TABLE IDENTIFICADOR
     ADD CONSTRAINT FK_IdentificadorParaIndividuo
 FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
-
-ALTER TABLE CTPS
-  ADD CONSTRAINT FK_EstadoCodigo
-FOREIGN KEY (estado) REFERENCES ESTADO (codigo);
 
 INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, dataDeEmissao, tipo)
 VALUES ('7ec971f2-bd30-4704-8952-d705e9b006e5', '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
