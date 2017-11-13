@@ -250,8 +250,9 @@ INSERT INTO TIPOCOMUNICACAO VALUES (8, 'Outro', 'O');
  */
 
 CREATE TABLE HORARIOCONTATO (
-  codigo char,
-  descricao varchar
+  codigo char(1),
+  descricao varchar,
+  PRIMARY KEY (codigo)
 );
 
 INSERT INTO HORARIOCONTATO VALUES ('B', 'Horário comercial');
