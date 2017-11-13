@@ -38,6 +38,19 @@ INSERT INTO AREAGEOGRAFICA VALUES (3, 'E', 'Identificador do estado/província/t
 INSERT INTO AREAGEOGRAFICA VALUES (4, 'N', 'Identificador nacional');
 
 /*
+  Indicação se o indivíduo é brasileiro ou estrangeiro.
+ */
+
+CREATE TABLE NACIONALIDADE (
+  codigo int,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO NACIONALIDADE VALUES (1, 'Brasileiro');
+INSERT INTO NACIONALIDADE VALUES (2, 'Estrangeiro');
+
+/*
   Indica a fonte de notificação do óbito.
  */
 
