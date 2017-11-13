@@ -85,6 +85,21 @@ INSERT INTO TIPOCOMUNICACAO VALUES (6, 'URL', 'U');
 INSERT INTO TIPOCOMUNICACAO VALUES (8, 'Outro', 'O');
 
 /*
+  Tipo de preferência.
+ */
+
+CREATE TABLE HORARIOCONTATO (
+  codigo char,
+  descricao varchar
+);
+
+INSERT INTO HORARIOCONTATO VALUES ('B', 'Horário comercial');
+INSERT INTO HORARIOCONTATO VALUES ('D', 'Durante o dia');
+INSERT INTO HORARIOCONTATO VALUES ('W', 'Finais de semana');
+INSERT INTO HORARIOCONTATO VALUES ('A', 'Qualquer hora');
+INSERT INTO HORARIOCONTATO VALUES ('E', 'Período noturno');
+
+/*
   Tipos de relacionamentos previstos.
  */
 CREATE TABLE TIPORELACIONAMENTO (
