@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS COMUNICACAO;
 CREATE TABLE COMUNICACAO (
 	individuo VARCHAR(36) NOT NULL,
 	meio int,
-	preferencia char,
+	preferencia char(1),
 	detalhe varchar NOT NULL,
 	utilizacao int
 );

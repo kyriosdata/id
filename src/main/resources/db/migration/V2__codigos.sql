@@ -233,7 +233,7 @@ INSERT INTO TIPOIDENTIFICADOR VALUES ('22', 'patologia');
 CREATE TABLE TIPOCOMUNICACAO (
   codigo int,
   descricao varchar,
-  alternativo char,
+  alternativo char(1),
   PRIMARY KEY (codigo)
 );
 
