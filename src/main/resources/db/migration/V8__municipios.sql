@@ -5,10 +5,10 @@
 DROP TABLE IF EXISTS MUNICIPIO;
 
 CREATE TABLE MUNICIPIO (
-	id int,
+	codigo int,
 	estado VARCHAR(2),
 	nome varchar,
-	PRIMARY KEY (id)
+	PRIMARY KEY (codigo)
 );
 
 INSERT INTO MUNICIPIO VALUES (1100015,'RO','Alta Floresta D''Oeste');
