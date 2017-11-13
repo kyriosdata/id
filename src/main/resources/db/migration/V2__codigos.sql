@@ -100,6 +100,21 @@ INSERT INTO HORARIOCONTATO VALUES ('A', 'Qualquer hora');
 INSERT INTO HORARIOCONTATO VALUES ('E', 'Período noturno');
 
 /*
+  Tipo de uso de meio de comunicação.
+ */
+
+CREATE TABLE TIPOUSO (
+  codigo int,
+  descricao varchar,
+  alternativo char,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO TIPOUSO VALUES (1, 'Comercial', 'B');
+INSERT INTO TIPOUSO VALUES (2, 'Pessoal', 'P');
+INSERT INTO TIPOUSO VALUES (3, 'Tanto comercial quanto pessoal', 'A');
+
+/*
   Tipos de relacionamentos previstos.
  */
 CREATE TABLE TIPORELACIONAMENTO (
