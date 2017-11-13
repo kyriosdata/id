@@ -366,54 +366,6 @@ INSERT INTO USODONOME VALUES (8, 'O', 'Outro nome (alias)');
   por telefone ou, dependendo da situação cultural, pessoalmente.
  */
 
-CREATE TABLE NOMEDETITULO (
-  nome varchar,
-  abreviacao varchar,
-  PRIMARY KEY (abreviacao)
-);
-
-/*
-  TODO Acrescentar na tabela lista "completa" de pronomes de tratamento.
- */
-INSERT INTO NOMEDETITULO VALUES ('Almirante', 'Alm.');
-INSERT INTO NOMEDETITULO VALUES ('Capitão', 'Cap.');
-INSERT INTO NOMEDETITULO VALUES ('Coronel', 'Cel.');
-INSERT INTO NOMEDETITULO VALUES ('General', 'Gen.');
-INSERT INTO NOMEDETITULO VALUES ('Herr', 'Herr.');
-INSERT INTO NOMEDETITULO VALUES ('Major', 'Maj.');
-INSERT INTO NOMEDETITULO VALUES ('Professor', 'Prof.');
-INSERT INTO NOMEDETITULO VALUES ('Reverendo', 'Ver.');
-INSERT INTO NOMEDETITULO VALUES ('Sargento', 'Sgt.');
-INSERT INTO NOMEDETITULO VALUES ('Senhor', 'Sr.');
-INSERT INTO NOMEDETITULO VALUES ('Senhora', 'Sra.');
-INSERT INTO NOMEDETITULO VALUES ('Senhorita', 'Srta.');
-
-/*
-  LOOKUP TABLE
-  Seção 9.8.2 (página 38)
- */
-
-CREATE TABLE NOMESUFIXO (
-  sufixo varchar,
-  abreviacao VARCHAR
-);
-
-INSERT INTO NOMESUFIXO VALUES ('Junior', 'Jr.');
-INSERT INTO NOMESUFIXO VALUES ('Membro do Parlamento', 'MP');
-INSERT INTO NOMESUFIXO VALUES ('Senior', 'Sr.');
-INSERT INTO NOMESUFIXO VALUES ('Primeiro', 'I');
-INSERT INTO NOMESUFIXO VALUES ('Segundo', 'II');
-INSERT INTO NOMESUFIXO VALUES ('Terceiro', 'III');
-INSERT INTO NOMESUFIXO VALUES ('Quarto', 'IV');
-INSERT INTO NOMESUFIXO VALUES ('Quinto', 'V');
-INSERT INTO NOMESUFIXO VALUES ('Sexto', 'VI');
-INSERT INTO NOMESUFIXO VALUES ('Sétimo', 'VII');
-INSERT INTO NOMESUFIXO VALUES ('Oitavo', 'VIII');
-INSERT INTO NOMESUFIXO VALUES ('Nono', 'IX');
-INSERT INTO NOMESUFIXO VALUES ('Décimo', 'X');
-INSERT INTO NOMESUFIXO VALUES ('PhD', 'PhD');
-INSERT INTO NOMESUFIXO VALUES ('Doutor em Medicina', 'MD');
-
 CREATE TABLE PAIS (
   codigo int,
   nome VARCHAR(46),
