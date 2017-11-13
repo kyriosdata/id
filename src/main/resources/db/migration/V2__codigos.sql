@@ -54,6 +54,22 @@ INSERT INTO OBITOFONTE VALUES (4, 'Outro');
 INSERT INTO OBITOFONTE VALUES (9, 'Desconhecido');
 
 /*
+  Sexo do indivíduo para propósitos administrativos.
+ */
+
+CREATE TABLE SEXO (
+  codigo int,
+  descricao varchar,
+  alternativo char,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO SEXO VALUES (1, 'Masculino', 'M');
+INSERT INTO SEXO VALUES (2, 'Feminino', 'F');
+INSERT INTO SEXO VALUES (3, 'Intersexo ou indeterminado', 'I');
+INSERT INTO SEXO VALUES (9, 'Não declarado ou descrito inadequadamente', 'U');
+
+/*
   Seguimento de data. Indica se a data em questão precisa de acompanhamento
   para obter dados mais acurados.
  */
