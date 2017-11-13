@@ -70,7 +70,14 @@ ALTER TABLE UTILIZACAO
     ADD CONSTRAINT FK_UsoDoNomeCodigo
 FOREIGN KEY (uso) REFERENCES USODONOME (codigo);
 
+/*
+  Representação alternativa de um nome.
+  Seção 9.10 (pág. 43)
+ */
+
 CREATE TABLE REPRESENTACAO (
+  nome varchar(36) NOT NULL,
+  utilizacao varchar,
   alternativa varchar
 );
 
