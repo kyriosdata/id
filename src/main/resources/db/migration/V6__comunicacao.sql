@@ -5,6 +5,14 @@
 
 DROP TABLE IF EXISTS COMUNICACAO;
 
+/*
+	Seção 12 (pág. 84) Comunicação eletrônica do indivíduo.
+
+	Seção 12.2 (pág. 85) - meio de comunicação,
+	12.3 (pág. 86) - código de preferência de contato,
+	12.4 (pág. 86) - detalhe (endereço) da comunicação eletrônica e
+	12.5 (pág. 87) - código de utilização do contato
+ */
 CREATE TABLE COMUNICACAO (
 	individuo VARCHAR(36) NOT NULL,
 	meio int,
