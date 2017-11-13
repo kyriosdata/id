@@ -6,15 +6,20 @@
 DROP TABLE IF EXISTS VINCULO;
 
 CREATE TABLE VINCULO (
-	id VARCHAR(36) NOT NULL,
+	identificador VARCHAR(36) NOT NULL,
+	individuo varchar(36) NOT NULL,
 	relacionamento int,
 	dataInicio DATE,
 	dataFinal DATE
 );
 
 ALTER TABLE VINCULO
-	ADD CONSTRAINT FK_IdentificadorChave
-FOREIGN KEY (id) REFERENCES IDENTIFICADOR (id);
+	ADD CONSTRAINT FK_VinculoParaUmIdentificador
+FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
+
+ALTER TABLE VINCULO
+	ADD CONSTRAINT FK_VinculoParaUmIndividuo
+FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
 
 ALTER TABLE VINCULO
 		ADD CONSTRAINT FK_TipoDeRelacionamento
