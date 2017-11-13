@@ -64,5 +64,5 @@ INSERT INTO NOME (
   titulos, nomes, sobrenomes, sufixos, preferido, usoCondicional)
   VALUES (
     '8db412b5-bc25-4ced-96ba-2014d1178550', '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
-  NULL, 'José Pedro', 'dos Santos', 'Filho', 3, 3);
+  NULL, 'José Pedro', 'dos Santos', 'Filho', 1, 3);
 
