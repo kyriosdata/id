@@ -38,6 +38,20 @@ INSERT INTO AREAGEOGRAFICA VALUES (3, 'E', 'Identificador do estado/província/t
 INSERT INTO AREAGEOGRAFICA VALUES (4, 'N', 'Identificador nacional');
 
 /*
+  Seguimento de data. Indica se a data em questão precisa de acompanhamento
+  para obter dados mais acurados.
+ */
+
+CREATE TABLE DATASEGUIMENTO (
+  codigo char,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO DATASEGUIMENTO VALUES ('S', 'A data precisa de seguimento');
+INSERT INTO DATASEGUIMENTO VALUES ('N', 'A data não precisa de seguimento');
+
+/*
   Pluralidade de nascimento é um indicador que contempla
   nascimentos múltiplos.
  */
