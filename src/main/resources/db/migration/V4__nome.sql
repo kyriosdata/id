@@ -23,13 +23,14 @@ DROP TABLE IF EXISTS REPRESENTACAO;
   um nome deve ser capturado.
  */
 CREATE TABLE NOME (
+  id varchar(36) NOT NULL,
   individuo varchar(36) NOT NULL,
   titulos varchar,
   nomes varchar,
   sobrenomes varchar,
   sufixos varchar,
   usoCondicional int,
-  preferido BOOLEAN
+  preferido int
 );
 
 ALTER TABLE NOME
@@ -39,6 +40,10 @@ FOREIGN KEY (usoCondicional) REFERENCES USOCONDICIONAL (codigo);
 ALTER TABLE NOME
   ADD CONSTRAINT FK_IndividuoDoNome
 FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
+
+ALTER TABLE NOME
+    ADD CONSTRAINT FK_NomePreferido
+FOREIGN KEY (preferido) REFERENCES NOMEPREFERIDO (codigo);
 
 CREATE TABLE UTILIZACAO (
   uso int,
@@ -53,4 +58,11 @@ FOREIGN KEY (uso) REFERENCES USODONOME(codigo);
 CREATE TABLE REPRESENTACAO (
   alternativa varchar
 );
+
+INSERT INTO NOME (
+  id, individuo,
+  titulos, nomes, sobrenomes, sufixos, usoCondicional, preferido)
+  VALUES (
+    '8db412b5-bc25-4ced-96ba-2014d1178550', '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
+  NULL, 'José Pedro', 'dos Santos', 'Filho', 3)
 
