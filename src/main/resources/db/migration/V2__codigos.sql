@@ -37,6 +37,47 @@ INSERT INTO AREAGEOGRAFICA VALUES (2, 'A', 'Identificador da área/região/distr
 INSERT INTO AREAGEOGRAFICA VALUES (3, 'E', 'Identificador do estado/província/território');
 INSERT INTO AREAGEOGRAFICA VALUES (4, 'N', 'Identificador nacional');
 
+/*
+  Pluralidade de nascimento é um indicador que contempla
+  nascimentos múltiplos.
+ */
+
+CREATE TABLE NASCIMENTOORDEM (
+  codigo int,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO NASCIMENTOORDEM VALUES (1, 'Único ou primeiro de um nascimento múltiplo');
+INSERT INTO NASCIMENTOORDEM VALUES (2, 'Segundo de um nascimento múltiplo');
+INSERT INTO NASCIMENTOORDEM VALUES (3, 'Terceiro de um nascimento múltiplo');
+INSERT INTO NASCIMENTOORDEM VALUES (4, 'Quarto de um nascimento múltiplo');
+INSERT INTO NASCIMENTOORDEM VALUES (5, 'Quinto de um nascimento múltiplo');
+INSERT INTO NASCIMENTOORDEM VALUES (6, 'Sexto de um nascimento múltiplo');
+INSERT INTO NASCIMENTOORDEM VALUES (7, 'Outros');
+INSERT INTO NASCIMENTOORDEM VALUES (9, 'Não declarado');
+
+
+/*
+  Pluralidade de nascimento é um indicador que contempla
+  nascimentos múltiplos.
+ */
+
+CREATE TABLE NASCIMENTOPLURALIDADE (
+  codigo int,
+  descricao varchar,
+  PRIMARY KEY (codigo)
+);
+
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (1, 'Único');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (2, 'Gêmeos');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (3, 'Trigêmeos');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (4, 'Quádruplos');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (5, 'Quíntuplos');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (6, 'Sêxtuplos');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (7, 'Outros');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES (9, 'Não declarado');
+
 CREATE TABLE TIPOCERTIDAO (
   codigo int,
   descricao varchar,
