@@ -17,7 +17,7 @@
     <node id="n0">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="100.0" width="121.0" x="79.44733248423233" y="337.99250850132785"/>
+          <y:Geometry height="128.0" width="121.0" x="79.44733248423233" y="323.99250850132785"/>
           <y:Fill color2="#B7C9E3" hasColor="false" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="57.9765625" x="31.51171875" y="4.0">Indivíduo</y:NodeLabel>
@@ -245,14 +245,15 @@ data final<y:LabelModel>
     <node id="n10">
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="100.0" width="121.0" x="-99.22833021720737" y="337.99250850132785"/>
+          <y:Geometry height="128.0" width="121.0" x="-99.22833021720737" y="323.99250850132785"/>
           <y:Fill color="#E8EEF7" color2="#CCFFCC" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="77.587890625" x="21.7060546875" y="4.0">Identificador</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="60.53125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="69.525390625" x="2.0" y="30.1328125">designação
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="74.6640625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="top" visible="true" width="69.525390625" x="2.0" y="30.1328125">designação
 área
 emissor
-data<y:LabelModel>
+data
+tipo<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -266,7 +267,6 @@ data<y:LabelModel>
       </data>
     </node>
     <node id="n11">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="114.0" width="121.0" x="-277.9039929186471" y="371.49250850132785"/>
@@ -291,7 +291,6 @@ termo<y:LabelModel>
       </data>
     </node>
     <node id="n12">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="77.0" width="121.0" x="-277.9039929186471" y="274.49250850132785"/>
@@ -313,7 +312,6 @@ estado<y:LabelModel>
       </data>
     </node>
     <node id="n13">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="128.0" width="121.0" x="-277.9039929186471" y="547.4850170026557"/>
@@ -335,7 +333,6 @@ zona<y:LabelModel>
       </data>
     </node>
     <node id="n14">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="114.0" width="148.0" x="271.70416652338247" y="114.5"/>
@@ -360,7 +357,6 @@ seguimento<y:LabelModel>
       </data>
     </node>
     <node id="n15">
-      <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="114.0" width="121.0" x="478.79865788711174" y="114.5"/>
@@ -480,7 +476,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e9" source="n10" target="n0">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -491,7 +486,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e10" source="n8" target="n0">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -502,7 +496,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e11" source="n10" target="n11">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-0.17566270143970542" sy="26.5" tx="39.5" ty="-14.0"/>
@@ -513,7 +506,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e12" source="n10" target="n13">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-42.175662701439705" sy="3.5" tx="0.0" ty="0.0">
@@ -527,7 +519,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e13" source="n14" target="n15">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0"/>
@@ -538,7 +529,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e14" source="n14" target="n5">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-13.5" sy="1.0" tx="-13.5" ty="-9.492508501327848"/>
@@ -557,7 +547,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e15" source="n15" target="n5">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="37.594491363729276" ty="-43.49250850132785">
@@ -571,7 +560,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e16" source="n14" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.37700481432796096" sy="-16.0" tx="3.7507531865514565" ty="-38.0"/>
@@ -590,7 +578,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e17" source="n14" target="n3">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="2.377004814327961" sy="22.0" tx="0.0" ty="0.0"/>
@@ -609,7 +596,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e18" source="n10" target="n1">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
@@ -623,7 +609,6 @@ ordem<y:LabelModel>
       </data>
     </edge>
     <edge id="e19" source="n10" target="n12">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="-31.605003116125943" sy="-4.492508501327848" tx="19.070659585313734" ty="-9.492508501327848">
