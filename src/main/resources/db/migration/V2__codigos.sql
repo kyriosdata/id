@@ -1,43 +1,40 @@
 /*
-  LOOKUP TABLES
-  Tabelas que mantêm códigos predefinidos utilizados em campos
-  de outras tabelas.
+  LOOKUP TABLES.
+
+  Tabelas que contêm valores válidos para
+  vários campos empregados para a identificação de
+  indivíduos.
  */
 
-DROP TABLE IF EXISTS AreaGeografica;
-DROP TABLE IF EXISTS Estado;
-DROP TABLE IF EXISTS TipoDoIdentificador;
-DROP TABLE IF EXISTS UsoCondicional;
-DROP TABLE IF EXISTS UsoDoNome;
+DROP TABLE IF EXISTS AREAGEOGRAFICA;
+DROP TABLE IF EXISTS ESTADO;
+DROP TABLE IF EXISTS TIPODOIDENTIFICADOR;
+DROP TABLE IF EXISTS USOCONDICIONAL;
+DROP TABLE IF EXISTS USODONOME;
 DROP TABLE IF EXISTS NOMEDETITULO;
 DROP TABLE IF EXISTS NOMESUFIXO;
 
-CREATE TABLE Estado (
+CREATE TABLE ESTADO (
   codigo varchar(2),
   nome varchar,
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO Estado VALUES ('GO', 'Goiás');
-INSERT INTO Estado VALUES ('RJ', 'Rio de Janeiro');
-INSERT INTO Estado VALUES ('SP', 'São Paulo');
+INSERT INTO ESTADO VALUES ('GO', 'Goiás');
+INSERT INTO ESTADO VALUES ('RJ', 'Rio de Janeiro');
+INSERT INTO ESTADO VALUES ('SP', 'São Paulo');
 
-/* LOOKUP TABLE
-   Um código que representa a área geográfica na qual
-   o identificador é utilizado.
-*/
-
-CREATE TABLE AreaGeografica (
+CREATE TABLE AREAGEOGRAFICA (
   codigo int,
   codigoAlternativo char,
   descricao varchar,
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO AreaGeografica VALUES (1, 'L', 'Identificador do sujeito local');
-INSERT INTO AreaGeografica VALUES (2, 'A', 'Identificador da área/região/distrito');
-INSERT INTO AreaGeografica VALUES (3, 'E', 'Identificador do estado/província/território');
-INSERT INTO AreaGeografica VALUES (4, 'N', 'Identificador nacional');
+INSERT INTO AREAGEOGRAFICA VALUES (1, 'L', 'Identificador do sujeito local');
+INSERT INTO AREAGEOGRAFICA VALUES (2, 'A', 'Identificador da área/região/distrito');
+INSERT INTO AREAGEOGRAFICA VALUES (3, 'E', 'Identificador do estado/província/território');
+INSERT INTO AREAGEOGRAFICA VALUES (4, 'N', 'Identificador nacional');
 
 /*
   LOOKUP TABLE
@@ -47,31 +44,31 @@ INSERT INTO AreaGeografica VALUES (4, 'N', 'Identificador nacional');
   http://www.pmf.sc.gov.br/arquivos/arquivos/pdf/04_01_2010_10.17.42.24125bd84cc115c7ed10f14d211976a2.PDF
  */
 
-CREATE TABLE TipoDoIdentificador (
+CREATE TABLE TIPODOIDENTIFICADOR (
   codigo varchar,
   descricao varchar,
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO TipoDoIdentificador VALUES ('01', 'Identificador único dentro da organização');
-INSERT INTO TipoDoIdentificador VALUES ('21', 'radiologia');
-INSERT INTO TipoDoIdentificador VALUES ('22', 'patologia');
+INSERT INTO TIPODOIDENTIFICADOR VALUES ('01', 'Identificador único dentro da organização');
+INSERT INTO TIPODOIDENTIFICADOR VALUES ('21', 'radiologia');
+INSERT INTO TIPODOIDENTIFICADOR VALUES ('22', 'patologia');
 
 /*
   LOOKUP TABLE
   Seção 9.4 Uso condicional
  */
-CREATE TABLE UsoCondicional (
+CREATE TABLE USOCONDICIONAL (
   codigo int,
   descricao varchar
 );
 
-INSERT INTO UsoCondicional VALUES (1, 'Informação não confiável');
-INSERT INTO UsoCondicional VALUES (2, 'Nome com erro de digitação');
-INSERT INTO UsoCondicional VALUES (3, 'Nome para não ser usado');
-INSERT INTO UsoCondicional VALUES (4, 'Vínculo do nome proibido por lei');
-INSERT INTO UsoCondicional VALUES (6, 'Requisito de privacidade/segurança especial');
-INSERT INTO UsoCondicional VALUES (9, 'Nome temporário');
+INSERT INTO USOCONDICIONAL VALUES (1, 'Informação não confiável');
+INSERT INTO USOCONDICIONAL VALUES (2, 'Nome com erro de digitação');
+INSERT INTO USOCONDICIONAL VALUES (3, 'Nome para não ser usado');
+INSERT INTO USOCONDICIONAL VALUES (4, 'Vínculo do nome proibido por lei');
+INSERT INTO USOCONDICIONAL VALUES (6, 'Requisito de privacidade/segurança especial');
+INSERT INTO USOCONDICIONAL VALUES (9, 'Nome temporário');
 
 
 /*
@@ -79,17 +76,17 @@ INSERT INTO UsoCondicional VALUES (9, 'Nome temporário');
   Seção 9.9.2 Uso do nome
  */
 
-CREATE TABLE UsoDoNome (
+CREATE TABLE USODONOME (
   codigo int,
   alternativo char,
   descricao varchar
 );
 
-INSERT INTO UsoDoNome VALUES (1, 'R', 'relatório');
-INSERT INTO UsoDoNome VALUES (2, 'N', 'Nome de recém-nascido');
-INSERT INTO UsoDoNome VALUES (3, 'C', 'Nome profissional ou comercial');
-INSERT INTO UsoDoNome VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
-INSERT INTO UsoDoNome VALUES (8, 'O', 'Outro nome (alias)');
+INSERT INTO USODONOME VALUES (1, 'R', 'relatório');
+INSERT INTO USODONOME VALUES (2, 'N', 'Nome de recém-nascido');
+INSERT INTO USODONOME VALUES (3, 'C', 'Nome profissional ou comercial');
+INSERT INTO USODONOME VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
+INSERT INTO USODONOME VALUES (8, 'O', 'Outro nome (alias)');
 
 /*
   LOOKUP TABLE

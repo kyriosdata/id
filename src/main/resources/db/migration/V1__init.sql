@@ -1,6 +1,7 @@
 /*
-	Tabela que mantém identificadores únicos (surrogate keys) para
-	os indivíduos cujas informações são mantidas.
+	Tabela que mantém peo menos uma entrada (registro)
+	para cada indivíduo assistido. Idealmente deveria
+	manter um único registro por indivíduo.
  */
 
 DROP TABLE IF EXISTS INDIVIDUO;
