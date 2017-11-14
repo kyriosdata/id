@@ -339,7 +339,8 @@ INSERT INTO TIPORELACIONAMENTO VALUES
 
 /*
   LOOKUP TABLE
-  Seção 9.3 Nome preferido
+  Seção 9.3 (pág. 24)
+  Nome preferido
  */
 
 CREATE TABLE NOMEPREFERIDO (
@@ -348,25 +349,27 @@ CREATE TABLE NOMEPREFERIDO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO NOMEPREFERIDO VALUES (1, 'Este é o nome preferido');
-INSERT INTO NOMEPREFERIDO VALUES (2, 'Este não é o nome preferido');
+INSERT INTO NOMEPREFERIDO VALUES
+  (1, 'Este é o nome preferido'),
+  (2, 'Este não é o nome preferido');
 
 /*
   LOOKUP TABLE
-  Seção 9.4 Uso condicional
+  Seção 9.4 (pág. 25)
+  Uso condicional
  */
 CREATE TABLE USOCONDICIONAL (
   codigo    INT,
   descricao VARCHAR
 );
 
-INSERT INTO USOCONDICIONAL VALUES (1, 'Informação não confiável');
-INSERT INTO USOCONDICIONAL VALUES (2, 'Nome com erro de digitação');
-INSERT INTO USOCONDICIONAL VALUES (3, 'Nome para não ser usado');
-INSERT INTO USOCONDICIONAL VALUES (4, 'Vínculo do nome proibido por lei');
-INSERT INTO USOCONDICIONAL
-VALUES (6, 'Requisito de privacidade/segurança especial');
-INSERT INTO USOCONDICIONAL VALUES (9, 'Nome temporário');
+INSERT INTO USOCONDICIONAL VALUES
+  (1, 'Informação não confiável'),
+  (2, 'Nome com erro de digitação'),
+  (3, 'Nome para não ser usado'),
+  (4, 'Vínculo do nome proibido por lei'),
+  (6, 'Requisito de privacidade/segurança especial'),
+  (9, 'Nome temporário');
 
 
 /*
