@@ -1134,15 +1134,15 @@
     </column>
     <column id="333" parent="35" name="LIVRO">
       <Position>4</Position>
-      <DataType>VARCHAR(max)|12</DataType>
+      <DataType>INTEGER(10)|4</DataType>
     </column>
     <column id="334" parent="35" name="FOLHA">
       <Position>5</Position>
-      <DataType>VARCHAR(max)|12</DataType>
+      <DataType>INTEGER(10)|4</DataType>
     </column>
     <column id="335" parent="35" name="TERMO">
       <Position>6</Position>
-      <DataType>VARCHAR(max)|12</DataType>
+      <DataType>INTEGER(10)|4</DataType>
     </column>
     <foreign-key id="336" parent="35" name="FK_IDENTIFICADORDACERTIDAO">
       <ColNames>IDENTIFICADOR</ColNames>
@@ -1215,7 +1215,7 @@
     </column>
     <column id="348" parent="37" name="SERIE">
       <Position>2</Position>
-      <DataType>DECIMAL(65535,32767)|3</DataType>
+      <DataType>INTEGER(10)|4</DataType>
     </column>
     <column id="349" parent="37" name="ESTADO">
       <Position>3</Position>
@@ -1559,18 +1559,22 @@
     <column id="416" parent="43" name="AREA">
       <Position>4</Position>
       <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="417" parent="43" name="EMISSOR">
       <Position>5</Position>
       <DataType>VARCHAR(max)|12</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="418" parent="43" name="DATA">
       <Position>6</Position>
       <DataType>DATE(8)|91</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="419" parent="43" name="TIPO">
       <Position>7</Position>
       <DataType>VARCHAR(max)|12</DataType>
+      <NotNull>1</NotNull>
     </column>
     <key id="420" parent="43" name="CONSTRAINT_DB">
       <NameSurrogate>1</NameSurrogate>
@@ -1952,11 +1956,11 @@
     </column>
     <column id="499" parent="64" name="ZONA">
       <Position>2</Position>
-      <DataType>DECIMAL(65535,32767)|3</DataType>
+      <DataType>INTEGER(10)|4</DataType>
     </column>
     <column id="500" parent="64" name="SESSAO">
       <Position>3</Position>
-      <DataType>DECIMAL(65535,32767)|3</DataType>
+      <DataType>INTEGER(10)|4</DataType>
     </column>
     <foreign-key id="501" parent="64" name="FK_IDENTIFICADORDOTITULOELEITORAL">
       <ColNames>IDENTIFICADOR</ColNames>

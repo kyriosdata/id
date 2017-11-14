@@ -29,7 +29,7 @@ CREATE TABLE NOME (
   nomes varchar,
   sobrenomes varchar,
   sufixos varchar,
-  preferido int,
+  preferido int NOT NULL,
   usoCondicional int
 );
 
