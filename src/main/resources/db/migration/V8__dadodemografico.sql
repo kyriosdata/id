@@ -74,14 +74,3 @@ FOREIGN KEY (estado) REFERENCES ESTADO (codigo);
 ALTER TABLE DADODEMOGRAFICO
 	ADD CONSTRAINT FK_Pais
 FOREIGN KEY (pais) REFERENCES PAIS (codigo);
-
-INSERT INTO DADODEMOGRAFICO(
-	individuo,
-	nascimento, nascimentoAcuracia, nascimentoSeguimento, nascimentoPluralidade, nascimentoOrdem,
-	obito, obitoAcuracia, obitoFonte, sexo, mae, pai, situacaoFamiliar, raca, comentario,
-	nacionalidade, municipio, estado, pais, dataEntradaPais) VALUES (
-	'8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
-	DATE '2017-11-13', 'AEU', 'S', 1, 1,
-	DATE '2017-11-14', 'AAA', 1, 1, 'nome da mãe', 'nome do pai',	1, 1, 'um comentário',
-	1, 1100015, 'RO', NULL, NULL
-);
