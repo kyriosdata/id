@@ -42,8 +42,12 @@ CREATE TABLE NACIONALIDADE (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO NACIONALIDADE VALUES (1, 'Brasileiro');
-INSERT INTO NACIONALIDADE VALUES (2, 'Estrangeiro');
+/*
+  Seção 10.9 (pág. 57)
+ */
+INSERT INTO NACIONALIDADE VALUES
+  (1, 'Brasileiro'),
+  (2, 'Estrangeiro');
 
 /*
   Seção 10.3.4 (pág. 53)
@@ -56,11 +60,12 @@ CREATE TABLE OBITOFONTE (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO OBITOFONTE VALUES (1, 'Cartório');
-INSERT INTO OBITOFONTE VALUES (2, 'Prestador de assistência à saúde');
-INSERT INTO OBITOFONTE VALUES (3, 'Parente');
-INSERT INTO OBITOFONTE VALUES (4, 'Outro');
-INSERT INTO OBITOFONTE VALUES (9, 'Desconhecido');
+INSERT INTO OBITOFONTE VALUES
+  (1, 'Cartório'),
+  (2, 'Prestador de assistência à saúde'),
+  (3, 'Parente'),
+  (4, 'Outro'),
+  (9, 'Desconhecido');
 
 /*
   Raça/cor
