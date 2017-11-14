@@ -3,10 +3,12 @@
 	para identificação de pacientes.
  */
 
-/* José Pedro dos Santos Filho mais conhecido por Zuza do Luar. */
+/* "José Pedro dos Santos Filho" mais conhecido por "Zuza do Luar". */
 INSERT INTO INDIVIDUO VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5');
 
+/* "José Pedro dos Santos" é o pai adotivo do "Zuza do Luar". */
 INSERT INTO INDIVIDUO VALUES ('530e40d3-9482-4dcb-b5cb-2168c98f3b26');
+
 INSERT INTO INDIVIDUO VALUES ('18afaf46-abe5-46d8-80df-68a44a367a5d');
 
 
@@ -22,6 +24,7 @@ VALUES (
   '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
   'Zuza', 'do Luar', NULL, 1);
 
+/* José Pedro dos Santos Filho (não é o nome preferido) */
 INSERT INTO NOME (id, individuo, nomes, sobrenomes, sufixos, preferido)
 VALUES (
   '8db412b5-bc25-4ced-96ba-2014d1178550',
@@ -30,7 +33,7 @@ VALUES (
 
 INSERT INTO VINCULO (IDENTIFICADOR, INDIVIDUO, RELACIONAMENTO, DATAINICIO)
 VALUES ('7ec971f2-bd30-4704-8952-d705e9b006e5',
-        '8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 41,
+        '8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 263,
         DATE '2016-12-31');
 
 INSERT INTO COMUNICACAO (INDIVIDUO, MEIO, PREFERENCIA, DETALHE, USO)
