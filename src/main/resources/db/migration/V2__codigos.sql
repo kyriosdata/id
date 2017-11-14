@@ -639,15 +639,15 @@ INSERT INTO PAIS VALUES
   Seção 11.9 (pág. 77).
  */
 
-CREATE TABLE TIPOENDERECO (
+CREATE TABLE ENDERECOTIPO (
   codigo int,
   descricao varchar,
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO TIPOENDERECO VALUES (1, 'Comercial');
-INSERT INTO TIPOENDERECO VALUES (2, 'Correio ou postal');
-INSERT INTO TIPOENDERECO VALUES (3, 'Acomodação temporária');
-INSERT INTO TIPOENDERECO VALUES (4, 'Residencial');
-INSERT INTO TIPOENDERECO VALUES (8, 'Sem endereço fixo');
-INSERT INTO TIPOENDERECO VALUES (9, 'Desconhecido, ou não declarado, ou inadequadamente descrito');
+INSERT INTO ENDERECOTIPO VALUES (1, 'Comercial');
+INSERT INTO ENDERECOTIPO VALUES (2, 'Correio ou postal');
+INSERT INTO ENDERECOTIPO VALUES (3, 'Acomodação temporária');
+INSERT INTO ENDERECOTIPO VALUES (4, 'Residencial');
+INSERT INTO ENDERECOTIPO VALUES (8, 'Sem endereço fixo');
+INSERT INTO ENDERECOTIPO VALUES (9, 'Desconhecido, ou não declarado, ou inadequadamente descrito');

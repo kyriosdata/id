@@ -48,11 +48,11 @@
     <table id="38" parent="4" name="DADODEMOGRAFICO"/>
     <table id="39" parent="4" name="DATASEGUIMENTO"/>
     <table id="40" parent="4" name="ENDERECO"/>
-    <table id="41" parent="4" name="ESTADO"/>
-    <table id="42" parent="4" name="HORARIOCONTATO"/>
-    <table id="43" parent="4" name="IDENTIFICADOR"/>
-    <table id="44" parent="4" name="INDIVIDUO"/>
-    <table id="45" parent="4" name="LINHAENDERECO"/>
+    <table id="41" parent="4" name="ENDERECOLINHA"/>
+    <table id="42" parent="4" name="ESTADO"/>
+    <table id="43" parent="4" name="HORARIOCONTATO"/>
+    <table id="44" parent="4" name="IDENTIFICADOR"/>
+    <table id="45" parent="4" name="INDIVIDUO"/>
     <table id="46" parent="4" name="MUNICIPIO"/>
     <table id="47" parent="4" name="NACIONALIDADE"/>
     <table id="48" parent="4" name="NASCIMENTOORDEM"/>
@@ -1513,125 +1513,125 @@
       <RefKeyName>CONSTRAINT_A96</RefKeyName>
       <RefColNames>CODIGO</RefColNames>
     </foreign-key>
-    <column id="407" parent="41" name="CODIGO">
-      <Position>1</Position>
-      <DataType>VARCHAR(2)|12</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="408" parent="41" name="NOME">
-      <Position>2</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-    </column>
-    <key id="409" parent="41" name="CONSTRAINT_7A">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>CODIGO</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="410" parent="42" name="CODIGO">
-      <Position>1</Position>
-      <DataType>CHAR(1)|1</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="411" parent="42" name="DESCRICAO">
-      <Position>2</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-    </column>
-    <key id="412" parent="42" name="CONSTRAINT_5">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>CODIGO</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="413" parent="43" name="ID">
+    <column id="407" parent="41" name="ENDERECO">
       <Position>1</Position>
       <DataType>VARCHAR(36)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="414" parent="43" name="INDIVIDUO">
-      <Position>2</Position>
-      <DataType>VARCHAR(36)|12</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="415" parent="43" name="DESIGNACAO">
-      <Position>3</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="416" parent="43" name="AREA">
-      <Position>4</Position>
-      <DataType>INTEGER(10)|4</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="417" parent="43" name="EMISSOR">
-      <Position>5</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="418" parent="43" name="DATA">
-      <Position>6</Position>
-      <DataType>DATE(8)|91</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="419" parent="43" name="TIPO">
-      <Position>7</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="420" parent="43" name="CONSTRAINT_DB">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="421" parent="43" name="FK_IDENTIFICADORPARAINDIVIDUO">
-      <ColNames>INDIVIDUO</ColNames>
-      <RefSchemaName>PUBLIC</RefSchemaName>
-      <RefTableName>INDIVIDUO</RefTableName>
-      <RefKeyName>CONSTRAINT_7</RefKeyName>
-      <RefColNames>ID</RefColNames>
-    </foreign-key>
-    <foreign-key id="422" parent="43" name="FK_AREAGEOGRAFICACODIGO">
-      <ColNames>AREA</ColNames>
-      <RefSchemaName>PUBLIC</RefSchemaName>
-      <RefTableName>AREAGEOGRAFICA</RefTableName>
-      <RefKeyName>CONSTRAINT_A</RefKeyName>
-      <RefColNames>CODIGO</RefColNames>
-    </foreign-key>
-    <foreign-key id="423" parent="43" name="FK_TIPODOIDENTIFICADORCODIGO">
-      <ColNames>TIPO</ColNames>
-      <RefSchemaName>PUBLIC</RefSchemaName>
-      <RefTableName>TIPOIDENTIFICADOR</RefTableName>
-      <RefKeyName>CONSTRAINT_6</RefKeyName>
-      <RefColNames>CODIGO</RefColNames>
-    </foreign-key>
-    <column id="424" parent="44" name="ID">
-      <Position>1</Position>
-      <DataType>VARCHAR(36)|12</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <key id="425" parent="44" name="CONSTRAINT_7">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>ID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="426" parent="45" name="ENDERECO">
-      <Position>1</Position>
-      <DataType>VARCHAR(36)|12</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="427" parent="45" name="LINHA">
+    <column id="408" parent="41" name="LINHA">
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="428" parent="45" name="ORDEM">
+    <column id="409" parent="41" name="ORDEM">
       <Position>3</Position>
       <DataType>INTEGER(10)|4</DataType>
     </column>
-    <foreign-key id="429" parent="45" name="FK_LINHATEMENDERECOASSOCIADO">
+    <foreign-key id="410" parent="41" name="FK_LINHATEMENDERECOASSOCIADO">
       <ColNames>ENDERECO</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>ENDERECO</RefTableName>
       <RefKeyName>CONSTRAINT_95</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
+    <column id="411" parent="42" name="CODIGO">
+      <Position>1</Position>
+      <DataType>VARCHAR(2)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="412" parent="42" name="NOME">
+      <Position>2</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+    </column>
+    <key id="413" parent="42" name="CONSTRAINT_7A">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODIGO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="414" parent="43" name="CODIGO">
+      <Position>1</Position>
+      <DataType>CHAR(1)|1</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="415" parent="43" name="DESCRICAO">
+      <Position>2</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+    </column>
+    <key id="416" parent="43" name="CONSTRAINT_5">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODIGO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="417" parent="44" name="ID">
+      <Position>1</Position>
+      <DataType>VARCHAR(36)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="418" parent="44" name="INDIVIDUO">
+      <Position>2</Position>
+      <DataType>VARCHAR(36)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="419" parent="44" name="DESIGNACAO">
+      <Position>3</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="420" parent="44" name="AREA">
+      <Position>4</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="421" parent="44" name="EMISSOR">
+      <Position>5</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="422" parent="44" name="DATA">
+      <Position>6</Position>
+      <DataType>DATE(8)|91</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="423" parent="44" name="TIPO">
+      <Position>7</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="424" parent="44" name="CONSTRAINT_DB">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="425" parent="44" name="FK_IDENTIFICADORPARAINDIVIDUO">
+      <ColNames>INDIVIDUO</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>INDIVIDUO</RefTableName>
+      <RefKeyName>CONSTRAINT_7</RefKeyName>
+      <RefColNames>ID</RefColNames>
+    </foreign-key>
+    <foreign-key id="426" parent="44" name="FK_AREAGEOGRAFICACODIGO">
+      <ColNames>AREA</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>AREAGEOGRAFICA</RefTableName>
+      <RefKeyName>CONSTRAINT_A</RefKeyName>
+      <RefColNames>CODIGO</RefColNames>
+    </foreign-key>
+    <foreign-key id="427" parent="44" name="FK_TIPODOIDENTIFICADORCODIGO">
+      <ColNames>TIPO</ColNames>
+      <RefSchemaName>PUBLIC</RefSchemaName>
+      <RefTableName>TIPOIDENTIFICADOR</RefTableName>
+      <RefKeyName>CONSTRAINT_6</RefKeyName>
+      <RefColNames>CODIGO</RefColNames>
+    </foreign-key>
+    <column id="428" parent="45" name="ID">
+      <Position>1</Position>
+      <DataType>VARCHAR(36)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="429" parent="45" name="CONSTRAINT_7">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
     <column id="430" parent="46" name="CODIGO">
       <Position>1</Position>
       <DataType>INTEGER(10)|4</DataType>

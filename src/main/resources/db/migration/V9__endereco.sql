@@ -45,7 +45,7 @@ FOREIGN KEY (pais) REFERENCES PAIS (codigo);
 
 ALTER TABLE ENDERECO
 	ADD CONSTRAINT FK_TipoDoEndereco
-FOREIGN KEY (tipo) REFERENCES TIPOENDERECO (codigo);
+FOREIGN KEY (tipo) REFERENCES ENDERECOTIPO (codigo);
 
 /*
 	Seção 11.2 (pág. 65) - Linha de endereço
