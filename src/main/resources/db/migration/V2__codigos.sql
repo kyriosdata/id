@@ -287,6 +287,7 @@ INSERT INTO COMUNICACAOPREFERENCIA VALUES
   ('E', 'Período noturno');
 
 /*
+  Seção 12.5 (pág. 87)
   Tipo de uso de meio de comunicação.
  */
 
@@ -297,9 +298,10 @@ CREATE TABLE COMUNICACAOUSO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO COMUNICACAOUSO VALUES (1, 'Comercial', 'B');
-INSERT INTO COMUNICACAOUSO VALUES (2, 'Pessoal', 'P');
-INSERT INTO COMUNICACAOUSO VALUES (3, 'Tanto comercial quanto pessoal', 'A');
+INSERT INTO COMUNICACAOUSO VALUES
+  (1, 'Comercial', 'B'),
+  (2, 'Pessoal', 'P'),
+  (3, 'Tanto comercial quanto pessoal', 'A');
 
 /*
   Tipos de relacionamentos previstos.
