@@ -40,7 +40,7 @@ FOREIGN KEY (individuo) REFERENCES INDIVIDUO (id);
  */
 CREATE TABLE CTPS (
   identificador varchar(36) NOT NULL,
-  serie NUMERIC,
+  serie INT,
   estado varchar(2)
 );
 
@@ -61,9 +61,9 @@ CREATE TABLE CERTIDAO (
   identificador varchar(36) NOT NULL,
   tipo int,
   cartorio varchar,
-  livro varchar,
-  folha varchar,
-  termo varchar
+  livro INT,
+  folha INT,
+  termo INT
 );
 
 ALTER TABLE CERTIDAO
@@ -83,8 +83,8 @@ FOREIGN KEY (tipo) REFERENCES TIPOCERTIDAO (codigo);
 
 CREATE TABLE TITULOELEITORAL (
   identificador varchar(36) NOT NULL,
-  zona NUMERIC,
-  sessao NUMERIC
+  zona INT,
+  sessao INT
 );
 
 ALTER TABLE TITULOELEITORAL
