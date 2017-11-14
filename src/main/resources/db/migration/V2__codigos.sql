@@ -68,6 +68,7 @@ INSERT INTO OBITOFONTE VALUES
   (9, 'Desconhecido');
 
 /*
+  Seção 10.8 (pág. 57)
   Raça/cor
  */
 
@@ -77,13 +78,15 @@ CREATE TABLE RACA (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO RACA VALUES (1, 'Branca');
-INSERT INTO RACA VALUES (2, 'Preta');
-INSERT INTO RACA VALUES (3, 'Parda');
-INSERT INTO RACA VALUES (4, 'Amarela');
-INSERT INTO RACA VALUES (5, 'Indígena');
+INSERT INTO RACA VALUES
+  (1, 'Branca'),
+  (2, 'Preta'),
+  (3, 'Parda'),
+  (4, 'Amarela'),
+  (5, 'Indígena');
 
 /*
+  Seção 10.4 (pág. 54)
   Sexo do indivíduo para propósitos administrativos.
  */
 
@@ -94,10 +97,11 @@ CREATE TABLE SEXO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO SEXO VALUES (1, 'Masculino', 'M');
-INSERT INTO SEXO VALUES (2, 'Feminino', 'F');
-INSERT INTO SEXO VALUES (3, 'Intersexo ou indeterminado', 'I');
-INSERT INTO SEXO VALUES (9, 'Não declarado ou descrito inadequadamente', 'U');
+INSERT INTO SEXO VALUES
+  (1, 'Masculino', 'M'),
+  (2, 'Feminino', 'F'),
+  (3, 'Intersexo ou indeterminado', 'I'),
+  (9, 'Não declarado ou descrito inadequadamente', 'U');
 
 /*
   Situação familiar indica a relação do indivíduo com as pessoas
