@@ -94,4 +94,4 @@ FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
 INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, data, tipo)
 VALUES ('7ec971f2-bd30-4704-8952-d705e9b006e5', '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
-        12345678, 1, 'N/A', DATE '2017-12-31', '01');
+        12345678, 1, 'N/A', DATE '2017-12-31', '10');
