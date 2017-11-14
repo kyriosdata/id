@@ -152,15 +152,15 @@ CREATE TABLE NASCIMENTOORDEM (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO NASCIMENTOORDEM
-VALUES (1, 'Único ou primeiro de um nascimento múltiplo');
-INSERT INTO NASCIMENTOORDEM VALUES (2, 'Segundo de um nascimento múltiplo');
-INSERT INTO NASCIMENTOORDEM VALUES (3, 'Terceiro de um nascimento múltiplo');
-INSERT INTO NASCIMENTOORDEM VALUES (4, 'Quarto de um nascimento múltiplo');
-INSERT INTO NASCIMENTOORDEM VALUES (5, 'Quinto de um nascimento múltiplo');
-INSERT INTO NASCIMENTOORDEM VALUES (6, 'Sexto de um nascimento múltiplo');
-INSERT INTO NASCIMENTOORDEM VALUES (7, 'Outros');
-INSERT INTO NASCIMENTOORDEM VALUES (9, 'Não declarado');
+INSERT INTO NASCIMENTOORDEM VALUES
+  (1, 'Único ou primeiro de um nascimento múltiplo'),
+  (2, 'Segundo de um nascimento múltiplo'),
+  (3, 'Terceiro de um nascimento múltiplo'),
+  (4, 'Quarto de um nascimento múltiplo'),
+  (5, 'Quinto de um nascimento múltiplo'),
+  (6, 'Sexto de um nascimento múltiplo'),
+  (7, 'Outros'),
+  (9, 'Não declarado');
 
 
 /*
