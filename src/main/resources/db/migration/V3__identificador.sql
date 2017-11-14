@@ -1,15 +1,16 @@
+DROP TABLE IF EXISTS IDENTIFICADOR;
+DROP TABLE IF EXISTS CTPS;
+DROP TABLE IF EXISTS CERTIDAO;
+DROP TABLE IF EXISTS TITULOELEITORAL;
+
 /*
+  Seção 8 (pág. 7)
   O identificador do indivíduo também é conhecido por:
   (a) ID do paciente; (b) identificador pessoal;
   (c) número único do prontuário; (d) número do prontuário médico;
   (e) identificador local do sujeito; (f) número de identificação
   do sujeito; e (g) identificador único, dentre outros.
  */
-
-DROP TABLE IF EXISTS IDENTIFICADOR;
-DROP TABLE IF EXISTS CTPS;
-DROP TABLE IF EXISTS CERTIDAO;
-DROP TABLE IF EXISTS TITULOELEITORAL;
 
 CREATE TABLE IDENTIFICADOR (
   id VARCHAR(36) NOT NULL,
