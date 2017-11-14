@@ -304,6 +304,7 @@ INSERT INTO COMUNICACAOUSO VALUES
   (3, 'Tanto comercial quanto pessoal', 'A');
 
 /*
+  Seção 13.2 (pág. 89)
   Tipos de relacionamentos previstos.
  */
 CREATE TABLE TIPORELACIONAMENTO (
@@ -312,28 +313,29 @@ CREATE TABLE TIPORELACIONAMENTO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO TIPORELACIONAMENTO VALUES (7, 'Avó materna');
-INSERT INTO TIPORELACIONAMENTO VALUES (8, 'Avô materno');
-INSERT INTO TIPORELACIONAMENTO VALUES (22, 'Cônjuge/companheiro(a)');
-INSERT INTO TIPORELACIONAMENTO VALUES (23, 'Irmão');
-INSERT INTO TIPORELACIONAMENTO VALUES (24, 'Irmã');
-INSERT INTO TIPORELACIONAMENTO VALUES (25, 'Meio-irmão');
-INSERT INTO TIPORELACIONAMENTO VALUES (26, 'Meia-irmã');
-INSERT INTO TIPORELACIONAMENTO VALUES (27, 'Irmãos');
-INSERT INTO TIPORELACIONAMENTO VALUES (28, 'Criança');
-INSERT INTO TIPORELACIONAMENTO VALUES (29, 'Filha');
-INSERT INTO TIPORELACIONAMENTO VALUES (36, 'Avô paterna');
-INSERT INTO TIPORELACIONAMENTO VALUES (37, 'Avô paterno');
-INSERT INTO TIPORELACIONAMENTO VALUES (38, 'Tio materno');
-INSERT INTO TIPORELACIONAMENTO VALUES (40, 'Tio paterno');
-INSERT INTO TIPORELACIONAMENTO VALUES (41, 'Tia paterna');
-INSERT INTO TIPORELACIONAMENTO VALUES (189, 'Recém-nascido');
-INSERT INTO TIPORELACIONAMENTO VALUES (254, 'Pais');
-INSERT INTO TIPORELACIONAMENTO VALUES (262, 'Mãe adotiva');
-INSERT INTO TIPORELACIONAMENTO VALUES (263, 'Pai adotivo');
-INSERT INTO TIPORELACIONAMENTO VALUES (264, 'Responsável');
-INSERT INTO TIPORELACIONAMENTO VALUES (265, 'Coabitante');
-INSERT INTO TIPORELACIONAMENTO VALUES (939, 'Tia materna');
+INSERT INTO TIPORELACIONAMENTO VALUES
+  (7, 'Avó materna'),
+  (8, 'Avô materno'),
+  (22, 'Cônjuge/companheiro(a)'),
+  (23, 'Irmão'),
+  (24, 'Irmã'),
+  (25, 'Meio-irmão'),
+  (26, 'Meia-irmã'),
+  (27, 'Irmãos'),
+  (28, 'Criança'),
+  (29, 'Filha'),
+  (36, 'Avô paterna'),
+  (37, 'Avô paterno'),
+  (38, 'Tio materno'),
+  (40, 'Tio paterno'),
+  (41, 'Tia paterna'),
+  (189, 'Recém-nascido'),
+  (254, 'Pais'),
+  (262, 'Mãe adotiva'),
+  (263, 'Pai adotivo'),
+  (264, 'Responsável'),
+  (265, 'Coabitante'),
+  (939, 'Tia materna');
 
 /*
   LOOKUP TABLE
