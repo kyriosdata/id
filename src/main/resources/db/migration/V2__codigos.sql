@@ -12,7 +12,7 @@ DROP TABLE IF EXISTS TIPOCERTIDAO;
 DROP TABLE IF EXISTS TIPOIDENTIFICADOR;
 DROP TABLE IF EXISTS USOCONDICIONAL;
 DROP TABLE IF EXISTS NOMEPREFERIDO;
-DROP TABLE IF EXISTS USODONOME;
+DROP TABLE IF EXISTS NOMEUSO;
 DROP TABLE IF EXISTS NOMEDETITULO;
 DROP TABLE IF EXISTS NOMESUFIXO;
 DROP TABLE IF EXISTS PAIS;
@@ -370,19 +370,19 @@ INSERT INTO USOCONDICIONAL VALUES (9, 'Nome temporário');
   Seção 9.9.2 (pág. 40) Uso do nome
  */
 
-CREATE TABLE USODONOME (
+CREATE TABLE NOMEUSO (
   codigo int,
   alternativo char(1),
   descricao varchar,
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO USODONOME VALUES (1, 'R', 'relatório');
-INSERT INTO USODONOME VALUES (2, 'N', 'Nome de recém-nascido');
-INSERT INTO USODONOME VALUES (3, 'C', 'Nome profissional ou comercial');
-INSERT INTO USODONOME VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
-INSERT INTO USODONOME VALUES (5, 'L', 'Nome registrado (nome legal)');
-INSERT INTO USODONOME VALUES (8, 'O', 'Outro nome (alias)');
+INSERT INTO NOMEUSO VALUES (1, 'R', 'relatório');
+INSERT INTO NOMEUSO VALUES (2, 'N', 'Nome de recém-nascido');
+INSERT INTO NOMEUSO VALUES (3, 'C', 'Nome profissional ou comercial');
+INSERT INTO NOMEUSO VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
+INSERT INTO NOMEUSO VALUES (5, 'L', 'Nome registrado (nome legal)');
+INSERT INTO NOMEUSO VALUES (8, 'O', 'Outro nome (alias)');
 
 /*
   LOOKUP TABLE
