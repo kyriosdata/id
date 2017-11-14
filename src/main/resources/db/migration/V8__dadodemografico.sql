@@ -1,5 +1,0 @@
-/*
-	Dados demográficos.
- */
-
-
