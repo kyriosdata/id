@@ -1,15 +1,17 @@
 ## SGBD H2
-A simplicidade do [H2](http://www.h2database.com) foi determinante para identificá-lo para a fase
-de desenvolvimento.
+A simplicidade do [H2](http://www.h2database.com) foi determinante para 
+selecioná-lo para uso durante a fase de desenvolvimento.
 
 **Importante**: use a versão que é empregada pelo Spring e pelo Flyway. Para tal,
 consulte o arquivo _pom.xml_ (effective pom) e procure pela propriedade
 _h2.version_. Essa propriedade deve ser empregada pelo Flyway e também
 para a configuração do **exec-maven-plugin**.
 
-Observe que ao executar **mvn package** será gerado o diretório **jars** no diretório
-**target** no qual estarão todas os jar files empregados, inclusive aquele correspondente
-ao H2. Esse deve ser o jar empregado pelo cliente do IntelliJ IDEA. 
+### Disponibilizar H2 localmente
+Observe que ao executar **mvn package** será gerado o diretório **jars** no 
+diretório **target** no qual estarão todas os jar files empregados, inclusive 
+aquele correspondente ao H2. Esse deve ser o jar empregado pelo cliente do 
+IntelliJ IDEA. 
 
 ### Iniciar o H2 (Server Mode)
 Basta executar **mvn exec:java**. No _pom.xml_ está indicada a versão
