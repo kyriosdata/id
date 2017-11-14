@@ -6240,4 +6240,4 @@ INSERT INTO MUNICIPIO VALUES
   ('5222054','GO','Vicentinópolis'),
   ('5222203','GO','Vila Boa'),
   ('5222302','GO','Vila Propício'),
-  ('5300108','DF','Brasília'),;
+  ('5300108','DF','Brasília');
