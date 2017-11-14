@@ -3,7 +3,7 @@
  */
 
 DROP TABLE IF EXISTS ENDERECO;
-DROP TABLE IF EXISTS LINHAENDERECO;
+DROP TABLE IF EXISTS ENDERECOLINHA;
 
 /*
 	Seção 11.2.14 (pág. 74) - bairro é seguida, na ordem por outras seções
@@ -50,13 +50,13 @@ FOREIGN KEY (tipo) REFERENCES TIPOENDERECO (codigo);
 /*
 	Seção 11.2 (pág. 65) - Linha de endereço
  */
-CREATE TABLE LINHAENDERECO (
+CREATE TABLE ENDERECOLINHA (
 	endereco varchar(36) NOT NULL,
 	linha varchar,
 	ordem int
 );
 
-ALTER TABLE LINHAENDERECO
+ALTER TABLE ENDERECOLINHA
 		ADD CONSTRAINT FK_LinhaTemEnderecoAssociado
 FOREIGN KEY (endereco) REFERENCES ENDERECO (id);
 
