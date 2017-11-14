@@ -17,6 +17,10 @@ DROP TABLE IF EXISTS NOMEDETITULO;
 DROP TABLE IF EXISTS NOMESUFIXO;
 DROP TABLE IF EXISTS PAIS;
 
+/*
+  Seção 10.11 (pág. 58)
+  Unidade da federação.
+ */
 CREATE TABLE ESTADO (
   codigo varchar(2),
   nome varchar,
@@ -158,8 +162,9 @@ INSERT INTO DATASEGUIMENTO VALUES ('S', 'A data precisa de seguimento');
 INSERT INTO DATASEGUIMENTO VALUES ('N', 'A data não precisa de seguimento');
 
 /*
-  Pluralidade de nascimento é um indicador que contempla
-  nascimentos múltiplos.
+  Seção 10.15 (pág. 60)
+  A ordem sequencial deste indivíduo em um nascimento múltiplo, não
+  importando se foi uma nascido vivo ou morto.
  */
 
 CREATE TABLE NASCIMENTOORDEM (
@@ -179,6 +184,7 @@ INSERT INTO NASCIMENTOORDEM VALUES (9, 'Não declarado');
 
 
 /*
+  Seção 10.14 (pág. 59)
   Pluralidade de nascimento é um indicador que contempla
   nascimentos múltiplos.
  */
