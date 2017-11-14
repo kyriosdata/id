@@ -384,13 +384,12 @@ CREATE TABLE NOMEUSO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO NOMEUSO VALUES (1, 'R', 'relatório');
-INSERT INTO NOMEUSO VALUES (2, 'N', 'Nome de recém-nascido');
-INSERT INTO NOMEUSO VALUES (3, 'C', 'Nome profissional ou comercial');
-INSERT INTO NOMEUSO
-VALUES (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)');
-INSERT INTO NOMEUSO VALUES (5, 'L', 'Nome registrado (nome legal)');
-INSERT INTO NOMEUSO VALUES (8, 'O', 'Outro nome (alias)');
+INSERT INTO NOMEUSO VALUES (1, 'R', 'relatório'),
+  (2, 'N', 'Nome de recém-nascido'),
+  (3, 'C', 'Nome profissional ou comercial'),
+  (4, 'S', 'Nome de solteiro (nome de nascimento) (nome original)'),
+  (5, 'L', 'Nome registrado (nome legal)'),
+  (8, 'O', 'Outro nome (alias)');
 
 /*
   LOOKUP TABLE Tipo de endereço
