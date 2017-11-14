@@ -68,7 +68,7 @@ FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
 ALTER TABLE UTILIZACAO
     ADD CONSTRAINT FK_UsoDoNomeCodigo
-FOREIGN KEY (uso) REFERENCES USODONOME (codigo);
+FOREIGN KEY (uso) REFERENCES NOMEUSO (codigo);
 
 /*
   Representação alternativa de um nome.
