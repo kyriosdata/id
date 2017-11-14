@@ -1166,6 +1166,7 @@
     <column id="339" parent="36" name="MEIO">
       <Position>2</Position>
       <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
     </column>
     <column id="340" parent="36" name="PREFERENCIA">
       <Position>3</Position>
@@ -1176,7 +1177,7 @@
       <DataType>VARCHAR(max)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="342" parent="36" name="UTILIZACAO">
+    <column id="342" parent="36" name="USO">
       <Position>5</Position>
       <DataType>INTEGER(10)|4</DataType>
     </column>
@@ -1202,7 +1203,7 @@
       <RefColNames>CODIGO</RefColNames>
     </foreign-key>
     <foreign-key id="346" parent="36" name="FK_USODACOMUNICACAO">
-      <ColNames>UTILIZACAO</ColNames>
+      <ColNames>USO</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>COMUNICACAOUSO</RefTableName>
       <RefKeyName>CONSTRAINT_4</RefKeyName>
