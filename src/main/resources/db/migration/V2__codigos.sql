@@ -15,7 +15,8 @@ DROP TABLE IF EXISTS NOMEUSO;
 DROP TABLE IF EXISTS NOMEDETITULO;
 DROP TABLE IF EXISTS NOMESUFIXO;
 DROP TABLE IF EXISTS PAIS;
-
+DROP TABLE IF EXISTS ESTADO;
+DROP TABLE IF EXISTS MUNICIPIO;
 /*
   Seção 8.3 (pág. 11)
  */
@@ -402,17 +403,13 @@ CREATE TABLE ENDERECOTIPO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO ENDERECOTIPO VALUES (1, 'Comercial');
-INSERT INTO ENDERECOTIPO VALUES (2, 'Correio ou postal');
-INSERT INTO ENDERECOTIPO VALUES (3, 'Acomodação temporária');
-INSERT INTO ENDERECOTIPO VALUES (4, 'Residencial');
-INSERT INTO ENDERECOTIPO VALUES (8, 'Sem endereço fixo');
-INSERT INTO ENDERECOTIPO
-VALUES (9, 'Desconhecido, ou não declarado, ou inadequadamente descrito');
-
-DROP TABLE IF EXISTS PAIS;
-DROP TABLE IF EXISTS ESTADO;
-DROP TABLE IF EXISTS MUNICIPIO;
+INSERT INTO ENDERECOTIPO VALUES
+  (1, 'Comercial'),
+  (2, 'Correio ou postal'),
+  (3, 'Acomodação temporária'),
+  (4, 'Residencial'),
+  (8, 'Sem endereço fixo'),
+  (9, 'Desconhecido, ou não declarado, ou inadequadamente descrito');
 
 /*
   LOOKUP TABLE
