@@ -268,7 +268,9 @@ INSERT INTO COMUNICACAOMEIO VALUES
   (8, 'Outro', 'O');
 
 /*
-  Tipo de preferência.
+  Seção 12.3 (pág. 86)
+  Indicação da preferência de horário para uso do meio de comunicação
+  em questão.
  */
 
 CREATE TABLE COMUNICACAOPREFERENCIA (
