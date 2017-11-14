@@ -104,6 +104,7 @@ INSERT INTO SEXO VALUES
   (9, 'Não declarado ou descrito inadequadamente', 'U');
 
 /*
+  Seção 10.7 (pág. 56)
   Situação familiar indica a relação do indivíduo com as pessoas
   com as quais convive.
  */
@@ -114,17 +115,13 @@ CREATE TABLE SITUACAOFAMILIAR (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO SITUACAOFAMILIAR
-VALUES (1, 'Convive com companheiro(a) e filho(s)');
-INSERT INTO SITUACAOFAMILIAR
-VALUES (2, 'Convive com companheiro(a) com laços conjugais e sem filhos');
-INSERT INTO SITUACAOFAMILIAR
-VALUES (3, 'Convive com companheiro(a), com filho(s) e/ou outro(s) familiares');
-INSERT INTO SITUACAOFAMILIAR
-VALUES (4, 'Convive com familiar(es) sem companheira(o)');
-INSERT INTO SITUACAOFAMILIAR VALUES (5,
-                                     'Convive com outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais');
-INSERT INTO SITUACAOFAMILIAR VALUES (6, 'Vive só');
+INSERT INTO SITUACAOFAMILIAR VALUES
+  (1, 'Convive com companheiro(a) e filho(s)'),
+  (2, 'Convive com companheiro(a) com laços conjugais e sem filhos'),
+  (3, 'Convive com companheiro(a), com filho(s) e/ou outro(s) familiares'),
+  (4, 'Convive com familiar(es) sem companheira(o)'),
+  (5, 'Convive com outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais'),
+  (6, 'Vive só');
 
 /*
   Seguimento de data. Indica se a data em questão precisa de acompanhamento
