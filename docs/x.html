@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Fábio Nogueira de Lucena">
+  <link rel="shortcut icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ABNT 15985</title>
+  <meta name="description" content="Apresentação detalhada da norma ABNT NBR 15985:2011">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bulma.css">
+  <link rel="stylesheet" href="css/tooltip.css">
+
+  <style>    
+  </style>
+</head>
+
+<body>
+  <script>
+    function toggle(obj) {
+      var icone = obj.childNodes[1].childNodes[1];
+        
+      if (icone.classList.contains('fa-square-o')) {
+        icone.classList.remove("fa-square-o");        
+        icone.classList.add("fa-check-square-o");
+      } else {
+        icone.classList.remove("fa-check-square-o");
+        icone.classList.add("fa-square-o");
+      }
+      
+    }
+  </script>
+
+  <a class="button" onclick="toggle(this)">
+    <span class="icon">
+      <i class="fa fa-check-square-o"></i>
+    </span>
+    <span>Preferido</span>
+  </a>
+</body>
+
+</html>
