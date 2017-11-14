@@ -201,6 +201,7 @@ INSERT INTO CERTIDAOTIPO VALUES
   (3, 'divórcio');
 
 /*
+  Seção 8.6 (pág. 13)
   LOOKUP TABLE
   Tipo de identificador usando pela organização, por exemplo,
   identificador único do paciente, cartão de saúde, cartão da previdência.
@@ -257,13 +258,14 @@ CREATE TABLE COMUNICACAOMEIO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO COMUNICACAOMEIO VALUES (1, 'Telefone (excluindo o celular)', 'T');
-INSERT INTO COMUNICACAOMEIO VALUES (2, 'Telefone celular', 'C');
-INSERT INTO COMUNICACAOMEIO VALUES (3, 'Fax', 'F');
-INSERT INTO COMUNICACAOMEIO VALUES (4, 'Pager', 'P');
-INSERT INTO COMUNICACAOMEIO VALUES (5, 'Correio eletrônico', 'E');
-INSERT INTO COMUNICACAOMEIO VALUES (6, 'URL', 'U');
-INSERT INTO COMUNICACAOMEIO VALUES (8, 'Outro', 'O');
+INSERT INTO COMUNICACAOMEIO VALUES
+  (1, 'Telefone (excluindo o celular)', 'T'),
+  (2, 'Telefone celular', 'C'),
+  (3, 'Fax', 'F'),
+  (4, 'Pager', 'P'),
+  (5, 'Correio eletrônico', 'E'),
+  (6, 'URL', 'U'),
+  (8, 'Outro', 'O');
 
 /*
   Tipo de preferência.
