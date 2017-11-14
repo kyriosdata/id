@@ -18,7 +18,7 @@ CREATE TABLE COMUNICACAO (
 	meio int,
 	preferencia char(1),
 	detalhe varchar NOT NULL,
-	utilizacao int
+	uso int
 );
 
 ALTER TABLE COMUNICACAO
