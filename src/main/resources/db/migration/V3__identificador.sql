@@ -15,10 +15,10 @@ CREATE TABLE IDENTIFICADOR (
   id VARCHAR(36) NOT NULL,
   individuo varchar(36) NOT NULL,
   designacao varchar NOT NULL,
-  area int,
-  emissor varchar,
-  dataDeEmissao DATE,
-  tipo varchar,
+  area int NOT NULL,
+  emissor varchar NOT NULL ,
+  data DATE NOT NULL ,
+  tipo varchar NOT NULL ,
   PRIMARY KEY (id)
 );
 
@@ -92,6 +92,6 @@ ALTER TABLE TITULOELEITORAL
 FOREIGN KEY (identificador) REFERENCES IDENTIFICADOR (id);
 
 
-INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, dataDeEmissao, tipo)
+INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, data, tipo)
 VALUES ('7ec971f2-bd30-4704-8952-d705e9b006e5', '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
         12345678, 1, 'N/A', DATE '2017-12-31', '01');

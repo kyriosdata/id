@@ -1564,7 +1564,7 @@
       <Position>5</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="418" parent="43" name="DATADEEMISSAO">
+    <column id="418" parent="43" name="DATA">
       <Position>6</Position>
       <DataType>DATE(8)|91</DataType>
     </column>

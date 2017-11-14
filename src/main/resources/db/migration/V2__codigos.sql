@@ -221,9 +221,35 @@ CREATE TABLE TIPOIDENTIFICADOR (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO TIPOIDENTIFICADOR VALUES ('01', 'Identificador único dentro da organização');
-INSERT INTO TIPOIDENTIFICADOR VALUES ('21', 'radiologia');
-INSERT INTO TIPOIDENTIFICADOR VALUES ('22', 'patologia');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('10', 'SSP');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('40', 'Organismos militares');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('41', 'Comando da Aeronáutica (Ministério da Aerotnáutica)');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('42', 'Comando do Exército (Ministério do Exército)');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('43', 'Comando da Marinha (Ministério da Marinha)');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('44', 'Polícia Federal');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('60', 'Carteira de identidade classista');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('61', 'Conselho Regional de Administração');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('62', 'Conselho Regional de Assistência Social');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('63', 'Conselho Regional de Biblioteconomia');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('64', 'Conselho Regional de Contabilidade');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('65', 'Conselho Regional de Corretores Imóveis');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('66', 'Conselho Regional de Enfermagem');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('67', 'Conselho Regional de Engenharia, Arquitetura e Agronomia');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('68', 'Conselho Regional de Estatística');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('69', 'Conselho Regional de Farmácia');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('70', 'Conselho Regional de Fisioterapi e Terapia Ocupacional');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('71', 'Conselho Regional de Medicina');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('72', 'Conselho Regional de Medicina Veterinária');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('73', 'Ordem dos Músicos do Brasil');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('74', 'Conselho Regional de Nutrição');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('75', 'Conselho Regional de Odontologia');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('76', 'Conselho Regional de Profissionais de Relações Públicas');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('77', 'Conselho Regional de Psicologia');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('78', 'Conselho Regional de Química');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('79', 'Conselho Regional de Representantes Comerciais');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('80', 'Ordem dos Advogados do Brasil');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('81', 'Outros Emissores');
+INSERT INTO TIPOIDENTIFICADOR VALUES ('82', 'Documento Estrangeiro');
 
 /*
   Seção 12.2 (pág. 85)
