@@ -120,10 +120,12 @@ INSERT INTO SITUACAOFAMILIAR VALUES
   (2, 'Convive com companheiro(a) com laços conjugais e sem filhos'),
   (3, 'Convive com companheiro(a), com filho(s) e/ou outro(s) familiares'),
   (4, 'Convive com familiar(es) sem companheira(o)'),
-  (5, 'Convive com outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais'),
+  (5,
+   'Convive com outra(s) pessoa(s), sem laços consanguíneos e/ou laços conjugais'),
   (6, 'Vive só');
 
 /*
+  Seção 10.2.4 (pág. 50)
   Seguimento de data. Indica se a data em questão precisa de acompanhamento
   para obter dados mais acurados.
  */
@@ -134,8 +136,9 @@ CREATE TABLE DATASEGUIMENTO (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO DATASEGUIMENTO VALUES ('S', 'A data precisa de seguimento');
-INSERT INTO DATASEGUIMENTO VALUES ('N', 'A data não precisa de seguimento');
+INSERT INTO DATASEGUIMENTO VALUES
+  ('S', 'A data precisa de seguimento'),
+  ('N', 'A data não precisa de seguimento');
 
 /*
   Seção 10.15 (pág. 60)
