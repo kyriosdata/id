@@ -1,14 +1,14 @@
-/*
-	Tabela que mantém peo menos uma entrada (registro)
-	para cada indivíduo assistido. Idealmente deveria
-	manter um único registro por indivíduo.
- */
-
 DROP TABLE IF EXISTS INDIVIDUO;
 DROP TABLE IF EXISTS IDENTIFICADOR;
 DROP TABLE IF EXISTS CTPS;
 DROP TABLE IF EXISTS CERTIDAO;
 DROP TABLE IF EXISTS TITULOELEITORAL;
+
+/*
+	Tabela que mantém peo menos uma entrada (registro)
+	para cada indivíduo assistido. Idealmente deveria
+	manter um único registro por indivíduo.
+ */
 
 CREATE TABLE INDIVIDUO (
 	id VARCHAR(36) NOT NULL,
