@@ -46,7 +46,9 @@ INSERT INTO COMUNICACAO (INDIVIDUO, MEIO, PREFERENCIA, DETALHE, USO)
 VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 5, 'D', 'zl@gmail.com', 3);
 VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 2, 'B', '999999999', 3);
 
-/* Zuza do Luar nasceu em 2010*/
+/* Zuza do Luar nasceu em 2010 é do sexo masculino. Pai e mãe desconhecidos. */
+/* Convive com o pai adotivo (José Pedro dos Santos), sabe-se que nasceu em
+   Cabixi, Rondônia. */
 INSERT INTO DADODEMOGRAFICO (
   individuo, nascimento, nascimentoAcuracia, nascimentoSeguimento,
   nascimentoPluralidade, nascimentoOrdem, obito, obitoAcuracia, obitoFonte,
@@ -55,7 +57,22 @@ INSERT INTO DADODEMOGRAFICO (
 VALUES (
   '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
   DATE '2017-11-13', 'AAA', 'N', 1, 1,
-  NULL , NULL, NULL, 1, 'nome da mãe', 'nome do pai', 1, 1,
-  'um comentário',
-  1, 1100015, 'RO', NULL, NULL
+  NULL , NULL, NULL, 1, NULL, NULL, 5, 1,
+  NULL, 1, 1100031, 'RO', NULL, NULL
+);
+
+/* Endereço residencial do Zuza do Luar */
+INSERT INTO ENDERECO(
+  ID, INDIVIDUO, BAIRRO, DISTRITO, MUNICIPIO, ESTADO, CEP, CAIXAPOSTAL, PAIS,
+  TIPO, DATAINICIAL, DATAINICIALACURACIA, DATAFINAL, DATAFINALACURACIA)
+VALUES (
+   '39c7285f-3874-4719-bcc2-28ecf8816b5b',
+   '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
+  'Solar', NULL, 1100031, 'RO', NULL, NULL, NULL, 4, NULL, NULL, NULL, NULL
+);
+
+INSERT INTO ENDERECOLINHA (ENDERECO, LINHA, ORDEM)
+VALUES (
+    '39c7285f-3874-4719-bcc2-28ecf8816b5b',
+  'Rua da Lua Cheia, no. 123, Ed. Taciturno, apto. 112', 1
 );
