@@ -282,32 +282,32 @@ INSERT INTO COMUNICACAOMEIO VALUES (8, 'Outro', 'O');
   Tipo de preferência.
  */
 
-CREATE TABLE HORARIOCONTATO (
+CREATE TABLE COMUNICACAOPREFERENCIA (
   codigo char(1),
   descricao varchar,
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO HORARIOCONTATO VALUES ('B', 'Horário comercial');
-INSERT INTO HORARIOCONTATO VALUES ('D', 'Durante o dia');
-INSERT INTO HORARIOCONTATO VALUES ('W', 'Finais de semana');
-INSERT INTO HORARIOCONTATO VALUES ('A', 'Qualquer hora');
-INSERT INTO HORARIOCONTATO VALUES ('E', 'Período noturno');
+INSERT INTO COMUNICACAOPREFERENCIA VALUES ('B', 'Horário comercial');
+INSERT INTO COMUNICACAOPREFERENCIA VALUES ('D', 'Durante o dia');
+INSERT INTO COMUNICACAOPREFERENCIA VALUES ('W', 'Finais de semana');
+INSERT INTO COMUNICACAOPREFERENCIA VALUES ('A', 'Qualquer hora');
+INSERT INTO COMUNICACAOPREFERENCIA VALUES ('E', 'Período noturno');
 
 /*
   Tipo de uso de meio de comunicação.
  */
 
-CREATE TABLE TIPOUSO (
+CREATE TABLE COMUNICACAOUSO (
   codigo int,
   descricao varchar,
   alternativo char(1),
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO TIPOUSO VALUES (1, 'Comercial', 'B');
-INSERT INTO TIPOUSO VALUES (2, 'Pessoal', 'P');
-INSERT INTO TIPOUSO VALUES (3, 'Tanto comercial quanto pessoal', 'A');
+INSERT INTO COMUNICACAOUSO VALUES (1, 'Comercial', 'B');
+INSERT INTO COMUNICACAOUSO VALUES (2, 'Pessoal', 'P');
+INSERT INTO COMUNICACAOUSO VALUES (3, 'Tanto comercial quanto pessoal', 'A');
 
 /*
   Tipos de relacionamentos previstos.
