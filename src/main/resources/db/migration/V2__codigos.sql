@@ -263,20 +263,20 @@ INSERT INTO TIPOIDENTIFICADOR VALUES ('82', 'Documento Estrangeiro');
   Tipo de meio de comunicação eletrônica.
  */
 
-CREATE TABLE TIPOCOMUNICACAO (
+CREATE TABLE COMUNICACAOTIPO (
   codigo int,
   descricao varchar,
   alternativo char(1),
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO TIPOCOMUNICACAO VALUES (1, 'Telefone (excluindo o celular)', 'T');
-INSERT INTO TIPOCOMUNICACAO VALUES (2, 'Telefone celular', 'C');
-INSERT INTO TIPOCOMUNICACAO VALUES (3, 'Fax', 'F');
-INSERT INTO TIPOCOMUNICACAO VALUES (4, 'Pager', 'P');
-INSERT INTO TIPOCOMUNICACAO VALUES (5, 'Correio eletrônico', 'E');
-INSERT INTO TIPOCOMUNICACAO VALUES (6, 'URL', 'U');
-INSERT INTO TIPOCOMUNICACAO VALUES (8, 'Outro', 'O');
+INSERT INTO COMUNICACAOTIPO VALUES (1, 'Telefone (excluindo o celular)', 'T');
+INSERT INTO COMUNICACAOTIPO VALUES (2, 'Telefone celular', 'C');
+INSERT INTO COMUNICACAOTIPO VALUES (3, 'Fax', 'F');
+INSERT INTO COMUNICACAOTIPO VALUES (4, 'Pager', 'P');
+INSERT INTO COMUNICACAOTIPO VALUES (5, 'Correio eletrônico', 'E');
+INSERT INTO COMUNICACAOTIPO VALUES (6, 'URL', 'U');
+INSERT INTO COMUNICACAOTIPO VALUES (8, 'Outro', 'O');
 
 /*
   Tipo de preferência.
