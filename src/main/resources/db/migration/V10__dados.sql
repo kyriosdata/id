@@ -6,17 +6,6 @@
 /* "José Pedro dos Santos Filho" mais conhecido por "Zuza do Luar". */
 INSERT INTO INDIVIDUO VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5');
 
-/* "José Pedro dos Santos" é o pai adotivo do "Zuza do Luar". */
-INSERT INTO INDIVIDUO VALUES ('530e40d3-9482-4dcb-b5cb-2168c98f3b26');
-
-INSERT INTO INDIVIDUO VALUES ('18afaf46-abe5-46d8-80df-68a44a367a5d');
-
-
-INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, data, tipo)
-VALUES ('7ec971f2-bd30-4704-8952-d705e9b006e5',
-        '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
-        12345678, 1, 'N/A', DATE '2017-12-31', '10');
-
 /* Zuza do Luar é o nome preferido de José Pedro dos Santos Filho */
 INSERT INTO NOME (id, individuo, nomes, sobrenomes, sufixos, preferido)
 VALUES (
@@ -31,21 +20,41 @@ VALUES (
   '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
   'José Pedro', 'dos Santos', 'Filho', 2);
 
-INSERT INTO VINCULO (IDENTIFICADOR, INDIVIDUO, RELACIONAMENTO, DATAINICIO)
+/* "José Pedro dos Santos" é o pai adotivo do "Zuza do Luar". */
+INSERT INTO INDIVIDUO VALUES ('530e40d3-9482-4dcb-b5cb-2168c98f3b26');
+
+/* Carteira de identidade emitida pela SSP-GO do "Zuza do Luar" */
+INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, data, tipo)
 VALUES ('7ec971f2-bd30-4704-8952-d705e9b006e5',
-        '8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 263,
-        DATE '2016-12-31');
+        '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
+        12345678, 4, 'SSP-GO', DATE '2017-12-31', '10');
 
+/* Carteira de identidade do pai adotivo do Zuza do Luar */
+INSERT INTO IDENTIFICADOR (id, individuo, designacao, area, emissor, data, tipo)
+VALUES ('1de7df6a-55b6-4d23-8bec-93fcd65dadb5',
+        '530e40d3-9482-4dcb-b5cb-2168c98f3b26',
+        12345677, 4, 'SSP-GO', DATE '2016-12-31', '10');
+
+/* Zuza do Luar é adotado em 2016 por "José Pedro dos Santos" */
+INSERT INTO VINCULO (IDENTIFICADOR, INDIVIDUO, RELACIONAMENTO, DATAINICIO)
+VALUES ('1de7df6a-55b6-4d23-8bec-93fcd65dadb5',
+        '8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 263, DATE '2016-12-31');
+
+/* Zuza do Luar possui email (durante o dia) e celular (horário comercial) */
+/* tanto para uso pessoal quanto profissional. */
 INSERT INTO COMUNICACAO (INDIVIDUO, MEIO, PREFERENCIA, DETALHE, USO)
-VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 4, 'B', 'f@gmail.com', 1);
+VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 5, 'D', 'zl@gmail.com', 3);
+VALUES ('8d4cd0d3-8996-4812-96b4-48b4f1847ff5', 2, 'B', '999999999', 3);
 
+/* Zuza do Luar nasceu em 2010*/
 INSERT INTO DADODEMOGRAFICO (
-  individuo,
-  nascimento, nascimentoAcuracia, nascimentoSeguimento, nascimentoPluralidade, nascimentoOrdem,
-  obito, obitoAcuracia, obitoFonte, sexo, mae, pai, situacaoFamiliar, raca, comentario,
-  nacionalidade, municipio, estado, pais, dataEntradaPais) VALUES (
+  individuo, nascimento, nascimentoAcuracia, nascimentoSeguimento,
+  nascimentoPluralidade, nascimentoOrdem, obito, obitoAcuracia, obitoFonte,
+  sexo, mae, pai, situacaoFamiliar, raca, comentario,
+  nacionalidade, municipio, estado, pais, dataEntradaPais)
+VALUES (
   '8d4cd0d3-8996-4812-96b4-48b4f1847ff5',
-  DATE '2017-11-13', 'AEU', 'S', 1, 1,
+  DATE '2017-11-13', 'AAA', 'N', 1, 1,
   DATE '2017-11-14', 'AAA', 1, 1, 'nome da mãe', 'nome do pai', 1, 1,
   'um comentário',
   1, 1100015, 'RO', NULL, NULL
