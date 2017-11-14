@@ -35,7 +35,7 @@
       </data>
     </node>
     <node id="n1">
-      <data key="d4"><![CDATA[#vinculos]]></data>
+      <data key="d4"><![CDATA[/#vinculos]]></data>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
           <y:Geometry height="77.0" width="121.0" x="-277.9039929186471" y="114.5"/>
