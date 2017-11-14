@@ -49,26 +49,26 @@
     <table id="39" parent="4" name="DATASEGUIMENTO"/>
     <table id="40" parent="4" name="ENDERECO"/>
     <table id="41" parent="4" name="ENDERECOLINHA"/>
-    <table id="42" parent="4" name="ESTADO"/>
-    <table id="43" parent="4" name="HORARIOCONTATO"/>
-    <table id="44" parent="4" name="IDENTIFICADOR"/>
-    <table id="45" parent="4" name="INDIVIDUO"/>
-    <table id="46" parent="4" name="MUNICIPIO"/>
-    <table id="47" parent="4" name="NACIONALIDADE"/>
-    <table id="48" parent="4" name="NASCIMENTOORDEM"/>
-    <table id="49" parent="4" name="NASCIMENTOPLURALIDADE"/>
-    <table id="50" parent="4" name="NOME"/>
-    <table id="51" parent="4" name="NOMEPREFERIDO"/>
-    <table id="52" parent="4" name="NOMEUSO"/>
-    <table id="53" parent="4" name="OBITOFONTE"/>
-    <table id="54" parent="4" name="PAIS"/>
-    <table id="55" parent="4" name="RACA"/>
-    <table id="56" parent="4" name="REPRESENTACAO"/>
-    <table id="57" parent="4" name="SEXO"/>
-    <table id="58" parent="4" name="SITUACAOFAMILIAR"/>
-    <table id="59" parent="4" name="TIPOCERTIDAO"/>
-    <table id="60" parent="4" name="TIPOCOMUNICACAO"/>
-    <table id="61" parent="4" name="TIPOENDERECO"/>
+    <table id="42" parent="4" name="ENDERECOTIPO"/>
+    <table id="43" parent="4" name="ESTADO"/>
+    <table id="44" parent="4" name="HORARIOCONTATO"/>
+    <table id="45" parent="4" name="IDENTIFICADOR"/>
+    <table id="46" parent="4" name="INDIVIDUO"/>
+    <table id="47" parent="4" name="MUNICIPIO"/>
+    <table id="48" parent="4" name="NACIONALIDADE"/>
+    <table id="49" parent="4" name="NASCIMENTOORDEM"/>
+    <table id="50" parent="4" name="NASCIMENTOPLURALIDADE"/>
+    <table id="51" parent="4" name="NOME"/>
+    <table id="52" parent="4" name="NOMEPREFERIDO"/>
+    <table id="53" parent="4" name="NOMEUSO"/>
+    <table id="54" parent="4" name="OBITOFONTE"/>
+    <table id="55" parent="4" name="PAIS"/>
+    <table id="56" parent="4" name="RACA"/>
+    <table id="57" parent="4" name="REPRESENTACAO"/>
+    <table id="58" parent="4" name="SEXO"/>
+    <table id="59" parent="4" name="SITUACAOFAMILIAR"/>
+    <table id="60" parent="4" name="TIPOCERTIDAO"/>
+    <table id="61" parent="4" name="TIPOCOMUNICACAO"/>
     <table id="62" parent="4" name="TIPOIDENTIFICADOR"/>
     <table id="63" parent="4" name="TIPORELACIONAMENTO"/>
     <table id="64" parent="4" name="TIPOUSO"/>
@@ -1509,8 +1509,8 @@
     <foreign-key id="406" parent="40" name="FK_TIPODOENDERECO">
       <ColNames>TIPO</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
-      <RefTableName>TIPOENDERECO</RefTableName>
-      <RefKeyName>CONSTRAINT_A96</RefKeyName>
+      <RefTableName>ENDERECOTIPO</RefTableName>
+      <RefKeyName>CONSTRAINT_49</RefKeyName>
       <RefColNames>CODIGO</RefColNames>
     </foreign-key>
     <column id="407" parent="41" name="ENDERECO">
@@ -1535,131 +1535,131 @@
     </foreign-key>
     <column id="411" parent="42" name="CODIGO">
       <Position>1</Position>
-      <DataType>VARCHAR(2)|12</DataType>
+      <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="412" parent="42" name="NOME">
+    <column id="412" parent="42" name="DESCRICAO">
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="413" parent="42" name="CONSTRAINT_7A">
+    <key id="413" parent="42" name="CONSTRAINT_49">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="414" parent="43" name="CODIGO">
       <Position>1</Position>
-      <DataType>CHAR(1)|1</DataType>
+      <DataType>VARCHAR(2)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="415" parent="43" name="DESCRICAO">
+    <column id="415" parent="43" name="NOME">
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="416" parent="43" name="CONSTRAINT_5">
+    <key id="416" parent="43" name="CONSTRAINT_7A">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="417" parent="44" name="ID">
+    <column id="417" parent="44" name="CODIGO">
+      <Position>1</Position>
+      <DataType>CHAR(1)|1</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="418" parent="44" name="DESCRICAO">
+      <Position>2</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+    </column>
+    <key id="419" parent="44" name="CONSTRAINT_5">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODIGO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="420" parent="45" name="ID">
       <Position>1</Position>
       <DataType>VARCHAR(36)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="418" parent="44" name="INDIVIDUO">
+    <column id="421" parent="45" name="INDIVIDUO">
       <Position>2</Position>
       <DataType>VARCHAR(36)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="419" parent="44" name="DESIGNACAO">
+    <column id="422" parent="45" name="DESIGNACAO">
       <Position>3</Position>
       <DataType>VARCHAR(max)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="420" parent="44" name="AREA">
+    <column id="423" parent="45" name="AREA">
       <Position>4</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="421" parent="44" name="EMISSOR">
+    <column id="424" parent="45" name="EMISSOR">
       <Position>5</Position>
       <DataType>VARCHAR(max)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="422" parent="44" name="DATA">
+    <column id="425" parent="45" name="DATA">
       <Position>6</Position>
       <DataType>DATE(8)|91</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="423" parent="44" name="TIPO">
+    <column id="426" parent="45" name="TIPO">
       <Position>7</Position>
       <DataType>VARCHAR(max)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="424" parent="44" name="CONSTRAINT_DB">
+    <key id="427" parent="45" name="CONSTRAINT_DB">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="425" parent="44" name="FK_IDENTIFICADORPARAINDIVIDUO">
+    <foreign-key id="428" parent="45" name="FK_IDENTIFICADORPARAINDIVIDUO">
       <ColNames>INDIVIDUO</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>INDIVIDUO</RefTableName>
       <RefKeyName>CONSTRAINT_7</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <foreign-key id="426" parent="44" name="FK_AREAGEOGRAFICACODIGO">
+    <foreign-key id="429" parent="45" name="FK_AREAGEOGRAFICACODIGO">
       <ColNames>AREA</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>AREAGEOGRAFICA</RefTableName>
       <RefKeyName>CONSTRAINT_A</RefKeyName>
       <RefColNames>CODIGO</RefColNames>
     </foreign-key>
-    <foreign-key id="427" parent="44" name="FK_TIPODOIDENTIFICADORCODIGO">
+    <foreign-key id="430" parent="45" name="FK_TIPODOIDENTIFICADORCODIGO">
       <ColNames>TIPO</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>TIPOIDENTIFICADOR</RefTableName>
       <RefKeyName>CONSTRAINT_6</RefKeyName>
       <RefColNames>CODIGO</RefColNames>
     </foreign-key>
-    <column id="428" parent="45" name="ID">
+    <column id="431" parent="46" name="ID">
       <Position>1</Position>
       <DataType>VARCHAR(36)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="429" parent="45" name="CONSTRAINT_7">
+    <key id="432" parent="46" name="CONSTRAINT_7">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="430" parent="46" name="CODIGO">
+    <column id="433" parent="47" name="CODIGO">
       <Position>1</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="431" parent="46" name="ESTADO">
+    <column id="434" parent="47" name="ESTADO">
       <Position>2</Position>
       <DataType>VARCHAR(2)|12</DataType>
     </column>
-    <column id="432" parent="46" name="NOME">
+    <column id="435" parent="47" name="NOME">
       <Position>3</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="433" parent="46" name="CONSTRAINT_B">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>CODIGO</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="434" parent="47" name="CODIGO">
-      <Position>1</Position>
-      <DataType>INTEGER(10)|4</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="435" parent="47" name="DESCRICAO">
-      <Position>2</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-    </column>
-    <key id="436" parent="47" name="CONSTRAINT_9">
+    <key id="436" parent="47" name="CONSTRAINT_B">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
@@ -1673,7 +1673,7 @@
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="439" parent="48" name="CONSTRAINT_8">
+    <key id="439" parent="48" name="CONSTRAINT_9">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
@@ -1687,112 +1687,112 @@
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="442" parent="49" name="CONSTRAINT_C">
+    <key id="442" parent="49" name="CONSTRAINT_8">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="443" parent="50" name="ID">
+    <column id="443" parent="50" name="CODIGO">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="444" parent="50" name="DESCRICAO">
+      <Position>2</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+    </column>
+    <key id="445" parent="50" name="CONSTRAINT_C">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODIGO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="446" parent="51" name="ID">
       <Position>1</Position>
       <DataType>VARCHAR(36)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="444" parent="50" name="INDIVIDUO">
+    <column id="447" parent="51" name="INDIVIDUO">
       <Position>2</Position>
       <DataType>VARCHAR(36)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="445" parent="50" name="TITULOS">
+    <column id="448" parent="51" name="TITULOS">
       <Position>3</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="446" parent="50" name="NOMES">
+    <column id="449" parent="51" name="NOMES">
       <Position>4</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="447" parent="50" name="SOBRENOMES">
+    <column id="450" parent="51" name="SOBRENOMES">
       <Position>5</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="448" parent="50" name="SUFIXOS">
+    <column id="451" parent="51" name="SUFIXOS">
       <Position>6</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="449" parent="50" name="PREFERIDO">
+    <column id="452" parent="51" name="PREFERIDO">
       <Position>7</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="450" parent="50" name="USOCONDICIONAL">
+    <column id="453" parent="51" name="USOCONDICIONAL">
       <Position>8</Position>
       <DataType>INTEGER(10)|4</DataType>
     </column>
-    <index id="451" parent="50" name="FK_UTILIZACAODENOME_INDEX_2">
+    <index id="454" parent="51" name="FK_UTILIZACAODENOME_INDEX_2">
       <ColNames>ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <foreign-key id="452" parent="50" name="FK_INDIVIDUODONOME">
+    <foreign-key id="455" parent="51" name="FK_INDIVIDUODONOME">
       <ColNames>INDIVIDUO</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>INDIVIDUO</RefTableName>
       <RefKeyName>CONSTRAINT_7</RefKeyName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <foreign-key id="453" parent="50" name="FK_NOMEPREFERIDO">
+    <foreign-key id="456" parent="51" name="FK_NOMEPREFERIDO">
       <ColNames>PREFERIDO</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>NOMEPREFERIDO</RefTableName>
       <RefKeyName>CONSTRAINT_54</RefKeyName>
       <RefColNames>CODIGO</RefColNames>
     </foreign-key>
-    <foreign-key id="454" parent="50" name="FK_USOCONDICIONALCODIGO">
+    <foreign-key id="457" parent="51" name="FK_USOCONDICIONALCODIGO">
       <ColNames>USOCONDICIONAL</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>USOCONDICIONAL</RefTableName>
       <RefColNames>CODIGO</RefColNames>
     </foreign-key>
-    <column id="455" parent="51" name="CODIGO">
-      <Position>1</Position>
-      <DataType>INTEGER(10)|4</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="456" parent="51" name="DESCRICAO">
-      <Position>2</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-    </column>
-    <key id="457" parent="51" name="CONSTRAINT_54">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>CODIGO</ColNames>
-      <Primary>1</Primary>
-    </key>
     <column id="458" parent="52" name="CODIGO">
       <Position>1</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="459" parent="52" name="ALTERNATIVO">
+    <column id="459" parent="52" name="DESCRICAO">
       <Position>2</Position>
-      <DataType>CHAR(1)|1</DataType>
-    </column>
-    <column id="460" parent="52" name="DESCRICAO">
-      <Position>3</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="461" parent="52" name="CONSTRAINT_A9">
+    <key id="460" parent="52" name="CONSTRAINT_54">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="462" parent="53" name="CODIGO">
+    <column id="461" parent="53" name="CODIGO">
       <Position>1</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="463" parent="53" name="DESCRICAO">
+    <column id="462" parent="53" name="ALTERNATIVO">
       <Position>2</Position>
+      <DataType>CHAR(1)|1</DataType>
+    </column>
+    <column id="463" parent="53" name="DESCRICAO">
+      <Position>3</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="464" parent="53" name="CONSTRAINT_2">
+    <key id="464" parent="53" name="CONSTRAINT_A9">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
@@ -1802,11 +1802,11 @@
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="466" parent="54" name="NOME">
+    <column id="466" parent="54" name="DESCRICAO">
       <Position>2</Position>
-      <DataType>VARCHAR(46)|12</DataType>
+      <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="467" parent="54" name="CONSTRAINT_25">
+    <key id="467" parent="54" name="CONSTRAINT_2">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
@@ -1816,62 +1816,62 @@
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="469" parent="55" name="DESCRICAO">
+    <column id="469" parent="55" name="NOME">
       <Position>2</Position>
-      <DataType>VARCHAR(max)|12</DataType>
+      <DataType>VARCHAR(46)|12</DataType>
     </column>
-    <key id="470" parent="55" name="CONSTRAINT_26">
+    <key id="470" parent="55" name="CONSTRAINT_25">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="471" parent="56" name="NOME">
+    <column id="471" parent="56" name="CODIGO">
+      <Position>1</Position>
+      <DataType>INTEGER(10)|4</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="472" parent="56" name="DESCRICAO">
+      <Position>2</Position>
+      <DataType>VARCHAR(max)|12</DataType>
+    </column>
+    <key id="473" parent="56" name="CONSTRAINT_26">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>CODIGO</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="474" parent="57" name="NOME">
       <Position>1</Position>
       <DataType>VARCHAR(36)|12</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="472" parent="56" name="UTILIZACAO">
+    <column id="475" parent="57" name="UTILIZACAO">
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="473" parent="56" name="ALTERNATIVA">
+    <column id="476" parent="57" name="ALTERNATIVA">
       <Position>3</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <foreign-key id="474" parent="56" name="FK_NOMEDAREPRESENTACAO">
+    <foreign-key id="477" parent="57" name="FK_NOMEDAREPRESENTACAO">
       <ColNames>NOME</ColNames>
       <RefSchemaName>PUBLIC</RefSchemaName>
       <RefTableName>NOME</RefTableName>
       <RefColNames>ID</RefColNames>
     </foreign-key>
-    <column id="475" parent="57" name="CODIGO">
+    <column id="478" parent="58" name="CODIGO">
       <Position>1</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="476" parent="57" name="DESCRICAO">
+    <column id="479" parent="58" name="DESCRICAO">
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="477" parent="57" name="ALTERNATIVO">
+    <column id="480" parent="58" name="ALTERNATIVO">
       <Position>3</Position>
       <DataType>CHAR(1)|1</DataType>
     </column>
-    <key id="478" parent="57" name="CONSTRAINT_26C">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>CODIGO</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="479" parent="58" name="CODIGO">
-      <Position>1</Position>
-      <DataType>INTEGER(10)|4</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="480" parent="58" name="DESCRICAO">
-      <Position>2</Position>
-      <DataType>VARCHAR(max)|12</DataType>
-    </column>
-    <key id="481" parent="58" name="CONSTRAINT_21">
+    <key id="481" parent="58" name="CONSTRAINT_26C">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
@@ -1885,7 +1885,7 @@
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="484" parent="59" name="CONSTRAINT_1">
+    <key id="484" parent="59" name="CONSTRAINT_21">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
@@ -1899,25 +1899,25 @@
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <column id="487" parent="60" name="ALTERNATIVO">
-      <Position>3</Position>
-      <DataType>CHAR(1)|1</DataType>
-    </column>
-    <key id="488" parent="60" name="CONSTRAINT_D">
+    <key id="487" parent="60" name="CONSTRAINT_1">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="489" parent="61" name="CODIGO">
+    <column id="488" parent="61" name="CODIGO">
       <Position>1</Position>
       <DataType>INTEGER(10)|4</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="490" parent="61" name="DESCRICAO">
+    <column id="489" parent="61" name="DESCRICAO">
       <Position>2</Position>
       <DataType>VARCHAR(max)|12</DataType>
     </column>
-    <key id="491" parent="61" name="CONSTRAINT_A96">
+    <column id="490" parent="61" name="ALTERNATIVO">
+      <Position>3</Position>
+      <DataType>CHAR(1)|1</DataType>
+    </column>
+    <key id="491" parent="61" name="CONSTRAINT_D">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>CODIGO</ColNames>
       <Primary>1</Primary>
