@@ -279,11 +279,12 @@ CREATE TABLE COMUNICACAOPREFERENCIA (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO COMUNICACAOPREFERENCIA VALUES ('B', 'Horário comercial');
-INSERT INTO COMUNICACAOPREFERENCIA VALUES ('D', 'Durante o dia');
-INSERT INTO COMUNICACAOPREFERENCIA VALUES ('W', 'Finais de semana');
-INSERT INTO COMUNICACAOPREFERENCIA VALUES ('A', 'Qualquer hora');
-INSERT INTO COMUNICACAOPREFERENCIA VALUES ('E', 'Período noturno');
+INSERT INTO COMUNICACAOPREFERENCIA VALUES
+  ('B', 'Horário comercial'),
+  ('D', 'Durante o dia'),
+  ('W', 'Finais de semana'),
+  ('A', 'Qualquer hora'),
+  ('E', 'Período noturno');
 
 /*
   Tipo de uso de meio de comunicação.
