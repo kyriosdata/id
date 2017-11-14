@@ -77,6 +77,7 @@ INSERT INTO NACIONALIDADE VALUES (1, 'Brasileiro');
 INSERT INTO NACIONALIDADE VALUES (2, 'Estrangeiro');
 
 /*
+  Seção 10.3.4 (pág. 53)
   Indica a fonte de notificação do óbito.
  */
 
