@@ -175,24 +175,30 @@ CREATE TABLE NASCIMENTOPLURALIDADE (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (1, 'Único');
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (2, 'Gêmeos');
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (3, 'Trigêmeos');
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (4, 'Quádruplos');
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (5, 'Quíntuplos');
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (6, 'Sêxtuplos');
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (7, 'Outros');
-INSERT INTO NASCIMENTOPLURALIDADE VALUES (9, 'Não declarado');
+INSERT INTO NASCIMENTOPLURALIDADE VALUES
+  (1, 'Único'),
+  (2, 'Gêmeos'),
+  (3, 'Trigêmeos'),
+  (4, 'Quádruplos'),
+  (5, 'Quíntuplos'),
+  (6, 'Sêxtuplos'),
+  (7, 'Outros'),
+  (9, 'Não declarado');
 
+/*
+  Seção 8.7 (pág. 14) fala do nome do cartório que emitiu
+  a certidação de nascimento, casamento ou divórcio.
+ */
 CREATE TABLE TIPOCERTIDAO (
   codigo    INT,
   descricao VARCHAR,
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO TIPOCERTIDAO VALUES (1, 'nascimento');
-INSERT INTO TIPOCERTIDAO VALUES (2, 'casamento');
-INSERT INTO TIPOCERTIDAO VALUES (3, 'divórcio');
+INSERT INTO TIPOCERTIDAO VALUES
+  (1, 'nascimento'),
+  (2, 'casamento'),
+  (3, 'divórcio');
 
 /*
   LOOKUP TABLE
