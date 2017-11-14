@@ -192,7 +192,7 @@ CREATE TABLE TIPOIDENTIFICADOR (
   PRIMARY KEY (codigo)
 );
 
-INSERT INTO data VALUES
+INSERT INTO TIPOIDENTIFICADOR VALUES
   ('10','SSP'),
   ('40','Organismos militares'),
   ('41','Comando da Aeronáutica (Ministério da Aerotnáutica'),
