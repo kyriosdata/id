@@ -42,59 +42,115 @@
     <span>Nome</span>
   </a>
 
-  <section class="section" id="formulario-documentos">
-    <div class="columns" id="paraAnimar">
-      <div class="column is-8">
-        <div class="columns">
-          <div class="column is-6">
-            <div class="field">
-              <label class="label is-small">Nome</label>
-              <div class="control">
-                <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
+  <div class="content">
+      <h3>Documento</h3>
+
+      <div class="columns">
+        <div class="column is-narrow">
+          <div class="field">
+            <div class="control">
+              <label class="label is-small">Tipo do
+                            identificador</label>
+              <div class="select">
+                <select>
+                                <option value="01" selected>Único dentro da
+                                    organização
+                                </option>
+                                <option value="02">Número do prontuário</option>
+                                <option value="21">Radiologia</option>
+                                <option value="22">Patologia</option>
+                                <option value="23">Farmácia</option>
+                            </select>
               </div>
             </div>
           </div>
-          <div class="column is-6">
-            <div class="field">
-              <div class="control">
-                <label class="label is-small">Sobrenome</label>
-                <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
+          <div class="field">
+            <label id="com-id" class="label is-small">Número</label>
+            <div class="control">
+              <div class="text">
+                <input type="text" size="25" class="input">
               </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="label is-small">Emissor</label>
+              <input type="text" class="input">
+            </div>
+          </div>
+        </div>
+        <div class="column is-narrow">
+          <div class="field">
+            <div class="control">
+              <label class="label is-small">Área geográfica</label>
+              <div class="select">
+                <select>
+                                <option value="1" selected>Local</option>
+                                <option value="2">Área/região/distrito</option>
+                                <option value="3">Estado/província/território
+                                </option>
+                                <option value="4">Nacional</option>
+                            </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="label is-small">Data de emissão</label>
+              <input type="date" class="input">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="field">
+          <label class="label is-small">Tipo de certidão</label>
+          <div class="control">
+            <div class="text">
+              <select name="tipo-certidao" class="input">
+                            <option value="nascimento">Nascimento</option>
+                            <option value="casamento">Casamento</option>
+                            <option value="divorcio">Divórcio</option>
+                        </select>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label class="label is-small">Nome do cartório</label>
+          <div class="control">
+            <div class="text">
+              <input type="text" size="25" class="input">
             </div>
           </div>
         </div>
         <div class="columns">
-          <div class="column is-4">
+          <div class="column">
             <div class="field">
+              <label class="label is-small">Livro</label>
               <div class="control">
-                <label class="label is-small">Título</label>
-                <input id="titulo" type="text" size="15" class="input" placeholder="Prof., Dr., ..." oninput="nomeChanged()">
+                <div class="text">
+                  <input type="number" class="input">
+                </div>
               </div>
             </div>
           </div>
-          <div class="column is-4">
+          <div class="column">
             <div class="field">
+              <label class="label is-small">Folha</label>
               <div class="control">
-                <label class="label is-small">Sufixo</label>
-                <input id="sufixo" type="text" size="15" class="input" placeholder="Júnior, Filho, ..." oninput="nomeChanged()">
+                <div class="text">
+                  <input type="number" class="input">
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="columns">
-          <div class="column is-8">
+          <div class="column">
             <div class="field">
-              <label class="label is-small">Uso condicional</label>
+              <label class="label is-small">Termo</label>
               <div class="control">
-                <div class="select">
-                  <select id="uso">
-                      <option value="1">Informação não confiável</option>
-                      <option value="2">Nome com erro de digitação</option>
-                      <option value="3">Nome para não ser usado</option>
-                      <option value="4">Vínculo do nome proibido por lei</option>
-                      <option value="6">Requisito de privacidade/segurança especial</option>
-                      <option value="9">Nome temporário</option>
-                    </select>
+                <div class="text">
+                  <input type="number" class="input">
                 </div>
               </div>
             </div>
@@ -102,40 +158,58 @@
         </div>
       </div>
 
-      <div class="column is-4">
+      <div class="box">
         <div class="field">
-          <div class="control">
-            <label class="label is-small">&nbsp;</label>
-            <a class="button is-info" onclick="animar()">
-              <span>Adiciona</span>
-            </a>
+          <label class="label is-small">Carteira de Trabalho</label>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <label class="label is-small">Série</label>
+            <div class="control">
+              <div class="text">
+                <input type="number" class="input">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label is-small">Estado</label>
+              <div class="control">
+                <div class="text">
+                  <input type="number" class="input">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <div class="field">
+          <label class="label is-small">Título de eleitor</label>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <label class="label is-small">Seção</label>
+            <div class="control">
+              <div class="text">
+                <input type="number" class="input">
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="field">
+              <label class="label is-small">Zona</label>
+              <div class="control">
+                <div class="text">
+                  <input type="number" class="input">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <div class="field">
-    <label class="label is-small">Nome completo</label>
-    <div class="control">
-      <div class="text">
-        <label id="nome-completo" class="is-small">--
-                                    preencha os campos --</label>
-      </div>
-    </div>
-  </div>
-
-  <div class="field">
-    <div class="control">
-      <label class="label is-small">&nbsp;</label>
-      <a class="button" onclick="toggle(this)">
-        <span class="icon">
-          <i class="fa fa-check-square-o"></i>
-        </span>
-        <span>Preferido</span>
-      </a>
-    </div>
-  </div>
 </body>
 
 </html>
