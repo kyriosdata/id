@@ -27,7 +27,7 @@
 
 <body>
   <script>
-    function novoNome() {
+    function novoDocumento() {
       var panel = document.getElementById("paraAnimar");
       var estilo = panel.style;
       if (estilo.maxHeight) {
@@ -36,39 +36,13 @@
         estilo.maxHeight = panel.scrollHeight + "px";
       }
     }
-
-    function animar() {
-      var obj = document.getElementById("paraAnimar").classList;
-      if (obj.contains("zoomIn")) {
-        obj.remove("zoomIn");
-        obj.add("zoomOut");
-      } else {
-        obj.remove("zoomOut");
-        obj.add("zoomIn");
-      }
-
-    }
-
-    function toggle(obj) {
-      var icone = obj.childNodes[1].childNodes[1];
-
-      if (icone.classList.contains('fa-square-o')) {
-        icone.classList.remove("fa-square-o");
-        icone.classList.add("fa-check-square-o");
-      } else {
-        icone.classList.remove("fa-check-square-o");
-        icone.classList.add("fa-square-o");
-      }
-
-    }
-
   </script>
 
-  <a class="button is-info" onclick="novoNome()">
+  <a class="button is-info" onclick="novoDocumento()">
     <span>Nome</span>
   </a>
 
-  <section class="section" id="formulario-nomes">
+  <section class="section" id="formulario-documentos">
     <div class="columns" id="paraAnimar">
       <div class="column is-8">
         <div class="columns">
