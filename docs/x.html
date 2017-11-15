@@ -21,6 +21,15 @@
 
 <body>
   <script>
+    function acordion(o) {
+    	var panel = o.nextElementSibling;
+    	if (panel.style.maxHeight){
+      		panel.style.maxHeight = null;
+    	} else {
+      	panel.style.maxHeight = panel.scrollHeight + "px";
+    	} 
+  	}
+    
     function animar() {
       var obj = document.getElementById("paraAnimar").classList;
       if (obj.contains("zoomIn")) {
