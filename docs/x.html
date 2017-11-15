@@ -21,12 +21,13 @@
       transition: max-height 0.2s ease-out;
       border: 1px solid green;
     }
+
   </style>
 </head>
 
 <body>
   <script>
-    function acordion() {
+    function novoNome() {
       var panel = document.getElementById("paraAnimar");
       var estilo = panel.style;
       if (estilo.maxHeight) {
@@ -60,61 +61,59 @@
       }
 
     }
+
   </script>
 
-  <a class="button is-info" onclick="acordion()">
-    <span>Aparecer</span>
+  <a class="button is-info" onclick="novoNome()">
+    <span>Nome</span>
   </a>
 
   <section class="section" id="formulario-nomes">
-    <div class="content">
-      <h3>Preencha as informações sobre o nome...</h3>
-
-      <div class="columns" id="paraAnimar">
-        <div class="column is-8">
-          <div class="columns">
-            <div class="column is-6">
-              <div class="field">
-                <label class="label is-small">Nome</label>
-                <div class="control">
-                  <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
-                </div>
-              </div>
-            </div>
-            <div class="column is-6">
-              <div class="field">
-                <div class="control">
-                  <label class="label is-small">Sobrenome</label>
-                  <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
-                </div>
+    <div class="columns" id="paraAnimar">
+      <div class="column is-8">
+        <div class="columns">
+          <div class="column is-6">
+            <div class="field">
+              <label class="label is-small">Nome</label>
+              <div class="control">
+                <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
               </div>
             </div>
           </div>
-          <div class="columns">
-            <div class="column is-4">
-              <div class="field">
-                <div class="control">
-                  <label class="label is-small">Título</label>
-                  <input id="titulo" type="text" size="15" class="input" placeholder="Prof., Dr., ..." oninput="nomeChanged()">
-                </div>
-              </div>
-            </div>
-            <div class="column is-4">
-              <div class="field">
-                <div class="control">
-                  <label class="label is-small">Sufixo</label>
-                  <input id="sufixo" type="text" size="15" class="input" placeholder="Júnior, Filho, ..." oninput="nomeChanged()">
-                </div>
+          <div class="column is-6">
+            <div class="field">
+              <div class="control">
+                <label class="label is-small">Sobrenome</label>
+                <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
               </div>
             </div>
           </div>
-          <div class="columns">
-            <div class="column is-8">
-              <div class="field">
-                <label class="label is-small">Uso condicional</label>
-                <div class="control">
-                  <div class="select">
-                    <select id="uso">
+        </div>
+        <div class="columns">
+          <div class="column is-4">
+            <div class="field">
+              <div class="control">
+                <label class="label is-small">Título</label>
+                <input id="titulo" type="text" size="15" class="input" placeholder="Prof., Dr., ..." oninput="nomeChanged()">
+              </div>
+            </div>
+          </div>
+          <div class="column is-4">
+            <div class="field">
+              <div class="control">
+                <label class="label is-small">Sufixo</label>
+                <input id="sufixo" type="text" size="15" class="input" placeholder="Júnior, Filho, ..." oninput="nomeChanged()">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-8">
+            <div class="field">
+              <label class="label is-small">Uso condicional</label>
+              <div class="control">
+                <div class="select">
+                  <select id="uso">
                       <option value="1">Informação não confiável</option>
                       <option value="2">Nome com erro de digitação</option>
                       <option value="3">Nome para não ser usado</option>
@@ -122,21 +121,20 @@
                       <option value="6">Requisito de privacidade/segurança especial</option>
                       <option value="9">Nome temporário</option>
                     </select>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="column is-4">
-          <div class="field">
-            <div class="control">
-              <label class="label is-small">&nbsp;</label>
-              <a class="button is-info" onclick="animar()">
-                <span>Adiciona</span>
-              </a>
-            </div>
+      <div class="column is-4">
+        <div class="field">
+          <div class="control">
+            <label class="label is-small">&nbsp;</label>
+            <a class="button is-info" onclick="animar()">
+              <span>Adiciona</span>
+            </a>
           </div>
         </div>
       </div>
