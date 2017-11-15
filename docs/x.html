@@ -15,18 +15,23 @@
   <link rel="stylesheet" href="css/animate.css">
 
   <style>
-
+    #paraAnimar {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.2s ease-out;
+    }
   </style>
 </head>
 
 <body>
   <script>
-    function acordion(o) {
-    	var panel = o.nextElementSibling;
-    	if (panel.style.maxHeight){
-      		panel.style.maxHeight = null;
+    function acordion() {
+    	var panel = document.getElementById("paraAnimar");
+        var estilo = panel.style;
+    	if (estilo.maxHeight){
+      		estilo.maxHeight = null;
     	} else {
-      	panel.style.maxHeight = panel.scrollHeight + "px";
+	      	estilo.maxHeight = panel.scrollHeight + "px";
     	} 
   	}
     
@@ -55,13 +60,16 @@
     }
   </script>
 
+<a class="button is-info" onclick="acordion()">
+                  <span>Aparecer</span>
+                </a>
   <div class="parcial" id="nomes-form">
     <section class="section" id="formulario-nomes">
       <div class="content">
         <h3>Preencha as informações sobre o nome...</h3>
 
-        <div class="columns">
-          <div class="column is-8 animated" id="paraAnimar">
+        <div class="columns" id="paraAnimar">
+          <div class="column is-8 animated">
             <div class="columns">
               <div class="column is-6">
                 <div class="field">
