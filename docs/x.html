@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bulma.css">
   <link rel="stylesheet" href="css/tooltip.css">
+  <link rel="stylesheet" href="css/animate.css">
 
   <style>
 
@@ -20,6 +21,17 @@
 
 <body>
   <script>
+    function animar() {
+      var obj = document.getElementById("paraAnimar").classList;
+      if (obj.contains("zoomIn")) {
+        obj.remove("zoomIn");
+        obj.add("zoomOut");
+      } else {
+        obj.remove("zoomOut");
+        obj.add("zoomIn");  
+      }
+      
+    }
     function toggle(obj) {
       var icone = obj.childNodes[1].childNodes[1];
 
@@ -37,10 +49,10 @@
   <div class="parcial" id="nomes-form">
     <section class="section" id="formulario-nomes">
       <div class="content">
-        <h3>Nome</h3>
+        <h3>Preencha as informações sobre o nome...</h3>
 
         <div class="columns">
-          <div class="column is-8">
+          <div class="column is-8 animated" id="paraAnimar">
             <div class="columns">
               <div class="column is-6">
                 <div class="field">
@@ -101,7 +113,7 @@
             <div class="field">
               <div class="control">
                 <label class="label is-small">&nbsp;</label>
-                <a class="button is-info">
+                <a class="button is-info" onclick="animar()">
                   <span>Adiciona</span>
                 </a>
               </div>
@@ -122,24 +134,20 @@
         </div>
 
         <div class="field">
-          <label class="label is-small">Uso</label>
+          <label class="label is-small">Uso condicional</label>
           <div class="control">
             <div class="select">
-              <select id="uso" class="select">
-                                    <option value="1">Relatório (R)</option>
-                                    <option value="2">Nome de recém-nascido
-                                        (N)
+              <select id="uso" class="select" disabled>
+                  <option value="1">Informação não confiável</option>
+                  <option value="2">Nome com erro de digitação
                                     </option>
-                                    <option value="3">Nome profissional ou
-                                        comercial (C)
+                  <option value="3">Nome para não ser usado
                                     </option>
-                                    <option value="4">Nome de solteiro
-                                        (nascimento) (original)
+                  <option value="4">Vínculo do nome proibido por lei
                                     </option>
-                                    <option value="5">Nome registrado (nome
-                                        legal)
+                  <option value="6">Requisito de privacidade/segurança especial
                                     </option>
-                                    <option value="8">Outro nome (alias)
+                                    <option value="9">Nome temporário
                                     </option>
                                 </select>
             </div>
