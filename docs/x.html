@@ -40,25 +40,40 @@
         <h3>Nome</h3>
 
         <div class="columns">
-          <div class="column is-4">
-            <div class="field">
-              <label class="label is-small">Nome</label>
-              <div class="control">
-                <div class="text">
-                  <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
+          <div class="column is-8">
+            <div class="columns">
+              <div class="column is-6">
+              <div class="field">
+                <label class="label is-small">Nome</label>
+                <div class="control">
+                  <div class="text">
+                    <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
+                  </div>
                 </div>
               </div>
+            </div>
+            <div class="column is-6">
+              <div class="field">
+                <div class="control">
+                  <label class="label is-small">Sobrenome</label>
+                  <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
+                </div>
+              </div>
+            </div>
             </div>
           </div>
           <div class="column is-4">
             <div class="field">
               <div class="control">
-                <label class="label is-small">Sobrenome</label>
-                <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
+                <label class="label is-small">&nbsp;</label>
+                <a class="button is-info">
+                  <span>Adiciona</span>
+                </a>
               </div>
             </div>
           </div>
         </div>
+
         <div class="columns">
           <div class="column is-3">
             <div class="field">
@@ -85,16 +100,6 @@
       <i class="fa fa-check-square-o"></i>
     </span>
                   <span>Preferido</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="column is-narrow">
-            <div class="field">
-              <div class="control">
-               <label class="label is-small">&nbsp;</label>
-                <a class="button is-info">
-                  <span>Adiciona</span>
                 </a>
               </div>
             </div>
