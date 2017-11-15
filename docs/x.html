@@ -90,69 +90,42 @@
                 </div>
               </div>
             </div>
-            <div class="level">
-              <div class="level-left">
-                <div class="level-item">
-                  <div class="field">
-                    <div class="control">
-                      <label class="label is-small">Título</label>
-                      <input id="titulo" type="text" size="15" class="input" placeholder="Prof., Dr., ..." oninput="nomeChanged()">
-                    </div>
-                  </div>
-                </div>
-                <div class="level-item">
-                  <div class="field">
-                    <div class="control">
-                      <label class="label is-small">Sufixo</label>
-                      <input id="sufixo" type="text" size="15" class="input" placeholder="Júnior, Filho, ..." oninput="nomeChanged()">
-                    </div>
+            <div class="columns">
+              <div class="column is-4">
+                <div class="field">
+                  <div class="control">
+                    <label class="label is-small">Título</label>
+                    <input id="titulo" type="text" size="15" class="input" placeholder="Prof., Dr., ..." oninput="nomeChanged()">
                   </div>
                 </div>
               </div>
-              <div class="level-right">
-                <div class="level-item">
-                  <div class="field">
-                    <div class="control">
-                      <label class="label is-small">&nbsp;</label>
-                      <a class="button" onclick="toggle(this)">
-                        <span class="icon">
+              <div class="column is-4">
+                <div class="field">
+                  <div class="control">
+                    <label class="label is-small">Sufixo</label>
+                    <input id="sufixo" type="text" size="15" class="input" placeholder="Júnior, Filho, ..." oninput="nomeChanged()">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="columns">
+              <div class="column is-6">
+                <div class="field">
+                  <div class="control">
+                    <label class="label is-small">&nbsp;</label>
+                    <a class="button" onclick="toggle(this)">
+                      <span class="icon">
                           <i class="fa fa-check-square-o"></i>
                         </span>
-                        <span>Preferido</span>
-                      </a>
-                    </div>
+                      <span>Preferido</span>
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="column is-4">
-            <div class="field">
-              <div class="control">
-                <label class="label is-small">&nbsp;</label>
-                <a class="button is-info" onclick="animar()">
-                  <span>Adiciona</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label is-small">Nome completo</label>
-          <div class="control">
-            <div class="text">
-              <label id="nome-completo" class="is-small">--
-                                    preencha os campos --</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="label is-small">Uso condicional</label>
-          <div class="control">
-            <div class="select">
-              <select id="uso" class="select" disabled>
+                <div class="field">
+                  <label class="label is-small">Uso condicional</label>
+                  <div class="control">
+                    <div class="select">
+                      <select id="uso" class="select" disabled>
                   <option value="1">Informação não confiável</option>
                   <option value="2">Nome com erro de digitação
                                     </option>
@@ -165,16 +138,42 @@
                                     <option value="9">Nome temporário
                                     </option>
                                 </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="column is-4">
+            <div class="field">
+              <div class="control">
+                <label class="label is-small">&nbsp;</label>
+                <a class="button is-info" onclick="animar()">
+                  <span>Adiciona</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+
+  </div>
+
+  <div class="field">
+    <label class="label is-small">Nome completo</label>
+    <div class="control">
+      <div class="text">
+        <label id="nome-completo" class="is-small">--
+                                    preencha os campos --</label>
+      </div>
+    </div>
   </div>
 
 
-
-
+  </div>
+  </section>
+  </div>
 </body>
 
 </html>
