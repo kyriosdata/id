@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="css/bulma.css">
   <link rel="stylesheet" href="css/tooltip.css">
 
-  <style>    
+  <style>
+
   </style>
 </head>
 
@@ -21,90 +22,100 @@
   <script>
     function toggle(obj) {
       var icone = obj.childNodes[1].childNodes[1];
-        
+
       if (icone.classList.contains('fa-square-o')) {
-        icone.classList.remove("fa-square-o");        
+        icone.classList.remove("fa-square-o");
         icone.classList.add("fa-check-square-o");
       } else {
         icone.classList.remove("fa-check-square-o");
         icone.classList.add("fa-square-o");
       }
-      
+
     }
   </script>
-  
+
   <div class="parcial" id="nomes-form">
-        <section class="section" id="formulario-nomes">
-          <div class="content">
-            <h3>Nome</h3>
+    <section class="section" id="formulario-nomes">
+      <div class="content">
+        <h3>Nome</h3>
 
-            <div class="columns">
-              <div class="column is-narrow">
-                <div class="field">
-                  <label class="label is-small">Nome</label>
-                  <div class="control">
-                    <div class="text">
-                      <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="column is-narrow">
-                <div class="field">
-                  <div class="control">
-                    <label class="label is-small">Sobrenome</label>
-                    <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="columns">
-              <div class="column is-narrow">
-                <div class="field">
-                  <div class="control">
-                    <label class="label is-small">Título</label>
-                    <input id="titulo" type="text" size="15" class="input" placeholder="Prof., Dr., ..." oninput="nomeChanged()">
-                  </div>
-                </div>
-              </div>
-              <div class="column is-3">
-                <div class="field">
-                  <div class="control">
-                    <label class="label is-small">Sufixo</label>
-                    <input id="sufixo" type="text" size="15" class="input" placeholder="Júnior, Filho, ..." oninput="nomeChanged()">                
-                  </div>                                    
-                </div>
-              </div>
-            <div class="column">
-              <div class="field">
-                  <div class="control">
-                    <label class="label is-small">&nbsp;</label>           
-                    <a class="button" onclick="toggle(this)">
-    <span class="icon">
-      <i class="fa fa-check-square-o"></i>
-    </span>
-    <span>Preferido</span>
-  </a>
-                  </div>                
-              </div>
-            </div>
-            </div>
-
+        <div class="columns">
+          <div class="column is-4">
             <div class="field">
-              <label class="label is-small">Nome completo</label>
+              <label class="label is-small">Nome</label>
               <div class="control">
                 <div class="text">
-                  <label id="nome-completo" class="is-small">--
-                                    preencha os campos --</label>
+                  <input id="nome" type="text" size="30" class="input" oninput="nomeChanged()">
                 </div>
               </div>
             </div>
-
+          </div>
+          <div class="column is-4">
             <div class="field">
-              <label class="label is-small">Uso</label>
               <div class="control">
-                <div class="select">
-                  <select id="uso" class="select">
+                <label class="label is-small">Sobrenome</label>
+                <input id="sobrenome" type="text" size="30" class="input" oninput="nomeChanged()">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-3">
+            <div class="field">
+              <div class="control">
+                <label class="label is-small">Título</label>
+                <input id="titulo" type="text" size="15" class="input" placeholder="Prof., Dr., ..." oninput="nomeChanged()">
+              </div>
+            </div>
+          </div>
+          <div class="column is-3">
+            <div class="field">
+              <div class="control">
+                <label class="label is-small">Sufixo</label>
+                <input id="sufixo" type="text" size="15" class="input" placeholder="Júnior, Filho, ..." oninput="nomeChanged()">
+              </div>
+            </div>
+          </div>
+          <div class="column is-2">
+            <div class="field">
+              <div class="control is-expanded">
+                <label class="label is-small">&nbsp;</label>
+                <a class="button" onclick="toggle(this)">
+                  <span class="icon">
+      <i class="fa fa-check-square-o"></i>
+    </span>
+                  <span>Preferido</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="column is-narrow">
+            <div class="field">
+              <div class="control">
+               <label class="label is-small">&nbsp;</label>
+                <a class="button is-info">
+                  <span>Adiciona</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label is-small">Nome completo</label>
+          <div class="control">
+            <div class="text">
+              <label id="nome-completo" class="is-small">--
+                                    preencha os campos --</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label is-small">Uso</label>
+          <div class="control">
+            <div class="select">
+              <select id="uso" class="select">
                                     <option value="1">Relatório (R)</option>
                                     <option value="2">Nome de recém-nascido
                                         (N)
@@ -121,18 +132,16 @@
                                     <option value="8">Outro nome (alias)
                                     </option>
                                 </select>
-                </div>
-              </div>
-            </div>            
+            </div>
           </div>
-        </section>
+        </div>
       </div>
+    </section>
+  </div>
 
-  
-  
-  <a class="button is-info">
-    <span>Adiciona</span>
-  </a>
+
+
+
 </body>
 
 </html>
