@@ -1,3 +1,5 @@
+[![Build Status](https://experimentos.visualstudio.com/id/_apis/build/status/kyriosdata.id)](https://experimentos.visualstudio.com/id/_build/latest?definitionId=1)
+
 # ABNT NBR 15985:2011
 
 A atenção à saúde depende de informação que é associada ao indivíduo assistido 
