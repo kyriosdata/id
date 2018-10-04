@@ -12,16 +12,30 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.0.M1</version>
+        <version>2.0.5.RELEASE</version>
     </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8
         </project.reporting.outputEncoding>
+
+        <h2.url>jdbc:h2:tcp://localhost:9092/./target/database</h2.url>
+        <h2.version>1.4.197</h2.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>
@@ -68,7 +82,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>5.1.4</version>
                 <configuration>
-                    <url>jdbc:h2:tcp://localhost:9092/./target/database</url>
+                    <url>${h2.url}</url>
                     <user>sa</user>
                 </configuration>
             </plugin>

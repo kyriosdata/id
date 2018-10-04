@@ -18,14 +18,22 @@ IntelliJ IDEA.
 jdbc:h2:tcp://localhost:9092/./target/database
 ```
 
-### Iniciar o H2 (Server Mode)
+### Iniciar o H2 (Server e Web)
 Basta executar
  
-```mvn exec:java```
+```mvn exec:java -P start-h2```
  
 No _pom.xml_ está indicada a versão
 a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
 Flyway quanto pelo cliente SQL empregado.
+
+Portas utilizadas: **9092** (tcp) e **8082** (web).
+
+### Interromper o H2 (Server e Web)
+Basta executar
+ 
+```mvn exec:java -P stop-h2```
+
 
 ## Migrações (informações)
 
