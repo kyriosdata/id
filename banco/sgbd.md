@@ -15,12 +15,12 @@ IntelliJ IDEA.
 
 ## SGBD H2
 
-### URL de conexão
+#### URL de conexão
 ```
 jdbc:h2:tcp://localhost:9092/./target/database
 ```
 
-### Iniciar o H2 (Server e Web)
+#### Iniciar o H2 (Server e Web)
  
 ```mvn exec:exec -P start-h2```
  
@@ -30,18 +30,18 @@ Flyway quanto pelo cliente SQL empregado.
 
 Portas utilizadas: **9092** (tcp) e **8082** (web).
 
-### Interromper o H2 (Server e Web)
+#### Interromper o H2 (Server e Web)
  
 ```mvn exec:exec -P stop-h2```
 
 ## Flyway
 Assumindo que o H2 está em execução...
 
-### Migrações (informações)
+#### Migrações (informações)
 
 ```mvn flyway:info```
 
-### Migrações (aplicar)
+#### Migrações (aplicar)
 
 ```mvn flyway:migrate```
 
@@ -49,11 +49,11 @@ Migrações configuradas, ou seja, os arquivos disponíveis em
 _resources/db/migration_ serão executados na ordem **V1__**, **V2__** e 
 assim por diante.
 
-### Limpar (sim, mas nunca em produção...)
+#### Limpar (sim, mas nunca em produção...)
 
 ```mvn flyway:clean```
 
-### Refatoração
+#### Refatoração
 
 O diretório `src/main/db/migration` contém várias versões **V1**, 
 **V2** e assim sucessivamente. 
