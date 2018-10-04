@@ -28,7 +28,8 @@
 
         <dependency>
             <groupId>org.flywaydb</groupId>
-            <artifactId>flyway-core</artifactId>
+            <artifactId>flyway-maven-plugin</artifactId>
+            <version>4.2.0</version>
         </dependency>
 
         <!-- Versão deve ser a mesma do Flyway e do Cliente -->
