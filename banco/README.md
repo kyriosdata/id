@@ -28,18 +28,24 @@ Flyway quanto pelo cliente SQL empregado. As portas utilizadas são **9092** (tc
 
 #### Interromper o H2 (Server e Web)
  
-```mvn exec:exec -P stop-h2```
+```
+mvn exec:exec -P stop-h2
+```
 
 ## Flyway
 Assumindo que o H2 está em execução...
 
 #### Migrações (informações)
 
-```mvn flyway:info```
+```
+mvn flyway:info
+```
 
 #### Migrações (aplicar)
 
-```mvn flyway:migrate```
+```
+mvn flyway:migrate
+```
 
 Migrações configuradas, ou seja, os arquivos disponíveis em 
 _resources/db/migration_ serão executados na ordem **V1__**, **V2__** e 
@@ -47,7 +53,9 @@ assim por diante.
 
 #### Limpar (sim, mas nunca em produção...)
 
-```mvn flyway:clean```
+```
+mvn flyway:clean
+```
 
 #### Refatoração
 
