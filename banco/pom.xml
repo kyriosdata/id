@@ -24,11 +24,6 @@
     <dependencies>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>${h2.version}</version>
@@ -44,11 +39,11 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
 
-            <!-- mvn package => provoca cópia de jars usados para target/jars -->
+            <!-- mvn package => copia jar utilizados para target/jars -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.2</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <id>copy-dependencies</id>
@@ -71,30 +66,13 @@
             <plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
-                <version>4.2.0</version>
+                <version>5.1.4</version>
                 <configuration>
                     <url>jdbc:h2:tcp://localhost:9092/./target/database</url>
                     <user>sa</user>
                 </configuration>
             </plugin>
 
-            <!-- Iniciar o H2 (Server mode) -->
-            <!-- Versão utilizada deve ser a mesma empregada pelo cliente -->
-            <!-- mvn exec:java -->
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>1.6.0</version>
-                <configuration>
-                    <mainClass>org.h2.tools.Server</mainClass>
-                    <arguments>
-                        <argument>-tcp</argument>
-                        <argument>-tcpAllowOthers</argument>
-                        <argument>-webPort</argument>
-                    </arguments>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
@@ -135,4 +113,60 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
+    <profiles>
+
+        <profile>
+            <id>start-h2</id>
+            <!-- Inicia a execução do H2 (Server e Web) -->
+            <!-- mvn exec:exec -P start-h2 -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <argument>org.h2.tools.Console</argument>
+                                <argument>-tcp</argument>
+                                <argument>-tcpAllowOthers</argument>
+                                <argument>-web</argument>
+                                <argument>-browser</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <id>stop-h2</id>
+            <!-- Interrompe a execução do H2 (Server e Web) -->
+            <!-- mvn exec:exec -P stop-h2 -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <argument>org.h2.tools.Server</argument>
+                                <argument>-tcpShutdown</argument>
+                                <argument>tcp://localhost:9092</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 </project>
