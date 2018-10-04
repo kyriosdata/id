@@ -22,7 +22,9 @@ jdbc:h2:tcp://localhost:9092/./target/database
 
 #### Iniciar o H2 (Server e Web)
  
-```mvn exec:exec -P start-h2```
+```
+mvn exec:exec -P start-h2
+```
  
 A versão do H2 a ser utilizada está definida no _pom.xml_ por meio da propriedade **h2.version**. Deve ser a mesma versão empregada tanto pelo 
 Flyway quanto pelo cliente SQL empregado. As portas utilizadas são **9092** (tcp) e **8082** (web).
