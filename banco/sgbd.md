@@ -15,7 +15,7 @@ IntelliJ IDEA.
 
 ## SGBD H2
 
-#### URL de conexão
+#### Conexão (URL)
 ```
 jdbc:h2:tcp://localhost:9092/./target/database
 ```
