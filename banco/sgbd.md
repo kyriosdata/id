@@ -1,4 +1,4 @@
-## SGBD H2
+## Escolhendo um SGBD para ser usado durante o desenvolvimento...
 A simplicidade do [H2](http://www.h2database.com) foi determinante para 
 selecioná-lo para uso durante a fase de desenvolvimento.
 
@@ -7,7 +7,7 @@ consulte o arquivo _pom.xml_ (effective pom) e procure pela propriedade
 _h2.version_. Essa propriedade deve ser empregada pelo Flyway e também
 para a configuração do **exec-maven-plugin**.
 
-### Disponibilizar H2 localmente
+#### Disponibilizar H2 localmente
 Observe que ao executar **mvn package** será gerado o diretório **jars** no 
 diretório **target** no qual estarão todas os jar files empregados, inclusive 
 aquele correspondente ao H2. Esse deve ser o jar empregado pelo cliente do 
@@ -25,13 +25,12 @@ jdbc:h2:tcp://localhost:9092/./target/database
 ```mvn exec:exec -P start-h2```
  
 No _pom.xml_ está indicada a versão
-a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
+a ser utilizada pela propriedade **h2.version**. Deve ser a mesma versão empregada tanto pelo 
 Flyway quanto pelo cliente SQL empregado.
 
 Portas utilizadas: **9092** (tcp) e **8082** (web).
 
 ### Interromper o H2 (Server e Web)
-Basta executar
  
 ```mvn exec:exec -P stop-h2```
 
