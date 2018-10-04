@@ -22,6 +22,8 @@
 
         <h2.url>jdbc:h2:tcp://localhost:9092/./target/database</h2.url>
         <h2.version>1.4.197</h2.version>
+
+        <flyway.user>sa</flyway.user>
     </properties>
 
     <dependencies>
@@ -83,7 +85,6 @@
                 <version>5.1.4</version>
                 <configuration>
                     <url>${h2.url}</url>
-                    <user>sa</user>
                 </configuration>
             </plugin>
 

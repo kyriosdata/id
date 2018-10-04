@@ -21,7 +21,7 @@ jdbc:h2:tcp://localhost:9092/./target/database
 ### Iniciar o H2 (Server e Web)
 Basta executar
  
-```mvn exec:java -P start-h2```
+```mvn exec:exec -P start-h2```
  
 No _pom.xml_ está indicada a versão
 a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
@@ -32,7 +32,7 @@ Portas utilizadas: **9092** (tcp) e **8082** (web).
 ### Interromper o H2 (Server e Web)
 Basta executar
  
-```mvn exec:java -P stop-h2```
+```mvn exec:exec -P stop-h2```
 
 
 ## Migrações (informações)
@@ -47,6 +47,10 @@ Migrações configuradas, ou seja, os arquivos disponíveis em
 _resources/db/migration_ serão executados na ordem **V1__**, **V2__** e 
 assim por diante.
 
+## Limpar (sim, mas nunca em produção...)
+
+```mvn flyway:clean```
+
 ### Fluxo típico
 Remover o **database.mv.db** (banco padrão usado pela aplicação). Executar o
 H2 via **mvn exec:jdbc** e só então a aplicação. A execução da aplicação pode ser
@@ -55,9 +59,12 @@ feita via linha de comandos conforme ilustrado abaixo.
 # Passos
 
 ```
-$ mvn exec:java
-$ mvn clean package
-$ java -jar target/spring-flyway-1.0.0.jar
+$ mvn exec:exec -P start-h2
+$ mvn flyway:info
+$ mvn flyway:migrate
+... Realiza algumas mudanças 
+$ mvn flyway:clean
+$ mvn flyway:migrate
 ```
 
 ## Migração (refatoração)
