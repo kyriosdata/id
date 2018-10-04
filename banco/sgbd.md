@@ -2,10 +2,7 @@
 A simplicidade do [H2](http://www.h2database.com) foi determinante para 
 selecioná-lo para uso durante a fase de desenvolvimento.
 
-**Importante**: use a versão que é empregada pelo Spring e pelo Flyway. Para tal,
-consulte o arquivo _pom.xml_ (effective pom) e procure pela propriedade
-_h2.version_. Essa propriedade deve ser empregada pelo Flyway e também
-para a configuração do **exec-maven-plugin**.
+**Importante**: caso venha a utilizar algum cliente senão aquele web oferecido pelo próprio H2, verifique se o cliente faz uso da mesma versão empregada para iniciar o H2. Esta versão também deve ser a mesma empregada pelo Flyway. 
 
 #### Disponibilizar H2 localmente
 Observe que ao executar **mvn package** será gerado o diretório **jars** no 
