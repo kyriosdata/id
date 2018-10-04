@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -16,7 +17,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.reporting.outputEncoding>UTF-8
+        </project.reporting.outputEncoding>
     </properties>
 
     <dependencies>
@@ -26,7 +28,11 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+        </dependency>
 
     </dependencies>
 
@@ -52,7 +58,8 @@
                         </goals>
                         <configuration>
                             <includeScope>runtime</includeScope>
-                            <outputDirectory>${project.build.directory}/jars/</outputDirectory>
+                            <outputDirectory>${project.build.directory}/jars/
+                            </outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -69,13 +76,6 @@
                     <url>jdbc:h2:tcp://localhost:9092/./target/database</url>
                     <user>sa</user>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.h2database</groupId>
-                        <artifactId>h2</artifactId>
-                        <version>${h2.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
 
             <!-- Iniciar o H2 (Server mode) -->
@@ -91,15 +91,9 @@
                     <arguments>
                         <argument>-tcp</argument>
                         <argument>-tcpAllowOthers</argument>
+                        <argument>-webPort</argument>
                     </arguments>
                 </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.h2database</groupId>
-                        <artifactId>h2</artifactId>
-                        <version>${h2.version}</version>
-                    </dependency>
-                </dependencies>
             </plugin>
         </plugins>
     </build>

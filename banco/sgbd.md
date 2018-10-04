@@ -13,6 +13,11 @@ diretório **target** no qual estarão todas os jar files empregados, inclusive
 aquele correspondente ao H2. Esse deve ser o jar empregado pelo cliente do 
 IntelliJ IDEA. 
 
+## URL de conexão
+```
+jdbc:h2:tcp://localhost:9092/./target/database
+```
+
 ### Iniciar o H2 (Server Mode)
 Basta executar
  
@@ -22,10 +27,17 @@ No _pom.xml_ está indicada a versão
 a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
 Flyway quanto pelo cliente SQL empregado.
 
-### URL de conexão
-```
-jdbc:h2:tcp://localhost:9092/./database
-```
+## Migrações (informações)
+
+```mvn flyway:info```
+
+## Migrações (aplicar)
+
+```mvn flyway:migrate```
+
+Migrações configuradas, ou seja, os arquivos disponíveis em 
+_resources/db/migration_ serão executados na ordem **V1__**, **V2__** e 
+assim por diante.
 
 ### Fluxo típico
 Remover o **database.mv.db** (banco padrão usado pela aplicação). Executar o
