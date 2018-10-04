@@ -14,7 +14,11 @@ aquele correspondente ao H2. Esse deve ser o jar empregado pelo cliente do
 IntelliJ IDEA. 
 
 ### Iniciar o H2 (Server Mode)
-Basta executar **mvn exec:java**. No _pom.xml_ está indicada a versão
+Basta executar
+ 
+```mvn exec:java```
+ 
+No _pom.xml_ está indicada a versão
 a ser utilizada. Deve ser a mesma versão empregada tanto pelo 
 Flyway quanto pelo cliente SQL empregado.
 
