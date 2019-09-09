@@ -17,8 +17,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8
-        </project.reporting.outputEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <h2.url>jdbc:h2:tcp://localhost:9092/./target/database</h2.url>
         <h2.version>1.4.197</h2.version>
