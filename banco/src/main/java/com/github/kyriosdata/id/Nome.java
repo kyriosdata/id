@@ -1,3 +1,22 @@
+/**
+ * Copyright 2019
+ * Fábio Nogueira de Lucena
+ * Fábrica de Software (Instituto de Informática)
+ * Universidade Federal de Goiás
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.github.kyriosdata.id;
 
 import java.util.ArrayList;
@@ -7,14 +26,16 @@ import java.util.List;
 public class Nome {
     private List<String> nomes;
     private List<String> sobrenomes;
-    private List<String> prefixos;
+    private List<String> titulos;
+    private List<String> sufixos;
     private boolean preferido;
     private boolean usoCondicional;
 
     public static class Builder {
         private List<String> nomes = new ArrayList<>();
         private List<String> sobrenomes = new ArrayList<>();
-        private List<String> prefixos = new ArrayList<>();
+        private List<String> titulos = new ArrayList<>();
+        private List<String> sufixos = new ArrayList<>();
         private boolean preferido = true;
         private boolean usoCondicional = false;
 
@@ -32,8 +53,13 @@ public class Nome {
             return this;
         }
 
-        public Builder addPrefixo(final String prefixo) {
-            prefixos.add(prefixo);
+        public Builder addSufixo(final String prefixo) {
+            sufixos.add(prefixo);
+            return this;
+        }
+
+        public Builder addTitulo(final String titulo) {
+            titulos.add(titulo);
             return this;
         }
 
@@ -55,7 +81,8 @@ public class Nome {
     private Nome(Builder builder) {
         nomes = Collections.unmodifiableList(builder.nomes);
         sobrenomes = Collections.unmodifiableList(builder.sobrenomes);
-        prefixos = Collections.unmodifiableList(builder.prefixos);
+        titulos = Collections.unmodifiableList(builder.titulos);
+        sufixos = Collections.unmodifiableList(builder.sufixos);
         preferido = builder.preferido;
         usoCondicional = builder.usoCondicional;
     }
@@ -68,8 +95,12 @@ public class Nome {
         return sobrenomes;
     }
 
-    public List<String> getPrefixos() {
-        return prefixos;
+    public List<String> getTitulos() {
+        return titulos;
+    }
+
+    public List<String> getSufixos() {
+        return sufixos;
     }
 
     public boolean isPreferido() {
@@ -78,5 +109,18 @@ public class Nome {
 
     public boolean isUsoCondicional() {
         return usoCondicional;
+    }
+
+    @Override
+    public String toString() {
+        final String parcial = String.join(" ",
+                une(titulos), une(nomes), une(sobrenomes), une(sufixos));
+
+        // Remove espaços caso não haja título, sobrenomes e/ou sufixos
+        return parcial.trim().replaceAll(" +", " ");
+    }
+
+    private String une(List<String> lista) {
+        return String.join(" ", lista);
     }
 }
