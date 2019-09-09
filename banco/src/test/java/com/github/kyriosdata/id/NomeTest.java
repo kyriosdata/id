@@ -22,9 +22,10 @@ package com.github.kyriosdata.id;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class NomeTest {
+class NomeTest {
 
     @Test
     void builderCasoTrivial() {
@@ -65,5 +66,13 @@ public class NomeTest {
         // Não há como remover
         assertThrows(UnsupportedOperationException.class, () ->
                 nome.getNomes().remove(0));
+    }
+
+    @Test
+    void usoCondicionalFalsePorPadrao() {
+        Nome.Builder builder = new Nome.Builder("Davi");
+        Nome nome = builder.build();
+
+        assertFalse(nome.isUsoCondicional());
     }
 }
