@@ -24,6 +24,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class NomeTest {
 
@@ -74,5 +75,46 @@ class NomeTest {
         Nome nome = builder.build();
 
         assertFalse(nome.isUsoCondicional());
+    }
+
+    @Test
+    void nomePorPadraoPreferido() {
+        Nome.Builder builder = new Nome.Builder("Davi");
+        Nome nome = builder.build();
+
+        assertTrue(nome.isPreferido());
+    }
+
+    @Test
+    void naoHaTituloPadrao() {
+        Nome.Builder builder = new Nome.Builder("Davi");
+        Nome nome = builder.build();
+
+        assertEquals(0, nome.getTitulos().size());
+    }
+
+    @Test
+    void naoHaSufixoPadrao() {
+        Nome.Builder builder = new Nome.Builder("Davi");
+        Nome nome = builder.build();
+
+        assertEquals(0, nome.getSufixos().size());
+    }
+
+    @Test
+    void naoHaSobrenomePadrao() {
+        Nome.Builder builder = new Nome.Builder("Davi");
+        Nome nome = builder.build();
+
+        assertEquals(0, nome.getSobrenomes().size());
+    }
+
+    @Test
+    void alteraPadraoEmNome() {
+        Nome.Builder builder = new Nome.Builder("Davi");
+        Nome nome = builder.preferido(false).usoCondicional(true). build();
+
+        assertFalse(nome.isPreferido());
+        assertTrue(nome.isUsoCondicional());
     }
 }
