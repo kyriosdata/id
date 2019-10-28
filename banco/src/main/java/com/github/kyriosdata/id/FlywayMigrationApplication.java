@@ -24,6 +24,8 @@ public class FlywayMigrationApplication {
 					.forEach(System.err::println);
 			repository.findByNome("Lucas")
 					.forEach(System.err::println);
+
+			repository.findAll().forEach(System.err::println);
 		};
 	}
 }
