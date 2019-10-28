@@ -15,8 +15,14 @@ public class FlywayMigrationApplication {
 	@Bean
 	public CommandLineRunner exampleQuery(IndividuoRepository repository) {
 		return args -> {
-			String uuid = "8d4cd0d3-8996-4812-96b4-48b4f1847ff5";
-			repository.findByIdIgnoringCase(uuid)
+			repository.save(new Individuo("Fábio"));
+			repository.save(new Individuo("Pedro"));
+			repository.save(new Individuo("João"));
+			repository.save(new Individuo("Lucas"));
+
+			repository.findByNome("João")
+					.forEach(System.err::println);
+			repository.findByNome("Lucas")
 					.forEach(System.err::println);
 		};
 	}

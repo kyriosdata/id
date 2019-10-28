@@ -1,33 +1,45 @@
 package com.github.kyriosdata.id;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Set;
 
 @Entity
 public class Individuo {
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
 
-	private Set<Nome> nomes;
+	private String nome;
 
-	Individuo() {
+	// Exigido pelo JPA
+	Individuo() {}
+
+	public Individuo(String nome) {
+		this.nome = nome;
 	}
 
-	public Individuo(String id) {
-		super();
-
-		this.id = id;
+	public String getNome() {
+		return nome;
 	}
 
-	public String getId() {
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Long getId() {
 		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	@Override
 	public String toString() {
-		return "Indivíduo: " + id;
+		return "Indivíduo: " + id + " Nome: " + nome;
 	}
 
 }

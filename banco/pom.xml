@@ -4,28 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.kyriosdata.spring</groupId>
-    <artifactId>spring-flyway</artifactId>
+    <groupId>com.github.kyriosdata</groupId>
+    <artifactId>id</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.5.RELEASE</version>
+        <version>2.1.7.RELEASE</version>
     </parent>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-        <h2.url>jdbc:h2:tcp://localhost:9092/./target/database</h2.url>
-        <h2.version>1.4.197</h2.version>
-
-        <flyway.user>sa</flyway.user>
     </properties>
 
     <dependencies>
@@ -44,7 +34,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>${h2.version}</version>
+            <scope>runtime</scope>
         </dependency>
 
         <dependency>

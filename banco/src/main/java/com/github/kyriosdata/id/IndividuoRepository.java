@@ -1,9 +1,11 @@
 package com.github.kyriosdata.id;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface IndividuoRepository extends JpaRepository<Individuo, Long> {
+import java.util.List;
 
-	Iterable<Individuo> findByIdIgnoringCase(String make);
+public interface IndividuoRepository extends CrudRepository<Individuo, Long> {
+
+	List<Individuo> findByNome(String nome);
 
 }
