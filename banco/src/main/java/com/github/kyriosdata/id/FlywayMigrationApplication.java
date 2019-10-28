@@ -26,5 +26,4 @@ public class FlywayMigrationApplication {
 					.forEach(System.err::println);
 		};
 	}
-
 }

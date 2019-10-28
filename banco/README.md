@@ -1,8 +1,16 @@
-## Escolhendo um SGBD para ser usado durante o desenvolvimento...
+# Uso
+```shell
+mvn spring-boot:run
+```
+
+## H2 (por simplicidade)
 A simplicidade do [H2](http://www.h2database.com) foi determinante para 
 selecioná-lo para uso durante a fase de desenvolvimento.
 
-**Importante**: caso venha a utilizar algum cliente senão aquele web oferecido pelo próprio H2, verifique se o cliente faz uso da mesma versão empregada para iniciar o H2. Esta versão também deve ser a mesma empregada pelo Flyway. 
+**Importante**: caso venha a utilizar algum cliente senão aquele web
+oferecido pelo próprio H2, verifique se o cliente faz uso da mesma versão
+empregada para iniciar o H2. Esta versão também deve ser a mesma empregada
+pelo Flyway. 
 
 #### Disponibilizar H2 localmente
 Observe que ao executar **mvn package** será gerado o diretório **jars** no 
