@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.RowCallbackHandler;
 
 import java.sql.ResultSet;
 
-//@SpringBootApplication
+@SpringBootApplication
 public class FlywayMigrationApplication {
 
 	public static void main(String[] args) {

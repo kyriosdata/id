@@ -4,15 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowCallbackHandler;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
-import javax.sql.DataSource;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootApplication
 public class SpringJdbcApplication {
@@ -21,15 +17,14 @@ public class SpringJdbcApplication {
     private JdbcTemplate jdbcTemplate;
 
     @Bean
-    public CommandLineRunner exampleQuery() {
+    public CommandLineRunner exibeMunicipios() {
         return args -> {
+            List<Map<String, Object>> municipios =
+                    jdbcTemplate.queryForList("SELECT * FROM municipio");
 
-            List records = jdbcTemplate.queryForList("SELECT * FROM municipio");
-            for (int i = 0; i < records.size(); i++) {
-                System.out.println("Municipio = " + records.get(i));
-            }
+            municipios.forEach(System.out::println);
 
-            System.out.println("TOTAL DE REGISTROS: " + records.size());
+            System.out.println("TOTAL: " + municipios.size());
         };
     }
 

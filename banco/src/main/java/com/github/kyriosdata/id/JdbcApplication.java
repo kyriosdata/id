@@ -6,6 +6,9 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 import java.util.List;
 
+/**
+ * Manualmente configura acesso ao H2.
+ */
 public class JdbcApplication {
     public static final String DRIVER = "org.h2.Driver";
     public static final String JDBC_URL = "jdbc:h2:tcp://localhost:9092/./db1";
