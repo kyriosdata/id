@@ -132,8 +132,11 @@
 
         <profile>
             <id>start-h2</id>
-            <!-- Inicia a execução do H2 (Server e Web) -->
-            <!-- mvn exec:exec -P start-h2 -->
+            <!-- mvn exec:exec -P start-h2                       -->
+            <!-- APENAS PARA DESENVOLVIMENTO                     -->
+            <!-- SEGURANCA COMPROMETIDA pelo flag "-ifNotExists" -->
+            <!-- FLAG PERMITE CRIAR DATABASE REMOTAMENTE         -->
+            <!-- Inicia a execução do H2 (Server e Web)          -->            
             <build>
                 <plugins>
                     <plugin>
@@ -151,6 +154,7 @@
                                 <argument>-web</argument>
                                 <argument>-webAllowOthers</argument>
                                 <argument>-browser</argument>
+                                <argument>-ifNotExists</argument>                                
                             </arguments>
                         </configuration>
                     </plugin>

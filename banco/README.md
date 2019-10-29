@@ -1,13 +1,10 @@
 # Primeiros passos
 Segue sequência típica para desenvolvimento que coloca o H2 e um cliente Web
-disponível para sessão de trabalho. Observe que inclui passo para criação de
-um _database_. Detalhes são fornecidos nas subseções seguintes: 
+disponível para sessão de trabalho. Detalhes e cenários específicos 
+são fornecidos nas subseções seguintes: 
  
  - `mvn package` (deposita em target/jars/h2-&lt;versao&gt;.jar o H2)
  - `mvn exec:exec -P start-h2` (coloca H2 Server em execução)
- - `java -cp target/jars/h2-<versao>.jar org.h2.tools.Shell` (usar `jdbc:h2
- :./teste` para criar _database_ **teste**)
- - `mvn exec:exec -P start-h2-web` (iniciar o Cliente Web para acesso ao H2)
  
 ```shell
 mvn spring-boot:run
@@ -15,7 +12,7 @@ mvn spring-boot:run
 
 ## H2 (por simplicidade)
 A simplicidade do [H2](http://www.h2database.com) foi determinante para 
-selecioná-lo para uso durante a fase de desenvolvimento.
+utilizá-lo durante o desenvolvimento.
 
 **Importante**: caso venha a utilizar algum cliente senão aquele web
 oferecido pelo próprio H2, verifique se o cliente faz uso da mesma versão
@@ -23,10 +20,11 @@ empregada para iniciar o H2. Esta versão também deve ser a mesma empregada
 pelo Flyway. 
 
 #### Disponibilizar H2 localmente
-Observe que ao executar **mvn package** será gerado o diretório **jars** no 
-diretório **target** no qual estarão todas os jar files empregados, inclusive 
-aquele correspondente ao H2. Esse deve ser o jar empregado pelo cliente do 
-IntelliJ IDEA. 
+Observe que ao executar **mvn package** será gerado no diretório **target/jars** 
+todos os arquivos jar empregados pela solução, inclusive 
+aquele correspondente ao H2. O arquivo segue o formato **h2-&lt;versao&gt;.jar**.
+Este arquivo também inclui o _driver_ JDBC a ser utilizado por qualquer cliente
+SQL para interagir com o H2.
 
 ## H2 (start/stop e criar _database_)
 Abaixo segue como colocar em execução o H2 no modo "server" (apto a receber
