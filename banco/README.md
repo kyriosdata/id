@@ -18,12 +18,10 @@ diretório **target** no qual estarão todas os jar files empregados, inclusive
 aquele correspondente ao H2. Esse deve ser o jar empregado pelo cliente do 
 IntelliJ IDEA. 
 
-## SGBD H2
-
-#### Conexão (URL)
-```
-jdbc:h2:tcp://localhost:9092/./target/database
-```
+## H2 (start/stop e criar _database_)
+Abaixo segue como colocar em execução o H2 no modo "server" (apto a receber
+requisições de processos locais). Após colocado em execução será necessário
+criar um banco de dados (_database_) com o qual trabalhar. 
 
 #### Iniciar o H2 (Server e Web)
  
@@ -40,6 +38,20 @@ Flyway quanto pelo cliente SQL empregado. As portas utilizadas são **9092** (tc
 mvn exec:exec -P stop-h2
 ```
 
+#### Criar um _database_
+Antes de se conectar a uma base de dados será necessário criá-la. Uma forma
+ é apresentada abaixo: 
+ 
+ - `java -cp target/jars/h2-1.4.199.jar org.h2.tools.Shell`. Você terá que
+  fornecer como URL algo como `jdbc:h2:./teste` para criar no diretório
+   corrente o banco "teste" (que posteriormente poderá ser empregado).
+   
+
+#### Conexão (URL)
+```
+jdbc:h2:tcp://localhost:9092/./target/database
+```
+   
 ## Flyway
 Assumindo que o H2 está em execução...
 
