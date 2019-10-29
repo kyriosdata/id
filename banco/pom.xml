@@ -198,7 +198,7 @@
                             <arguments>
                                 <argument>-classpath</argument>
                                 <classpath/>
-                                <argument>org.h2.tools.Server</argument>
+                                <argument>org.h2.tools.Console</argument>
                                 <argument>-web</argument>
                                 <argument>-webAllowOthers</argument>
                                 <argument>-browser</argument>
