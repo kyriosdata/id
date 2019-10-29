@@ -3,18 +3,18 @@
 banco desejado, possivelmente algo como _jdbc:h2:tcp://192.168.0.104:9092/./db-teste_, por exemplo.
 
 - `mvn exec:exec -P start-h2` inicia o servidor (porta **9092**) e o cliente Web (porta **8082**) do H2, ambos acessíveis remotamente.
+
 - `mvn exec:exec -P stop-h2` interrompe a execução do H2.
 
 ### H2 (server, cliente e driver JDBC)
 
-- **mvn package** deposita no diretório **target/jars** 
+- `mvn package` deposita no diretório **target/jars** 
 os arquivos jar empregados pela solução, inclusive o arquivo **h2-&lt;version&gt;.jar** que inclui a implementação do [H2](http://www.h2database.com), o cliente Web e o _driver_ JDBC.
 Observe que **version** é definida pela propriedade **h2.version** no arquivo _pom.xml_. 
 
 
 ### H2 (iniciar o Server e cliente Web)
-Iniciado com permissão para criação remota de _database_. Este recurso apresenta
-vulnerabilidades de segurança e, portanto, só deve ser feito tal uso em desenvolvimento.
+Iniciado com permissão para criação remota e automática de _database_. Este recurso apresenta vulnerabilidades de segurança e, portanto, só deve ser feito tal uso em desenvolvimento.
  
 ```
 mvn exec:exec -P start-h2
@@ -29,11 +29,11 @@ mvn exec:exec -P stop-h2
 ```
 
 ### Criar um _database_
-Antes de se conectar a uma base de dados será necessário criá-la. Conforme configurado
-no _pom.xml_, o comando para iniciar o H2 o configura para permitir a criação automática
+Antes de se conectar a uma base de dados será necessário criá-la. Conforme 
+o _pom.xml_, o comando para iniciar o H2 está configurado para permitir a criação automática
 de um _database_, contudo, você pode desejar criar um explicitamente conforme abaixo:
  
- - `java -cp target/jars/h2-&lt;version&gt;.jar org.h2.tools.Shell`. Você terá que
+ - `java -cp target/jars/h2-<version>.jar org.h2.tools.Shell`. Você terá que
   fornecer como URL algo como `jdbc:h2:./teste` para criar no diretório
    corrente o banco "teste".
    
