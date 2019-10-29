@@ -14,24 +14,15 @@ mvn spring-boot:run
 A simplicidade do [H2](http://www.h2database.com) foi determinante para 
 utilizá-lo durante o desenvolvimento.
 
-**Importante**: caso venha a utilizar algum cliente senão aquele web
-oferecido pelo próprio H2, verifique se o cliente faz uso da mesma versão
-empregada para iniciar o H2. Esta versão também deve ser a mesma empregada
-pelo Flyway. 
-
-#### Disponibilizar H2 localmente
-Observe que ao executar **mvn package** será gerado no diretório **target/jars** 
+Ao executar **mvn package** será gerado no diretório **target/jars** 
 todos os arquivos jar empregados pela solução, inclusive 
 aquele correspondente ao H2. O arquivo segue o formato **h2-&lt;versao&gt;.jar**.
 Este arquivo também inclui o _driver_ JDBC a ser utilizado por qualquer cliente
 SQL para interagir com o H2.
 
-## H2 (start/stop e criar _database_)
-Abaixo segue como colocar em execução o H2 no modo "server" (apto a receber
-requisições de processos locais). Após colocado em execução será necessário
-criar um banco de dados (_database_) com o qual trabalhar. 
-
-#### Iniciar o H2 (Server e Web)
+#### H2 (iniciar o Server e cliente Web)
+Iniciado com permissão para criação remota de _database_. Este recurso apresenta
+vulnerabilidades de segurança e, portanto, só deve ser feito tal uso em desenvolvimento.
  
 ```
 mvn exec:exec -P start-h2
