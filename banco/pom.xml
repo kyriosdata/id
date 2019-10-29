@@ -131,6 +131,32 @@
     <profiles>
 
         <profile>
+            <id>start-h2-web</id>
+            <!-- Inicia a execução do H2 (Server e Web) -->
+            <!-- mvn exec:exec -P start-h2 -->
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>1.6.0</version>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-classpath</argument>
+                                <classpath/>
+                                <argument>org.h2.tools.Server</argument>
+                                <argument>-web</argument>
+                                <argument>-webAllowOthers</argument>
+                                <argument>-browser</argument>
+                            </arguments>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
             <id>start-h2</id>
             <!-- Inicia a execução do H2 (Server e Web) -->
             <!-- mvn exec:exec -P start-h2 -->
