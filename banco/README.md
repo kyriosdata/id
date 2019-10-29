@@ -1,7 +1,13 @@
 # Primeiros passos
- - `mvn package` (disponibiliza em target/jars/h2-&lt;versao&gt;.jar o H2)
+Segue sequência típica para desenvolvimento que coloca o H2 e um cliente Web
+disponível para sessão de trabalho. Observe que inclui passo para criação de
+um _database_. Detalhes são fornecidos nas subseções seguintes: 
+ 
+ - `mvn package` (deposita em target/jars/h2-&lt;versao&gt;.jar o H2)
  - `mvn exec:exec -P start-h2` (coloca H2 Server em execução)
- - `java -cp target/jars/h2-<versao>.jar org.h2.tools.Shell` (criar _database_)
+ - `java -cp target/jars/h2-<versao>.jar org.h2.tools.Shell` (usar `jdbc:h2
+ :./teste` para criar _database_ **teste**)
+ - `mvn exec:exec -P start-h2-web` (iniciar o Cliente Web para acesso ao H2)
  
 ```shell
 mvn spring-boot:run
