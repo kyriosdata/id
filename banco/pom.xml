@@ -54,6 +54,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.github.kyriosdata.id.FlywayMigrationApplication</mainClass>
+                </configuration>
             </plugin>
 
             <!-- mvn package => copia jar utilizados para target/jars -->
