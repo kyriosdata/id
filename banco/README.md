@@ -1,23 +1,15 @@
-# Primeiros passos
-Segue sequência típica para desenvolvimento que coloca o H2 e um cliente Web
-disponível para sessão de trabalho. Detalhes e cenários específicos 
-são fornecidos nas subseções seguintes: 
- 
- - `mvn package` (deposita em target/jars/h2-&lt;versao&gt;.jar o H2)
- - `mvn exec:exec -P start-h2` (coloca H2 Server em execução)
- 
-```shell
-mvn spring-boot:run
-```
+## H2 
+- Configure a propriedade _h2.version_ no arquivo _pom.xml_ para a versão do H2 a ser empregada.
 
-## H2 (por simplicidade)
 A simplicidade do [H2](http://www.h2database.com) foi determinante para 
 utilizá-lo durante o desenvolvimento.
 
-Ao executar **mvn package** será gerado no diretório **target/jars** 
-todos os arquivos jar empregados pela solução, inclusive 
-aquele correspondente ao H2. O arquivo segue o formato **h2-&lt;versao&gt;.jar**.
-Este arquivo também inclui o _driver_ JDBC a ser utilizado por qualquer cliente
+Ao executar **mvn package** será depositado no diretório **target/jars** 
+os arquivos jar empregados pela solução, inclusive aquele que implementa o H2,
+o arquivo **h2-&lt;version&gt;.jar**, onde **version* é definida pela propriedade
+**h2.version** no arquivo _pom.xml_. 
+
+O arquivo contendo o H2 também inclui o _driver_ JDBC a ser utilizado por qualquer cliente
 SQL para interagir com o H2.
 
 #### H2 (iniciar o Server e cliente Web)
