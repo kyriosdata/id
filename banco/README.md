@@ -1,4 +1,8 @@
-# Uso
+# Primeiros passos
+ - `mvn package` (disponibiliza em target/jars/h2-<versao>.jar o H2)
+ - `mvn exec:exec -P start-h2` (coloca H2 Server em execução)
+ - `java -cp target/jars/h2-<versao>.jar org.h2.tools.Shell` (criar _database_)
+ 
 ```shell
 mvn spring-boot:run
 ```
