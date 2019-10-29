@@ -1,6 +1,10 @@
-## H2 
+# Iniciando com o H2
 - Configure a propriedade _h2.version_ no arquivo _pom.xml_ para a versão do H2 a ser empregada.
+- Inicie o servidor H2 e cliente Web do H2 com `mvn exec:exec -P start-h2`. O servidor emprega a porta **9092** enquanto o cliente Web a porta **8082**, todos eles acessíveis
+remotamente.
+- Interrompa a execução do H2 com `mvn exec:exec -P stop-h2`.
 
+## H2
 A simplicidade do [H2](http://www.h2database.com) foi determinante para 
 utilizá-lo durante o desenvolvimento.
 
