@@ -15,15 +15,10 @@ public class FlywayMigrationApplication {
 	@Bean
 	public CommandLineRunner exampleQuery(IndividuoRepository repository) {
 		return args -> {
-			repository.save(new Individuo("Fábio"));
-			repository.save(new Individuo("Pedro"));
-			repository.save(new Individuo("João"));
-			repository.save(new Individuo("Lucas"));
-
-			repository.findByNome("João")
-					.forEach(System.err::println);
-			repository.findByNome("Lucas")
-					.forEach(System.err::println);
+			repository.save(new Individuo());
+			repository.save(new Individuo());
+			repository.save(new Individuo());
+			repository.save(new Individuo());
 
 			repository.findAll().forEach(System.err::println);
 		};
