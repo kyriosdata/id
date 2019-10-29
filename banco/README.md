@@ -56,7 +56,7 @@ mvn flyway:info
 
 A configuração da URL também pode ser fornecida via linha de comandos conforme abaixo, onde remotamente é recuperada informações do banco `db1` cujo usuário é `sa`. 
 
-- `mvn flyway:info -Dh2.url="jdbc:h2:tcp://<ip>:9092/./db1;USER=sa"
+```mvn flyway:info -Dh2.url="jdbc:h2:tcp://<ip>:9092/./db1;USER=sa"```
 
 #### Migrações (aplicar)
 
