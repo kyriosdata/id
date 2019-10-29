@@ -1,20 +1,15 @@
 # Iniciando com o H2
-- Configure a propriedade _h2.version_ no arquivo _pom.xml_ para a versão do H2 a ser empregada.
+- Configure a propriedade _h2.version_ no arquivo _pom.xml_ com a versão do H2 a ser empregada.
 - Inicie o servidor H2 e cliente Web do H2 com `mvn exec:exec -P start-h2`. O servidor emprega a porta **9092** enquanto o cliente Web a porta **8082**, todos eles acessíveis
 remotamente.
 - Interrompa a execução do H2 com `mvn exec:exec -P stop-h2`.
 
-## H2
-A simplicidade do [H2](http://www.h2database.com) foi determinante para 
-utilizá-lo durante o desenvolvimento.
+## H2 (server, cliente e driver JDBC)
 
-Ao executar **mvn package** será depositado no diretório **target/jars** 
-os arquivos jar empregados pela solução, inclusive aquele que implementa o H2,
-o arquivo **h2-&lt;version&gt;.jar**, onde **version* é definida pela propriedade
-**h2.version** no arquivo _pom.xml_. 
+- **mvn package** deposita no diretório **target/jars** 
+os arquivos jar empregados pela solução, inclusive o arquivo **h2-&lt;version&gt;.jar** que inclui a implementação do [H2](http://www.h2database.com), o cliente Web e o _driver_ JDBC.
+Observe que **version** é definida pela propriedade **h2.version** no arquivo _pom.xml_. 
 
-O arquivo contendo o H2 também inclui o _driver_ JDBC a ser utilizado por qualquer cliente
-SQL para interagir com o H2.
 
 #### H2 (iniciar o Server e cliente Web)
 Iniciado com permissão para criação remota de _database_. Este recurso apresenta
