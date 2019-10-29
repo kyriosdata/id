@@ -35,7 +35,8 @@ de um _database_, contudo, você pode desejar criar um explicitamente conforme a
  
  - `java -cp target/jars/h2-<version>.jar org.h2.tools.Shell`. Você terá que
   fornecer como URL algo como `jdbc:h2:./teste` para criar no diretório
-   corrente o banco "teste".
+   corrente o banco "teste". Se o acesso é remoto, então a url deverá ser algo como
+   `jdbc:h2:tcp://<ip>:9092/./db-usado`.
    
 
 ### Conexão (URL)
@@ -52,6 +53,10 @@ empregado pelo FlyWay.
 ```
 mvn flyway:info
 ```
+
+A configuração da URL também pode ser fornecida via linha de comandos conforme abaixo, onde remotamente é recuperada informações do banco `db1` cujo usuário é `sa`. 
+
+- `mvn flyway:info -Dh2.url="jdbc:h2:tcp://<ip>:9092/./db1;USER=sa"
 
 #### Migrações (aplicar)
 
