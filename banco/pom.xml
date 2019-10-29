@@ -145,10 +145,11 @@
                             <arguments>
                                 <argument>-classpath</argument>
                                 <classpath/>
-                                <argument>org.h2.tools.Console</argument>
+                                <argument>org.h2.tools.Server</argument>
                                 <argument>-tcp</argument>
                                 <argument>-tcpAllowOthers</argument>
                                 <argument>-web</argument>
+                                <argument>-webAllowOthers</argument>
                                 <argument>-browser</argument>
                             </arguments>
                         </configuration>
