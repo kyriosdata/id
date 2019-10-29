@@ -1,17 +1,16 @@
 # Iniciando com o H2
 - Configure a propriedade _h2.version_ no arquivo _pom.xml_ com a versão do H2 a ser empregada.
-- Inicie o servidor H2 e cliente Web do H2 com `mvn exec:exec -P start-h2`. O servidor emprega a porta **9092** enquanto o cliente Web a porta **8082**, todos eles acessíveis
-remotamente.
-- Interrompa a execução do H2 com `mvn exec:exec -P stop-h2`.
+- `mvn exec:exec -P start-h2` inicia o servidor (porta **9092**) e o cliente Web (porta **8082**) do H2, ambos acessíveis remotamente.
+- `mvn exec:exec -P stop-h2` interrompe a execução do H2.
 
-## H2 (server, cliente e driver JDBC)
+### H2 (server, cliente e driver JDBC)
 
 - **mvn package** deposita no diretório **target/jars** 
 os arquivos jar empregados pela solução, inclusive o arquivo **h2-&lt;version&gt;.jar** que inclui a implementação do [H2](http://www.h2database.com), o cliente Web e o _driver_ JDBC.
 Observe que **version** é definida pela propriedade **h2.version** no arquivo _pom.xml_. 
 
 
-#### H2 (iniciar o Server e cliente Web)
+### H2 (iniciar o Server e cliente Web)
 Iniciado com permissão para criação remota de _database_. Este recurso apresenta
 vulnerabilidades de segurança e, portanto, só deve ser feito tal uso em desenvolvimento.
  
@@ -19,31 +18,32 @@ vulnerabilidades de segurança e, portanto, só deve ser feito tal uso em desenv
 mvn exec:exec -P start-h2
 ```
  
-A versão do H2 a ser utilizada está definida no _pom.xml_ por meio da propriedade **h2.version**. Deve ser a mesma versão empregada tanto pelo 
-Flyway quanto pelo cliente SQL empregado. As portas utilizadas são **9092** (tcp) e **8082** (web).
+A versão do H2 a ser utilizada está definida no _pom.xml_ por meio da propriedade **h2.version**. As portas utilizadas são **9092** (tcp) e **8082** (web).
 
-#### Interromper o H2 (Server e Web)
+### Interromper o H2 (Server e Web)
  
 ```
 mvn exec:exec -P stop-h2
 ```
 
-#### Criar um _database_
-Antes de se conectar a uma base de dados será necessário criá-la. Uma forma
- é apresentada abaixo: 
+### Criar um _database_
+Antes de se conectar a uma base de dados será necessário criá-la. Conforme configurado
+no _pom.xml_, o comando para iniciar o H2 o configura para permitir a criação automática
+de um _database_, contudo, você pode desejar criar um explicitamente conforme abaixo:
  
- - `java -cp target/jars/h2-1.4.199.jar org.h2.tools.Shell`. Você terá que
+ - `java -cp target/jars/h2-&lt;version&gt;.jar org.h2.tools.Shell`. Você terá que
   fornecer como URL algo como `jdbc:h2:./teste` para criar no diretório
-   corrente o banco "teste" (que posteriormente poderá ser empregado).
+   corrente o banco "teste".
    
 
-#### Conexão (URL)
+### Conexão (URL)
 ```
 jdbc:h2:tcp://localhost:9092/./target/database
 ```
    
-## Flyway
-Assumindo que o H2 está em execução...
+### Flyway
+Defina a propriedade **h2.url** no arquivo _pom.xml_ para o _database_ a ser
+empregado pelo FlyWay. 
 
 #### Migrações (informações)
 
