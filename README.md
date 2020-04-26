@@ -18,3 +18,11 @@ profissionais de saúde quanto por profissionais de tecnologia da informação_.
 ### PORTAL 
 O resultado está disponível na forma de um portal. 
 Confira em https://kyriosdata.github.io/id. 
+
+### Agradecimentos
+
+
+
+[Java Profiler](https://www.ej-technologies.com/products/jprofiler/overview.html)
+
+[![](https://www.ej-technologies.com/images/product_banners/jprofiler_small.png)](https://www.ej-technologies.com/products/jprofiler/overview.html)
