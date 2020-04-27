@@ -22,8 +22,7 @@ Confira em https://kyriosdata.github.io/id.
 ### Agradecimentos
 
 [JArchitect](http://www.jarchitect.com/)
-
-
+<img src="imagens/jarchitectlogo.png" alt="drawing" width="100"/>
 
 [Java Profiler](https://www.ej-technologies.com/products/jprofiler/overview.html)
 
